@@ -1,0 +1,1029 @@
+1
+00:00:05,339 --> 00:00:12,200
+Well, we are going to be focusing,
+particularly, on legged mobility.
+
+2
+00:00:12,200 --> 00:00:16,643
+And legged mobility brings us
+to an understanding of and
+
+3
+00:00:16,643 --> 00:00:21,190
+engagement with dynamics and
+the management of energy.
+
+4
+00:00:23,210 --> 00:00:25,330
+Why focus on legs?
+
+5
+00:00:25,330 --> 00:00:30,120
+Well, we're humans and we're particularly
+interested in human animals.
+
+6
+00:00:30,120 --> 00:00:32,650
+And humans live and work largely on land.
+
+7
+00:00:34,610 --> 00:00:38,020
+Look at this very, very interesting map
+
+8
+00:00:38,020 --> 00:00:42,400
+produced about 20 years ago by
+some economists at Harvard.
+
+9
+00:00:42,400 --> 00:00:47,113
+They show you the density
+of the navigable and
+
+10
+00:00:47,113 --> 00:00:51,952
+temperate earth ecozones
+which comprise only
+
+11
+00:00:51,952 --> 00:00:56,552
+8% of the inhabitable landmass on earth.
+
+12
+00:00:56,552 --> 00:00:59,566
+But this 8% accounts for
+
+13
+00:00:59,566 --> 00:01:04,366
+50% of the world's economic output.
+
+14
+00:01:04,366 --> 00:01:10,920
+And so we see that despite our wonderful
+legs and our wonderful mobility,
+
+15
+00:01:10,920 --> 00:01:17,474
+the largest component of human living and
+working is happening on a tiny,
+
+16
+00:01:17,474 --> 00:01:22,050
+tiny substrate,
+8% of the inhabited landmass.
+
+17
+00:01:22,050 --> 00:01:27,338
+And we suspect, as the economists predict,
+that as human beings come to
+
+18
+00:01:27,338 --> 00:01:33,424
+be able to exploit more of this inhabited
+land mass with greater mobility engines.
+
+19
+00:01:33,424 --> 00:01:38,184
+That there will be much,
+much greater economic output in presently
+
+20
+00:01:38,184 --> 00:01:42,701
+underserved and economically
+deprived regions of the planet.
+
+21
+00:01:44,663 --> 00:01:49,417
+We're also interested in legs because
+there are a variety of inhospitable
+
+22
+00:01:49,417 --> 00:01:54,630
+environments where people can't go, or
+shouldn't go, that legs are crucial.
+
+23
+00:01:55,800 --> 00:02:01,279
+For example, about ten years ago, there
+was a terrible disaster at Sago Mine.
+
+24
+00:02:02,880 --> 00:02:08,450
+And it was clear from the news reports and
+
+25
+00:02:08,450 --> 00:02:14,300
+careful formal studies of the accident
+site that if we'd had better robots
+
+26
+00:02:14,300 --> 00:02:19,860
+that were more mobile, more easily
+able to traverse these very non level.
+
+27
+00:02:19,860 --> 00:02:23,040
+No roads here, no flat fields here.
+
+28
+00:02:23,040 --> 00:02:27,770
+If we had robots that were able to
+traverse these very difficult, broken,
+
+29
+00:02:27,770 --> 00:02:34,480
+unstable land regimes, we possibly could
+have done better by the disaster victims.
+
+30
+00:02:34,480 --> 00:02:39,560
+Not just on Earth are we interested
+in terrestrial mobility,
+
+31
+00:02:39,560 --> 00:02:41,430
+there's extraterrestrial mobility.
+
+32
+00:02:42,970 --> 00:02:47,400
+It's not that you can't roam
+around Mars with wheels.
+
+33
+00:02:47,400 --> 00:02:50,390
+The amazing Mars Rovers have way, way,
+
+34
+00:02:50,390 --> 00:02:56,130
+way outlived their planned life, but
+they were limited in their mobility.
+
+35
+00:02:56,130 --> 00:02:59,030
+Dramatically limited by their wheels so
+
+36
+00:02:59,030 --> 00:03:02,460
+that the Mars Rover Spirit
+got stuck in the sand.
+
+37
+00:03:03,470 --> 00:03:09,330
+And ten years ago it died in the Martian
+winter because it couldn't free itself
+
+38
+00:03:09,330 --> 00:03:10,400
+from the sand trap.
+
+39
+00:03:12,900 --> 00:03:17,800
+We think in robotics that legs
+are better than wheels and
+
+40
+00:03:17,800 --> 00:03:19,860
+legs are better than tracks.
+
+41
+00:03:19,860 --> 00:03:24,600
+And legs and tails and
+appendages are better than jets.
+
+42
+00:03:25,670 --> 00:03:26,630
+Why do we think that?
+
+43
+00:03:28,310 --> 00:03:32,420
+We find, when we look carefully,
+that legs and
+
+44
+00:03:32,420 --> 00:03:38,490
+appendages enable
+the mobile agent to direct
+
+45
+00:03:38,490 --> 00:03:43,003
+the ground reaction forces that we
+talked about in the previous segment.
+
+46
+00:03:44,660 --> 00:03:49,663
+We can direct the ground reaction
+forces and by directing them we can
+
+47
+00:03:49,663 --> 00:03:54,534
+choose to either leap forward,
+for example,
+
+48
+00:03:54,534 --> 00:04:00,410
+as Aaron Johnson's Rex Robot is
+doing in this slowed down movie.
+
+49
+00:04:01,570 --> 00:04:04,250
+Or we can redirect them to jump up,
+
+50
+00:04:05,310 --> 00:04:09,180
+as Aaron Johnson's same Rex Robot
+is doing in this different movie.
+
+51
+00:04:10,260 --> 00:04:14,280
+Where very,
+very minute differences in the timing, and
+
+52
+00:04:14,280 --> 00:04:17,500
+the forces, and
+the coordination of the leg patterns
+
+53
+00:04:17,500 --> 00:04:21,290
+give rise to dramatically
+different ground reaction forces.
+
+54
+00:04:21,290 --> 00:04:25,750
+And those very different ground reaction
+forces achieve totally different
+
+55
+00:04:25,750 --> 00:04:27,450
+kinds of mobility.
+
+56
+00:04:27,450 --> 00:04:33,280
+Never with a tracked or a wheeled vehicle
+would one be able to achieve these sorts
+
+57
+00:04:33,280 --> 00:04:38,640
+of navigational and mobile feats
+that the animals take for granted.
+
+58
+00:04:41,810 --> 00:04:45,780
+Another very, very important use for
+legged mobility is
+
+59
+00:04:45,780 --> 00:04:50,850
+the possibility of feeling
+the substrate through our limbs.
+
+60
+00:04:50,850 --> 00:04:56,220
+This is called proprioception, and this
+movie of Rex trudging its way up a slope.
+
+61
+00:04:56,220 --> 00:05:01,970
+We want the machine to stop midway and
+park itself in such a fashion
+
+62
+00:05:01,970 --> 00:05:09,010
+that it doesn't, any longer, need to exert
+any current, any torque against the world.
+
+63
+00:05:09,010 --> 00:05:12,110
+So that it could stay there for
+a long time without burning up energy.
+
+64
+00:05:12,110 --> 00:05:19,390
+To do so it must feel the forces of
+the ground through its legs, in its hip.
+
+65
+00:05:19,390 --> 00:05:23,169
+And by feeling them, it can balance and
+achieve an efficient stand.
+
+66
+00:05:24,780 --> 00:05:30,588
+So in this course we will be spending
+most of our time on legged mobility and
+
+67
+00:05:30,588 --> 00:05:35,095
+all of our time on appendaged mobility,
+tails and legs.
+
+68
+00:05:35,095 --> 00:05:41,145
+As soon as we say that,
+we're bound to consider the fundamental
+
+69
+00:05:41,145 --> 00:05:47,656
+physical properties before we take
+on any further considerations.
+
+70
+00:05:47,656 --> 00:05:50,233
+Mobility starts with physics.
+
+71
+00:05:50,233 --> 00:05:55,794
+Mobility starts with Newton, F = ma.
+
+72
+00:05:55,794 --> 00:06:01,294
+Mobility requires
+an understanding of Lagrange's
+
+73
+00:06:01,294 --> 00:06:06,544
+reformulation of Newton's
+laws into a principle
+
+74
+00:06:06,544 --> 00:06:11,919
+of least action that gave
+him a mechanics that began
+
+75
+00:06:11,919 --> 00:06:16,730
+to seem more geometric and
+less analytical.
+
+76
+00:06:16,730 --> 00:06:21,080
+We will visit Lagrange's
+reformulation of Newton's laws and
+
+77
+00:06:21,080 --> 00:06:24,429
+we will make major use of his ideas.
+
+78
+00:06:25,840 --> 00:06:31,000
+Most importantly, Hamilton came along and
+
+79
+00:06:31,000 --> 00:06:35,950
+understood that these least action
+principles could be again reconceived in
+
+80
+00:06:35,950 --> 00:06:43,250
+terms of conservation principles,
+energy conservation, energy loss.
+
+81
+00:06:43,250 --> 00:06:48,480
+In this course,
+we're concerned with losing energy,
+
+82
+00:06:48,480 --> 00:06:49,990
+we don't want to conserve energy.
+
+83
+00:06:49,990 --> 00:06:54,250
+We want to expend the joules
+in our batteries and
+
+84
+00:06:54,250 --> 00:06:59,550
+get those joules into the body in
+the form of kinetic energy of the body,
+
+85
+00:06:59,550 --> 00:07:03,200
+so that the body can move around and
+get things done for the robot.
+
+86
+00:07:04,200 --> 00:07:09,360
+In order to do so, we must waste energy,
+we must spend our energy
+
+87
+00:07:09,360 --> 00:07:14,120
+on directed motion and
+on thermal loss and other losses.
+
+88
+00:07:14,120 --> 00:07:17,910
+We'll be spending a lot of
+time thinking about energy and
+
+89
+00:07:17,910 --> 00:07:20,889
+energy based methodologies in this course.
+
+90
+00:07:22,600 --> 00:07:27,860
+So mobility starts with physics but
+it takes a very long and important detour
+
+91
+00:07:27,860 --> 00:07:32,800
+through technology, whose fundamentals
+are still not completely understood.
+
+92
+00:07:34,330 --> 00:07:39,370
+We're very, very much concerned with
+scarce resources such as specific force.
+
+93
+00:07:40,540 --> 00:07:45,310
+Specific force means force per mass, why?
+
+94
+00:07:45,310 --> 00:07:48,290
+Well, we must apply
+the ground reaction forces in
+
+95
+00:07:48,290 --> 00:07:50,630
+adequate magnitude to achieve our end.
+
+96
+00:07:52,100 --> 00:07:52,730
+To do so,
+
+97
+00:07:52,730 --> 00:07:58,580
+with electro-mechanical actuators which
+are the cleanest and the fastest acting.
+
+98
+00:07:58,580 --> 00:08:04,360
+We engage in the history of
+recent material science and
+
+99
+00:08:04,360 --> 00:08:10,530
+magnetism, which is an ongoing,
+slowly developing, very important area.
+
+100
+00:08:10,530 --> 00:08:15,475
+The progression of energetic
+density in rare earth
+
+101
+00:08:15,475 --> 00:08:20,420
+magnets has made a slow
+change in the capacity of our
+
+102
+00:08:20,420 --> 00:08:25,365
+motors to impart forces
+without requiring large,
+
+103
+00:08:25,365 --> 00:08:28,820
+large, large rotors and stators.
+
+104
+00:08:28,820 --> 00:08:33,068
+And so, we show you here
+a picture of an Maxon motor,
+
+105
+00:08:33,068 --> 00:08:39,070
+which until recently had been one of
+the preferred engines of our robots.
+
+106
+00:08:40,930 --> 00:08:46,010
+In recent years,
+it’s become clear that more than just
+
+107
+00:08:46,010 --> 00:08:50,140
+the materials properties
+of the motors are crucial.
+
+108
+00:08:50,140 --> 00:08:55,584
+We know that their ability to shed
+thermal load, their ability to shed heat,
+
+109
+00:08:55,584 --> 00:09:01,028
+the wasted energy that gets burned up in
+joule heating in their wires is very,
+
+110
+00:09:01,028 --> 00:09:02,317
+very important.
+
+111
+00:09:02,317 --> 00:09:08,121
+And recently some of our colleagues,
+Professor Sangbae Kim at MIT,
+
+112
+00:09:08,121 --> 00:09:13,523
+have pointed out that the air gap
+radius when it gets enlarged for
+
+113
+00:09:13,523 --> 00:09:17,842
+the same mass, gives much,
+much greater torque.
+
+114
+00:09:17,842 --> 00:09:22,560
+And so we should be thinking about
+motors that have good rare earth magnets
+
+115
+00:09:22,560 --> 00:09:27,360
+in them and motors that have good
+thermal shedding capability in them.
+
+116
+00:09:27,360 --> 00:09:33,734
+And motors that are built with large air
+gap radii as shown in Sangbae's picture.
+
+117
+00:09:35,150 --> 00:09:40,010
+This confusion, interesting confusion,
+combination of fundamental materials,
+
+118
+00:09:40,010 --> 00:09:44,900
+properties and technological, commercial
+off the shelf availabilities is one of
+
+119
+00:09:44,900 --> 00:09:49,260
+the many wonderful confusing aspects
+of robotics right now in its infancy.
+
+120
+00:09:49,260 --> 00:09:51,510
+And some day we'll get
+to the bottom of it.
+
+121
+00:09:51,510 --> 00:09:52,460
+But for now,
+
+122
+00:09:52,460 --> 00:09:57,570
+what we know is we want greater specific
+force than we can get in our machines.
+
+123
+00:09:59,510 --> 00:10:02,940
+Another scarce resource is traction.
+
+124
+00:10:04,210 --> 00:10:08,650
+Traction in the claws of the cheetah
+that we'll come back to and
+
+125
+00:10:08,650 --> 00:10:11,520
+talk about subsequently.
+
+126
+00:10:11,520 --> 00:10:15,720
+The cheetah in the former
+pictures was able to achieve its
+
+127
+00:10:15,720 --> 00:10:20,630
+huge accelerations as you saw
+on those pictures because it has
+
+128
+00:10:20,630 --> 00:10:26,350
+claws that can engage the ground and
+form virtual pin joints.
+
+129
+00:10:26,350 --> 00:10:31,600
+None of our robots has the ability to
+recruit such huge traction forces.
+
+130
+00:10:31,600 --> 00:10:34,580
+And so, for us in the robotics world,
+
+131
+00:10:34,580 --> 00:10:38,550
+trying to achieve those accelerations
+even if we had the forces
+
+132
+00:10:38,550 --> 00:10:42,390
+would cause us to be skittering over
+that grass as if it were ice or Teflon.
+
+133
+00:10:45,020 --> 00:10:49,000
+Another scarce resource is power.
+
+134
+00:10:49,000 --> 00:10:54,370
+Power is the rate at which I
+can move my joules around,
+
+135
+00:10:54,370 --> 00:10:58,760
+the rate at which energy gets
+transferred from one form or another.
+
+136
+00:10:58,760 --> 00:11:04,930
+Another way to think about power is
+the speed at which I can sustain my force.
+
+137
+00:11:04,930 --> 00:11:08,700
+Specific power, of course,
+means power per mass.
+
+138
+00:11:08,700 --> 00:11:14,030
+And I want to get as great power per mass
+as I can out of my actuator technology.
+
+139
+00:11:15,040 --> 00:11:23,388
+Here is an example of one our more recent
+vertical climbing robots in a paper by Dr.
+
+140
+00:11:23,388 --> 00:11:28,960
+Goran Lynch and Professor Clark
+now at Florida State University,
+
+141
+00:11:28,960 --> 00:11:35,610
+Professor Pei-Chun Lin now at
+National Taiwan University, and myself.
+
+142
+00:11:35,610 --> 00:11:41,180
+This wall running robot was achieved
+
+143
+00:11:41,180 --> 00:11:46,810
+by introducing compliant elements
+that could absorb the energy
+
+144
+00:11:46,810 --> 00:11:53,280
+from the motor whilst the legs were
+retracting so as to spread out
+
+145
+00:11:53,280 --> 00:12:00,490
+the time over which the energy had to be
+moved and avoid burning the motor coils.
+
+146
+00:12:00,490 --> 00:12:04,740
+This is another example of
+a technological consideration
+
+147
+00:12:04,740 --> 00:12:08,560
+that must have formal foundations
+that we don't understand yet.
+
+148
+00:12:08,560 --> 00:12:13,630
+But we will be coming back to these
+considerations in the segment
+
+149
+00:12:13,630 --> 00:12:15,000
+two of the course.
+
+150
+00:12:18,180 --> 00:12:22,980
+Mobility starts with physics,
+it takes a detour through technology,
+
+151
+00:12:22,980 --> 00:12:27,070
+it ends with the hope of programming work.
+
+152
+00:12:28,930 --> 00:12:29,920
+What might that mean?
+
+153
+00:12:32,060 --> 00:12:36,520
+As we'll see through
+the hours of lectures,
+
+154
+00:12:37,880 --> 00:12:42,880
+our robots start with architectures,
+the architectures of computers and
+
+155
+00:12:42,880 --> 00:12:46,430
+the architectures of motors and
+the architectures of sensors.
+
+156
+00:12:46,430 --> 00:12:50,740
+There are hardware elements of various
+kinds, and each of these hardware elements
+
+157
+00:12:50,740 --> 00:12:56,350
+has its own interesting story,
+mix of technological accident and
+
+158
+00:12:56,350 --> 00:13:00,400
+fundamental material science, or
+fundamental physical principles.
+
+159
+00:13:00,400 --> 00:13:04,680
+Each of these components that go into
+the architecture that makes a machine
+
+160
+00:13:04,680 --> 00:13:06,330
+has its own fascinating story.
+
+161
+00:13:07,850 --> 00:13:13,970
+At the end, we build up our actuators and
+our actuators communicate information
+
+162
+00:13:13,970 --> 00:13:20,050
+about the state of the environment, the
+state of the body, the state of the limbs.
+
+163
+00:13:20,050 --> 00:13:24,990
+All the way back to the communicating and
+coordinating structures and
+
+164
+00:13:24,990 --> 00:13:25,640
+the intelligence.
+
+165
+00:13:27,120 --> 00:13:31,160
+But at the end of the day, these
+coordination patterns must be used to
+
+166
+00:13:31,160 --> 00:13:37,120
+achieve some kind of
+stable energetic display,
+
+167
+00:13:37,120 --> 00:13:41,240
+some kind of stable energetic shedding.
+
+168
+00:13:41,240 --> 00:13:44,230
+And we will come to call these basins.
+
+169
+00:13:45,530 --> 00:13:49,970
+Basins of attraction,
+places where energy wants to go low,
+
+170
+00:13:49,970 --> 00:13:53,560
+energy wants to get shed and
+the world and the robot,
+
+171
+00:13:53,560 --> 00:13:58,000
+when they shake hands, wants to
+end up in these low energy states.
+
+172
+00:13:58,000 --> 00:14:03,150
+These basins become symbols and
+
+173
+00:14:03,150 --> 00:14:06,420
+the symbols begin to be composable.
+
+174
+00:14:07,980 --> 00:14:10,610
+When we have symbols that are composable,
+
+175
+00:14:10,610 --> 00:14:14,810
+we are on the threshold
+of programming languages.
+
+176
+00:14:14,810 --> 00:14:19,760
+And so the last week of this course
+will be concerned with our ability to
+
+177
+00:14:19,760 --> 00:14:24,390
+compose these basins, these symbols,
+these energy basins and
+
+178
+00:14:24,390 --> 00:14:28,000
+build more complicated behaviors from old.
+
+179
+00:14:28,000 --> 00:14:31,540
+For example,
+if we think about a language of work, if
+
+180
+00:14:33,260 --> 00:14:38,680
+we think about basins as symbols,
+we want to translate the abstract goals.
+
+181
+00:14:38,680 --> 00:14:46,800
+Move your body here, or move that dish
+from this shelf into that refrigerator.
+
+182
+00:14:46,800 --> 00:14:49,817
+We want to translate these goals
+into sensor-torque strategies.
+
+183
+00:14:49,817 --> 00:14:54,738
+And so we want to take our
+architectures as they're connected
+
+184
+00:14:54,738 --> 00:14:59,670
+up to the world through our limbs and
+we want to build basins.
+
+185
+00:14:59,670 --> 00:15:06,560
+Here's an example of Dr.
+Rob Burridge's thesis from 1992,
+
+186
+00:15:06,560 --> 00:15:12,100
+wherein he and Al Rizzi showed
+how to build a juggling basin.
+
+187
+00:15:12,100 --> 00:15:15,910
+Here the energetic design is for
+
+188
+00:15:15,910 --> 00:15:19,090
+an oscillating vertical
+motion of the ping pong ball.
+
+189
+00:15:19,090 --> 00:15:24,050
+The ping pong ball wants to lie
+down at that vertical motion,
+
+190
+00:15:24,050 --> 00:15:27,258
+and when we try to knock that ball away,
+
+191
+00:15:27,258 --> 00:15:32,334
+the basin restores the ball down
+to the low energy goal state.
+
+192
+00:15:34,088 --> 00:15:38,559
+Here's Burridge's work on sequential
+composition of those basins and
+
+193
+00:15:38,559 --> 00:15:41,866
+we won't talk very much
+about this technically now.
+
+194
+00:15:41,866 --> 00:15:44,040
+We'll do this in week four.
+
+195
+00:15:44,040 --> 00:15:48,651
+But you would like to think about
+these sequential compositions as
+
+196
+00:15:48,651 --> 00:15:52,198
+the beginning of a programming
+language for work.
+
+197
+00:15:55,100 --> 00:15:59,718
+The virtue of formal programming
+languages is that they're amenable to
+
+198
+00:15:59,718 --> 00:16:01,241
+mathematical proofs.
+
+199
+00:16:04,097 --> 00:16:08,562
+The virtue of mathematical proofs is that
+they sometimes give rise to predictable
+
+200
+00:16:08,562 --> 00:16:09,150
+results.
+
+201
+00:16:09,150 --> 00:16:12,250
+It's not that the proof means
+that the robot will work.
+
+202
+00:16:12,250 --> 00:16:14,850
+The proof gives you a debugging tool.
+
+203
+00:16:14,850 --> 00:16:20,140
+Because if the theorem is correct, and
+
+204
+00:16:20,140 --> 00:16:22,450
+the behavior does not work
+in the physical world,
+
+205
+00:16:22,450 --> 00:16:27,490
+then you know that the hypothesis
+underlying that theorem doesn't hold.
+
+206
+00:16:27,490 --> 00:16:31,332
+And it helps you in your debugging step.
+
+207
+00:16:31,332 --> 00:16:36,358
+We don't like to think about robots
+that don't have formal properties.
+
+208
+00:16:36,358 --> 00:16:39,287
+We don't like to think about
+computers that crash, but
+
+209
+00:16:39,287 --> 00:16:43,340
+we're willing to live with them
+if they're on our desktop.
+
+210
+00:16:43,340 --> 00:16:49,530
+If those computers are running our
+elevator, or running our jet, or running
+
+211
+00:16:49,530 --> 00:16:54,720
+our search and rescue equipment, we
+really, really don't want them to crash.
+
+212
+00:16:54,720 --> 00:16:58,730
+And we would like to have
+formal mathematical principles
+
+213
+00:16:58,730 --> 00:17:00,620
+that preclude such possibilities.
+
+214
+00:17:02,290 --> 00:17:06,790
+These are the themes that we will
+be covering in the weeks and
+
+215
+00:17:06,790 --> 00:17:08,770
+segments to come.
+
+216
+00:17:08,770 --> 00:17:14,186
+Welcome to our special mobility course
+at the University of Pennsylvania,
+
+217
+00:17:14,186 --> 00:17:15,970
+Penn GRASP Laboratory.

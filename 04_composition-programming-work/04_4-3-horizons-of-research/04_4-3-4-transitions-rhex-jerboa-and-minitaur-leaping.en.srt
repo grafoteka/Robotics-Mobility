@@ -1,0 +1,404 @@
+1
+00:00:06,704 --> 00:00:09,663
+So far, we have been looking
+at steady state behaviors,
+
+2
+00:00:09,663 --> 00:00:14,050
+which means that the energy of
+the robot changes slowly, if at all.
+
+3
+00:00:14,050 --> 00:00:16,690
+This last segment of the course,
+we'll look at leaping.
+
+4
+00:00:16,690 --> 00:00:19,620
+Leaping really involves
+rapid changes in energy.
+
+5
+00:00:19,620 --> 00:00:23,070
+And that brings in very different
+techniques that we need for analysis.
+
+6
+00:00:23,070 --> 00:00:24,240
+Here are two videos of Jerboa.
+
+7
+00:00:25,510 --> 00:00:29,110
+On the left it's doing the hopping
+we saw on the previous segment, and
+
+8
+00:00:29,110 --> 00:00:33,800
+on the right it's doing a leaping behavior
+to try and get on top of this box.
+
+9
+00:00:33,800 --> 00:00:36,420
+Which would you guess is
+the easier behavior to analyze?
+
+10
+00:00:38,320 --> 00:00:40,940
+The answer is, by far,
+the one on the left.
+
+11
+00:00:40,940 --> 00:00:43,700
+The behavior on the right is
+called transitional behavior.
+
+12
+00:00:44,838 --> 00:00:48,850
+And the analytical difficulty with that
+is that it can't be encoded in terms of
+
+13
+00:00:48,850 --> 00:00:53,340
+basins and generalized energy,
+like we showed in section 4.1.
+
+14
+00:00:53,340 --> 00:00:56,310
+However, it's not always so bad.
+
+15
+00:00:56,310 --> 00:01:01,080
+Here's a video of me rolling a ball
+on a table and a makeshift corner.
+
+16
+00:01:01,080 --> 00:01:05,510
+The ball has one or more impacts
+with the boxes on the sides, and for
+
+17
+00:01:05,510 --> 00:01:07,500
+the most part,
+bounces away from the corner.
+
+18
+00:01:08,680 --> 00:01:14,000
+This deceptively simple demonstration
+exposes some of the nasty underbelly
+
+19
+00:01:14,000 --> 00:01:16,050
+of hybrid systems, though.
+
+20
+00:01:16,050 --> 00:01:20,460
+Notice that for the concave corner, even
+though the initial velocity is variable,
+
+21
+00:01:20,460 --> 00:01:25,100
+the final velocity is relatively
+stable to perturbations.
+
+22
+00:01:25,100 --> 00:01:29,010
+However, in the convex corner,
+the opposite is true.
+
+23
+00:01:29,010 --> 00:01:31,910
+Even small variations in initial velocity
+
+24
+00:01:31,910 --> 00:01:36,900
+cause the ball to diverge completely
+into different final velocities.
+
+25
+00:01:36,900 --> 00:01:41,480
+So the first concave corner results
+in a convergent transition,
+
+26
+00:01:41,480 --> 00:01:43,990
+whereas in the second case,
+we get a divergent one.
+
+27
+00:01:46,030 --> 00:01:49,688
+The first example where this is relevant
+is a pronking leap for Minitaur,
+
+28
+00:01:49,688 --> 00:01:51,230
+as you can see in these videos.
+
+29
+00:01:52,420 --> 00:01:55,940
+Through our virtual leg coordination
+anchoring effort, we can try and
+
+30
+00:01:55,940 --> 00:01:59,540
+ensure that the multiple legs
+touch down at the same time.
+
+31
+00:01:59,540 --> 00:02:03,674
+But in practice they all touch down
+at slightly different times, but
+
+32
+00:02:03,674 --> 00:02:07,393
+the advantage is that these
+impacts are usually convergent.
+
+33
+00:02:07,393 --> 00:02:11,466
+You can try this at home by
+picking up a chair or a table and
+
+34
+00:02:11,466 --> 00:02:15,210
+lightly dropping it about
+one inch off the ground.
+
+35
+00:02:15,210 --> 00:02:19,633
+And you can see that the final condition
+is relatively independent of how you drop
+
+36
+00:02:19,633 --> 00:02:21,040
+the chair.
+
+37
+00:02:21,040 --> 00:02:23,060
+The same is true of Minitaur.
+
+38
+00:02:23,060 --> 00:02:27,960
+And a lot of the time we can ignore
+the variability of how it lands and
+
+39
+00:02:27,960 --> 00:02:32,600
+instead focus on composing the behavior
+using sequential parallel composition
+
+40
+00:02:32,600 --> 00:02:33,850
+that we learned about before.
+
+41
+00:02:35,230 --> 00:02:36,685
+All of these are just the bounding and
+
+42
+00:02:36,685 --> 00:02:39,710
+pronking that we've seen
+in the previous segments.
+
+43
+00:02:39,710 --> 00:02:42,030
+With added vertical energy for one stride.
+
+44
+00:02:43,150 --> 00:02:47,560
+The vertical leap is about two and half
+times MInitaur's normal standing height.
+
+45
+00:02:47,560 --> 00:02:51,909
+You might be thinking, my cat can
+jump higher than that, probably true.
+
+46
+00:02:51,909 --> 00:02:54,850
+In an absolute height you could
+probably jump higher than that as well.
+
+47
+00:02:56,270 --> 00:02:59,120
+But try without bending your knees or
+your ankle.
+
+48
+00:03:00,160 --> 00:03:03,510
+You might see that it's extremely
+hard to jump without knees.
+
+49
+00:03:04,590 --> 00:03:08,200
+RHex and Jerboa are two robots that
+don't have any active knees or
+
+50
+00:03:08,200 --> 00:03:11,520
+ankles, that is,
+it can't actively extend its leg.
+
+51
+00:03:13,050 --> 00:03:17,670
+We've been able to make RHex and
+Jerboa perform leaping behaviors as well.
+
+52
+00:03:17,670 --> 00:03:18,770
+Using their legs and
+
+53
+00:03:18,770 --> 00:03:24,230
+body together to go through a sequence of
+hybrid transitions before going airborne.
+
+54
+00:03:24,230 --> 00:03:28,130
+I've shown you a brief set of samples
+here where you can look up RHex and
+
+55
+00:03:28,130 --> 00:03:31,150
+Jerboa leaping on YouTube to
+see a more full selection of
+
+56
+00:03:31,150 --> 00:03:32,490
+the leaps possible on this way.
+
+57
+00:03:33,930 --> 00:03:39,438
+To manage the exploding complexity of
+the hybrid transitions, Aaron Johnson
+
+58
+00:03:39,438 --> 00:03:44,373
+came up with this object called
+the ground reaction complex, or GRC.
+
+59
+00:03:44,373 --> 00:03:49,370
+The GRC is really a mathematical structure
+for bookkeeping the hybrid transitions.
+
+60
+00:03:49,370 --> 00:03:54,470
+Here's an example of a GRC for
+a planar, one legged robot.
+
+61
+00:03:54,470 --> 00:03:58,110
+This is actually what you'd get if
+you removed the tail from Jerboa.
+
+62
+00:03:58,110 --> 00:04:01,620
+In each cartoon,
+the cyan dot represents an active contact,
+
+63
+00:04:01,620 --> 00:04:06,170
+and the magenta dots
+represent inactive contacts.
+
+64
+00:04:06,170 --> 00:04:10,245
+And maybe you can see how
+the GRC is constructed.
+
+65
+00:04:10,245 --> 00:04:14,975
+The most surprising thing we found is
+that when given a similar leap command,
+
+66
+00:04:14,975 --> 00:04:18,978
+in certain ranges, RHex and
+Jerboa produce very similar leaps,
+
+67
+00:04:18,978 --> 00:04:20,750
+as you can see in this image.
+
+68
+00:04:21,810 --> 00:04:25,470
+The question then,
+obviously, is why, and when.
+
+69
+00:04:25,470 --> 00:04:31,110
+The answer to this question is not easy,
+and is a topic of active research.
+
+70
+00:04:31,110 --> 00:04:36,350
+But for now, we suspect the answer has
+to do with ranges of conditions when,
+
+71
+00:04:36,350 --> 00:04:39,100
+to refer back to my earlier demonstration,
+
+72
+00:04:39,100 --> 00:04:42,770
+the ball rolls into a concave
+angle versus a convex angle.
+
+73
+00:04:44,370 --> 00:04:49,280
+In this image, each data point is
+the apex state of a leap made by RHex
+
+74
+00:04:49,280 --> 00:04:52,230
+on the left and Jerboa on the right.
+
+75
+00:04:52,230 --> 00:04:55,990
+And you can see that there
+are regions of leap commands which
+
+76
+00:04:55,990 --> 00:04:58,900
+produced very similar trends
+in the final apex state.
+
+77
+00:05:00,650 --> 00:05:06,689
+As I mentioned before, analyzing why
+is still the topic of active research.
+
+78
+00:05:06,689 --> 00:05:10,559
+To summarize, transitions go
+through various hybrid modes,
+
+79
+00:05:10,559 --> 00:05:15,110
+which makes them difficult to
+analyze with energy basins.
+
+80
+00:05:15,110 --> 00:05:18,140
+Some transitions are nicer than others,
+though.
+
+81
+00:05:18,140 --> 00:05:22,492
+Minitaur leaps fall in the nice category,
+and the leaps can mostly be
+
+82
+00:05:22,492 --> 00:05:27,084
+implemented and analyzed using
+parallel and sequential composition.
+
+83
+00:05:27,084 --> 00:05:31,120
+RHex and Jerboa leaps, on the other hand,
+are much more difficult to analyze, and
+
+84
+00:05:31,120 --> 00:05:34,130
+we're beginning to do so
+using the ground reaction complex.

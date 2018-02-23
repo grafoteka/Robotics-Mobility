@@ -1,0 +1,695 @@
+1
+00:00:05,362 --> 00:00:09,309
+Those of you who have taken
+multivariable calculus will remember
+
+2
+00:00:09,309 --> 00:00:11,470
+the Multivariable Taylor Series.
+
+3
+00:00:12,650 --> 00:00:14,060
+What is a Taylor Series?
+
+4
+00:00:14,060 --> 00:00:18,600
+Well my immutable colleague
+professor Rob Griest,
+
+5
+00:00:18,600 --> 00:00:24,680
+who has the world's best calculus MOOC,
+teaches us that we should think about
+
+6
+00:00:24,680 --> 00:00:29,850
+nice functions as being very, very, very
+long polynomials, meaning that you can
+
+7
+00:00:29,850 --> 00:00:35,330
+expand nice functions by Taylor Series
+into higher and higher and
+
+8
+00:00:35,330 --> 00:00:40,480
+higher degree polynomials, and get better
+and better and better approximations.
+
+9
+00:00:40,480 --> 00:00:42,210
+This is called Taylor's Theorem.
+
+10
+00:00:43,780 --> 00:00:49,650
+And the notion of nice's captured
+formally by the word analytic.
+
+11
+00:00:49,650 --> 00:00:53,460
+Go take Rob’s course if you’re
+interested in what this means.
+
+12
+00:00:53,460 --> 00:00:58,070
+From our point of view what
+it means is that we can
+
+13
+00:00:58,070 --> 00:01:02,740
+expand a functions f of x at any point x.
+
+14
+00:01:02,740 --> 00:01:07,890
+In the neighborhood of some
+interesting .x* using the value
+
+15
+00:01:07,890 --> 00:01:14,370
+of function adec * plus
+a linear approximation,
+
+16
+00:01:14,370 --> 00:01:17,780
+achieved by taking the derivative
+of the function of x*, and
+
+17
+00:01:18,860 --> 00:01:26,600
+multiplying the difference from that
+x star point by that derivative, and
+
+18
+00:01:26,600 --> 00:01:30,830
+then forgetting about a bunch of remainder
+terms called the Taylor Remainder,
+
+19
+00:01:30,830 --> 00:01:34,740
+which are guaranteed to get very,
+very small very quickly.
+
+20
+00:01:37,050 --> 00:01:43,120
+We'll think about this second
+term as the linearization
+
+21
+00:01:43,120 --> 00:01:46,810
+of the nonlinear function f(x).
+
+22
+00:01:46,810 --> 00:01:52,780
+And let me remind you that
+capital F at x* is the Jacobean.
+
+23
+00:01:52,780 --> 00:01:56,374
+It's the matrix of partial derivatives
+evaluated at that point of interest.
+
+24
+00:01:59,425 --> 00:02:05,211
+The linearisation of F at x* turns
+out to be extremely important and
+
+25
+00:02:05,211 --> 00:02:09,080
+valuable in the world
+of dynamical systems.
+
+26
+00:02:10,160 --> 00:02:12,740
+If you recall the first segment,
+
+27
+00:02:12,740 --> 00:02:16,965
+we showed that a linear dynamical
+system could be completely solved.
+
+28
+00:02:18,120 --> 00:02:21,540
+Whereas, in general, nonlinear
+dynamical systems are unsolvable.
+
+29
+00:02:23,190 --> 00:02:28,458
+However, there's the hope that
+the linearized dynamics of a non
+
+30
+00:02:28,458 --> 00:02:33,538
+linear system might actually
+closely describe the properties
+
+31
+00:02:33,538 --> 00:02:40,080
+of that non linear system at least in
+the neighborhood of a distinguished point.
+
+32
+00:02:40,080 --> 00:02:44,664
+We'll illustrate this again using
+our damped pendulum back from
+
+33
+00:02:44,664 --> 00:02:49,260
+the previous sections, so
+I'm plotting for you in equation 6.
+
+34
+00:02:49,260 --> 00:02:51,232
+I'm writing down for you, again,
+
+35
+00:02:51,232 --> 00:02:55,728
+a reminder of what the right hand side of
+the differential equation looked like.
+
+36
+00:02:55,728 --> 00:03:01,650
+F sub sp the function, the field vector or
+
+37
+00:03:01,650 --> 00:03:05,436
+the vector field, as it's called, of the
+simple pendulum on the right hand side.
+
+38
+00:03:05,436 --> 00:03:10,824
+At the bottom point,
+at the bottom equilibrium state,
+
+39
+00:03:10,824 --> 00:03:17,476
+let's evaluate the Jacobean,
+the matrix of partial derivatives,
+
+40
+00:03:17,476 --> 00:03:22,192
+of little f, sub sp, at q*, q* being 0,0.
+
+41
+00:03:22,192 --> 00:03:26,720
+And let's plug that q* into
+the Jacobean matrix, capital F.
+
+42
+00:03:26,720 --> 00:03:30,950
+And let's evaluate it, and that's exactly
+what we've done in this bottom row.
+
+43
+00:03:32,940 --> 00:03:37,030
+That's the linearized dynamics
+of this nom in your system,
+
+44
+00:03:37,030 --> 00:03:39,290
+the pendulum, at its bottom fixed point.
+
+45
+00:03:41,730 --> 00:03:46,030
+At the top, we have the same formula for
+the Jacobean, but
+
+46
+00:03:46,030 --> 00:03:52,090
+notice that we're plugging in the top
+fixed point, which is the angle at theta,
+
+47
+00:03:52,090 --> 00:03:58,380
+180 degrees above ground, above the
+downward pointing part, and at 0 velocity.
+
+48
+00:03:59,510 --> 00:04:05,059
+And when we plug that value of theta in,
+of course, we get a rather different
+
+49
+00:04:05,059 --> 00:04:10,353
+matrix, the same Jacobean matrix,
+the same linearization function,
+
+50
+00:04:10,353 --> 00:04:14,540
+but it's being evaluated
+at two very different q*'s.
+
+51
+00:04:14,540 --> 00:04:17,640
+First we did it at the bottom, and
+the second we did it at the top.
+
+52
+00:04:19,271 --> 00:04:22,849
+We're going to introduce changes
+of coordinates to talk about
+
+53
+00:04:22,849 --> 00:04:25,950
+the normal forms of
+these dynamical systems.
+
+54
+00:04:25,950 --> 00:04:29,150
+First, in general,
+that is away from fixed points.
+
+55
+00:04:29,150 --> 00:04:31,970
+And then in particular,
+close to fixed points.
+
+56
+00:04:33,450 --> 00:04:41,450
+A change of coordinates is a one to
+one in smooth continuous function.
+
+57
+00:04:41,450 --> 00:04:45,420
+That is continuous partial derivatives,
+continuous Jacobean matrix.
+
+58
+00:04:46,640 --> 00:04:52,940
+If it's inverse function is also smooth,
+then we'll call a change of coordinates.
+
+59
+00:04:52,940 --> 00:04:54,760
+And what we would like to do is,
+
+60
+00:04:54,760 --> 00:04:58,484
+we would like to write the old
+dynamics in the new coordinates.
+
+61
+00:04:58,484 --> 00:05:03,220
+To do so,
+if we're given a differential equation,
+
+62
+00:05:03,220 --> 00:05:08,492
+x dot = f(x), and
+a change of coordinate, y = h(x),
+
+63
+00:05:08,492 --> 00:05:13,121
+where h is one of these
+continuously invertible and
+
+64
+00:05:13,121 --> 00:05:16,051
+continuous smooth functions.
+
+65
+00:05:16,051 --> 00:05:19,215
+Then we'll take D by Dt of y, and
+
+66
+00:05:19,215 --> 00:05:24,870
+we'll use the chain rule to
+get our hands on D by Dt of x.
+
+67
+00:05:24,870 --> 00:05:26,080
+Let's do that.
+
+68
+00:05:26,080 --> 00:05:30,080
+We'll see that y dot is in the chain rule.
+
+69
+00:05:30,080 --> 00:05:35,630
+Is the Jacobean of h
+times times d by dt of x.
+
+70
+00:05:35,630 --> 00:05:39,210
+But x d by dt solves
+the differential equation.
+
+71
+00:05:39,210 --> 00:05:43,609
+And so that reduces to the Jacobean
+of h times the vector field f.
+
+72
+00:05:45,520 --> 00:05:50,430
+But we can substitute for
+x in that equation by using h inverse.
+
+73
+00:05:50,430 --> 00:05:57,140
+And so suddenly we have a new differential
+equation, y dot equals f tilde of y,
+
+74
+00:05:57,140 --> 00:06:02,170
+where f tilde of y is said
+to be conjugate to f.
+
+75
+00:06:02,170 --> 00:06:06,240
+It's not the same form as f.
+
+76
+00:06:06,240 --> 00:06:07,670
+F tilde is very, very different.
+
+77
+00:06:07,670 --> 00:06:10,400
+It looks very,
+very different when you write it down.
+
+78
+00:06:10,400 --> 00:06:14,750
+But it has the same properties and
+the same behaviors.
+
+79
+00:06:14,750 --> 00:06:20,790
+In exactly analogous way to
+the diagonalized matrix capturing
+
+80
+00:06:20,790 --> 00:06:26,290
+the linear properties in normal
+coordinates of the matrix,
+
+81
+00:06:26,290 --> 00:06:31,000
+whose eigenvectors you
+found to diagonalize it.
+
+82
+00:06:31,000 --> 00:06:36,130
+The normal form of any vector
+field away from a fixed point
+
+83
+00:06:36,130 --> 00:06:40,990
+is always a constant vector field, simple.
+
+84
+00:06:40,990 --> 00:06:44,840
+It's not to say that the original vector
+field had this simple behavior, but
+
+85
+00:06:44,840 --> 00:06:46,370
+it's conjugate to it, and
+
+86
+00:06:46,370 --> 00:06:49,310
+so a change of coordinates will
+make it look simple in that way.
+
+87
+00:06:51,420 --> 00:06:56,060
+We're interested in the normal
+form at fixed points as well.
+
+88
+00:06:56,060 --> 00:07:01,280
+So what we mean by the normal form is
+reducing by change of coordinates,
+
+89
+00:07:01,280 --> 00:07:04,710
+a function to it's simplest
+polynomial conjugate.
+
+90
+00:07:04,710 --> 00:07:09,750
+The Flowbox Theorem,
+to summarize this idea, says that
+
+91
+00:07:09,750 --> 00:07:15,540
+if you are away from the fixed point, then
+your dynamics is conjugate automatically.
+
+92
+00:07:15,540 --> 00:07:18,815
+At least in the small neighborhood
+of any non-fixed point.
+
+93
+00:07:18,815 --> 00:07:23,640
+Your dynamics is conjugate to
+a boring old constant flow dynamics.
+
+94
+00:07:26,400 --> 00:07:32,620
+The normal form near a fixed
+point is much more interesting.
+
+95
+00:07:34,380 --> 00:07:40,380
+The Taylor Remainder never is going to
+be of interest to us in this discussion,
+
+96
+00:07:40,380 --> 00:07:44,386
+but the constant term at a fixed
+point by definition, vanishes.
+
+97
+00:07:44,386 --> 00:07:47,340
+We suppose that x* is a fixed point, and
+
+98
+00:07:47,340 --> 00:07:52,490
+what that means is that f vanishes
+at x* as depicted in this equation.
+
+99
+00:07:54,720 --> 00:08:02,343
+Now, our leading term is the linear
+vector field, capital F evaluated x*.
+
+100
+00:08:02,343 --> 00:08:06,940
+Where remember capital F is
+the matrix of partial derivatives of
+
+101
+00:08:06,940 --> 00:08:11,880
+the original non-linear field
+evaluated at the fixed point x*.
+
+102
+00:08:11,880 --> 00:08:13,180
+It dominates.
+
+103
+00:08:13,180 --> 00:08:17,400
+And it turns out not only does it
+dominate, but there's a theorem
+
+104
+00:08:17,400 --> 00:08:21,600
+the Hartman Grobman Theorem,
+which I am going to abbreviate HA, and
+
+105
+00:08:21,600 --> 00:08:24,860
+I'm going to call it
+the Hyperbolic Approximation Theorem.
+
+106
+00:08:24,860 --> 00:08:29,250
+You have to look at more complicated
+books to really understand this theorem.
+
+107
+00:08:29,250 --> 00:08:35,839
+But what we should understand is that in
+the neighborhood of a nice fixed point,
+
+108
+00:08:37,200 --> 00:08:41,370
+the non-linear dynamics is
+conjugate to its linearization.
+
+109
+00:08:41,370 --> 00:08:45,490
+Not only is the linearized dynamics
+dominating but it actually completely
+
+110
+00:08:45,490 --> 00:08:51,950
+captures the behavior so long as x*
+has the property of being hyperbolic
+
+111
+00:08:53,530 --> 00:08:57,260
+which is a fancy way of saying it
+has no purely imaginary eigenvalues.
+
+112
+00:08:58,440 --> 00:09:03,640
+Again, this is a very long story that
+I'm just giving a small mention of,
+
+113
+00:09:03,640 --> 00:09:10,540
+and I'm referring you to the legendary
+textbook by Professor John Guckenheimer
+
+114
+00:09:10,540 --> 00:09:15,310
+and Phil Holmes, that is still
+considered to be the Bible of
+
+115
+00:09:15,310 --> 00:09:19,179
+nonlinear dynamical systems, if you become
+interested in following these ideas.
+
+116
+00:09:21,880 --> 00:09:26,800
+The fixed point at the bottom, now,
+we're being told by this theorem,
+
+117
+00:09:27,830 --> 00:09:33,380
+should be captured, behaviorally,
+by the linearized dynamics at the bottom.
+
+118
+00:09:33,380 --> 00:09:38,760
+Well, the linearized dynamics is
+governed in turn by the eigenvalues,
+
+119
+00:09:38,760 --> 00:09:41,990
+the roots of the characteristic
+polynomial of that matrix,
+
+120
+00:09:41,990 --> 00:09:45,590
+that we just calculated
+in the previous slide.
+
+121
+00:09:47,520 --> 00:09:50,040
+Let's compute the eigenvalues.
+
+122
+00:09:50,040 --> 00:09:56,449
+And we see that the eigenvalues actually
+are negative, have negative real part.
+
+123
+00:09:59,420 --> 00:10:02,930
+The have nonzero real part assuming
+assuming we have positive damping.
+
+124
+00:10:08,050 --> 00:10:12,000
+The behavior near
+a hyperbolic fix point then,
+
+125
+00:10:12,000 --> 00:10:16,450
+including the stability behavior,
+is governed by the linearized dynamics.
+
+126
+00:10:16,450 --> 00:10:20,190
+And so the change of coordinates
+preserves the stability properties.
+
+127
+00:10:20,190 --> 00:10:24,930
+Continuous, continuously changeable change
+of coordinates takes bounded sets, so
+
+128
+00:10:24,930 --> 00:10:26,040
+it preserves stability.
+
+129
+00:10:27,280 --> 00:10:29,607
+It's continuous, and
+so it preserves limits,
+
+130
+00:10:29,607 --> 00:10:31,490
+so we preserve asymptotic stability.
+
+131
+00:10:31,490 --> 00:10:35,226
+And so the stability properties
+have to be the same, and so
+
+132
+00:10:35,226 --> 00:10:40,810
+the lineraization governs the stability
+properties of the hyperbolic fixed points.
+
+133
+00:10:42,360 --> 00:10:47,140
+Taylor says linearization dominates,
+hyperbolic approximation
+
+134
+00:10:47,140 --> 00:10:50,900
+guarantees that linearization
+actually determines stability.
+
+135
+00:10:50,900 --> 00:10:54,170
+So that the damped pendulum
+near the fixed point
+
+136
+00:10:54,170 --> 00:10:59,420
+can be understood behaviorally by
+looking at it's linearization.
+
+137
+00:10:59,420 --> 00:11:05,550
+And here I depict that
+by juxtaposing the red
+
+138
+00:11:06,610 --> 00:11:13,080
+nominare flow against the linearized
+dynamics of the flow near the fixed
+
+139
+00:11:13,080 --> 00:11:18,010
+points for different parametric values of
+the pendulum down at it's fixed point.
+
+140
+00:11:19,680 --> 00:11:23,380
+Again, we have some exercises where you
+can do some of these calculations, and
+
+141
+00:11:23,380 --> 00:11:26,390
+do some of your own exploring,
+but we'll press on.
+
+142
+00:11:27,830 --> 00:11:31,521
+In contrast, near and
+very near the top fixed point,
+
+143
+00:11:31,521 --> 00:11:36,363
+we once again see that the nonlinear
+dynamics is closely approximated
+
+144
+00:11:36,363 --> 00:11:40,976
+by linear saddles, and
+the linear saddles are clearly unstable.

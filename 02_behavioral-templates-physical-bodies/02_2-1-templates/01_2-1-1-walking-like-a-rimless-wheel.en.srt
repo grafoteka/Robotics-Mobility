@@ -1,0 +1,1239 @@
+1
+00:00:06,204 --> 00:00:10,340
+Hello, today we will be talking
+about dynamically walking robots.
+
+2
+00:00:10,340 --> 00:00:14,645
+We'll go over what is walking,
+why is it useful for legged robots.
+
+3
+00:00:14,645 --> 00:00:18,635
+And introduce a simple walking
+model called the rimless wheel.
+
+4
+00:00:18,635 --> 00:00:21,845
+This rimless wheel is a special
+type of model called a template.
+
+5
+00:00:21,845 --> 00:00:24,955
+Templates are a special class
+of models that represent
+
+6
+00:00:24,955 --> 00:00:29,145
+the simplest models that are needed
+to describe a target behavior.
+
+7
+00:00:29,145 --> 00:00:34,080
+We'll show that templates can give design
+insights into building legged robots, and
+
+8
+00:00:34,080 --> 00:00:38,730
+then by building the rimless wheel
+template into our walking motion of
+
+9
+00:00:38,730 --> 00:00:43,660
+the mechanical system we can get a robot
+to walk robustly with minimal computation.
+
+10
+00:00:43,660 --> 00:00:46,650
+So before we get into walking
+let's take a step back and
+
+11
+00:00:46,650 --> 00:00:49,040
+talk about locomotion in general.
+
+12
+00:00:49,040 --> 00:00:51,910
+Robots and animals move through
+their environments by generating
+
+13
+00:00:51,910 --> 00:00:53,780
+forces on their environments.
+
+14
+00:00:53,780 --> 00:00:57,670
+For example, when you run,
+your leg pushes downwards and
+
+15
+00:00:57,670 --> 00:01:01,540
+backwards, creating a downwards and
+backwards force on the environment.
+
+16
+00:01:01,540 --> 00:01:07,000
+Through Newton's Third Law, a reaction
+force is created upwards and forwards.
+
+17
+00:01:07,000 --> 00:01:11,221
+Newton's Second Law then causes
+an acceleration which gives you movement.
+
+18
+00:01:11,221 --> 00:01:15,761
+Biologists studying legged locomotion have
+shown that the methods animals use to
+
+19
+00:01:15,761 --> 00:01:19,930
+generate forces on their
+environment are extremely diverse.
+
+20
+00:01:19,930 --> 00:01:21,947
+For example, the number of legs, and
+
+21
+00:01:21,947 --> 00:01:25,710
+the shapes of legs of
+the animals varies tremendously.
+
+22
+00:01:25,710 --> 00:01:30,000
+Humans have two legs, whereas millipedes,
+have approximately 200.
+
+23
+00:01:30,000 --> 00:01:33,610
+Hedgehogs have relatively short legs,
+while spiders have very long,
+
+24
+00:01:33,610 --> 00:01:35,250
+and thin legs.
+
+25
+00:01:35,250 --> 00:01:38,790
+But, biologists have also discovered
+that the actual forces generated
+
+26
+00:01:38,790 --> 00:01:41,300
+by these diverse strategies
+are remarkably similar.
+
+27
+00:01:42,460 --> 00:01:46,000
+For example, when ground reaction
+forces are measured in running
+
+28
+00:01:46,000 --> 00:01:49,360
+they generally follow
+the same basic force profile.
+
+29
+00:01:49,360 --> 00:01:53,090
+A human running on two legs and
+a dog trotting on four legs
+
+30
+00:01:53,090 --> 00:01:57,860
+can look very similar based on the ground
+reaction forces they generate.
+
+31
+00:01:57,860 --> 00:02:01,600
+They're even similar to cockroaches
+running with an alternating tripod gate
+
+32
+00:02:01,600 --> 00:02:03,040
+with six legs.
+
+33
+00:02:03,040 --> 00:02:06,870
+And even crabs running
+sideways with eight legs.
+
+34
+00:02:06,870 --> 00:02:10,370
+So biologists have proposed two basic
+mechanisms to describe these four
+
+35
+00:02:10,370 --> 00:02:13,248
+profiles generated during walking and
+running.
+
+36
+00:02:13,248 --> 00:02:16,550
+The forces generating during
+walking tend to appear
+
+37
+00:02:16,550 --> 00:02:20,070
+as a mass vaulting over
+a relatively stiff leg.
+
+38
+00:02:20,070 --> 00:02:24,620
+Forces generated during running tend to
+look like a mass bouncing on a spring
+
+39
+00:02:24,620 --> 00:02:26,530
+much like a pogo stick.
+
+40
+00:02:26,530 --> 00:02:30,750
+These mechanisms have important features
+that are relevant for robot design.
+
+41
+00:02:30,750 --> 00:02:35,120
+For example, both mechanisms involve
+some way of retaining a portion
+
+42
+00:02:35,120 --> 00:02:39,880
+of the mechanical energy of the previous
+stride to use in the next stride.
+
+43
+00:02:39,880 --> 00:02:42,870
+Also by analyzing simple
+models of these mechanisms,
+
+44
+00:02:42,870 --> 00:02:45,210
+we can make statements
+about their stability.
+
+45
+00:02:45,210 --> 00:02:49,110
+So let's take a closer look at walking,
+which is the focus of this lecture.
+
+46
+00:02:49,110 --> 00:02:52,020
+We can gain insight into the mechanism
+
+47
+00:02:52,020 --> 00:02:55,370
+behind walking by looking
+into its energetics.
+
+48
+00:02:55,370 --> 00:02:59,970
+So a distinctive feature of walking is
+the kinetic energy, which is the energy of
+
+49
+00:02:59,970 --> 00:03:05,420
+motion, oscillates out a phase with
+gravitational potential energy.
+
+50
+00:03:05,420 --> 00:03:07,059
+Which is the energy due to gravity.
+
+51
+00:03:08,100 --> 00:03:09,630
+When a leg touches down and
+
+52
+00:03:09,630 --> 00:03:13,800
+a body moves forwards in the beginning
+of a walking stance, the body uses it's
+
+53
+00:03:13,800 --> 00:03:19,640
+kinetic energy to vault upwards and
+over the leg in the first half of stance.
+
+54
+00:03:19,640 --> 00:03:23,710
+This process converts some kinetic energy
+into gravitational potential running
+
+55
+00:03:23,710 --> 00:03:25,730
+energy during the second half of stance.
+
+56
+00:03:26,950 --> 00:03:31,000
+Starting when the leg is vertical,
+this gravitational potential
+
+57
+00:03:31,000 --> 00:03:35,800
+energy is converted back into kinetic
+energy as the body is pulled forwards and
+
+58
+00:03:35,800 --> 00:03:39,070
+downwards by gravity,
+accelerating the body.
+
+59
+00:03:39,070 --> 00:03:42,780
+This process repeats itself
+when the next leg touches down.
+
+60
+00:03:42,780 --> 00:03:44,960
+This process of exchanging kinetic and
+
+61
+00:03:44,960 --> 00:03:50,420
+gravitational potential energy can be
+very efficient especially at low speeds.
+
+62
+00:03:50,420 --> 00:03:53,000
+Animals have been measured
+to conserve up to 70% of
+
+63
+00:03:53,000 --> 00:03:55,430
+their mechanical energy while walking.
+
+64
+00:03:55,430 --> 00:03:59,410
+Energy efficiency is important for
+legged robots because it allows us to
+
+65
+00:03:59,410 --> 00:04:03,820
+build robots that potentially move faster,
+operate for
+
+66
+00:04:03,820 --> 00:04:08,060
+longer durations, and don't have to
+carry as much fuel or battery weight.
+
+67
+00:04:08,060 --> 00:04:12,030
+The type of walking we have been talking
+about so far is called dynamic walking.
+
+68
+00:04:12,030 --> 00:04:14,920
+Where the robot is not perfectly
+balanced during stance.
+
+69
+00:04:14,920 --> 00:04:16,480
+As you may have seen in videos,
+
+70
+00:04:16,480 --> 00:04:20,870
+many robots also walk by a different
+mechanism called quasi-static walking.
+
+71
+00:04:20,870 --> 00:04:23,850
+In quasi-static walking,
+the robot is nearly balanced
+
+72
+00:04:23,850 --> 00:04:27,640
+throughout its entire walking stride,
+and undergoes minimal accelerations.
+
+73
+00:04:28,810 --> 00:04:32,150
+Because accelerations are minimal
+in quasi-static walking,
+
+74
+00:04:32,150 --> 00:04:33,852
+it is typically quite slow.
+
+75
+00:04:33,852 --> 00:04:37,370
+Although quasi-static motions
+in general have there use,
+
+76
+00:04:37,370 --> 00:04:40,370
+we will focus only on dynamic
+motions in this lecture and
+
+77
+00:04:40,370 --> 00:04:45,170
+course due to their potential to make
+robots faster and more efficient.
+
+78
+00:04:45,170 --> 00:04:49,660
+Now that we have identified a mechanism
+of locomotion, how do we model it?
+
+79
+00:04:49,660 --> 00:04:51,400
+There are many ways to model locomotion,
+
+80
+00:04:51,400 --> 00:04:55,770
+from simulations involving thousands of
+variables to ones that are quite simple.
+
+81
+00:04:55,770 --> 00:04:59,770
+Overly complex models can fall victim
+to what is called Bellman's curse of
+
+82
+00:04:59,770 --> 00:05:04,615
+dimensionality, where the amount of
+computation time or data points needed for
+
+83
+00:05:04,615 --> 00:05:08,625
+analysis, increases exponentially
+with the number of variables.
+
+84
+00:05:08,625 --> 00:05:11,765
+On the other hand,
+extremely simple models can be too limited
+
+85
+00:05:11,765 --> 00:05:15,410
+to capture the full complexity
+of the desired behavior.
+
+86
+00:05:15,410 --> 00:05:19,460
+To address this tension between simplicity
+and complexity, roboticists and
+
+87
+00:05:19,460 --> 00:05:22,790
+biologists have developed a modeling
+framework called templates and
+
+88
+00:05:22,790 --> 00:05:27,960
+anchors to capture both the simplicity of
+the underlying mechanism of locomotion and
+
+89
+00:05:27,960 --> 00:05:30,100
+its complexity in a physical system.
+
+90
+00:05:30,100 --> 00:05:34,470
+Templates are the simplest model needed
+to describe the target behavior.
+
+91
+00:05:34,470 --> 00:05:39,280
+For example, with running and walking
+templates could be models representing
+
+92
+00:05:39,280 --> 00:05:42,050
+the underlying mechanisms
+observed in biology.
+
+93
+00:05:42,050 --> 00:05:45,870
+Because they have no more states or
+parameters than necessary, templates can
+
+94
+00:05:45,870 --> 00:05:50,210
+capture what is fundamentally going on
+in a movement in it's most simple form.
+
+95
+00:05:50,210 --> 00:05:54,580
+This simplicity makes templates very
+beneficial for analysis and control.
+
+96
+00:05:54,580 --> 00:05:57,610
+Anchors, on the other hand,
+are more elaborate models than incorporate
+
+97
+00:05:57,610 --> 00:06:01,050
+the important degrees of
+freedom of a physical system.
+
+98
+00:06:01,050 --> 00:06:03,680
+For example,
+when modeling a hopping kangaroo,
+
+99
+00:06:03,680 --> 00:06:06,670
+an anchor might take into
+account the leg joints.
+
+100
+00:06:06,670 --> 00:06:10,460
+The template then describes the motion
+of the kangaroo through the anchor.
+
+101
+00:06:10,460 --> 00:06:13,320
+By trimming away the degrees of freedom,
+a template
+
+102
+00:06:13,320 --> 00:06:18,190
+might consist of a simple bouncing mass
+on a spring to describe the kangaroo.
+
+103
+00:06:18,190 --> 00:06:21,570
+This relationship between templates and
+anchors is very important.
+
+104
+00:06:21,570 --> 00:06:24,070
+A template is only valid
+if it in some sense
+
+105
+00:06:24,070 --> 00:06:27,060
+is a version of the anchor
+with fewer degrees of freedom.
+
+106
+00:06:27,060 --> 00:06:30,520
+In which case, we say that the anchor
+embeds the template dynamics.
+
+107
+00:06:30,520 --> 00:06:34,540
+And then if the template is anchored to
+the physical system through the anchoring.
+
+108
+00:06:34,540 --> 00:06:39,497
+This relationship can also facilitate the
+control of robots as control policies at
+
+109
+00:06:39,497 --> 00:06:44,046
+the simple template level can then be
+mapped in a more complex anchor level.
+
+110
+00:06:44,046 --> 00:06:48,755
+For example, the control of the template
+can be used to guide the control of
+
+111
+00:06:48,755 --> 00:06:50,920
+the individual robot joints.
+
+112
+00:06:50,920 --> 00:06:54,840
+To illustrate how useful templates
+can be for low level robot control,
+
+113
+00:06:54,840 --> 00:06:58,020
+we're going to look at a model
+that we consider a template for
+
+114
+00:06:58,020 --> 00:07:00,390
+walking called the rimless wheel.
+
+115
+00:07:00,390 --> 00:07:03,560
+The rimless wheel has historical
+significance as it was
+
+116
+00:07:03,560 --> 00:07:08,060
+one of the models Tad McGeer, then
+a professor at Simon Treasure University,
+
+117
+00:07:08,060 --> 00:07:11,660
+used in analyzing his walkers
+powered entirely by gravity,
+
+118
+00:07:11,660 --> 00:07:16,000
+in his famous 1990 paper titled
+Passive Dynamic Walking.
+
+119
+00:07:16,000 --> 00:07:19,540
+The rimless wheel is a relatively
+simple dynamical system,
+
+120
+00:07:19,540 --> 00:07:23,090
+representing a spoked wheel
+with its rim removed.
+
+121
+00:07:23,090 --> 00:07:27,130
+This template also incorporates
+an important aspect of legged locomotion,
+
+122
+00:07:27,130 --> 00:07:28,540
+a power source.
+
+123
+00:07:28,540 --> 00:07:33,500
+Gravity pulls the rimless wheel down
+an incline ramp, accelerating the model
+
+124
+00:07:33,500 --> 00:07:37,810
+over the course of a stride and
+allowing it to walk on its spokes.
+
+125
+00:07:37,810 --> 00:07:41,390
+The fact that gravity is the power
+source instead of electricity
+
+126
+00:07:41,390 --> 00:07:45,180
+isn't that important as we will see that
+a small amount of constant work done by
+
+127
+00:07:45,180 --> 00:07:50,410
+gravity each stride can be replaced by
+motors to generate powered robot walking.
+
+128
+00:07:50,410 --> 00:07:52,660
+It might not be immediately obvious,
+however,
+
+129
+00:07:52,660 --> 00:07:55,120
+most wheels capture walking behavior.
+
+130
+00:07:55,120 --> 00:07:59,880
+A rimless wheel walking down a ramp is
+a lot like a wheel rolling down a ramp,
+
+131
+00:07:59,880 --> 00:08:03,180
+much like you probably studied
+in your first physics course.
+
+132
+00:08:03,180 --> 00:08:05,160
+In a rolling motion with a normal wheel,
+
+133
+00:08:05,160 --> 00:08:09,720
+gravity is accelerating the center of
+mass downwards, causing a movement
+
+134
+00:08:09,720 --> 00:08:12,650
+around whatever point the wheel is
+currently touching the ground with.
+
+135
+00:08:13,720 --> 00:08:18,090
+This moment around the ground contact
+point accelerates the wheel down the ramp.
+
+136
+00:08:18,090 --> 00:08:21,690
+This ground contact points on
+the wheel touch the ground only for
+
+137
+00:08:21,690 --> 00:08:23,950
+an instant before lifting off again.
+
+138
+00:08:23,950 --> 00:08:26,350
+So what happens when we
+give the wheel spokes and
+
+139
+00:08:26,350 --> 00:08:28,530
+then take away the rim of the wheel?
+
+140
+00:08:28,530 --> 00:08:30,040
+Well, if there's an internet or
+
+141
+00:08:30,040 --> 00:08:33,800
+very large number of spokes
+then almost nothing changes.
+
+142
+00:08:33,800 --> 00:08:36,150
+We get rolling behavior or
+something very similar to it.
+
+143
+00:08:37,180 --> 00:08:42,550
+But as we take away the number of spokes,
+the center of mass has a more pronounced
+
+144
+00:08:42,550 --> 00:08:46,860
+vault over the point where the spoke
+contacts the ground, and the kinetic and
+
+145
+00:08:46,860 --> 00:08:51,410
+gravitational potential energy oscillate
+out of phase with greater amplitude.
+
+146
+00:08:51,410 --> 00:08:54,040
+We've arrived at a very
+simple model of walking.
+
+147
+00:08:54,040 --> 00:08:57,310
+In our model,
+the spoken contact with the ground
+
+148
+00:08:57,310 --> 00:09:00,210
+represents the leg in
+contact with the ground.
+
+149
+00:09:00,210 --> 00:09:03,810
+As one leg lifts off,
+another instantaneously touches down so
+
+150
+00:09:03,810 --> 00:09:09,480
+that the body represented by the center of
+mass always has a leg in ground contact.
+
+151
+00:09:09,480 --> 00:09:13,820
+Of course, a rimless wheel doesn't
+look entirely like a biped.
+
+152
+00:09:13,820 --> 00:09:15,449
+Maybe it reminds you more of a tumbleweed.
+
+153
+00:09:16,540 --> 00:09:21,070
+But if we choose to visually ignore the
+spokes not in contact with the ground, and
+
+154
+00:09:21,070 --> 00:09:24,230
+instead pretend that there's another
+leg recirculating to prepare for
+
+155
+00:09:24,230 --> 00:09:28,040
+the next step, we have a convincing
+picture of how this model
+
+156
+00:09:28,040 --> 00:09:31,600
+can represent a biped walking
+with what we call a compass gait.
+
+157
+00:09:31,600 --> 00:09:34,410
+The version of the rimless wheel,
+that we are discussing today,
+
+158
+00:09:34,410 --> 00:09:37,280
+only has one degree of freedom,
+which is the wheel angle.
+
+159
+00:09:37,280 --> 00:09:39,550
+And six parameters which are the mass,
+
+160
+00:09:39,550 --> 00:09:44,310
+how far the mass is distributed from the
+mass center, the leg length, the inter-leg
+
+161
+00:09:44,310 --> 00:09:49,650
+angle, the ramp angle, and finally,
+the vertical acceleration due to gravity.
+
+162
+00:09:49,650 --> 00:09:54,410
+The rimless wheel template is a simple
+enough model to analyze mathematically.
+
+163
+00:09:54,410 --> 00:09:57,120
+But we will forego
+the mathematical analysis, and
+
+164
+00:09:57,120 --> 00:10:01,500
+instead rely on physical intuition
+with a 3D printed wheel model.
+
+165
+00:10:01,500 --> 00:10:04,750
+So what does it take for
+our rimless wheel model to walk?
+
+166
+00:10:04,750 --> 00:10:08,240
+Over a level ground,
+in the absence of a source of energy,
+
+167
+00:10:08,240 --> 00:10:11,970
+the model quickly comes to a stop due
+to the legs impacting the ground.
+
+168
+00:10:11,970 --> 00:10:16,030
+Because the leg impacts involve
+mass coming sharply to a stop,
+
+169
+00:10:16,030 --> 00:10:18,010
+which results in a loss of kinetic energy.
+
+170
+00:10:18,010 --> 00:10:21,320
+This, of course, is in contrast
+to a wheel rolling down a ramp
+
+171
+00:10:21,320 --> 00:10:25,750
+which can accelerate for quite some time
+before being slowed down by friction.
+
+172
+00:10:25,750 --> 00:10:29,930
+This illustrates an important concept
+in legged locomotion which is that
+
+173
+00:10:29,930 --> 00:10:34,660
+legged locomotion is fundamentally and
+energetically a dissipative process.
+
+174
+00:10:34,660 --> 00:10:38,860
+As you can see, it only takes a small
+amount of gravitational potential energy,
+
+175
+00:10:38,860 --> 00:10:43,140
+provided by a slight ramp incline, for
+the model to walk at a steady speed.
+
+176
+00:10:43,140 --> 00:10:46,390
+From stride to stride, the mass center
+of the rimless wheel gets lower and
+
+177
+00:10:46,390 --> 00:10:48,550
+lower as it travels down the ramp.
+
+178
+00:10:48,550 --> 00:10:51,200
+This change in height is constant for
+each stride.
+
+179
+00:10:51,200 --> 00:10:56,130
+So, during each stride approximately
+the same amount of gravitational potential
+
+180
+00:10:56,130 --> 00:11:01,530
+energy is being added to the model
+which is converted into kinetic energy.
+
+181
+00:11:01,530 --> 00:11:05,480
+This kinetic energy is then lost
+when the leg impacts the ground.
+
+182
+00:11:05,480 --> 00:11:09,840
+This process then repeats giving us
+the repetitive behavior that we see.
+
+183
+00:11:09,840 --> 00:11:14,780
+If we tilt the ramp up more, more energy
+is added and the template walks faster.
+
+184
+00:11:14,780 --> 00:11:19,800
+If we lower the ramp less energy is added
+for stride and the template walks slower.
+
+185
+00:11:19,800 --> 00:11:23,800
+The fact that the model walks with such
+a small ramp angle, just that walking like
+
+186
+00:11:23,800 --> 00:11:28,380
+a rimless wheel is quite energetically
+efficient despite the losses involve.
+
+187
+00:11:28,380 --> 00:11:32,370
+And in a minute, we will see that using
+a modern of gravity to add the small
+
+188
+00:11:32,370 --> 00:11:37,740
+amount of fix energy per stride on
+a robot retains this efficiency property.
+
+189
+00:11:37,740 --> 00:11:39,800
+Aside from the efficiency of the motion,
+
+190
+00:11:39,800 --> 00:11:42,660
+there is another important
+feature at play here.
+
+191
+00:11:42,660 --> 00:11:47,830
+There is actually an advantage to legged
+locomotion being a lossy process, and
+
+192
+00:11:47,830 --> 00:11:51,470
+that is because it allows legged
+locomotion to be mechanically stable.
+
+193
+00:11:51,470 --> 00:11:54,680
+Notice, that if we roll
+a wheel down the ramp,
+
+194
+00:11:54,680 --> 00:11:57,430
+the speed of the wheel
+increases as it rolls.
+
+195
+00:11:57,430 --> 00:11:59,590
+But not so with our legged template.
+
+196
+00:11:59,590 --> 00:12:02,570
+This is because the energetic
+losses naturally regulate
+
+197
+00:12:02,570 --> 00:12:04,290
+the speed of the system.
+
+198
+00:12:04,290 --> 00:12:07,650
+Odic will go into more detail about
+this during his anchor lectures.
+
+199
+00:12:07,650 --> 00:12:12,070
+But the intuitive idea here is that
+the energetic losses from the leg impacts
+
+200
+00:12:12,070 --> 00:12:16,230
+increases with velocity, which slows down
+the template if it gets moving too fast.
+
+201
+00:12:17,380 --> 00:12:22,330
+However, if the template is to slow
+these impact losses are small and
+
+202
+00:12:22,330 --> 00:12:27,430
+the constant amount of energy added per
+stride by gravity speeds the system up.
+
+203
+00:12:27,430 --> 00:12:31,810
+Eventually the system reaches a periodic
+limit cycle, a steady rolling speed.
+
+204
+00:12:31,810 --> 00:12:35,070
+Stability is an incredibly important
+topic in leg and robots, and
+
+205
+00:12:35,070 --> 00:12:37,920
+we will continue to come back
+to it during this course.
+
+206
+00:12:37,920 --> 00:12:41,310
+So why is it important that our
+walking template is stable?
+
+207
+00:12:41,310 --> 00:12:45,320
+One reason is that if we build robots
+that passively anchored a template
+
+208
+00:12:45,320 --> 00:12:47,500
+through their mechanical design,
+
+209
+00:12:47,500 --> 00:12:53,050
+it allows us to build robots that walk
+stably with little to no computation.
+
+210
+00:12:53,050 --> 00:12:56,190
+This is Tad McGuire's famous
+passive dynamic walker.
+
+211
+00:12:56,190 --> 00:13:01,340
+The robot is purely mechanical, it has
+no computer, no motors, and no sensors.
+
+212
+00:13:01,340 --> 00:13:04,650
+And yet, it can walk down a ramp in a
+manner that is shockingly anthropomorphic.
+
+213
+00:13:05,650 --> 00:13:10,200
+Instead of being programmed on a computer,
+the control scheme is designed into
+
+214
+00:13:10,200 --> 00:13:14,930
+the mechanism, in much the same way
+as it is with the rimless wheel.
+
+215
+00:13:14,930 --> 00:13:18,530
+Because the underlying template
+behavior is stable and
+
+216
+00:13:18,530 --> 00:13:22,190
+has been mechanically encoded or
+anchored in the machine.
+
+217
+00:13:22,190 --> 00:13:25,970
+It is able to walk a non-trivial
+duration without falling over
+
+218
+00:13:25,970 --> 00:13:30,300
+at a nearly constant speed, despite the
+model being an imperfect representation
+
+219
+00:13:30,300 --> 00:13:32,150
+of the physical world, as all models are.
+
+220
+00:13:33,610 --> 00:13:36,290
+As we have said before, a robot can walk
+
+221
+00:13:36,290 --> 00:13:40,900
+like a rimless wheel using only a small
+amount of motor energy instead of gravity.
+
+222
+00:13:40,900 --> 00:13:44,130
+Andy Marina,
+a professor at Cornell University,
+
+223
+00:13:44,130 --> 00:13:46,870
+did just that with his robot
+called the Cornell ranger.
+
+224
+00:13:47,950 --> 00:13:53,086
+In 2011, the Cornell ranger was able
+to walk an ultra marathon of 40.5
+
+225
+00:13:53,086 --> 00:13:57,560
+miles non-stop on a single battery
+charge of less than 500 watt hours,
+
+226
+00:13:57,560 --> 00:14:01,300
+or about $0.05 worth of electricity.
+
+227
+00:14:01,300 --> 00:14:05,990
+By creating a robot that is close to
+a literal instantiation of an efficient
+
+228
+00:14:05,990 --> 00:14:10,210
+locomotion model, Angie Rerina was
+able to more than double the previous
+
+229
+00:14:10,210 --> 00:14:14,810
+distant record for robotic legged
+locomotion on a single battery charge.
+
+230
+00:14:14,810 --> 00:14:17,710
+Robots can also mechanically
+encode templates without literally
+
+231
+00:14:17,710 --> 00:14:18,670
+instantiating them.
+
+232
+00:14:18,670 --> 00:14:22,350
+For example, the REX robot walks with
+a motorized alternating tripod gait
+
+233
+00:14:22,350 --> 00:14:26,190
+that has rimless wheel dynamics in the
+forward direction, while the tripod and
+
+234
+00:14:26,190 --> 00:14:29,720
+support allows the robot to be very
+balanced in the other directions,
+
+235
+00:14:29,720 --> 00:14:31,050
+much like a three-legged chair.
+
+236
+00:14:32,390 --> 00:14:34,420
+This stability of both the template and
+
+237
+00:14:34,420 --> 00:14:39,060
+the anchor allows Rex to walk robustly
+over a wide variety of terrains,
+
+238
+00:14:39,060 --> 00:14:43,820
+even rocky slopes and mountains, with
+almost no control at the computer level.
+
+239
+00:14:43,820 --> 00:14:47,380
+Instead, the robot interacts with, and
+responds to changes in the environment at
+
+240
+00:14:47,380 --> 00:14:51,700
+the mechanical level, which is possible,
+because the primary dynamical effects can
+
+241
+00:14:51,700 --> 00:14:54,600
+be modeled as a mechanically
+stable template.
+
+242
+00:14:54,600 --> 00:14:55,460
+In this lecture,
+
+243
+00:14:55,460 --> 00:14:59,620
+we discussed what biologists have found
+to be a mechanism behind dynamic walking.
+
+244
+00:14:59,620 --> 00:15:02,600
+That walking can be approximated
+by the pendular dynamics
+
+245
+00:15:02,600 --> 00:15:05,250
+of a mass vaulting over
+its relatively stiff leg.
+
+246
+00:15:06,300 --> 00:15:08,520
+We've formulated a low
+degree of freedom model for
+
+247
+00:15:08,520 --> 00:15:11,030
+this mechanism, called the rimless wheel.
+
+248
+00:15:11,030 --> 00:15:13,900
+This model is simple enough to analyze and
+provide insight,
+
+249
+00:15:13,900 --> 00:15:19,095
+yet complex enough to capture general
+principles including efficiency and
+
+250
+00:15:19,095 --> 00:15:22,230
+self-stabilizing behavior in
+the presence of a power source.
+
+251
+00:15:23,490 --> 00:15:27,580
+And we saw that by embedding the template
+dynamics into a physical robot,
+
+252
+00:15:27,580 --> 00:15:30,790
+engineers can build machines
+that can walk without computers,
+
+253
+00:15:30,790 --> 00:15:34,220
+as well as make robot marathoners and
+mountain climbers.
+
+254
+00:15:34,220 --> 00:15:36,732
+Next lecture we'll focus on templates for
+running and
+
+255
+00:15:36,732 --> 00:15:40,182
+we'll see that running can be described
+using pendular dynamics as well.
+
+256
+00:15:40,182 --> 00:15:43,479
+When the relatively stiff leg
+is replaced with a spring leg.

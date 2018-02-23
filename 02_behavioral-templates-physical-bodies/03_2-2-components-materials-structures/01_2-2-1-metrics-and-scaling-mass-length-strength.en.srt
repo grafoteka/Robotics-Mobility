@@ -1,0 +1,259 @@
+1
+00:00:07,766 --> 00:00:12,280
+In this section, we consider
+the implications on strength, mass, and
+
+2
+00:00:12,280 --> 00:00:15,100
+other properties when changing lens scale.
+
+3
+00:00:16,780 --> 00:00:19,530
+Here we see two similar triangles.
+
+4
+00:00:19,530 --> 00:00:23,800
+They are similar because the angles a,
+b, and c are all equal.
+
+5
+00:00:23,800 --> 00:00:27,570
+However, one triangle has side length
+L and the other has side length 2L.
+
+6
+00:00:28,850 --> 00:00:32,450
+Now we consider the implications on
+some properties of these triangles.
+
+7
+00:00:34,370 --> 00:00:37,150
+Since the perimeter is
+simply the sum of the sides,
+
+8
+00:00:37,150 --> 00:00:41,250
+the perimeter of the larger triangle will
+be double that of the small triangle.
+
+9
+00:00:41,250 --> 00:00:43,640
+So the perimeter will scale
+linearly with the lens.
+
+10
+00:00:45,480 --> 00:00:50,120
+The area of the triangles, however,
+scales according to length squared.
+
+11
+00:00:50,120 --> 00:00:54,510
+This motivates the much more general field
+of scaling analysis, and specifically
+
+12
+00:00:54,510 --> 00:00:58,660
+dynamic scaling and dynamic similarity,
+which are very useful in robotics.
+
+13
+00:01:00,982 --> 00:01:05,180
+Now instead of triangles, we consider
+what happens when you scale cubes.
+
+14
+00:01:06,790 --> 00:01:12,740
+As expected, the area of the cubes is
+proportional to the length squared,
+
+15
+00:01:12,740 --> 00:01:16,190
+and the volume of the cubes is
+proportional to the length cubed.
+
+16
+00:01:16,190 --> 00:01:20,650
+As you can see,
+a cube with side length two L, and
+
+17
+00:01:20,650 --> 00:01:24,600
+be thought of as containing eight
+smaller cubes of side length, L.
+
+18
+00:01:24,600 --> 00:01:28,160
+Suppose you have two ice cubes,
+one of side length, L, and
+
+19
+00:01:28,160 --> 00:01:30,810
+one of side length, 2L, and
+they're sitting in the sun.
+
+20
+00:01:32,380 --> 00:01:36,710
+For these ice cubes, the heat that goes
+into them is proportional to their surface
+
+21
+00:01:36,710 --> 00:01:42,246
+area and the thermal mass of the ice
+cubes is proportional to their volume.
+
+22
+00:01:42,246 --> 00:01:47,170
+So now scaling will help us answer the
+question which ice cube will melt first
+
+23
+00:01:47,170 --> 00:01:48,600
+and by what factor.
+
+24
+00:01:48,600 --> 00:01:52,900
+As well as helping us make predictions
+about what will happen with even larger or
+
+25
+00:01:52,900 --> 00:01:54,590
+smaller ice cubes.
+
+26
+00:01:54,590 --> 00:01:59,370
+Galileo was also very curious about
+the implications of scaling in animals.
+
+27
+00:01:59,370 --> 00:02:03,150
+He observed that bones of different
+sizes had different proportions.
+
+28
+00:02:05,090 --> 00:02:08,120
+In this figure,
+we see one of Galileo's sketches,
+
+29
+00:02:08,120 --> 00:02:12,400
+in which he draws a smaller bone and
+a larger bone, where the larger bone
+
+30
+00:02:12,400 --> 00:02:15,260
+is disproportionately thicker
+than the smaller bone.
+
+31
+00:02:15,260 --> 00:02:19,010
+The question he asked is if a larger
+bone that is three times the length
+
+32
+00:02:19,010 --> 00:02:22,950
+of the smaller bone were to
+experience the same stresses
+
+33
+00:02:22,950 --> 00:02:26,090
+in a larger animal as
+compared to a smaller animal.
+
+34
+00:02:26,090 --> 00:02:30,628
+How much disproportionately thicker
+did the larger bone need to be.
+
+35
+00:02:30,628 --> 00:02:33,920
+Just preserving cross-sectional
+area as the bone scales
+
+36
+00:02:33,920 --> 00:02:36,560
+does not however tell the whole story.
+
+37
+00:02:36,560 --> 00:02:40,040
+Larger animals typically
+move relatively more slowly
+
+38
+00:02:40,040 --> 00:02:43,489
+as measured in body length per
+second compared to smaller animals.
+
+39
+00:02:44,850 --> 00:02:49,150
+Furthermore, larger animals typically
+adopts a less probe posture
+
+40
+00:02:49,150 --> 00:02:49,890
+than smaller animals.
+
+41
+00:02:50,930 --> 00:02:55,490
+We now consider how a change in posture
+influences a change in loading of
+
+42
+00:02:55,490 --> 00:02:56,785
+a cartoon of a bone.
+
+43
+00:02:56,785 --> 00:03:00,330
+There are five fundamental
+types of loading.
+
+44
+00:03:00,330 --> 00:03:04,180
+Compression is a force parallel
+to the axis of the bone,
+
+45
+00:03:04,180 --> 00:03:05,650
+where the bone is being pushed together.
+
+46
+00:03:07,180 --> 00:03:10,960
+Tension is also parallel to the axis of
+the bone, but it is being pulled apart.
+
+47
+00:03:12,480 --> 00:03:17,770
+Shear is perpendicular to the axis of
+the bone as if it is being slid apart.
+
+48
+00:03:17,770 --> 00:03:21,700
+Bending is a result of a force
+perpendicular to the axis of the bone
+
+49
+00:03:21,700 --> 00:03:24,780
+coming out of the screen
+that is being twisted.
+
+50
+00:03:24,780 --> 00:03:29,460
+Torsion is the result of a twisting
+motion, but parallel with the bone.
+
+51
+00:03:29,460 --> 00:03:35,890
+Here we introduce a fundamental notion of
+stress, which is force normalized by area.
+
+52
+00:03:35,890 --> 00:03:38,860
+Stress is a very important consideration.
+
+53
+00:03:38,860 --> 00:03:41,470
+Depending on how a part is being loaded,
+
+54
+00:03:41,470 --> 00:03:43,570
+there's a certain stress
+at which it must break.

@@ -1,0 +1,965 @@
+1
+00:00:06,289 --> 00:00:10,430
+Last lecture we investigated walking
+using a pendulum-like template.
+
+2
+00:00:10,430 --> 00:00:14,048
+In this lecture we will learn about
+templates used to describe the mechanics
+
+3
+00:00:14,048 --> 00:00:14,676
+of running.
+
+4
+00:00:14,676 --> 00:00:18,243
+We will see why running is an important
+mode of robotic locomotion,
+
+5
+00:00:18,243 --> 00:00:22,373
+its advantages over walking, and that
+biologists have shown that running can
+
+6
+00:00:22,373 --> 00:00:26,318
+often be approximated by the dynamics
+of the bouncing spring mass system,
+
+7
+00:00:26,318 --> 00:00:28,880
+much like hopping on a pogo stick.
+
+8
+00:00:28,880 --> 00:00:31,710
+Finally, we will show how running
+templates can be anchored into
+
+9
+00:00:31,710 --> 00:00:36,630
+mechanics of robots so that they are able
+to run robustly with minimal computation.
+
+10
+00:00:38,040 --> 00:00:41,380
+Why is running an important
+mode of robotic locomotion?
+
+11
+00:00:41,380 --> 00:00:43,830
+If we can build robots that walk well,
+
+12
+00:00:43,830 --> 00:00:46,840
+why wouldn't we just design
+robots to walk really fast?
+
+13
+00:00:46,840 --> 00:00:51,360
+Well, running is important because walking
+becomes inefficient at high speeds.
+
+14
+00:00:51,360 --> 00:00:56,130
+Intuitively, we could see in the last
+lecture that with our walking model,
+
+15
+00:00:56,130 --> 00:00:59,600
+that the energetic losses of impacts
+when walking with a stiff leg
+
+16
+00:00:59,600 --> 00:01:01,480
+quickly increase with speed.
+
+17
+00:01:01,480 --> 00:01:03,030
+Instead of a stiff leg,
+
+18
+00:01:03,030 --> 00:01:08,290
+running involved using a relatively much
+springier leg which reduces these impacts.
+
+19
+00:01:08,290 --> 00:01:11,230
+Another reason for running is that
+there's a speed limitation for
+
+20
+00:01:11,230 --> 00:01:13,820
+walking with pendular-like dynamics.
+
+21
+00:01:13,820 --> 00:01:18,500
+During walking, gravity is the only force
+accelerating the mass center downwards.
+
+22
+00:01:18,500 --> 00:01:21,400
+But the mass center follows a circular
+trajectory during the pendulum
+
+23
+00:01:21,400 --> 00:01:22,690
+like motion, so
+
+24
+00:01:22,690 --> 00:01:26,600
+there is a centripetal acceleration
+of the mass center towards the tail.
+
+25
+00:01:26,600 --> 00:01:30,990
+If this centripetal acceleration exceeds
+the acceleration that gravity can provide,
+
+26
+00:01:30,990 --> 00:01:34,920
+then the normal force at the foot
+against the ground will go to zero.
+
+27
+00:01:34,920 --> 00:01:38,830
+With your normal force, a leg isn't
+able to generate forces on the body.
+
+28
+00:01:38,830 --> 00:01:42,900
+The centripetal acceleration divided
+by the acceleration due to gravity
+
+29
+00:01:42,900 --> 00:01:45,890
+is equal to what is known
+as Froude's number.
+
+30
+00:01:45,890 --> 00:01:49,960
+Simplifying to velocity squared divided
+by the quantity of acceleration due to
+
+31
+00:01:49,960 --> 00:01:51,360
+gravity times the leg length.
+
+32
+00:01:52,360 --> 00:01:56,710
+Biologists predict that walking cannot
+occur with a Froude number greater than 1.
+
+33
+00:01:56,710 --> 00:01:58,091
+Most animals, however,
+
+34
+00:01:58,091 --> 00:02:02,244
+are observed transitioning from a walk
+to a run well before a Froude number 1.
+
+35
+00:02:02,244 --> 00:02:05,479
+For example, many bipeds,
+including humans and birds,
+
+36
+00:02:05,479 --> 00:02:09,572
+are observed transitioning to a run
+with a Froude number of about 0.5,
+
+37
+00:02:09,572 --> 00:02:14,530
+with the hypothesis being that they do so
+to choose the most energetically gait.
+
+38
+00:02:14,530 --> 00:02:17,090
+For these same reasons,
+running is an important and
+
+39
+00:02:17,090 --> 00:02:22,180
+necessary form of locomotion for robots
+that move with a higher Froude number.
+
+40
+00:02:22,180 --> 00:02:25,720
+Biologists have shown that the forces
+generated against the ground while running
+
+41
+00:02:25,720 --> 00:02:30,480
+often appear to have the same force
+profile as a hopping spring-mass system.
+
+42
+00:02:30,480 --> 00:02:34,520
+These observed forces have been measured
+to be remarkably similar between animals
+
+43
+00:02:34,520 --> 00:02:38,920
+with widely different sizes,
+leg numbers, postures, and morphologies.
+
+44
+00:02:38,920 --> 00:02:41,940
+Despite the very different ways
+that animals generate these forces.
+
+45
+00:02:42,960 --> 00:02:47,650
+In this motion, the mass center height
+decreases in the first half of the stance.
+
+46
+00:02:47,650 --> 00:02:51,210
+Reaches it's lowest point mid
+stance as if compressing a spring.
+
+47
+00:02:51,210 --> 00:02:55,050
+And then increases in the second half
+of the stance as if releasing a spring.
+
+48
+00:02:55,050 --> 00:02:57,650
+We refer to the spring mass
+like dynamics of running
+
+49
+00:02:57,650 --> 00:02:59,845
+as the spring loaded pendulum model.
+
+50
+00:02:59,845 --> 00:03:00,574
+Where a leg or
+
+51
+00:03:00,574 --> 00:03:05,094
+set of legs in contact with the ground can
+be approximated by a single spring leg.
+
+52
+00:03:05,094 --> 00:03:09,075
+There are many variations of
+a spring-loaded pendulum mechanism,
+
+53
+00:03:09,075 --> 00:03:13,341
+some of which have proved to be very
+useful as templates for roboticists.
+
+54
+00:03:13,341 --> 00:03:17,620
+This theme of modeling leg of locomotion
+as a pendulum continues with running.
+
+55
+00:03:17,620 --> 00:03:21,180
+Because during each stance, the center of
+mass is interacting with the ground for
+
+56
+00:03:21,180 --> 00:03:26,490
+a leg much like the mass on a pendulum
+acts through its base through a link.
+
+57
+00:03:26,490 --> 00:03:30,490
+However, unlike walking, we have
+the added leg compliance in the form
+
+58
+00:03:30,490 --> 00:03:34,380
+of a spring to store and
+release energy from stride to stride.
+
+59
+00:03:34,380 --> 00:03:37,850
+This spring is important because
+like in elastic bouncing ball,
+
+60
+00:03:37,850 --> 00:03:41,620
+many running organisms in robots
+store potential energy during stance,
+
+61
+00:03:41,620 --> 00:03:44,690
+to improve the energetic
+efficiency of their gait.
+
+62
+00:03:44,690 --> 00:03:46,980
+For example, using tendons or
+tendon-like mechanisms.
+
+63
+00:03:48,450 --> 00:03:52,510
+Animals appear to run in the spring loaded
+pendulum dynamics in many directions,
+
+64
+00:03:52,510 --> 00:03:54,460
+not just forwards and backwards.
+
+65
+00:03:54,460 --> 00:03:56,050
+As we live in three dimensional space,
+
+66
+00:03:56,050 --> 00:03:59,380
+there are three planes of motion
+available to move through.
+
+67
+00:03:59,380 --> 00:04:01,950
+These planes have anatomical
+names relative to
+
+68
+00:04:01,950 --> 00:04:04,140
+the center of the organism or robot.
+
+69
+00:04:04,140 --> 00:04:08,000
+The Sagittal plane divides an organism
+into left and right halves.
+
+70
+00:04:08,000 --> 00:04:11,920
+The Coronal plane divides an organism
+into front and rear halves.
+
+71
+00:04:11,920 --> 00:04:15,150
+And the Transverse plane divides
+an organism into top and bottom halves.
+
+72
+00:04:16,750 --> 00:04:20,750
+Locomotion can occur in all three planes,
+but often it is useful to examine or
+
+73
+00:04:20,750 --> 00:04:22,580
+approximate motion in a single plane.
+
+74
+00:04:23,630 --> 00:04:26,430
+The Sagittal plane is probably
+what we are most familiar with,
+
+75
+00:04:26,430 --> 00:04:29,830
+as many animals run predominantly
+in a Sagittal plane.
+
+76
+00:04:29,830 --> 00:04:32,200
+However, running also
+occurs in also planes.
+
+77
+00:04:32,200 --> 00:04:35,710
+Crabs are notable Coronal plane runners,
+and
+
+78
+00:04:35,710 --> 00:04:39,150
+many organisms such as cockroaches run
+primarily in the Transverse plane.
+
+79
+00:04:40,760 --> 00:04:43,880
+For the rest of the lecture we'll focus
+on two templates that are variants
+
+80
+00:04:43,880 --> 00:04:45,950
+of the spring loaded pendulum.
+
+81
+00:04:45,950 --> 00:04:47,860
+The spring loaded inverted pendulum, or
+
+82
+00:04:47,860 --> 00:04:52,930
+slip model includes the presence of
+ballistic flight between stance events and
+
+83
+00:04:52,930 --> 00:04:56,860
+is commonly used to describe Sagittal and
+Coronal plane running.
+
+84
+00:04:56,860 --> 00:04:58,300
+The lateral leg spring or
+
+85
+00:04:58,300 --> 00:05:03,380
+LLS model involves switching between
+alternating sides of leg ground contact.
+
+86
+00:05:03,380 --> 00:05:07,050
+The LLS model is commonly used to
+describe transverse plane running.
+
+87
+00:05:07,050 --> 00:05:10,900
+The Spring Loaded Inverted Pendulum or
+SLIP template is given by a point mass
+
+88
+00:05:10,900 --> 00:05:15,400
+attached to the ground by a masses
+spring leg in the presence of gravity.
+
+89
+00:05:15,400 --> 00:05:19,790
+Often in biology, SLIP running can be
+seen in the Sagittal and Coronal planes.
+
+90
+00:05:19,790 --> 00:05:24,200
+During stance, SLIP generates the familiar
+spring-loaded pendulum forces
+
+91
+00:05:24,200 --> 00:05:26,330
+seen in biological running.
+
+92
+00:05:26,330 --> 00:05:29,540
+When stance is complete,
+the system lifts off the ground and
+
+93
+00:05:29,540 --> 00:05:31,500
+it undergoes ballistic flight.
+
+94
+00:05:31,500 --> 00:05:35,310
+The leg angle is changed in flight to
+prepare for the next touchdown event.
+
+95
+00:05:35,310 --> 00:05:39,290
+And when that spring leg touches down
+again the process repeats itself.
+
+96
+00:05:39,290 --> 00:05:41,470
+There are many variances
+to this SLIP template.
+
+97
+00:05:41,470 --> 00:05:45,450
+Different spring models can be used,
+for example a linear hook slide spring.
+
+98
+00:05:45,450 --> 00:05:49,700
+Friction can be neglected or
+taken into account as well as actuation.
+
+99
+00:05:49,700 --> 00:05:52,290
+Typically SLIP is controlled by
+either choosing the appropriate
+
+100
+00:05:52,290 --> 00:05:54,990
+legging on flight, or by formulating
+
+101
+00:05:54,990 --> 00:05:59,000
+actuated version of the model to
+apply forces of torques and stance.
+
+102
+00:05:59,000 --> 00:06:00,220
+Although we have it shown here for
+
+103
+00:06:00,220 --> 00:06:04,480
+simplicity, SLIP often takes into account
+the pitch angle of the mass center.
+
+104
+00:06:04,480 --> 00:06:08,350
+The SLIP template is much more complex
+than the rimless wheel template for
+
+105
+00:06:08,350 --> 00:06:09,970
+a few reasons.
+
+106
+00:06:09,970 --> 00:06:12,610
+One is that is there are more
+degrees of freedom even when
+
+107
+00:06:12,610 --> 00:06:14,030
+pitch isn’t taken into account.
+
+108
+00:06:15,130 --> 00:06:18,430
+In stance and flight the mass is free
+to move in two directions instead of
+
+109
+00:06:18,430 --> 00:06:20,350
+one as with the rimless wheel.
+
+110
+00:06:20,350 --> 00:06:22,140
+Another is that
+the equations of motion for
+
+111
+00:06:22,140 --> 00:06:25,330
+SLIP take the form of
+a hybrid dynamical system.
+
+112
+00:06:25,330 --> 00:06:28,030
+There are two hybrid states,
+stance and flight.
+
+113
+00:06:28,030 --> 00:06:31,310
+Each with it's own equations of
+motion governing the dynamics.
+
+114
+00:06:31,310 --> 00:06:34,080
+The transition from stance to
+flight occurs when the leg
+
+115
+00:06:34,080 --> 00:06:37,315
+reaches it's rest length with
+a positive radial velocity.
+
+116
+00:06:37,315 --> 00:06:40,620
+Although transition from flight to stance
+occurs when the leg contacts the ground.
+
+117
+00:06:41,630 --> 00:06:45,450
+Physically accurate hybrid dynamical
+systems can be very complex, and
+
+118
+00:06:45,450 --> 00:06:49,710
+typically are much more difficult to
+analyze than non-hybrid dynamical systems.
+
+119
+00:06:49,710 --> 00:06:53,390
+But despite their complexity,
+hybrid systems offer a natural choice for
+
+120
+00:06:53,390 --> 00:06:57,680
+modelling leg of locomotion, due to the
+changing dynamics depending on if a leg is
+
+121
+00:06:57,680 --> 00:06:59,480
+in contact with the ground or not.
+
+122
+00:06:59,480 --> 00:07:02,104
+Unfortunately, no analytic
+solution existS for
+
+123
+00:07:02,104 --> 00:07:05,510
+the equations in motion
+describing dynamics of SLIP.
+
+124
+00:07:05,510 --> 00:07:08,950
+So, it's not possible to
+get a close form expression
+
+125
+00:07:08,950 --> 00:07:12,740
+describing the position of the mass
+center as a function of time.
+
+126
+00:07:12,740 --> 00:07:15,390
+This is because the class
+of differential equations,
+
+127
+00:07:15,390 --> 00:07:17,875
+which can be solved analytically,
+is very small.
+
+128
+00:07:17,875 --> 00:07:22,436
+And no such solution exists for
+the stance dynamics here.
+
+129
+00:07:22,436 --> 00:07:25,585
+We can, however,
+perform numerical analysis of SLIP and
+
+130
+00:07:25,585 --> 00:07:30,088
+apply mathematical tools to qualitatively
+describe the behavior of this system,
+
+131
+00:07:30,088 --> 00:07:32,680
+which can be quite insightful.
+
+132
+00:07:32,680 --> 00:07:36,210
+If we as roboticists need analytic
+solutions governing the equations of
+
+133
+00:07:36,210 --> 00:07:41,030
+motion, often we can make approximations
+to the system to achieve our goals.
+
+134
+00:07:41,030 --> 00:07:45,506
+Several techniques, such as making
+small angle approximations to linearize
+
+135
+00:07:45,506 --> 00:07:50,185
+the sines and cosines, assuming that
+gravity acts radially instead of downwards
+
+136
+00:07:50,185 --> 00:07:53,507
+in stance, or
+outright ignoring gravity during stance,
+
+137
+00:07:53,507 --> 00:07:57,938
+can be used to get closed form expressions
+of the state from stride to stride.
+
+138
+00:07:57,938 --> 00:08:00,607
+Interestingly even though we are,
+in effect,
+
+139
+00:08:00,607 --> 00:08:03,343
+making an approximation
+to win approximation,
+
+140
+00:08:03,343 --> 00:08:07,940
+this can work quiet well and practice
+use for controlling robots to run.
+
+141
+00:08:07,940 --> 00:08:10,920
+As long as the state stays
+within the operating regime or
+
+142
+00:08:10,920 --> 00:08:14,130
+this assumption are approximately valid.
+
+143
+00:08:14,130 --> 00:08:18,490
+The body and legs of the Rex Robot in
+many ways embodied the slip template.
+
+144
+00:08:18,490 --> 00:08:21,800
+Rex has six C shaped springy legs that can
+
+145
+00:08:21,800 --> 00:08:25,520
+interact with the ground in unison to
+make the center of mass trajectory
+
+146
+00:08:26,660 --> 00:08:29,760
+look like it's under the influence
+of a single spring leg.
+
+147
+00:08:29,760 --> 00:08:33,340
+By using three legs at once in
+an alternating tripod gait,
+
+148
+00:08:33,340 --> 00:08:36,900
+Rex is able to run with SLIP like
+dynamics in the Sagittal plane
+
+149
+00:08:36,900 --> 00:08:39,270
+while passably being very balanced.
+
+150
+00:08:39,270 --> 00:08:44,350
+Due to the tripod of support preventing it
+from falling over In any one direction,
+
+151
+00:08:44,350 --> 00:08:45,560
+much like a three-legged chair.
+
+152
+00:08:46,570 --> 00:08:49,930
+In this video, the computer on
+Rex isn't using any sensors,
+
+153
+00:08:49,930 --> 00:08:52,350
+aside from the motor encoders, to run.
+
+154
+00:08:52,350 --> 00:08:57,060
+It's just spinning the motors and letting
+the natural slip-like dynamics occur.
+
+155
+00:08:57,060 --> 00:09:00,910
+Here the naturally stable dynamics of
+the robot body directly interact with
+
+156
+00:09:00,910 --> 00:09:01,760
+the environment,
+
+157
+00:09:01,760 --> 00:09:05,090
+minimizing the computation
+needed at the onboard computer.
+
+158
+00:09:05,090 --> 00:09:09,260
+Might even say that the computation has
+been offloaded to the mechanical design to
+
+159
+00:09:09,260 --> 00:09:12,410
+act like an analog computer.
+
+160
+00:09:12,410 --> 00:09:15,620
+This is important, because it makes
+the behavior of Rex not dependent on
+
+161
+00:09:15,620 --> 00:09:18,420
+sensors measuring
+the external environment, or
+
+162
+00:09:18,420 --> 00:09:21,260
+some programmed internal
+model of the world.
+
+163
+00:09:21,260 --> 00:09:25,030
+Rex can run with the stable gait using
+minimal computation just by anchoring
+
+164
+00:09:25,030 --> 00:09:26,150
+the SLIP template.
+
+165
+00:09:26,150 --> 00:09:30,450
+Another important template is called
+the Lateral Leg Spring or LLS model, and
+
+166
+00:09:30,450 --> 00:09:33,560
+is often used to model
+running in a transfers plane.
+
+167
+00:09:33,560 --> 00:09:37,815
+In this template the dynamics are governed
+by the familiar spring loaded pendulum.
+
+168
+00:09:37,815 --> 00:09:41,730
+However, once the leg on one side of the
+body lifts off, a leg in the other side of
+
+169
+00:09:41,730 --> 00:09:45,620
+the body touches down at the same
+instant generating side to side motion.
+
+170
+00:09:46,620 --> 00:09:49,710
+Like the SLIP,
+many different variants of LLS exists.
+
+171
+00:09:49,710 --> 00:09:52,800
+For example, the heading angle
+of the body can be included and
+
+172
+00:09:52,800 --> 00:09:56,050
+the legs can connect to the body at
+points offset from the center of mass.
+
+173
+00:09:57,200 --> 00:09:59,740
+It turns out that the side
+to side motion generated by
+
+174
+00:09:59,740 --> 00:10:02,850
+LLS can be very stable
+with the right parameters.
+
+175
+00:10:02,850 --> 00:10:05,820
+It is hypothesized that this
+mechanical stability could
+
+176
+00:10:05,820 --> 00:10:08,350
+explain the stability
+of cockroaches running.
+
+177
+00:10:08,350 --> 00:10:11,150
+Where cockroaches are able
+to react to environmental
+
+178
+00:10:11,150 --> 00:10:14,270
+perturbations faster then
+would be possible for
+
+179
+00:10:14,270 --> 00:10:18,990
+a neurological signal to go from the leg
+to the brain, be processed, and go back.
+
+180
+00:10:18,990 --> 00:10:22,100
+Instead, it is thought that the control
+system is partially built-in
+
+181
+00:10:22,100 --> 00:10:23,960
+to the mechanism in the cockroach,
+
+182
+00:10:23,960 --> 00:10:27,590
+much like how his template can
+be anchored into a robot design.
+
+183
+00:10:27,590 --> 00:10:30,080
+The DynaClimber Robot is
+a robotic climber that runs
+
+184
+00:10:30,080 --> 00:10:32,850
+vertically with LLS-like dynamics.
+
+185
+00:10:32,850 --> 00:10:36,830
+Like Rex, the DynaClimber's mechanical
+design provides stability for
+
+186
+00:10:36,830 --> 00:10:41,840
+its motion, allowing it to run up a wall
+with little sensing or computation.
+
+187
+00:10:41,840 --> 00:10:44,440
+Today we've seen that
+the mechanics of running can
+
+188
+00:10:44,440 --> 00:10:48,530
+often be captured by the mechanism
+of a spring-loaded pendulum which
+
+189
+00:10:48,530 --> 00:10:53,630
+generates the same ground reaction profile
+as created by many biological runners.
+
+190
+00:10:53,630 --> 00:10:55,530
+Running is an important
+mode of locomotion for
+
+191
+00:10:55,530 --> 00:10:59,250
+legged robots, because it is more
+efficient than walking at high speeds.
+
+192
+00:10:59,250 --> 00:11:02,090
+And because walking like
+a pendulum with a stiff leg
+
+193
+00:11:02,090 --> 00:11:04,250
+can't occur at a Froude
+number of greater than one.
+
+194
+00:11:04,250 --> 00:11:07,180
+We've seen that running can
+occur in different directions,
+
+195
+00:11:07,180 --> 00:11:09,520
+not simply the Sagittal plane.
+
+196
+00:11:09,520 --> 00:11:10,420
+Most importantly,
+
+197
+00:11:10,420 --> 00:11:14,410
+the dynamics of running templates can be
+anchored into legged robots, allowing them
+
+198
+00:11:14,410 --> 00:11:19,010
+to run in a variety of directions with
+little to no computation or sensing.
+
+199
+00:11:19,010 --> 00:11:22,650
+Using their natural dynamics instead for
+stability and to passively balance.
+
+200
+00:11:23,710 --> 00:11:27,437
+Next lecture, we will finish our section
+on templates by examining the class
+
+201
+00:11:27,437 --> 00:11:31,352
+of running robots that use the underlying
+dynamics of SLIP to actively balance.

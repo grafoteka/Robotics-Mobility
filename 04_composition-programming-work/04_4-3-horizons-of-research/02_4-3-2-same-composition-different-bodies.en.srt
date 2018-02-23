@@ -1,0 +1,648 @@
+1
+00:00:06,530 --> 00:00:09,963
+Now that we've had a first look at
+how compositions can be useful,
+
+2
+00:00:09,963 --> 00:00:14,700
+the second benefit is the ability to
+reuse compositions across bodies.
+
+3
+00:00:14,700 --> 00:00:19,405
+After all, the template controllers
+that we saw for slip in section
+
+4
+00:00:19,405 --> 00:00:23,650
+4.2 are simple enough that they should
+be useful from multiple bodies.
+
+5
+00:00:23,650 --> 00:00:27,550
+There's usually no problem in implementing
+them with the available actuators
+
+6
+00:00:27,550 --> 00:00:29,580
+in different types of robots.
+
+7
+00:00:29,580 --> 00:00:32,470
+And so in this section,
+we'll try to do that.
+
+8
+00:00:32,470 --> 00:00:36,800
+We'll assume also the ability to embed the
+template without worrying too much about
+
+9
+00:00:36,800 --> 00:00:39,260
+available actuators or verification.
+
+10
+00:00:40,260 --> 00:00:42,980
+Here's a video of Jerboa
+hopping in the plain.
+
+11
+00:00:44,430 --> 00:00:45,150
+What we've done here,
+
+12
+00:00:45,150 --> 00:00:48,650
+is taken the vertical hopping that
+we saw in the previous segment and
+
+13
+00:00:48,650 --> 00:00:51,370
+added in a stepping controller
+to position the toe in flight.
+
+14
+00:00:52,680 --> 00:00:56,470
+The vertical hopping is energized by
+the tail, which is specific to the Jerboa.
+
+15
+00:00:57,740 --> 00:00:59,957
+In addition, I'll point out here,
+
+16
+00:00:59,957 --> 00:01:04,830
+that the large carbon fiber tube in the
+foreground of this video is called a boom.
+
+17
+00:01:04,830 --> 00:01:08,708
+And what it's doing here, is it's
+constraining additional degrees of freedom
+
+18
+00:01:08,708 --> 00:01:12,440
+of the robot, think of it as
+training wheels for the robot.
+
+19
+00:01:12,440 --> 00:01:15,610
+Before we're ready to control all of
+the degrees of freedom of the robot,
+
+20
+00:01:15,610 --> 00:01:19,010
+we constrain some of them and
+test out our controllers.
+
+21
+00:01:19,010 --> 00:01:21,670
+Here the boom is constraining
+the pitch of the robot,
+
+22
+00:01:21,670 --> 00:01:24,250
+as well as restricting
+it to the sagittal pane.
+
+23
+00:01:24,250 --> 00:01:27,550
+The next segment will allow the pitch
+to roam free and see what happens.
+
+24
+00:01:28,820 --> 00:01:32,792
+We can also use the same idea where
+the virtual legs on Minitaur.
+
+25
+00:01:32,792 --> 00:01:36,310
+Jerboa was a monoped but
+Minitaur has multiple legs.
+
+26
+00:01:36,310 --> 00:01:40,290
+But what we're going to do is coordinate
+two of the legs as if they are one,
+
+27
+00:01:40,290 --> 00:01:41,690
+as we saw in the previous segment.
+
+28
+00:01:43,300 --> 00:01:48,040
+The virtual leg control ends up being
+actually identical to Jerboa, which is
+
+29
+00:01:48,040 --> 00:01:52,020
+a little surprising but is really showing
+off the power of parallel composition.
+
+30
+00:01:53,460 --> 00:01:57,120
+The within group control ends up
+controlling the pitch of the body.
+
+31
+00:01:57,120 --> 00:02:02,020
+The differential axial leg forces ends
+up being a virtual hip torque, and
+
+32
+00:02:02,020 --> 00:02:06,590
+we can just use the Raibert pitch rolling
+idea to control the pitch of the body.
+
+33
+00:02:08,370 --> 00:02:09,800
+Here's a video of Minitaur pronking.
+
+34
+00:02:10,920 --> 00:02:13,171
+It's similar to the bounding
+in a lot of ways,
+
+35
+00:02:13,171 --> 00:02:15,499
+except we've added this
+pitch coordination.
+
+36
+00:02:15,499 --> 00:02:20,513
+We're able to get this behavior in a day
+or two, while working on the bounding and
+
+37
+00:02:20,513 --> 00:02:24,220
+this goes to show the power of
+reuse from compositionally.
+
+38
+00:02:24,220 --> 00:02:27,680
+Now that I've shown you our hasty
+efforts of getting mentor ranking.
+
+39
+00:02:27,680 --> 00:02:29,660
+Here's what an African
+springbok looks like.
+
+40
+00:02:30,870 --> 00:02:35,980
+I'm showing you this because firstly, it's
+good to be a little in awe of animals.
+
+41
+00:02:35,980 --> 00:02:40,600
+It just goes to show what steps we have to
+take to catch up both technologically and
+
+42
+00:02:40,600 --> 00:02:41,880
+conceptually.
+
+43
+00:02:41,880 --> 00:02:45,880
+Secondly, this behavior is extremely and
+energetically inefficient.
+
+44
+00:02:45,880 --> 00:02:50,260
+The spring box use it to either confuse
+predators or it's just show off.
+
+45
+00:02:50,260 --> 00:02:52,950
+Neither which are really
+applicable to the robot.
+
+46
+00:02:52,950 --> 00:02:57,150
+Remember, that we like Bioinspiration but
+we're not trying to do biomimicry.
+
+47
+00:02:58,950 --> 00:03:00,790
+To summarize a lot of what we just saw,
+
+48
+00:03:00,790 --> 00:03:04,760
+I'll point out that we're not the first
+researchers to implement vertical hopping.
+
+49
+00:03:04,760 --> 00:03:08,430
+Here's Raibert's vertical
+hopper from the 1980s.
+
+50
+00:03:08,430 --> 00:03:13,039
+Here's Jerboa, using his tail to
+hop up and down in 2014 or 15.
+
+51
+00:03:14,150 --> 00:03:17,650
+His Minitaur, using it's virtual
+legs to hop up and down.
+
+52
+00:03:19,350 --> 00:03:22,970
+And here's another robot we have in
+the lab called the delta hopper,
+
+53
+00:03:22,970 --> 00:03:27,550
+which is a three legged freedom
+special hopper hoping up and down.
+
+54
+00:03:27,550 --> 00:03:32,080
+It seems sensible that we should be able
+to reuse some of our control ideas across
+
+55
+00:03:32,080 --> 00:03:34,110
+this vastly different bodies.
+
+56
+00:03:34,110 --> 00:03:38,710
+After all, biomechanists and
+roboticists agree, that the slip model, or
+
+57
+00:03:38,710 --> 00:03:44,950
+just a mass on a spring, is a good enough
+explanation for a lot of animal behaviors.
+
+58
+00:03:44,950 --> 00:03:48,480
+This idea of reuse is one of
+the most important advantages
+
+59
+00:03:48,480 --> 00:03:51,130
+of a compositional way of
+constructing controllers.
+
+60
+00:03:51,130 --> 00:03:54,330
+The next immediate benefit is that
+having a library of templates and
+
+61
+00:03:54,330 --> 00:03:59,050
+template controllers automatically
+suggests new combinations of them.
+
+62
+00:04:00,500 --> 00:04:04,960
+In this light, I'll describe two
+combinations which create a new behaviors
+
+63
+00:04:04,960 --> 00:04:07,640
+which were useful for Minitaur.
+
+64
+00:04:07,640 --> 00:04:11,800
+Say we have a library of these three
+controllers of vertical hopping.
+
+65
+00:04:11,800 --> 00:04:14,850
+A rimless wheel and a pitch control.
+
+66
+00:04:14,850 --> 00:04:18,040
+By using the pitch control
+primitive in the horizontal plane,
+
+67
+00:04:18,040 --> 00:04:22,278
+we can actually get Minitaur to turn,
+something that is not immediately
+
+68
+00:04:22,278 --> 00:04:25,460
+obvious because Minitaur only
+has sagittal plane activation.
+
+69
+00:04:27,000 --> 00:04:30,520
+Additionally, by using the pitch
+control idea in the roll direction, and
+
+70
+00:04:30,520 --> 00:04:32,980
+by changing the roll offset from zero.
+
+71
+00:04:32,980 --> 00:04:37,260
+We can get it to do this crabbing behavior
+laterally, which is really unusual and
+
+72
+00:04:37,260 --> 00:04:38,690
+surprising.
+
+73
+00:04:38,690 --> 00:04:41,380
+I'm actually going to leave the most
+visually appealing of these
+
+74
+00:04:41,380 --> 00:04:45,060
+generative combinations till
+the next segment, leaping.
+
+75
+00:04:45,060 --> 00:04:47,570
+These ideas of reusing in generating,
+
+76
+00:04:47,570 --> 00:04:52,500
+might remind you of something we're all
+very familiar with, spoken language.
+
+77
+00:04:52,500 --> 00:04:56,870
+After all, if I have a new thought,
+I'm usually able to find the words
+
+78
+00:04:56,870 --> 00:05:00,830
+that I've learned previously
+to describe it, usually.
+
+79
+00:05:00,830 --> 00:05:02,834
+This is not a coincidental connection.
+
+80
+00:05:02,834 --> 00:05:05,212
+It's happened for
+computer science, in fact,
+
+81
+00:05:05,212 --> 00:05:08,750
+which is why there are numerous
+programming languages that let computer
+
+82
+00:05:08,750 --> 00:05:11,660
+programmers express themselves
+from simple primitives.
+
+83
+00:05:11,660 --> 00:05:15,968
+And a language for programming work,
+or robots, is indeed something for
+
+84
+00:05:15,968 --> 00:05:18,240
+roboticists to strive towards.
+
+85
+00:05:18,240 --> 00:05:20,900
+So let's take stock of where
+compositional techniques lie.
+
+86
+00:05:21,930 --> 00:05:25,840
+I've made a crude table here, where
+Compositional techniques are on the right.
+
+87
+00:05:25,840 --> 00:05:29,180
+And for lack of a better term,
+the Holistic techniques,
+
+88
+00:05:29,180 --> 00:05:32,180
+where you must model the whole robot,
+and generate a controller for
+
+89
+00:05:32,180 --> 00:05:34,730
+all of the degrees of freedom
+at once are on the left.
+
+90
+00:05:35,880 --> 00:05:40,770
+The first thing roboticists care
+about is stability guarantees.
+
+91
+00:05:40,770 --> 00:05:43,010
+We'd really like to know
+that our behavior is stable.
+
+92
+00:05:44,350 --> 00:05:45,500
+For holistic techniques,
+
+93
+00:05:45,500 --> 00:05:48,550
+there are several methods that you
+could look up in the literature.
+
+94
+00:05:48,550 --> 00:05:52,170
+For compositional controllers, we could
+use some of the same techniques but
+
+95
+00:05:52,170 --> 00:05:55,660
+what we'd really like to do,
+is be able to leverage
+
+96
+00:05:55,660 --> 00:05:59,710
+templates stability properties
+which are much simpler to analyze.
+
+97
+00:05:59,710 --> 00:06:03,560
+And somehow, be able to guarantee that
+the body is stable under composition.
+
+98
+00:06:04,850 --> 00:06:07,360
+We haven't figure this how yet,
+but there's been some progress.
+
+99
+00:06:08,410 --> 00:06:10,071
+Second point is Underactuation,
+
+100
+00:06:10,071 --> 00:06:13,461
+where we'd like a few actuators to
+control many degrees and freedom.
+
+101
+00:06:14,580 --> 00:06:16,697
+There are a few holistic techniques.
+
+102
+00:06:16,697 --> 00:06:20,235
+For instance, if you had a linear
+controllable system you could use a linear
+
+103
+00:06:20,235 --> 00:06:22,944
+quadratic regulator to generate
+control inputs for you,
+
+104
+00:06:22,944 --> 00:06:25,690
+that would control all of
+your degrees of freedom.
+
+105
+00:06:25,690 --> 00:06:29,260
+However, techniques like this would
+require very good models which are often
+
+106
+00:06:29,260 --> 00:06:30,470
+hard to get.
+
+107
+00:06:30,470 --> 00:06:33,310
+In contrary, for compositional techniques,
+
+108
+00:06:33,310 --> 00:06:37,540
+if the template isn't actuated like we
+want, there's very little we can do.
+
+109
+00:06:38,840 --> 00:06:41,950
+We'll see in the next
+section how we leverage
+
+110
+00:06:41,950 --> 00:06:45,290
+body coupling to channel one
+actuator into different templates.
+
+111
+00:06:48,020 --> 00:06:51,210
+The third point is Optimality guarantees.
+
+112
+00:06:51,210 --> 00:06:52,340
+Optimal control,
+
+113
+00:06:52,340 --> 00:06:56,390
+lets us think about this in a principled
+way with holistic techniques.
+
+114
+00:06:56,390 --> 00:06:58,130
+However, in the compositional domain,
+
+115
+00:06:58,130 --> 00:07:02,480
+we're actively restricting the set
+of controllers we can use, and
+
+116
+00:07:02,480 --> 00:07:05,180
+hence, we can't really have
+these guarantees anymore.
+
+117
+00:07:06,300 --> 00:07:07,520
+Given these tradeoffs,
+
+118
+00:07:07,520 --> 00:07:11,380
+what are some of the benefits we
+have from compositional techniques?
+
+119
+00:07:11,380 --> 00:07:12,310
+In terms of modelling and
+
+120
+00:07:12,310 --> 00:07:16,320
+calibration, most of the holistic
+methods must be quite precise.
+
+121
+00:07:16,320 --> 00:07:21,470
+However, the compositional techniques
+can survive with much cruder models.
+
+122
+00:07:21,470 --> 00:07:26,671
+After all the templates plans are only
+crude representations of our bodies and
+
+123
+00:07:26,671 --> 00:07:31,344
+the template controllers are chosen for
+their large ability basins.
+
+124
+00:07:31,344 --> 00:07:35,390
+Next, the controller synthesis for
+compositional techniques is very easy.
+
+125
+00:07:35,390 --> 00:07:40,120
+Because each template can be thought of
+as a single input single output system,
+
+126
+00:07:40,120 --> 00:07:44,300
+making the number of parameters
+to think about much smaller.
+
+127
+00:07:44,300 --> 00:07:47,710
+However, in the holistic setting
+the number of parameters for
+
+128
+00:07:47,710 --> 00:07:52,710
+this n input n output system
+might be quite large.
+
+129
+00:07:52,710 --> 00:07:56,500
+It often goes exponentially, and
+the number of parameters you have to think
+
+130
+00:07:56,500 --> 00:07:59,440
+about, when developing the controller,
+is very large.
+
+131
+00:07:59,440 --> 00:08:03,560
+Lastly, the ability to reuse and generate
+controllers, which we just talked about in
+
+132
+00:08:03,560 --> 00:08:08,380
+the previous slides, is one of the best
+selling points of compositional control.
+
+133
+00:08:08,380 --> 00:08:12,777
+To summarize, a compositional approach to
+synthesis allows us to reuse templates
+
+134
+00:08:12,777 --> 00:08:15,494
+that we've learned already
+on different robots.
+
+135
+00:08:15,494 --> 00:08:19,778
+As well as to generate new behaviors
+that we might not have even thought of.

@@ -1,0 +1,564 @@
+1
+00:00:05,142 --> 00:00:06,800
+Bio-inspiration.
+
+2
+00:00:06,800 --> 00:00:07,630
+Wait a minute!
+
+3
+00:00:07,630 --> 00:00:10,300
+Don't machines already move better?
+
+4
+00:00:11,570 --> 00:00:13,070
+Machines, they're great.
+
+5
+00:00:13,070 --> 00:00:15,380
+We've been building machines for
+hundreds of years.
+
+6
+00:00:16,990 --> 00:00:22,840
+We have the fastest machine that's
+ever traveled, we have Helios 2.
+
+7
+00:00:22,840 --> 00:00:27,090
+NASA built Helios 2 to
+study solar properties.
+
+8
+00:00:27,090 --> 00:00:32,425
+And Helios 2 in its fastest ascent
+toward the Sun reached a speed of
+
+9
+00:00:32,425 --> 00:00:39,008
+0.22 kilometers per second, which is
+fractionally like the speed of light.
+
+10
+00:00:39,008 --> 00:00:43,663
+The speed of light is faster than
+anything in the universe can travel.
+
+11
+00:00:43,663 --> 00:00:49,400
+We have faster machines than anything
+that biology has come up with.
+
+12
+00:00:49,400 --> 00:00:51,360
+And how about capacity?
+
+13
+00:00:51,360 --> 00:00:56,830
+Our machines have far greater loads
+than any animal could possibly bear.
+
+14
+00:00:56,830 --> 00:01:04,230
+Our largest cargo ship, the MSC Oscar,
+carries 200,000 cubic meters of space.
+
+15
+00:01:04,230 --> 00:01:08,140
+And you can see how it dwarfs
+the human being in the picture here.
+
+16
+00:01:10,730 --> 00:01:16,590
+But if we move away from mere speed,
+and mere load,
+
+17
+00:01:16,590 --> 00:01:21,280
+and mere speed overload and
+study a little bit more carefully.
+
+18
+00:01:21,280 --> 00:01:25,800
+We begin to see that the animals
+are marvelously better sources of
+
+19
+00:01:25,800 --> 00:01:29,830
+mobility than anything we've yet
+been able to come up with in engineering.
+
+20
+00:01:31,470 --> 00:01:35,560
+I'm plotting a graph that my colleague,
+Professor Art Kuo at University of
+
+21
+00:01:35,560 --> 00:01:42,120
+Michigan has added to, where he displays
+the cost of transport which you could
+
+22
+00:01:42,120 --> 00:01:47,500
+think about as miles per gallon really
+in this chart, it's gallons per mile.
+
+23
+00:01:47,500 --> 00:01:50,000
+And the way you'd like
+to start thinking about
+
+24
+00:01:50,000 --> 00:01:54,910
+cost of transport is a notion
+called specific resistance.
+
+25
+00:01:54,910 --> 00:01:59,810
+Specific resistance measures
+the energy expended
+
+26
+00:01:59,810 --> 00:02:03,080
+to achieve a certain distance
+with a certain load.
+
+27
+00:02:04,410 --> 00:02:09,050
+Or, you can think about
+specific resistance
+
+28
+00:02:09,050 --> 00:02:13,130
+as the time average of
+the amount of power expended
+
+29
+00:02:14,270 --> 00:02:18,979
+to achieve a speed while
+carrying a certain mass.
+
+30
+00:02:21,250 --> 00:02:27,370
+You can see from the charts that
+the animals, if you disregard their load,
+
+31
+00:02:27,370 --> 00:02:31,890
+are far more cost efficient,
+have much lower
+
+32
+00:02:31,890 --> 00:02:36,520
+specific resistance than any of the
+machines that we've been able to build.
+
+33
+00:02:36,520 --> 00:02:41,930
+And it's only when we begin to think about
+the cost of transport including load,
+
+34
+00:02:41,930 --> 00:02:43,780
+that the machines begin to be competitive.
+
+35
+00:02:46,330 --> 00:02:48,155
+Agility, there's no question.
+
+36
+00:02:48,155 --> 00:02:53,034
+The animals are far more agile than
+anything we've been able to build.
+
+37
+00:02:53,034 --> 00:02:55,930
+You think your Porsche accelerates nicely.
+
+38
+00:02:55,930 --> 00:03:02,110
+The Porsche accelerates from zero to
+100 kilometers per hour in two seconds.
+
+39
+00:03:02,110 --> 00:03:05,270
+That's about two meters
+per second per second.
+
+40
+00:03:07,320 --> 00:03:12,660
+The sailfish in the ocean,
+when it's hunting, accelerates at
+
+41
+00:03:12,660 --> 00:03:17,418
+eight meters per second per
+second at nearly the same speeds.
+
+42
+00:03:17,418 --> 00:03:24,900
+And the cheetah, when it travels
+at about 60 kilometers per hour,
+
+43
+00:03:24,900 --> 00:03:29,880
+is accelerating at least 13
+meters per second squared.
+
+44
+00:03:29,880 --> 00:03:33,570
+So the animals are an order of magnitude
+
+45
+00:03:33,570 --> 00:03:36,620
+more agile if we measure
+agility by acceleration.
+
+46
+00:03:37,670 --> 00:03:41,930
+We'll be spending some amount of
+time in this course thinking about
+
+47
+00:03:41,930 --> 00:03:46,620
+metrics of mobility such
+as specific resistance.
+
+48
+00:03:46,620 --> 00:03:48,800
+Perhaps we'll talk about agility measures.
+
+49
+00:03:50,010 --> 00:03:54,353
+And by almost any of these measures,
+the animals are far,
+
+50
+00:03:54,353 --> 00:03:59,059
+far better than any machine that we've yet
+been able to build.
+
+51
+00:03:59,059 --> 00:04:04,024
+And so it behooves us to think
+about what the animals know and
+
+52
+00:04:04,024 --> 00:04:06,919
+to teach us concerning mobility.
+
+53
+00:04:06,919 --> 00:04:09,770
+There's a completely independent and
+
+54
+00:04:09,770 --> 00:04:15,670
+marvelous reason to think about
+animals in the context of mobility.
+
+55
+00:04:15,670 --> 00:04:20,940
+Because evolution teaches us that
+mobility is actually the very origin
+
+56
+00:04:20,940 --> 00:04:21,650
+of intelligence.
+
+57
+00:04:23,790 --> 00:04:28,910
+Way back in the Precambrian
+era there was a shift
+
+58
+00:04:30,430 --> 00:04:35,070
+from primitive animals
+that were filter feeders,
+
+59
+00:04:35,070 --> 00:04:39,900
+just passing the water through their
+gills, their gill equivalents.
+
+60
+00:04:39,900 --> 00:04:43,250
+So they were animals in the sense
+of Animalia, they were breathers,
+
+61
+00:04:43,250 --> 00:04:48,760
+they were movers but
+they weren't that mobile as bodies.
+
+62
+00:04:48,760 --> 00:04:54,590
+There was a marvelous shift
+around between 500 million and
+
+63
+00:04:54,590 --> 00:05:02,100
+300 million years ago from mere filter
+feeding to selective predation.
+
+64
+00:05:02,100 --> 00:05:07,110
+Where the animals began to
+direct themselves toward other
+
+65
+00:05:07,110 --> 00:05:13,130
+animals so as to consume
+those big packages of energy.
+
+66
+00:05:13,130 --> 00:05:16,620
+And some of the other
+animals began to develop
+
+67
+00:05:16,620 --> 00:05:20,680
+escape mechanisms to remove
+themselves from this predation.
+
+68
+00:05:21,950 --> 00:05:26,480
+And, it's been known for about 30 years
+in biology, evolutionary biology now,
+
+69
+00:05:26,480 --> 00:05:30,480
+that this is the origin
+of the neural crest and
+
+70
+00:05:30,480 --> 00:05:33,930
+the origin of the vertebrates and
+therefore the origin of our brain.
+
+71
+00:05:35,360 --> 00:05:39,715
+It's the mobile seeking
+brains that develop.
+
+72
+00:05:39,715 --> 00:05:44,320
+The mammalian hippocampus is the prime
+of example of a seeking brain and
+
+73
+00:05:44,320 --> 00:05:46,634
+the intelligence that it confers.
+
+74
+00:05:46,634 --> 00:05:50,866
+The 2014 Nobel Prize was
+given to the Mosers,
+
+75
+00:05:50,866 --> 00:05:55,604
+an amazing married pair of
+neuroscientists in Norway,
+
+76
+00:05:55,604 --> 00:05:59,050
+who discovered that animals have maps.
+
+77
+00:06:00,810 --> 00:06:04,470
+It was known that animals had
+some kind of mapping capability.
+
+78
+00:06:04,470 --> 00:06:06,860
+But, the the anatomy of the maps,
+
+79
+00:06:06,860 --> 00:06:12,520
+the seat of spacial navigation was unknown
+until they showed, the Mosers did,
+
+80
+00:06:12,520 --> 00:06:17,680
+that animals have grid cells
+that respond to relative
+
+81
+00:06:17,680 --> 00:06:22,650
+position and play cells that
+respond to landmarks in the world.
+
+82
+00:06:24,190 --> 00:06:28,900
+And increasing work by cognitive
+scientists and animal cognition
+
+83
+00:06:28,900 --> 00:06:34,390
+experts begins to reveal that
+the origin of episodic memory,
+
+84
+00:06:34,390 --> 00:06:39,650
+our own sense of who we are, and where
+we've been, and how we've come to be,
+
+85
+00:06:39,650 --> 00:06:43,900
+is deeply, deeply rooted in
+this hippocampic structure.
+
+86
+00:06:46,070 --> 00:06:49,130
+It's not just the mammals
+that have seeking brains,
+
+87
+00:06:49,130 --> 00:06:53,990
+although our seeking brains are
+particularly well developed and advanced.
+
+88
+00:06:53,990 --> 00:06:56,900
+It seems to be every animal that's mobile.
+
+89
+00:06:58,300 --> 00:07:04,120
+Most animals that are mobile
+develop a general cognitive map and
+
+90
+00:07:04,120 --> 00:07:10,450
+these maps hypothetically
+arose from olfactory trackers.
+
+91
+00:07:10,450 --> 00:07:15,660
+Meaning long, long, long ago before
+animals had very much of a nervous system
+
+92
+00:07:15,660 --> 00:07:18,410
+they had what's called chemotaxis.
+
+93
+00:07:18,410 --> 00:07:22,985
+They had the ability to sniff out
+different concentrations of different
+
+94
+00:07:22,985 --> 00:07:24,562
+molecular substances.
+
+95
+00:07:24,562 --> 00:07:29,378
+Many, many different animals
+have been shown to use
+
+96
+00:07:29,378 --> 00:07:33,756
+smell in conjunction
+with their locomotion and
+
+97
+00:07:33,756 --> 00:07:40,112
+their navigation honey bees,
+deep water sharks, homing pigeons.
+
+98
+00:07:40,112 --> 00:07:45,438
+It seems that in those animals that
+are seekers, they seek after prey or they
+
+99
+00:07:45,438 --> 00:07:51,184
+seek after scarce fauna, they have larger
+structures where the neuroanatomists
+
+100
+00:07:51,184 --> 00:07:55,533
+have found the structures,
+the seat of their cognitive max.
+
+101
+00:07:55,533 --> 00:07:57,183
+They have larger structures,
+
+102
+00:07:57,183 --> 00:08:00,700
+they have larger brains if they're
+involved in competitive navigation.
+
+103
+00:08:01,800 --> 00:08:06,560
+This competitive navigation arose 500
+million years ago, and it was built
+
+104
+00:08:06,560 --> 00:08:11,540
+from chemotaxis, the primitive ability to
+distinguish different molecular species
+
+105
+00:08:11,540 --> 00:08:16,470
+from each other, so that one would not
+eat the poison and instead seek the food.
+
+106
+00:08:18,880 --> 00:08:24,560
+These notions of navigation
+built on chemotaxis
+
+107
+00:08:24,560 --> 00:08:29,690
+have generated many intriguing
+theories on the part of the cognitive
+
+108
+00:08:29,690 --> 00:08:34,500
+science of evolutionary biologist that
+help us think about how to organize
+
+109
+00:08:35,900 --> 00:08:43,239
+navigation in robots between gradient
+based or smell strengthening basis.
+
+110
+00:08:44,440 --> 00:08:49,040
+As distinct from landmark based or
+topological navigation.
+
+111
+00:08:49,040 --> 00:08:54,460
+And so this is a marvelous conversation
+between cognitive scientists and
+
+112
+00:08:54,460 --> 00:08:58,970
+roboticists that emerges
+at the fulcrum of mobility.
+
+113
+00:08:58,970 --> 00:09:03,960
+We will spend much less of our
+time in this course thinking about
+
+114
+00:09:03,960 --> 00:09:07,280
+the navigational capacities
+of the cognitive maps.
+
+115
+00:09:07,280 --> 00:09:11,070
+But those questions and
+those excitements will be there for
+
+116
+00:09:11,070 --> 00:09:15,980
+the whole lectures and you will see
+them cropping up from time to time
+
+117
+00:09:15,980 --> 00:09:19,850
+as we talk about the mechanical
+bases of mobility.

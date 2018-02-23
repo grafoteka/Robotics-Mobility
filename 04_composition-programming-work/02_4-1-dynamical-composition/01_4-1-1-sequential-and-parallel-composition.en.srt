@@ -1,0 +1,364 @@
+1
+00:00:05,150 --> 00:00:07,598
+In week one,
+Dan talked to you about basins and energy.
+
+2
+00:00:07,598 --> 00:00:11,930
+Remember that gradient-like
+systems like to flow downhill.
+
+3
+00:00:11,930 --> 00:00:13,980
+So what does this hill mean?
+
+4
+00:00:13,980 --> 00:00:17,740
+For a passive mechanical system, this hill
+could just be the total mechanical energy
+
+5
+00:00:17,740 --> 00:00:21,830
+of the system, which doesn't increase,
+but decreases because of friction or
+
+6
+00:00:21,830 --> 00:00:24,830
+other actuated control inputs.
+
+7
+00:00:24,830 --> 00:00:27,070
+Here I;ve have drawn a cartoon
+of a hill might look like.
+
+8
+00:00:28,500 --> 00:00:32,540
+So, the actual state of the system
+is down below on the plane and
+
+9
+00:00:32,540 --> 00:00:37,590
+the hill signifies how the states
+kind of roll down the hill.
+
+10
+00:00:37,590 --> 00:00:42,010
+The basin is the rim of the funnel which
+is all the states that are kind of
+
+11
+00:00:42,010 --> 00:00:47,200
+funneled through into the goal location,
+but what if now we have multiple funnels?
+
+12
+00:00:47,200 --> 00:00:50,060
+So instead of just rolling down one,
+we could have the states
+
+13
+00:00:50,060 --> 00:00:54,780
+roll down one funnel, then into a second
+one, and then into a third one, etcetera.
+
+14
+00:00:54,780 --> 00:00:59,425
+This simple cartoon is really the idea
+behind sequential composition, or
+
+15
+00:00:59,425 --> 00:01:01,470
+back-chaining basins.
+
+16
+00:01:01,470 --> 00:01:06,240
+The only rule, really, is that
+the goal location of the first funnel
+
+17
+00:01:06,240 --> 00:01:08,420
+has to be within the basin
+of the second funnel.
+
+18
+00:01:08,420 --> 00:01:13,290
+That's it, it's very simple and intuitive,
+but it's been used a lot in robotics.
+
+19
+00:01:14,600 --> 00:01:18,581
+Here's an example of a juggling robot,
+where this idea was used to transition
+
+20
+00:01:18,581 --> 00:01:21,794
+between bouncing the ball and
+palming the ball to make it stop.
+
+21
+00:01:25,370 --> 00:01:28,120
+This is not the only use
+of sequential composition.
+
+22
+00:01:28,120 --> 00:01:34,120
+Way back in 1984, a famous paper by
+Lozano, Perez, Mason, and Taylor
+
+23
+00:01:34,120 --> 00:01:39,790
+described how sequential composition might
+be used to automate factory floor tasks.
+
+24
+00:01:41,350 --> 00:01:46,770
+This is a peg in hole assembly task ,where
+for instance, in the center right image,
+
+25
+00:01:46,770 --> 00:01:51,480
+a successful assembly might
+entail moving the peg down,
+
+26
+00:01:51,480 --> 00:01:55,250
+sliding it across to the left,
+and then down into the hole.
+
+27
+00:01:56,430 --> 00:02:00,680
+This strategy, it'll be obvious to you,
+doesn't work for the center image, for
+
+28
+00:02:00,680 --> 00:02:02,030
+instance.
+
+29
+00:02:02,030 --> 00:02:05,490
+So what we're really doing is
+composing a sequence of maneuvers for
+
+30
+00:02:05,490 --> 00:02:08,990
+the peg that ensure that
+the assembly will proceed correctly.
+
+31
+00:02:10,830 --> 00:02:15,450
+Another assembly like example is this one,
+where what we're trying to do is
+
+32
+00:02:16,770 --> 00:02:20,310
+go to a known final configuration for
+these hex keys.
+
+33
+00:02:20,310 --> 00:02:25,560
+That actuated control input here is the
+actuation of the tray underneath the hex
+
+34
+00:02:25,560 --> 00:02:30,920
+keys and so by tilting the trays through
+a sequence of maneuvers, we can channel or
+
+35
+00:02:30,920 --> 00:02:35,260
+funnel the hex key through different
+configurations into a desired final one.
+
+36
+00:02:35,260 --> 00:02:36,530
+This is also work by Matt Mason.
+
+37
+00:02:37,960 --> 00:02:40,660
+This is a more modern example
+where optimization and
+
+38
+00:02:40,660 --> 00:02:42,880
+robust control ideas have come in.
+
+39
+00:02:42,880 --> 00:02:47,420
+What the researchers are doing is online
+motion planning, that is they're selecting
+
+40
+00:02:47,420 --> 00:02:51,630
+appropriate funnels prepared by the
+current state of this glider online and
+
+41
+00:02:51,630 --> 00:02:54,790
+using that to control it
+through unknown obstacles.
+
+42
+00:02:54,790 --> 00:02:57,390
+The side effect is acute in
+control objectives sequentially.
+
+43
+00:02:57,390 --> 00:03:00,380
+If we were to have
+executed them in parallel,
+
+44
+00:03:00,380 --> 00:03:03,050
+that idea is called parallel composition.
+
+45
+00:03:03,050 --> 00:03:05,200
+There's going to be a lot more
+about this in section 4.2,
+
+46
+00:03:05,200 --> 00:03:09,150
+but here's a quick recap of the origin and
+history.
+
+47
+00:03:09,150 --> 00:03:13,460
+So let's say we build on the juggle
+that I showed you two slides ago.
+
+48
+00:03:13,460 --> 00:03:15,990
+What if we wanted to now juggle
+two balls instead of one?
+
+49
+00:03:17,350 --> 00:03:20,820
+So this is really a parallel
+composition of the same controller.
+
+50
+00:03:20,820 --> 00:03:23,090
+But there's an interesting twist on this.
+
+51
+00:03:23,090 --> 00:03:28,390
+If you think about the ball-ball paddle
+state space there's a big obstacle
+
+52
+00:03:28,390 --> 00:03:31,560
+if the two balls are falling
+simultaneously because the paddle can't
+
+53
+00:03:31,560 --> 00:03:32,840
+hit both balls at the same time.
+
+54
+00:03:34,300 --> 00:03:36,990
+So what we're really doing is
+composing the two controllers but
+
+55
+00:03:36,990 --> 00:03:40,339
+avoiding the obstacle of the phase
+of the two balls being aligned.
+
+56
+00:03:41,480 --> 00:03:44,220
+Another example is
+Raibert's planer hopper,
+
+57
+00:03:44,220 --> 00:03:46,620
+which Jeff talked to you about last week.
+
+58
+00:03:46,620 --> 00:03:50,300
+What Raibert did is he thought about
+the vertical hopping control and
+
+59
+00:03:50,300 --> 00:03:53,820
+the forward speed control, and
+the pitch control separately, and
+
+60
+00:03:53,820 --> 00:03:55,720
+played them all out together.
+
+61
+00:03:55,720 --> 00:03:58,350
+There are no similar obstacles
+in this situation, but
+
+62
+00:03:58,350 --> 00:04:00,591
+that's an interesting
+thing to keep in mind.
+
+63
+00:04:02,260 --> 00:04:06,571
+To summarize, robot control can be thought
+of as floating downhill on artificial
+
+64
+00:04:06,571 --> 00:04:07,640
+energy functions.
+
+65
+00:04:08,960 --> 00:04:12,310
+Sequential composition
+formalizes a sequence of tasks
+
+66
+00:04:12,310 --> 00:04:15,030
+using back-chaning of basins.
+
+67
+00:04:15,030 --> 00:04:19,360
+We can sequence course manipulation or
+assembly tasks and there have been several
+
+68
+00:04:19,360 --> 00:04:22,380
+other examples in the literature
+that I haven't had time to cover.
+
+69
+00:04:22,380 --> 00:04:25,630
+Parallel composition describes satisfying
+multiple control objectives at
+
+70
+00:04:25,630 --> 00:04:26,380
+the same time.
+
+71
+00:04:27,600 --> 00:04:32,100
+What we have to keep in mind with parallel
+composition is that there are obstacles
+
+72
+00:04:32,100 --> 00:04:34,770
+introduced into the state
+space that might not have been
+
+73
+00:04:34,770 --> 00:04:36,780
+there without the composition.
+
+74
+00:04:36,780 --> 00:04:41,720
+And secondly we have to keep in mind that
+lots of systems inject coupling forces
+
+75
+00:04:41,720 --> 00:04:44,920
+that would either have to be cancelled or
+thought about appropriately.
+
+76
+00:04:44,920 --> 00:04:48,160
+We're going to talk a lot more about
+parallel composition in the next segment.

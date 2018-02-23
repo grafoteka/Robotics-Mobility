@@ -1,0 +1,1279 @@
+1
+00:00:06,328 --> 00:00:10,210
+This lecture provides a very brief
+introduction to the dynamics and
+
+2
+00:00:10,210 --> 00:00:11,378
+control of robots.
+
+3
+00:00:11,378 --> 00:00:16,640
+Dynamics deals with the motions of
+systems acted upon by forces and torques.
+
+4
+00:00:16,640 --> 00:00:20,360
+This is an important area of study for
+roboticists because robots move by
+
+5
+00:00:20,360 --> 00:00:23,018
+creating forces and
+torques on their environment.
+
+6
+00:00:23,018 --> 00:00:28,330
+So a robot's dynamics explains what forces
+and torques are needed to generate motion.
+
+7
+00:00:28,330 --> 00:00:31,090
+Even when we know the dynamics
+choosing the right forces and
+
+8
+00:00:31,090 --> 00:00:34,640
+torques to control a robot
+can be a very tricky problem.
+
+9
+00:00:34,640 --> 00:00:36,930
+And as part of a whole
+field in engineering and
+
+10
+00:00:36,930 --> 00:00:38,570
+mathematics called control theory.
+
+11
+00:00:39,620 --> 00:00:42,390
+Today we are going to go
+over a very useful tool
+
+12
+00:00:42,390 --> 00:00:47,470
+used by engineers to explicitly write
+out the dynamics as some simple systems.
+
+13
+00:00:47,470 --> 00:00:51,210
+And then go over a popular method
+of controlling those systems.
+
+14
+00:00:51,210 --> 00:00:54,610
+Just a word of warning, the math in this
+lecture is a little more involved than in
+
+15
+00:00:54,610 --> 00:00:56,870
+many of the previous lectures.
+
+16
+00:00:56,870 --> 00:01:00,130
+But our intention in doing this is to
+give you practical engineering tools
+
+17
+00:01:00,130 --> 00:01:02,650
+that you can use to
+apply to real problems.
+
+18
+00:01:02,650 --> 00:01:06,690
+You likely learned about Newton's Laws
+in your introductory physics course.
+
+19
+00:01:06,690 --> 00:01:11,100
+They tell us that mechanical systems obey
+second order differential equations.
+
+20
+00:01:11,100 --> 00:01:13,590
+You need differential equations
+where there are no more than
+
+21
+00:01:13,590 --> 00:01:15,500
+two derivatives in it of any variable.
+
+22
+00:01:16,540 --> 00:01:19,495
+Newton's Laws let us model
+the accelerations of robots,
+
+23
+00:01:19,495 --> 00:01:24,295
+as function of their speed,
+velocity, and external forces.
+
+24
+00:01:24,295 --> 00:01:27,780
+In the kinematics section of this course,
+you learn how to generate the equations
+
+25
+00:01:27,780 --> 00:01:30,750
+and motion for
+a system using Free Body Diagrams.
+
+26
+00:01:30,750 --> 00:01:33,360
+Free Body Diagrams work
+well in simple systems.
+
+27
+00:01:33,360 --> 00:01:37,252
+But often times robotic models
+use complicated geometry and
+
+28
+00:01:37,252 --> 00:01:38,740
+coordinate systems.
+
+29
+00:01:38,740 --> 00:01:40,500
+It can make free body diagrams cumbersome.
+
+30
+00:01:41,670 --> 00:01:42,620
+In these cases,
+
+31
+00:01:42,620 --> 00:01:46,920
+writing out the components of the internal
+forces can be tedious especially when
+
+32
+00:01:46,920 --> 00:01:51,680
+using rotating coordinate systems which is
+pretty common when modeling robot joints.
+
+33
+00:01:51,680 --> 00:01:56,180
+Oftentimes, writing out the energy of such
+systems is much simpler than writing out
+
+34
+00:01:56,180 --> 00:01:57,740
+all the forces.
+
+35
+00:01:57,740 --> 00:02:01,100
+It turns out that there's another way of
+generating the equations of motions for
+
+36
+00:02:01,100 --> 00:02:03,820
+a system from the mechanical energy alone.
+
+37
+00:02:03,820 --> 00:02:06,150
+So you don't need to
+write out all the forces.
+
+38
+00:02:06,150 --> 00:02:08,840
+This formulation is known
+as Lagrangian Mechanics and
+
+39
+00:02:08,840 --> 00:02:11,740
+is another equivalent way of
+expressing Newton's laws.
+
+40
+00:02:13,300 --> 00:02:16,210
+For systems that aren't acted
+upon by outside forces,
+
+41
+00:02:16,210 --> 00:02:19,270
+Lagrangian Mechanics says
+that the equations of motion
+
+42
+00:02:19,270 --> 00:02:23,230
+are given by taking the kinetic energy,
+subtracting potential energy.
+
+43
+00:02:23,230 --> 00:02:28,240
+And then applying a special expression
+called the Euler-Lagrange operator and
+
+44
+00:02:28,240 --> 00:02:29,840
+setting the result to 0.
+
+45
+00:02:29,840 --> 00:02:35,200
+One big advantage of Lagrangian Mechanics
+is that since this process is so simple,
+
+46
+00:02:35,200 --> 00:02:38,870
+it is easy to automate in software once
+you can write down the system's energy.
+
+47
+00:02:40,180 --> 00:02:42,770
+Let's go over this in more detail
+before we do a simple example.
+
+48
+00:02:43,810 --> 00:02:47,000
+The mechanical energy of a system
+is the sum of its kinetic energy,
+
+49
+00:02:47,000 --> 00:02:51,050
+the energy from its motion,
+and potential energy.
+
+50
+00:02:51,050 --> 00:02:53,060
+For example the energy due to gravity or
+springs.
+
+51
+00:02:54,150 --> 00:02:56,360
+Even in complicated systems,
+the kinetic and
+
+52
+00:02:56,360 --> 00:02:59,490
+potential energies are often much
+easier to write out than the force is.
+
+53
+00:03:00,810 --> 00:03:04,280
+The difference between the kinetic and
+the potential energy has a name, and
+
+54
+00:03:04,280 --> 00:03:06,130
+it's called a Lagrangian.
+
+55
+00:03:06,130 --> 00:03:09,426
+By applying the Euler-Lagrange
+operator to the Lagrangian and
+
+56
+00:03:09,426 --> 00:03:12,548
+setting the results to 0,
+you get the equations of motion.
+
+57
+00:03:12,548 --> 00:03:16,939
+The Euler-Lagrange operator simply takes
+the partial derivative of velocities,
+
+58
+00:03:16,939 --> 00:03:19,411
+differentiates that with respect to time,
+and
+
+59
+00:03:19,411 --> 00:03:22,280
+subtracts away the partial
+derivative of positions.
+
+60
+00:03:23,370 --> 00:03:27,230
+The form of the Euler-Lagrange operator
+and the reason all of this works is
+
+61
+00:03:27,230 --> 00:03:31,990
+a consequence of the principle in physics
+called the principle of least action.
+
+62
+00:03:31,990 --> 00:03:34,540
+We don't have time to go into
+details of it today, but
+
+63
+00:03:34,540 --> 00:03:36,340
+feel free to look it up
+online if you're interested.
+
+64
+00:03:37,870 --> 00:03:41,050
+Finally, all of this accounts for
+internal forces, but
+
+65
+00:03:41,050 --> 00:03:43,850
+if external forces
+are acting on the system,
+
+66
+00:03:43,850 --> 00:03:48,240
+all you need to do is replace these
+forces with the zero at the end.
+
+67
+00:03:48,240 --> 00:03:50,870
+As a quick example of how to
+use Lagrangian mechanics,
+
+68
+00:03:50,870 --> 00:03:54,110
+let's derive the equations of motion for
+a simple pendulum.
+
+69
+00:03:54,110 --> 00:03:58,740
+A simple pendulum consists of a mass
+m attached to a rod of length l
+
+70
+00:03:58,740 --> 00:04:02,020
+that is free to rotate around
+some stationary pivot point.
+
+71
+00:04:02,020 --> 00:04:03,520
+Gravity pulls the mass downwards.
+
+72
+00:04:04,570 --> 00:04:09,120
+Let's say that when the rod is vertically
+downwards it has an angle of zero radians.
+
+73
+00:04:09,120 --> 00:04:13,590
+So the state of the system is given by the
+rod angle and the rod angular velocity.
+
+74
+00:04:13,590 --> 00:04:17,620
+The first step is to write out the kinetic
+and potential energy for the system.
+
+75
+00:04:17,620 --> 00:04:21,070
+The kinetic energy is given
+by 1/2 the moment of inertia
+
+76
+00:04:21,070 --> 00:04:23,340
+times the angular velocity squared.
+
+77
+00:04:23,340 --> 00:04:27,890
+Which simplifies to one half the mass
+times the rod length squared
+
+78
+00:04:27,890 --> 00:04:30,000
+times the angular velocity squared.
+
+79
+00:04:30,000 --> 00:04:32,990
+The potential energy is simply
+the energy due to gravity.
+
+80
+00:04:32,990 --> 00:04:36,540
+Which is equal to the negative
+of the mass times the rod length
+
+81
+00:04:36,540 --> 00:04:41,090
+times the acceleration due to gravity,
+time the cosine of the rod angle.
+
+82
+00:04:41,090 --> 00:04:44,610
+The Lagrangian is then the difference
+between the Kinetic and
+
+83
+00:04:44,610 --> 00:04:46,230
+the Potential energy.
+
+84
+00:04:46,230 --> 00:04:50,150
+Let's apply the Euler-Lagrange
+operator to the system term by term.
+
+85
+00:04:50,150 --> 00:04:54,652
+The partial derivative at the Lagrangian
+with respect to position is equal to mgl
+
+86
+00:04:54,652 --> 00:04:55,390
+sine theta.
+
+87
+00:04:55,390 --> 00:04:59,610
+Now in this case we get a scalar, but
+if the system had multiple degrees of
+
+88
+00:04:59,610 --> 00:05:04,690
+freedom we would instead get a vector
+whenever we take a partial derivative.
+
+89
+00:05:04,690 --> 00:05:09,070
+The partial derivative of the Lagrangian
+with respect to velocity is equal to ml
+
+90
+00:05:09,070 --> 00:05:11,860
+squared times the angular velocity.
+
+91
+00:05:11,860 --> 00:05:14,630
+And differentiating with
+respect to time gives
+
+92
+00:05:14,630 --> 00:05:17,360
+ml squared times the angular acceleration.
+
+93
+00:05:17,360 --> 00:05:20,610
+We get the equations of motion when
+we combine these two terms and
+
+94
+00:05:20,610 --> 00:05:22,460
+set the results to 0.
+
+95
+00:05:22,460 --> 00:05:25,100
+Notably, when we simplify the equations,
+
+96
+00:05:25,100 --> 00:05:28,690
+we see that the mass cancels out,
+leading to the interesting result
+
+97
+00:05:28,690 --> 00:05:32,250
+that if the frequency of a simple
+pendulum is unaffected by its mass.
+
+98
+00:05:33,550 --> 00:05:37,640
+The equations of motion for a system
+resulting from the Euler-Lagrange operator
+
+99
+00:05:37,640 --> 00:05:40,790
+have a nice structure that
+can be useful to understand.
+
+100
+00:05:40,790 --> 00:05:44,420
+To demonstrate this structure, we've gone
+ahead and derived the equations of motion
+
+101
+00:05:44,420 --> 00:05:48,080
+for the spring loaded inverted pendulum,
+or slip template.
+
+102
+00:05:48,080 --> 00:05:51,670
+By rearranging terms, we can put
+the equations into a generalized
+
+103
+00:05:51,670 --> 00:05:54,550
+f = ma form where the accelerations
+
+104
+00:05:54,550 --> 00:05:58,630
+are being multiplied by an inertial
+matrix containing the mass terms.
+
+105
+00:05:58,630 --> 00:06:01,599
+And all of this equals the sum
+of the generalized forces.
+
+106
+00:06:03,890 --> 00:06:07,500
+These forces include the Coriolis and
+centrifugal forces
+
+107
+00:06:07,500 --> 00:06:10,930
+caused by rotating reference frames
+represented by the matrix C.
+
+108
+00:06:10,930 --> 00:06:16,380
+And the forces from potential fields
+such as gravity are represented by
+
+109
+00:06:16,380 --> 00:06:18,080
+the vector N.
+
+110
+00:06:18,080 --> 00:06:22,110
+External forces represented by the vector
+tau are added to the right side of
+
+111
+00:06:22,110 --> 00:06:22,910
+the equation as well.
+
+112
+00:06:24,450 --> 00:06:28,440
+This representation of the general
+dynamics, regardless of the geometry or
+
+113
+00:06:28,440 --> 00:06:29,700
+coordinate system,
+
+114
+00:06:29,700 --> 00:06:33,160
+shows that forces always need to act
+through the mass to accelerate the system.
+
+115
+00:06:34,310 --> 00:06:38,540
+Thus, as robots get heavier, they lose
+the ability to accelerate as quickly.
+
+116
+00:06:38,540 --> 00:06:42,020
+Putting big heavy actuators on
+a robot isn't always a good idea
+
+117
+00:06:42,020 --> 00:06:45,530
+if those actuators can't generate a lot
+of torque or force for their weight.
+
+118
+00:06:46,660 --> 00:06:49,365
+Sometimes a light motor that
+can produce a lot of torque for
+
+119
+00:06:49,365 --> 00:06:52,600
+its weight can accelerate a robot
+more than a heavy one that
+
+120
+00:06:52,600 --> 00:06:55,290
+produces more torque but
+less for its weight.
+
+121
+00:06:55,290 --> 00:06:58,730
+So, this concludes our discussion of
+using Lagrangian mechanics to write out
+
+122
+00:06:58,730 --> 00:07:00,740
+the dynamics when modeling a robot.
+
+123
+00:07:02,120 --> 00:07:04,800
+Now that we know how to write
+out the dynamics for a robot
+
+124
+00:07:04,800 --> 00:07:09,840
+telling us how forces and twerks generated
+by the actuators cause the system to move.
+
+125
+00:07:09,840 --> 00:07:11,460
+What do we do with it?
+
+126
+00:07:11,460 --> 00:07:15,020
+Well, we would like our robot to
+choose a right actuator commands, so
+
+127
+00:07:15,020 --> 00:07:16,740
+it executes some kind of desired behavior.
+
+128
+00:07:17,770 --> 00:07:21,470
+Often this takes the form of
+going to a certain state.
+
+129
+00:07:21,470 --> 00:07:24,160
+For example,
+setting some desired joint angles or
+
+130
+00:07:24,160 --> 00:07:27,150
+moving forward at say
+one meter per second.
+
+131
+00:07:27,150 --> 00:07:29,860
+Today we'll focus on these sort
+of behaviors where a robotic
+
+132
+00:07:29,860 --> 00:07:33,280
+task can be encoded as reaching
+some desired position or velocity.
+
+133
+00:07:34,560 --> 00:07:39,670
+This idea of using the inputs to a system,
+which in our case are motor commands,
+
+134
+00:07:39,670 --> 00:07:43,020
+to achieve some desired behavior is
+ubiquitous enough in engineering and
+
+135
+00:07:43,020 --> 00:07:47,480
+mathematics, that it is itself
+a field called control theory.
+
+136
+00:07:47,480 --> 00:07:50,730
+We do not have time today to do any
+justice to a proper introduction into
+
+137
+00:07:50,730 --> 00:07:54,310
+control theory, but we're going to briefly
+introduce two techniques that have
+
+138
+00:07:54,310 --> 00:07:57,510
+relevance to getting robots to
+achieve some desired states.
+
+139
+00:07:57,510 --> 00:08:00,580
+These techniques are called
+Inverse Dynamics Control and
+
+140
+00:08:00,580 --> 00:08:01,900
+Proportional Derivative Control.
+
+141
+00:08:03,070 --> 00:08:06,730
+Our first attempt to control the equations
+of motion of a robot will be something
+
+142
+00:08:06,730 --> 00:08:08,890
+called Inverse Dynamics Control.
+
+143
+00:08:08,890 --> 00:08:12,400
+We are introducing it first because in
+some sense, it's the most obvious thing to
+
+144
+00:08:12,400 --> 00:08:15,860
+try, but we'll see often times it
+doesn't work well in practice.
+
+145
+00:08:15,860 --> 00:08:19,180
+The idea here is that the motors can
+generate arbitrary accelerations on
+
+146
+00:08:19,180 --> 00:08:22,460
+the system if they just cancel
+out the natural dynamics.
+
+147
+00:08:22,460 --> 00:08:26,010
+By choosing torques and forces that cancel
+everything out but the acceleration,
+
+148
+00:08:27,180 --> 00:08:30,170
+the actuator can, in theory,
+make the system accelerate at its will.
+
+149
+00:08:31,320 --> 00:08:32,630
+Using this control technique,
+
+150
+00:08:32,630 --> 00:08:35,230
+we can get a system to go wherever
+we want arbitrarily fast.
+
+151
+00:08:36,420 --> 00:08:39,670
+Let's give an example using pendulum-like
+dynamics as they show up so
+
+152
+00:08:39,670 --> 00:08:40,400
+much in robotics.
+
+153
+00:08:41,460 --> 00:08:44,920
+Imagine that you're balancing a pendulum
+on your hand and you want the pendulum to
+
+154
+00:08:44,920 --> 00:08:48,680
+point straight up, but you can only move
+your hands side to side to balance it.
+
+155
+00:08:48,680 --> 00:08:51,860
+You may have tried this for
+fun with a meter stick or a ruler.
+
+156
+00:08:51,860 --> 00:08:55,350
+This is system can be modeled by
+a pendulum attached to a cart.
+
+157
+00:08:55,350 --> 00:08:59,090
+It can roll left or right, and where only
+lateral forces can be applied to the cart.
+
+158
+00:09:00,150 --> 00:09:04,450
+Here's a simulation of inverse dynamical
+control applied to a pendulum on a cart.
+
+159
+00:09:04,450 --> 00:09:06,620
+So you get the pendulum
+to point straight up, or
+
+160
+00:09:06,620 --> 00:09:09,570
+be at an angle of theta
+equals zero radians.
+
+161
+00:09:09,570 --> 00:09:13,350
+Remember, the only available input
+we have to control the theta angle
+
+162
+00:09:13,350 --> 00:09:15,430
+is to push the cart left or right.
+
+163
+00:09:15,430 --> 00:09:19,220
+In this simulation things work out pretty
+well, and we can cancel out the dynamics,
+
+164
+00:09:19,220 --> 00:09:21,620
+and accelerate the pendulum as
+fast as we want to vertical.
+
+165
+00:09:22,920 --> 00:09:26,540
+But often in robotics,
+we don't precisely know the dynamics.
+
+166
+00:09:26,540 --> 00:09:30,420
+Or the actual dynamics might not
+exactly match the simplified model.
+
+167
+00:09:30,420 --> 00:09:35,340
+For example, a walking robot might look
+approximately like a rimless wheel, but
+
+168
+00:09:35,340 --> 00:09:38,800
+in actuality, models never
+exactly match the physical world.
+
+169
+00:09:38,800 --> 00:09:43,150
+If the control scheme doesn't account for
+model uncertainty, problems can occur.
+
+170
+00:09:43,150 --> 00:09:46,040
+Here we wrote out the acceleration
+using inverse dynamics control,
+
+171
+00:09:46,040 --> 00:09:49,750
+when the controller has an imperfect
+estimate of the parameters,
+
+172
+00:09:49,750 --> 00:09:52,550
+here represented by matrices with tildes.
+
+173
+00:09:52,550 --> 00:09:56,920
+As you can see, the actual acceleration
+is no longer the desired acceleration F.
+
+174
+00:09:57,980 --> 00:10:00,290
+Another possible issue with
+inverting the dynamics for
+
+175
+00:10:00,290 --> 00:10:04,840
+control is that the forces needed to
+cancel out the dynamics can be very high.
+
+176
+00:10:04,840 --> 00:10:07,110
+Notice how much the cart
+gets pushed around.
+
+177
+00:10:07,110 --> 00:10:10,450
+In real life, actuators can be
+very torque or power limited.
+
+178
+00:10:10,450 --> 00:10:15,186
+And often not enough actuators exist
+to cancel out the natural dynamics.
+
+179
+00:10:15,186 --> 00:10:19,670
+As we've seen previously in this course,
+often a better strategy in legged robotics
+
+180
+00:10:19,670 --> 00:10:24,530
+is to utilize the natural dynamics as much
+as possible instead of canceling them out.
+
+181
+00:10:24,530 --> 00:10:26,320
+So as to minimize the needed motor torque.
+
+182
+00:10:27,590 --> 00:10:30,660
+Here's an example of the cart when
+it has imperfect internal model of
+
+183
+00:10:30,660 --> 00:10:31,850
+their parameters.
+
+184
+00:10:31,850 --> 00:10:33,678
+As you can see, the pendulum falls over.
+
+185
+00:10:37,378 --> 00:10:41,160
+An extremely popular method of control
+that is more robust to parameter
+
+186
+00:10:41,160 --> 00:10:45,078
+variations is called proportional
+derivative control, or PD control.
+
+187
+00:10:45,078 --> 00:10:47,180
+A PD controller has two parts.
+
+188
+00:10:47,180 --> 00:10:50,360
+The first is the P part,
+or proportional term.
+
+189
+00:10:50,360 --> 00:10:54,470
+The Proportional Controller tries to
+push the system to a desired value
+
+190
+00:10:54,470 --> 00:10:58,860
+proportionally to the difference between
+the actual and the desired value.
+
+191
+00:10:58,860 --> 00:11:01,020
+We call this difference the error.
+
+192
+00:11:01,020 --> 00:11:02,970
+So when the system is closed
+to where it should be or
+
+193
+00:11:02,970 --> 00:11:07,580
+when the error is low the controller
+slows down and doesn't push too hard.
+
+194
+00:11:07,580 --> 00:11:11,290
+But when it is very far away
+the controller pushes much harder.
+
+195
+00:11:11,290 --> 00:11:15,200
+If you're a mechanical thinker, you might
+imagine proportional control like a spring
+
+196
+00:11:15,200 --> 00:11:18,840
+pulling the system to a desired value,
+included by the rest length of the spring.
+
+197
+00:11:19,950 --> 00:11:22,400
+A problem with just using
+proportional control
+
+198
+00:11:22,400 --> 00:11:25,670
+is that it can drive the system
+variable to a desired point, but
+
+199
+00:11:25,670 --> 00:11:29,510
+it doesn't do anything explicitly
+to make sure it's stopped there.
+
+200
+00:11:29,510 --> 00:11:33,840
+In the case of our spring analogy, without
+damping a spring constantly oscillates and
+
+201
+00:11:33,840 --> 00:11:34,980
+overshoots its rest length.
+
+202
+00:11:36,050 --> 00:11:39,630
+Here's the pendulum on the cart
+using just proportional control.
+
+203
+00:11:39,630 --> 00:11:41,460
+The error does repeatedly go to zero, but
+
+204
+00:11:41,460 --> 00:11:45,210
+there's no natural damping in this system,
+so the goal is continually overshot.
+
+205
+00:11:46,300 --> 00:11:50,720
+The d or derivative term adds damping to
+the system to prevent this from happening.
+
+206
+00:11:50,720 --> 00:11:54,020
+The derivative term is proportional
+to the change in error.
+
+207
+00:11:54,020 --> 00:11:56,850
+It tries to prevent the error
+from changing too fast.
+
+208
+00:11:56,850 --> 00:12:00,580
+It can prevent the perpetual
+overshoot problem we just mentioned.
+
+209
+00:12:00,580 --> 00:12:03,040
+This derivative term is then
+added to the proportional term,
+
+210
+00:12:03,040 --> 00:12:07,470
+and the sum of these terms is
+used as an input to this system.
+
+211
+00:12:07,470 --> 00:12:11,250
+Another way about thinking about PD
+control is from an energy perspective.
+
+212
+00:12:11,250 --> 00:12:14,660
+Where we reimagine that the error term
+as a virtual energy associated with it.
+
+213
+00:12:15,830 --> 00:12:20,620
+The potential part of the PD Controller
+acts like forces from a potential field,
+
+214
+00:12:20,620 --> 00:12:24,180
+which can drive the error momentarily to
+a certain position where its potential
+
+215
+00:12:24,180 --> 00:12:25,800
+energy is minimized.
+
+216
+00:12:25,800 --> 00:12:27,070
+But it can't change the total energy,
+
+217
+00:12:27,070 --> 00:12:29,210
+it will still have kinetic
+energy at this point.
+
+218
+00:12:30,440 --> 00:12:35,020
+The derivative portion acts to dissipate
+this energy, reducing the total energy so
+
+219
+00:12:35,020 --> 00:12:38,210
+that eventually the error goes
+to zero with no kinetic energy.
+
+220
+00:12:39,230 --> 00:12:42,970
+Because of this, PD control could be
+considered to be in a class of controllers
+
+221
+00:12:42,970 --> 00:12:47,260
+called potential dissipative
+control that explicitly considers
+
+222
+00:12:47,260 --> 00:12:51,300
+this virtual energy landscape
+that we've used as an analogy.
+
+223
+00:12:51,300 --> 00:12:54,820
+Here's the cart with the derivative
+term added in to use full PD control.
+
+224
+00:12:55,910 --> 00:13:00,710
+Notice how the derivative term dampens out
+the oscillations that we saw previously.
+
+225
+00:13:00,710 --> 00:13:04,780
+Since PD controllers use the state of
+the system to formulate what to do,
+
+226
+00:13:04,780 --> 00:13:07,690
+they're a classic example
+of feedback controllers.
+
+227
+00:13:09,000 --> 00:13:11,340
+PD control can work very
+well in linear systems,
+
+228
+00:13:11,340 --> 00:13:13,486
+however most real-life
+systems are non-linear.
+
+229
+00:13:13,486 --> 00:13:19,688
+Non-linear systems can act approximately
+linear close to their equilibrium states.
+
+230
+00:13:19,688 --> 00:13:24,879
+So often in cases where a system's range
+of operation is close to its equilibrium,
+
+231
+00:13:24,879 --> 00:13:29,620
+even if it is non-linear just as the
+pendulum on a card example PD control can
+
+232
+00:13:29,620 --> 00:13:30,378
+work well.
+
+233
+00:13:30,378 --> 00:13:34,581
+Also, frequently another term is added
+in which integrates the error in what is
+
+234
+00:13:34,581 --> 00:13:35,720
+called PID control.
+
+235
+00:13:37,040 --> 00:13:40,120
+Before we end we are going to review
+the Raibert controller which we
+
+236
+00:13:40,120 --> 00:13:42,510
+introduced at the end of
+the template section,
+
+237
+00:13:42,510 --> 00:13:46,430
+to show that PD control can be used
+on real robots to great effect.
+
+238
+00:13:46,430 --> 00:13:49,550
+Recall that Raibert's hoppers were
+approximately slip like machines that had
+
+239
+00:13:49,550 --> 00:13:53,820
+actuators capable of producing
+leg twerks to vary the leg angle,
+
+240
+00:13:53,820 --> 00:13:55,589
+as well as radio leg forces.
+
+241
+00:13:57,000 --> 00:13:59,970
+Raibert's control idea was to
+provide a constant radial force and
+
+242
+00:13:59,970 --> 00:14:04,930
+stance to get a vertical hop, to use
+angular torque to control their body pitch
+
+243
+00:14:04,930 --> 00:14:09,460
+and to use the leg touchdown angle
+to control that forward speed
+
+244
+00:14:11,270 --> 00:14:17,000
+through the natural body dynamics.
+
+245
+00:14:18,570 --> 00:14:21,190
+The forward speed controller is
+a little more complicated, but
+
+246
+00:14:21,190 --> 00:14:23,660
+essentially uses proportional control.
+
+247
+00:14:23,660 --> 00:14:27,490
+The first term estimates how far ahead
+of the body the foot should touch down
+
+248
+00:14:27,490 --> 00:14:29,750
+without causing a net forward
+acceleration in stance.
+
+249
+00:14:29,750 --> 00:14:34,708
+And then the second term adds an offset
+in proportion to the current speed error.
+
+250
+00:14:34,708 --> 00:14:38,788
+So that the robot accelerates
+to the desired speed over time.
+
+251
+00:14:38,788 --> 00:14:42,127
+Often times in legged robotics
+due to limited actuation,
+
+252
+00:14:42,127 --> 00:14:44,998
+the natural dynamics must
+be taken into account.
+
+253
+00:14:44,998 --> 00:14:48,876
+And Raibert's control scheme demonstrates
+that PD control can leverage
+
+254
+00:14:48,876 --> 00:14:52,628
+the natural dynamics through the use
+of the forward speed controller to
+
+255
+00:14:52,628 --> 00:14:54,523
+achieve impressive performance.
+
+256
+00:14:54,523 --> 00:14:56,510
+We've covered a lot in this lecture.
+
+257
+00:14:56,510 --> 00:14:59,430
+But I hope it's given you a practical
+introduction to some engineering
+
+258
+00:14:59,430 --> 00:15:02,510
+tools that will let you model in
+control legged robots for yourself.
+
+259
+00:15:03,980 --> 00:15:06,910
+We've gone over the necessity
+of understanding the dynamics of
+
+260
+00:15:06,910 --> 00:15:08,290
+legged robots.
+
+261
+00:15:08,290 --> 00:15:10,741
+And shown that you can write
+down the equations and
+
+262
+00:15:10,741 --> 00:15:13,668
+motion directly from energy
+using Lagrangian mechanics.
+
+263
+00:15:13,668 --> 00:15:17,164
+This process is often simpler
+than using free-body diagrams and
+
+264
+00:15:17,164 --> 00:15:21,050
+more complicated systems, and
+it can be easily automated in software.
+
+265
+00:15:22,200 --> 00:15:26,013
+Finally, we introduced proportional
+derivative control as a way of controlling
+
+266
+00:15:26,013 --> 00:15:28,508
+these dynamics,
+to get the robot to do what you want.

@@ -1,0 +1,319 @@
+1
+00:00:05,417 --> 00:00:09,009
+Now we've learned how to think
+about a monoped, i.e slipped,
+
+2
+00:00:09,009 --> 00:00:12,950
+how can we use this knowledge to
+control our robot with multiple legs?
+
+3
+00:00:12,950 --> 00:00:15,307
+In this segment and the two following,
+
+4
+00:00:15,307 --> 00:00:19,961
+we'll see a great advantage to taking
+a compositional approach to control.
+
+5
+00:00:19,961 --> 00:00:24,018
+In this section, we'll think about
+a multi-legged body as really,
+
+6
+00:00:24,018 --> 00:00:27,850
+well, a composition of
+single-legged bodies.
+
+7
+00:00:27,850 --> 00:00:30,840
+You might come out a little surprised at
+just how much can be accomplished from
+
+8
+00:00:30,840 --> 00:00:33,450
+just a little knowledge
+of monoped control.
+
+9
+00:00:33,450 --> 00:00:38,620
+First, we have to introduce the concept
+of a virtual leg, I'll put Raibert here.
+
+10
+00:00:38,620 --> 00:00:44,140
+Forces and torques exerted on the body
+by the set of physical legs and
+
+11
+00:00:44,140 --> 00:00:45,900
+by the virtual leg are the same.
+
+12
+00:00:46,960 --> 00:00:51,560
+Here's a pictorial example
+where a body with two legs
+
+13
+00:00:51,560 --> 00:00:56,580
+has the two legs tied together,
+not literally but maybe through control,
+
+14
+00:00:57,660 --> 00:01:01,430
+such that the behavior of the body's
+the same as the single leg.
+
+15
+00:01:01,430 --> 00:01:04,240
+How do we go about
+implementing virtual legs?
+
+16
+00:01:04,240 --> 00:01:07,360
+We have to first think about controlling
+the legs within the group i.e,
+
+17
+00:01:07,360 --> 00:01:11,350
+the legs with the loop of wire
+around them in this picture.
+
+18
+00:01:11,350 --> 00:01:15,194
+The first thing we have to think about
+is positioning the toe in flight for
+
+19
+00:01:15,194 --> 00:01:16,149
+the virtual leg.
+
+20
+00:01:16,149 --> 00:01:19,012
+This involves positioning
+multiple toes for
+
+21
+00:01:19,012 --> 00:01:23,390
+the physical legs such that the virtual
+toe is at the right position.
+
+22
+00:01:25,120 --> 00:01:29,260
+The second thing we have to think about
+is touchdown synchronization to make sure
+
+23
+00:01:29,260 --> 00:01:34,160
+that all of the physical legs within
+a group touch down at the same time, ie,
+
+24
+00:01:34,160 --> 00:01:35,760
+the time that the vertical
+leg touches down.
+
+25
+00:01:37,420 --> 00:01:40,000
+And lastly, we have to think about
+positioning the virtual hip.
+
+26
+00:01:41,000 --> 00:01:44,900
+You can see that the virtual hip is
+somewhere between the physical hips
+
+27
+00:01:44,900 --> 00:01:45,680
+in the picture above.
+
+28
+00:01:46,760 --> 00:01:50,390
+And we can actually control the location
+of the virtual hip by controlling
+
+29
+00:01:50,390 --> 00:01:54,840
+the internal forces exerted by the
+physical hips, as well as differential,
+
+30
+00:01:54,840 --> 00:01:55,790
+axial leg forces.
+
+31
+00:01:58,030 --> 00:02:03,159
+Lastly, I'll point out that behavior,
+which we'll see lots of examples of,
+
+32
+00:02:03,159 --> 00:02:06,925
+is actually just simply a monoped
+using this virtual legs idea.
+
+33
+00:02:06,925 --> 00:02:12,994
+You cannot just have virtual monopeds,
+we can also have virtual bipeds.
+
+34
+00:02:12,994 --> 00:02:14,554
+Here's a picture, again,
+
+35
+00:02:14,554 --> 00:02:19,450
+from Raibert's book, where we see
+examples of a bunch of virtual bipeds.
+
+36
+00:02:19,450 --> 00:02:22,593
+And with virtual bipeds,
+legs operate in pairs, but essentially,
+
+37
+00:02:22,593 --> 00:02:23,904
+they're one-foot gates.
+
+38
+00:02:23,904 --> 00:02:26,942
+What this means is that
+the control action is mirrored and
+
+39
+00:02:26,942 --> 00:02:28,850
+repeated from one step to the next.
+
+40
+00:02:30,320 --> 00:02:35,680
+All of the gates in this pictorial example
+are found in horses, for instance.
+
+41
+00:02:35,680 --> 00:02:40,497
+A chart is a virtual biped where
+the virtual hips are located at
+
+42
+00:02:40,497 --> 00:02:42,080
+the center of mass.
+
+43
+00:02:42,080 --> 00:02:46,535
+In a piece, the virtual hips are located
+close to each other, but on the lateral,
+
+44
+00:02:46,535 --> 00:02:49,270
+the opposite sides of the body.
+
+45
+00:02:49,270 --> 00:02:52,660
+Whereas in the bound,
+the hips are far apart from each other and
+
+46
+00:02:52,660 --> 00:02:54,470
+there's a pronounced pitching of the body.
+
+47
+00:02:55,610 --> 00:02:59,540
+We can control the virtual hip location
+and choose between these different gaits
+
+48
+00:02:59,540 --> 00:03:02,860
+by using some of the methods that I
+talked about in the previous slide.
+
+49
+00:03:04,220 --> 00:03:08,630
+Here's an example of our very own
+minitaur implementing a bounding gait.
+
+50
+00:03:08,630 --> 00:03:12,628
+I'll put out that each hip of minitaur
+in this video just thinks of itself as
+
+51
+00:03:12,628 --> 00:03:13,716
+a vertical hopper.
+
+52
+00:03:13,716 --> 00:03:17,950
+The front has no knowledge of the back and
+the back has no knowledge of the front.
+
+53
+00:03:18,960 --> 00:03:22,365
+Remember for a bound as we
+talk about in previous slide,
+
+54
+00:03:22,365 --> 00:03:26,640
+we would like the phases of the vertical
+hoppers to be asynchronized,
+
+55
+00:03:26,640 --> 00:03:31,640
+out of phase, this particular phase offset
+is actually passively stable because
+
+56
+00:03:31,640 --> 00:03:33,031
+of the body dynamics.
+
+57
+00:03:33,031 --> 00:03:36,430
+We'll see a more active control of
+the phase offset in the next segment.
+
+58
+00:03:38,190 --> 00:03:41,907
+I'll point out here that the bound looks
+more natural at higher speeds than
+
+59
+00:03:41,907 --> 00:03:45,035
+the lower speeds since animals
+tend to bound at higher speeds.
+
+60
+00:03:45,035 --> 00:03:47,475
+At slower speeds, they tend to walk.
+
+61
+00:03:47,475 --> 00:03:52,484
+To summarize, multi-legged robots can be
+controlled as compositions of monopeds.
+
+62
+00:03:52,484 --> 00:03:56,543
+Virtual legs allow you to think of
+multiple legs as a single virtual leg and
+
+63
+00:03:56,543 --> 00:03:59,070
+coordinate them accordingly.
+
+64
+00:03:59,070 --> 00:04:02,620
+A virtual biped with
+a leg-to-leg symmetric control
+
+65
+00:04:02,620 --> 00:04:06,640
+is actually just a composition
+of identical monopeds, and
+
+66
+00:04:06,640 --> 00:04:09,710
+phase coordination can be
+either passive as we saw for
+
+67
+00:04:09,710 --> 00:04:14,950
+the bound in this segment or it can be
+activ as we'll see in the next segment.

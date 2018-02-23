@@ -1,0 +1,710 @@
+1
+00:00:01,819 --> 00:00:04,327
+Well, simulations are great.
+
+2
+00:00:04,327 --> 00:00:07,606
+One of my former students,
+now professor Lewis [INAUDIBLE] at
+
+3
+00:00:07,606 --> 00:00:11,980
+John's Hopkins University was want to
+say simulations are doomed to succeed.
+
+4
+00:00:11,980 --> 00:00:16,930
+[LAUGH] Because we always
+throw away a lot of
+
+5
+00:00:16,930 --> 00:00:21,270
+the physical detail and we needed to throw
+away a lot of the physical detail in order
+
+6
+00:00:21,270 --> 00:00:24,790
+to get these controls which are very
+aggressive to work properly.
+
+7
+00:00:26,740 --> 00:00:30,170
+The chief reason that these controls
+couldn't be brought into the physical
+
+8
+00:00:30,170 --> 00:00:33,660
+world was because
+the sensing of the legs and
+
+9
+00:00:33,660 --> 00:00:38,150
+the contact properties of the legs
+turned out to be very, very difficult.
+
+10
+00:00:38,150 --> 00:00:39,370
+Let's talk about that problem.
+
+11
+00:00:40,760 --> 00:00:43,540
+Well, why couldn't we bring this
+
+12
+00:00:43,540 --> 00:00:46,850
+actively controlled machine
+into the physical world?
+
+13
+00:00:46,850 --> 00:00:50,702
+Principally, because we couldn't get, and
+
+14
+00:00:50,702 --> 00:00:55,543
+probably still are not able
+with technology of 2015,
+
+15
+00:00:55,543 --> 00:01:00,479
+to get good feedback from the legs
+up into the body in a manner
+
+16
+00:01:00,479 --> 00:01:05,517
+which is both accurate enough,
+and timely enough to achieve
+
+17
+00:01:05,517 --> 00:01:10,291
+these very aggressive high
+gain feedback control loss.
+
+18
+00:01:10,291 --> 00:01:14,906
+Before we talk about that in detail, let's
+observe that Robert Full, my biologist
+
+19
+00:01:14,906 --> 00:01:19,456
+collaborator at Berkley, together with
+his doctoral student, Devin Jindrich,
+
+20
+00:01:19,456 --> 00:01:23,293
+who is now at Arizona State University
+as a professor in his own right.
+
+21
+00:01:23,293 --> 00:01:28,291
+Had shown about two years
+earlier that the cockroaches,
+
+22
+00:01:28,291 --> 00:01:33,820
+when they run, are also not able
+to use their distal feedback.
+
+23
+00:01:35,750 --> 00:01:38,120
+It turns out that Bob and
+
+24
+00:01:38,120 --> 00:01:42,900
+Devin put miniaturized canons on
+the backs of cockroaches and they
+
+25
+00:01:42,900 --> 00:01:47,990
+fire those canons while the cockroaches
+are running to impart a huge impulse.
+
+26
+00:01:47,990 --> 00:01:52,740
+To perturb the gate and it turned out
+that the animals recovered their gait so
+
+27
+00:01:52,740 --> 00:01:58,129
+quickly that it was too quick for
+the travel time of a neural
+
+28
+00:01:58,129 --> 00:02:03,950
+signal from the point of sensing through
+the synapse to the point of control.
+
+29
+00:02:05,270 --> 00:02:09,723
+So the cockroach itself
+is stabilizing its body.
+
+30
+00:02:09,723 --> 00:02:15,734
+First of all, in a mechanical only or
+preflexive manner.
+
+31
+00:02:15,734 --> 00:02:18,090
+No neural signals involved.
+
+32
+00:02:19,370 --> 00:02:24,600
+The RHex leg contact detection
+problem is at least as hard and
+
+33
+00:02:24,600 --> 00:02:29,460
+harder probably for us than
+the cockroach distal feedback problem,
+
+34
+00:02:29,460 --> 00:02:32,450
+because the RHex legs are free to rotate.
+
+35
+00:02:32,450 --> 00:02:37,820
+And so, it's very difficult to
+get a signal across the gap
+
+36
+00:02:37,820 --> 00:02:41,700
+between the motor and
+the stator of those rotating legs.
+
+37
+00:02:44,170 --> 00:02:48,314
+My doctoral student, Professor Patron Lin,
+
+38
+00:02:48,314 --> 00:02:54,264
+now at National Taiwan University,
+was able to achieve a actively
+
+39
+00:02:54,264 --> 00:02:59,578
+fed back leg contact sensor
+using a wireless system that was
+
+40
+00:02:59,578 --> 00:03:05,040
+designed by different doctoral student,
+Doctor.
+
+41
+00:03:05,040 --> 00:03:08,220
+And they were able to get signals but
+the signals were quite noisy.
+
+42
+00:03:11,230 --> 00:03:16,010
+Instead subsequently,
+numbers of students have tried to build
+
+43
+00:03:16,010 --> 00:03:21,460
+virtual leg contact
+sensors based upon some
+
+44
+00:03:21,460 --> 00:03:25,909
+surrogate signal that's picked up when the
+leg hits the ground or hits some solid.
+
+45
+00:03:27,400 --> 00:03:32,070
+Unfortunately, these methods
+are either inaccurate or they're slow.
+
+46
+00:03:33,260 --> 00:03:38,690
+Inaccurate or flawed because we might
+
+47
+00:03:38,690 --> 00:03:45,350
+use the tracking error when the leg
+hits the ground and feels a load and
+
+48
+00:03:45,350 --> 00:03:50,080
+begins to lose its tracking, as was
+explained in the tracking control segment.
+
+49
+00:03:51,820 --> 00:03:58,960
+The difficulty there is it's very, very
+hard to know when your tracking error is
+
+50
+00:03:58,960 --> 00:04:03,630
+a consequence of the leg touch down or a
+consequence of the lagging leg in the air.
+
+51
+00:04:04,840 --> 00:04:08,240
+Alternatively, Dr.
+Aaron Johnson subsequently
+
+52
+00:04:09,460 --> 00:04:12,880
+was able to build a model of
+the recirculating leg and
+
+53
+00:04:12,880 --> 00:04:17,600
+use that model to detect
+residual estimation errors.
+
+54
+00:04:17,600 --> 00:04:20,620
+And when those estimation
+errors went high,
+
+55
+00:04:20,620 --> 00:04:25,161
+that was a very accurate indication
+that the contact had been made.
+
+56
+00:04:25,161 --> 00:04:29,786
+But unfortunately,
+the extra sensing loops introduced
+
+57
+00:04:29,786 --> 00:04:35,180
+sufficient lag that the stance phase
+was over by the time the signal
+
+58
+00:04:35,180 --> 00:04:40,299
+processing finished and
+the contact detection had been made.
+
+59
+00:04:41,808 --> 00:04:46,858
+So we never ever were
+able to get very fast and
+
+60
+00:04:46,858 --> 00:04:55,070
+very accurate distal feedback from
+the legs up into the clock control.
+
+61
+00:04:55,070 --> 00:05:00,050
+Thus, for many, many, many years,
+the control of the RHex gaits has been
+
+62
+00:05:00,050 --> 00:05:04,990
+a feed forward clock-excited signal
+that I will now describe to you.
+
+63
+00:05:06,490 --> 00:05:14,060
+If you watch this movie, you will see that
+there are two virtual hands on this clock.
+
+64
+00:05:14,060 --> 00:05:17,780
+One hand is moving quickly, and
+the other hand is moving slowly.
+
+65
+00:05:17,780 --> 00:05:22,000
+And then when that fast hand comes down
+to the bottom, it changes speed and
+
+66
+00:05:22,000 --> 00:05:25,780
+it moves slowly whilst the other
+hand moves around quickly.
+
+67
+00:05:26,940 --> 00:05:32,578
+These hands are virtual
+spokes of a virtual wheel.
+
+68
+00:05:32,578 --> 00:05:38,630
+In fact, they're two virtual
+out of phase wheels and
+
+69
+00:05:38,630 --> 00:05:40,810
+when one spoke is on the ground,
+
+70
+00:05:40,810 --> 00:05:45,200
+the other spoke of the virtual wheel
+on the other side is rotating quickly
+
+71
+00:05:45,200 --> 00:05:49,100
+to come down to touchdown just in time for
+the other leg to lift off.
+
+72
+00:05:50,540 --> 00:05:54,280
+This is the clock that we've
+always called the Buehler Clock
+
+73
+00:05:54,280 --> 00:05:58,070
+in honor of Martin Buehler,
+who first devised it.
+
+74
+00:05:58,070 --> 00:06:04,830
+This is the feed forward clock excitation
+signal that I have been discussing so far.
+
+75
+00:06:04,830 --> 00:06:08,897
+What can we say about
+a clock excited hopper?
+
+76
+00:06:08,897 --> 00:06:13,211
+Well Dr. Komsuoglu,
+whose name I mentioned to you before,
+
+77
+00:06:13,211 --> 00:06:17,779
+succeeded in showing that a clock
+excited vertical hopper could
+
+78
+00:06:17,779 --> 00:06:22,281
+indeed be stabilized successfully
+by a properly tuned clock.
+
+79
+00:06:22,281 --> 00:06:25,616
+And this analytical result meant
+that the tuning of the clock and
+
+80
+00:06:25,616 --> 00:06:29,520
+the tuning of the compliance could be
+done mathematically at design time.
+
+81
+00:06:31,730 --> 00:06:33,790
+What happens when we increase
+the degrees of freedom?
+
+82
+00:06:35,420 --> 00:06:40,420
+Let's go from a simple one degree of
+freedom vertical hopper to something like
+
+83
+00:06:40,420 --> 00:06:43,991
+a clock excited two degree of freedom
+spring-loaded inverted pendulum.
+
+84
+00:06:45,580 --> 00:06:47,970
+Here if the clock
+
+85
+00:06:47,970 --> 00:06:52,210
+has the effect forcing the leg to touch
+down at the same angle each time.
+
+86
+00:06:53,330 --> 00:06:57,430
+Then, we were able to do an analysis
+with my colleague and collaborator,
+
+87
+00:06:57,430 --> 00:07:01,915
+Professor Phil Holmes at Princeton and
+his graduate student, Rafael Ghigliazza.
+
+88
+00:07:02,970 --> 00:07:08,396
+And we were able to come up with good
+sufficient and necessary conditions for
+
+89
+00:07:08,396 --> 00:07:12,480
+stabilizing this slip template
+in this clocked hopper.
+
+90
+00:07:12,480 --> 00:07:16,218
+Unfortunately, when we moved to
+the next degree of freedom when we
+
+91
+00:07:16,218 --> 00:07:20,758
+added a body attitude and tried to account
+for the three degree of freedom clocked
+
+92
+00:07:20,758 --> 00:07:23,780
+spring loaded and
+inverted pendulum with attitude.
+
+93
+00:07:23,780 --> 00:07:26,664
+We were only be able to get very loose,
+sufficient and very,
+
+94
+00:07:26,664 --> 00:07:29,963
+very loose necessary conditions for
+stability.
+
+95
+00:07:29,963 --> 00:07:35,400
+And so
+to this day the control of the anchoring
+
+96
+00:07:35,400 --> 00:07:38,990
+of the pogo stick, or
+the spring loaded inverted pendulum,
+
+97
+00:07:38,990 --> 00:07:43,910
+in the physical RHex is
+an unfinished bit of analysis.
+
+98
+00:07:43,910 --> 00:07:50,070
+And to this day, we're missing
+complete clock anchoring conditions so
+
+99
+00:07:50,070 --> 00:07:55,460
+that we don't know how to tune
+the machine properly at design time and
+
+100
+00:07:55,460 --> 00:08:00,172
+we're forced to tune the machine
+empirically at run time.
+
+101
+00:08:02,270 --> 00:08:04,327
+Let's describe that process.
+
+102
+00:08:05,644 --> 00:08:10,553
+Tuning Task Open Loop Gaits is not so
+hard if you take
+
+103
+00:08:10,553 --> 00:08:16,210
+the vantage point of
+a simple learning mechanism.
+
+104
+00:08:16,210 --> 00:08:20,960
+So, we will fallback on an empirical
+
+105
+00:08:20,960 --> 00:08:23,990
+tuning method which is a very,
+very simple form of learning.
+
+106
+00:08:25,510 --> 00:08:31,750
+Which uses a gradient descent in
+the parameter space of the clock to
+
+107
+00:08:31,750 --> 00:08:36,990
+try to improve a cost function that robot
+measures again, and again, and again.
+
+108
+00:08:38,595 --> 00:08:42,305
+The natural cost function to use
+is the specific resistance, and
+
+109
+00:08:42,305 --> 00:08:46,785
+the robot can measure its own specific
+resistance instantaneously if you take
+
+110
+00:08:46,785 --> 00:08:51,765
+the power divided by speed
+version of specific resistance.
+
+111
+00:08:51,765 --> 00:08:56,483
+Go back to the first segment
+1.1.1 if you forgotten about what
+
+112
+00:08:56,483 --> 00:08:58,936
+we meant by specific resistance.
+
+113
+00:08:58,936 --> 00:09:03,738
+If we use specific resistance or
+a modified version
+
+114
+00:09:03,738 --> 00:09:09,099
+thereof as the cost function,
+we can measure our time and
+
+115
+00:09:09,099 --> 00:09:16,146
+measure the battery power used to
+achieve a traversal of a known distance.
+
+116
+00:09:16,146 --> 00:09:22,559
+And by measuring the time against the
+distance and using the power consumed for
+
+117
+00:09:22,559 --> 00:09:28,820
+that leg, we achieve an estimate of
+the specific resistance for that gait.
+
+118
+00:09:28,820 --> 00:09:36,130
+And so what this robot would do,
+it would autonomously run ten meters.
+
+119
+00:09:36,130 --> 00:09:39,690
+Turn itself around by
+watching the end stop.
+
+120
+00:09:39,690 --> 00:09:43,230
+Start its clock,
+run again with a different gait.
+
+121
+00:09:43,230 --> 00:09:46,230
+Come to the end,
+evaluate a specific resistance.
+
+122
+00:09:46,230 --> 00:09:50,934
+Turn around, choose a different
+set of gait parameters that would
+
+123
+00:09:50,934 --> 00:09:55,470
+lower where it predicted would
+lower the cost in the next gait and
+
+124
+00:09:55,470 --> 00:09:58,243
+repeat again, and again, and again.
+
+125
+00:09:58,243 --> 00:10:01,126
+Let me give you some feeling for
+what this is like empirically.
+
+126
+00:10:01,126 --> 00:10:05,576
+So here is an early trial
+where the robot was
+
+127
+00:10:05,576 --> 00:10:10,540
+running at about 40
+centimeters per second.
+
+128
+00:10:10,540 --> 00:10:15,814
+And as it tuned itself around,
+you can see the gait parameters changing
+
+129
+00:10:15,814 --> 00:10:20,500
+in the slides, and you can see from the
+movie that the gaits begin to be faster,
+
+130
+00:10:22,750 --> 00:10:28,496
+and faster yet
+without much energetic cost.
+
+131
+00:10:28,496 --> 00:10:36,330
+Until finally, we achieved empirically
+gaits that looked like this.
+
+132
+00:10:36,330 --> 00:10:39,838
+Here's an example of
+a reasonably fast RHex gait.
+
+133
+00:10:39,838 --> 00:10:47,006
+This is RHex running across mixed
+terrain at five body lengths per second,
+
+134
+00:10:47,006 --> 00:10:54,532
+unheard of for a machine at that point,
+legged machine at that point.
+
+135
+00:10:54,532 --> 00:10:57,101
+And this was result of this very, very,
+
+136
+00:10:57,101 --> 00:11:01,563
+very simple learning method whose
+descent its specific resistance as
+
+137
+00:11:01,563 --> 00:11:06,419
+a function of iteration is depicted in
+the graph next to this running movie.
+
+138
+00:11:11,561 --> 00:11:14,244
+This is much as we understand about RHex.
+
+139
+00:11:15,790 --> 00:11:21,250
+Analytically, we're constantly interested
+in improving our understanding
+
+140
+00:11:21,250 --> 00:11:27,240
+mathematically, and we're constantly
+attempting to achieve better feedback,
+
+141
+00:11:27,240 --> 00:11:32,220
+more accurate feedback, and
+faster feedback from the legs to the body.
+
+142
+00:11:33,260 --> 00:11:38,120
+And in large measure, this has motivated
+some recent developments in the lab
+
+143
+00:11:38,120 --> 00:11:42,530
+that we'll be discussing in the next
+two segments bearing on parallel
+
+144
+00:11:42,530 --> 00:11:47,269
+composition of a much more aggressive and
+analytically successful and
+
+145
+00:11:47,269 --> 00:11:51,020
+empirically successful kind.
+
+146
+00:11:51,020 --> 00:11:52,495
+Stay tuned.

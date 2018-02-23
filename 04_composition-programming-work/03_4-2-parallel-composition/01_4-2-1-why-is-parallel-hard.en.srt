@@ -1,0 +1,640 @@
+1
+00:00:05,497 --> 00:00:09,280
+We had a brief introduction to
+parallel composition last segment.
+
+2
+00:00:09,280 --> 00:00:12,720
+In this segment,
+we're going to talk about details.
+
+3
+00:00:12,720 --> 00:00:15,470
+We'll push on a synthetic
+view of parallel composition.
+
+4
+00:00:15,470 --> 00:00:19,530
+That is as roboticists we want to
+construct behaviors using compositions and
+
+5
+00:00:19,530 --> 00:00:21,790
+we'll talk about how we accomplish that.
+
+6
+00:00:21,790 --> 00:00:25,300
+And we'll place a special emphasis
+on behavioral modularity and
+
+7
+00:00:25,300 --> 00:00:26,270
+I'll explain what that is.
+
+8
+00:00:29,010 --> 00:00:31,543
+Jeff talked about
+templates in section 2.1.
+
+9
+00:00:31,543 --> 00:00:34,274
+Just to quickly recap.
+
+10
+00:00:34,274 --> 00:00:38,102
+Templates are low dimensional
+reference dynamics.
+
+11
+00:00:38,102 --> 00:00:42,439
+In this picture you can see how
+we use the idea of templates and
+
+12
+00:00:42,439 --> 00:00:45,430
+anchors to analyze biological systems.
+
+13
+00:00:46,460 --> 00:00:51,060
+A complicated system sometimes behaves
+like it's actually a simpler one and
+
+14
+00:00:51,060 --> 00:00:54,640
+the template captures
+the underlying simpler dynamics.
+
+15
+00:00:56,920 --> 00:01:00,480
+This idea is later used to
+analyze machines like Rex
+
+16
+00:01:00,480 --> 00:01:02,920
+as Dan said in section 4.1.
+
+17
+00:01:02,920 --> 00:01:05,450
+Instead of the bodycentric
+view of templates and anchors,
+
+18
+00:01:05,450 --> 00:01:07,450
+what about a more dynamical systems view?
+
+19
+00:01:08,830 --> 00:01:13,140
+In this cartoon, the blue line
+indicates the template dynamics.
+
+20
+00:01:13,140 --> 00:01:15,210
+That is they're actually
+lower dimensional and
+
+21
+00:01:15,210 --> 00:01:17,810
+simpler than the full state
+space which is in grey.
+
+22
+00:01:17,810 --> 00:01:21,610
+The actual evolution of the system might
+follow something like the red arrows where
+
+23
+00:01:21,610 --> 00:01:26,980
+the attraction down to the template sub
+manifold is called the anchoring dynamics.
+
+24
+00:01:26,980 --> 00:01:30,530
+Somewhat surprisingly, anchoring is
+actually a parallel composition.
+
+25
+00:01:32,082 --> 00:01:35,930
+Here is my template dynamics,
+the blue again and
+
+26
+00:01:35,930 --> 00:01:39,190
+the anchor dynamics is simply a parallel
+composition of something that attracts
+
+27
+00:01:39,190 --> 00:01:40,778
+down to the template sub manifold.
+
+28
+00:01:42,040 --> 00:01:45,250
+With them together, you get something
+like the picture on the left again.
+
+29
+00:01:46,880 --> 00:01:50,260
+To summarize, for systems with
+a high number of degrees of freedom,
+
+30
+00:01:50,260 --> 00:01:54,170
+there's really no alternative to
+thinking about parallel composition.
+
+31
+00:01:54,170 --> 00:01:55,410
+Why is this?
+
+32
+00:01:55,410 --> 00:01:59,110
+It's because uncoordinated degrees
+of freedom in a mechanical systems
+
+33
+00:01:59,110 --> 00:02:03,110
+tend to accumulate energy and
+that usually causes the robot to fail.
+
+34
+00:02:03,110 --> 00:02:04,660
+What happens in lots of animals and
+
+35
+00:02:04,660 --> 00:02:08,500
+robots is that these extra degrees of
+freedom might be passively controlled?
+
+36
+00:02:09,870 --> 00:02:14,120
+In this situation, they're actually
+referred to as something called preflexes.
+
+37
+00:02:14,120 --> 00:02:16,020
+So either you have preflexes or
+
+38
+00:02:16,020 --> 00:02:19,490
+you can think about parallel
+compositions of templates.
+
+39
+00:02:19,490 --> 00:02:22,310
+One of the difficulties of
+parallel composition is coupling.
+
+40
+00:02:23,310 --> 00:02:24,900
+To illustrate this, look at this circuit.
+
+41
+00:02:26,610 --> 00:02:30,270
+There are two physical parts of
+the circuit if you look carefully.
+
+42
+00:02:30,270 --> 00:02:35,190
+An RL circuit over here and
+an RC circuit over on the right.
+
+43
+00:02:35,190 --> 00:02:38,180
+These two separate parts
+are connected by the resistor R21.
+
+44
+00:02:39,450 --> 00:02:42,780
+Let's think about the limit
+if R21 goes to infinity.
+
+45
+00:02:42,780 --> 00:02:44,680
+That would physically
+disconnect the circuit and
+
+46
+00:02:44,680 --> 00:02:48,273
+the current in the RL part would not
+interfere with the current in the RC part.
+
+47
+00:02:49,500 --> 00:02:50,900
+This is a physical decoupling.
+
+48
+00:02:50,900 --> 00:02:56,370
+And the solutions of the RL part and
+the RC part would not interact.
+
+49
+00:02:56,370 --> 00:03:00,560
+You could say that the evolution of the
+system can be represented by this diagonal
+
+50
+00:03:00,560 --> 00:03:05,270
+linear system or
+x1 dot is not affect by x2 and vice versa.
+
+51
+00:03:06,820 --> 00:03:09,650
+Here's some images of what happens when
+
+52
+00:03:09,650 --> 00:03:14,610
+you don't have the coupling which are
+the arrows in blue and you start slowly
+
+53
+00:03:14,610 --> 00:03:19,270
+adding coupling by reducing R21
+from its initial value of infinity.
+
+54
+00:03:19,270 --> 00:03:20,950
+You get something like the red lines,
+
+55
+00:03:20,950 --> 00:03:23,870
+which are slight deformations
+of the blue lines.
+
+56
+00:03:24,950 --> 00:03:28,590
+And if you keep increasing the coupling,
+you get higher deformations, but
+
+57
+00:03:28,590 --> 00:03:33,420
+you can see how it still resembles
+the original decoupled system somewhat.
+
+58
+00:03:34,440 --> 00:03:36,650
+Crosstalk can be much worse
+in mechanical systems.
+
+59
+00:03:36,650 --> 00:03:40,170
+Let's think of a simple system
+like a double pendulum.
+
+60
+00:03:40,170 --> 00:03:43,690
+Which you can think about as a parallel
+composition of an upper link and
+
+61
+00:03:43,690 --> 00:03:49,070
+a lower link, where the controller is just
+gravity and there's some natural damping.
+
+62
+00:03:49,070 --> 00:03:52,842
+So if I held one of the links
+of the double pendulum rigid,
+
+63
+00:03:52,842 --> 00:03:57,181
+you'd imagine that it would
+oscillate until it slowly died out.
+
+64
+00:03:57,181 --> 00:04:00,670
+So the template dynamics is
+really a slow oscillation or
+
+65
+00:04:00,670 --> 00:04:04,096
+fast oscillation where
+the energy is not increasing.
+
+66
+00:04:04,096 --> 00:04:06,596
+That is, if I release
+the pendulum from some height,
+
+67
+00:04:06,596 --> 00:04:08,830
+you would expect it to
+not go above that height.
+
+68
+00:04:10,010 --> 00:04:12,410
+But now let's take a double pendulum.
+
+69
+00:04:12,410 --> 00:04:15,400
+You can see that even though
+I started below the line,
+
+70
+00:04:15,400 --> 00:04:17,690
+one of the links ended
+up crossing the line.
+
+71
+00:04:17,690 --> 00:04:18,370
+Why is this?
+
+72
+00:04:19,690 --> 00:04:25,070
+It's really because that the energy in
+mechanical systems is coupled tightly,
+
+73
+00:04:25,070 --> 00:04:28,520
+and energy from one link can
+cross over into a second one and
+
+74
+00:04:28,520 --> 00:04:32,530
+cause obstacles to be hit
+where you didn't expect.
+
+75
+00:04:32,530 --> 00:04:35,510
+And here are the traces, and
+you can see that even though,
+
+76
+00:04:35,510 --> 00:04:38,730
+in the right trace the height
+of the system started at zero,
+
+77
+00:04:38,730 --> 00:04:41,210
+it tends to go above it and
+cause failures.
+
+78
+00:04:42,280 --> 00:04:47,210
+So this kind of mechanical coupling really
+messes us up when trying to do parallel
+
+79
+00:04:47,210 --> 00:04:49,538
+composition in mechanical systems.
+
+80
+00:04:49,538 --> 00:04:53,920
+To summarize the motivation for parallel
+composition, robots have many degrees of
+
+81
+00:04:53,920 --> 00:04:57,560
+freedom and you either need to
+incorporate preflexes at design time or
+
+82
+00:04:57,560 --> 00:05:01,530
+you need to think about parallel
+composition of templates at control time.
+
+83
+00:05:02,840 --> 00:05:05,420
+Let's talk about this
+with a simple example.
+
+84
+00:05:05,420 --> 00:05:10,390
+Here's a vertical hopper, and what I would
+like to do as an engineer is embed this
+
+85
+00:05:10,390 --> 00:05:14,400
+behavior into my planer hopper, which
+is a slightly more complicated system.
+
+86
+00:05:15,680 --> 00:05:19,620
+So what I'd like to do is to map my
+controllers from template to anchor.
+
+87
+00:05:19,620 --> 00:05:21,060
+So that's part one of the agenda.
+
+88
+00:05:22,880 --> 00:05:26,850
+However, I would also like to embed
+multiple templates, not just one.
+
+89
+00:05:27,860 --> 00:05:31,630
+For instance, my planar hopper should
+not just be able to hop up and down, but
+
+90
+00:05:31,630 --> 00:05:34,020
+also move laterally on the plane.
+
+91
+00:05:34,020 --> 00:05:37,796
+To do that, we embed a second template,
+the rimless wheel,
+
+92
+00:05:37,796 --> 00:05:41,160
+which Jeff talking about
+in the previous week, and
+
+93
+00:05:41,160 --> 00:05:44,520
+have both of those controllers
+acting on my planar hopper.
+
+94
+00:05:45,820 --> 00:05:48,520
+Additionally, I would like
+the controllers to be decoupled.
+
+95
+00:05:49,640 --> 00:05:52,870
+I would not like to have to worry
+about the fore-aft control, and
+
+96
+00:05:52,870 --> 00:05:55,970
+the vertical hop control, and vice versa.
+
+97
+00:05:55,970 --> 00:05:59,560
+However, when anchoring multiple
+templates, you have to be worried about
+
+98
+00:05:59,560 --> 00:06:03,590
+coupling forces, as we saw with the double
+pendulum example in the previous slide.
+
+99
+00:06:04,670 --> 00:06:08,590
+We could either try to cancel these
+coupling interactions, which remember get
+
+100
+00:06:08,590 --> 00:06:13,410
+worse with higher velocities since
+Coriolis terms depend on velocity, but
+
+101
+00:06:13,410 --> 00:06:16,520
+then you would ruin the decouple
+nature of our controller.
+
+102
+00:06:16,520 --> 00:06:19,830
+We'll talk in the next segment
+about how it's much preferable
+
+103
+00:06:19,830 --> 00:06:22,670
+to not have coupling
+between our controllers.
+
+104
+00:06:22,670 --> 00:06:25,640
+Lastly, I've just talked
+about the implementation.
+
+105
+00:06:25,640 --> 00:06:27,230
+But that's not really enough.
+
+106
+00:06:27,230 --> 00:06:31,460
+You have to be able to verify that
+our parallel composition works
+
+107
+00:06:31,460 --> 00:06:33,928
+both in practice as well as analytically.
+
+108
+00:06:33,928 --> 00:06:37,570
+Now that I've explained
+some of the difficulties,
+
+109
+00:06:37,570 --> 00:06:40,630
+let see some empirical
+parallel compositions.
+
+110
+00:06:40,630 --> 00:06:43,730
+Raibert was one of the first
+to pioneer on this.
+
+111
+00:06:43,730 --> 00:06:46,560
+Here's a video of a Raibert
+hopper hopping up and down.
+
+112
+00:06:46,560 --> 00:06:50,450
+And this is using the controller that
+Jeff described in the previous weeks.
+
+113
+00:06:52,840 --> 00:06:56,320
+What Raibert did, was he took
+this vertical hopping idea, and
+
+114
+00:06:56,320 --> 00:06:59,450
+added a decoupled controller for
+fore aft movement.
+
+115
+00:06:59,450 --> 00:07:03,999
+And you can see here, hopper is happily
+hopping along the boom at control speeds.
+
+116
+00:07:05,420 --> 00:07:08,779
+It seems like the implementation
+was very simple but
+
+117
+00:07:08,779 --> 00:07:12,684
+there are some considerations
+that might not be so obvious.
+
+118
+00:07:12,684 --> 00:07:17,016
+The ratio of the leg inertia to the body
+inertias turns out to be very important to
+
+119
+00:07:17,016 --> 00:07:19,872
+the decoupled controllers
+to work in this example.
+
+120
+00:07:19,872 --> 00:07:24,280
+For Raibert this ratio was 14:1 for
+the body to the leg inertia.
+
+121
+00:07:25,550 --> 00:07:29,260
+I've made a simulation here where
+this ratio is actually changeable.
+
+122
+00:07:29,260 --> 00:07:31,710
+Here it's hopping fine for a ratio of 7:1.
+
+123
+00:07:31,710 --> 00:07:37,320
+But then if you keep increasing it so that
+it's about 1:1, it doesn't work anymore.
+
+124
+00:07:39,770 --> 00:07:43,930
+So there's an interesting
+interaction of design choices
+
+125
+00:07:43,930 --> 00:07:46,650
+with the ability to implement
+decoupled controllers.
+
+126
+00:07:46,650 --> 00:07:50,190
+To summarize, in a high degree of freedom
+robot, there's no alternative to either
+
+127
+00:07:50,190 --> 00:07:54,070
+incorporating preflexes or thinking
+about parallel composition of templates.
+
+128
+00:07:55,520 --> 00:07:59,490
+Coupling forces in mechanical systems will
+really try to screw us up when we try to
+
+129
+00:07:59,490 --> 00:08:04,490
+implement decoupled controllers but it's
+really preferrable to be able to do this
+
+130
+00:08:04,490 --> 00:08:09,490
+for a number of reasons, which are going
+to be more obvious in the coming lectures.
+
+131
+00:08:09,490 --> 00:08:14,080
+Lastly verifying that the parallel
+composition is correct is difficult, but
+
+132
+00:08:14,080 --> 00:08:15,940
+it's also very important.
+
+133
+00:08:15,940 --> 00:08:17,711
+And we're going to talk about
+that in the next segment.

@@ -1,0 +1,541 @@
+1
+00:00:07,947 --> 00:00:11,060
+In this section, we're going to
+review the study of kinematics,
+
+2
+00:00:11,060 --> 00:00:13,090
+which is related to the motion of bodies.
+
+3
+00:00:14,640 --> 00:00:16,140
+This is distinct from dynamics,
+
+4
+00:00:16,140 --> 00:00:20,630
+because we don't consider the forces that
+cause the accelerations of these bodies.
+
+5
+00:00:20,630 --> 00:00:23,330
+First, we define the phrase
+degrees of freedom.
+
+6
+00:00:23,330 --> 00:00:27,590
+These are the number of parameters that
+fully define the system in its space.
+
+7
+00:00:27,590 --> 00:00:31,220
+A rigid body and
+ambient space has six degrees of freedom.
+
+8
+00:00:31,220 --> 00:00:35,770
+Typically, they are x, y, and z,
+which are three positions, and roll,
+
+9
+00:00:35,770 --> 00:00:38,710
+pitch, and yaw, which are three angles.
+
+10
+00:00:38,710 --> 00:00:41,360
+In this figure,
+we see a plane who's degrees of freedom
+
+11
+00:00:41,360 --> 00:00:43,250
+have been highlighted in
+the typical convention.
+
+12
+00:00:44,290 --> 00:00:47,400
+In robotics, we're interested in
+both active degrees of freedom,
+
+13
+00:00:47,400 --> 00:00:51,340
+which are explicitly controlled by
+actuators, as well as the passive degrees
+
+14
+00:00:51,340 --> 00:00:53,610
+of freedom that are governed
+by the system's dynamics.
+
+15
+00:00:55,150 --> 00:00:57,610
+Most robots are highly underactuated.
+
+16
+00:00:57,610 --> 00:01:01,070
+This means that the majority of
+the degrees of freedom are passive and
+
+17
+00:01:01,070 --> 00:01:03,690
+not controlled by the system's actuators.
+
+18
+00:01:03,690 --> 00:01:05,998
+In this video, we see the pendulum robot.
+
+19
+00:01:05,998 --> 00:01:09,280
+The body of the robot has
+only two degrees of freedom,
+
+20
+00:01:09,280 --> 00:01:11,290
+as it is constrained on a boom.
+
+21
+00:01:11,290 --> 00:01:13,620
+The leg also has two degrees of freedom.
+
+22
+00:01:13,620 --> 00:01:18,220
+One of which, the rotation, is active
+as it is controlled by the motor.
+
+23
+00:01:18,220 --> 00:01:19,893
+The other is the extension of the leg,
+
+24
+00:01:19,893 --> 00:01:22,099
+which is simply governed
+by the attached spring.
+
+25
+00:01:27,887 --> 00:01:30,573
+Joints are an example of
+a holonomic constraint and
+
+26
+00:01:30,573 --> 00:01:33,840
+reduce the number of degrees
+of freedom of a system.
+
+27
+00:01:33,840 --> 00:01:34,740
+In this video,
+
+28
+00:01:34,740 --> 00:01:39,380
+we see a leg from the minitaur robot
+demonstrating multiple revolute joints.
+
+29
+00:01:41,860 --> 00:01:45,290
+In this video, we see a similar
+leg jumping on a linear rail.
+
+30
+00:01:48,150 --> 00:01:50,620
+All of the pin joints
+in the minitaur leg and
+
+31
+00:01:50,620 --> 00:01:55,180
+the linear rail constrain the attached
+links to only one degree of freedom.
+
+32
+00:01:55,180 --> 00:01:58,650
+Another example of a joint that has
+one degree of freedom is a screw
+
+33
+00:01:58,650 --> 00:02:01,580
+even though the translation and
+rotation are coupled.
+
+34
+00:02:01,580 --> 00:02:04,830
+An example of a two degree of
+freedom joint in the plane
+
+35
+00:02:04,830 --> 00:02:07,490
+is an idealized wheel spinning on ice.
+
+36
+00:02:07,490 --> 00:02:10,730
+The rotation and
+translation are completely decoupled.
+
+37
+00:02:10,730 --> 00:02:15,570
+Kutzbach's equation determines the number
+of degrees of freedom in a planar system.
+
+38
+00:02:15,570 --> 00:02:19,967
+M is the number of degrees of freedom,
+N is the number of links in the system,
+
+39
+00:02:19,967 --> 00:02:23,198
+J1 is the number of one-degree
+of freedom joints, and
+
+40
+00:02:23,198 --> 00:02:26,570
+J2 is the number of
+two-degree of freedom joints.
+
+41
+00:02:26,570 --> 00:02:28,890
+Once solved, if M is equal to zero,
+
+42
+00:02:28,890 --> 00:02:31,580
+the system is fully constrained and
+can't move.
+
+43
+00:02:31,580 --> 00:02:34,480
+Another class of constraints
+are called non-holonomic,
+
+44
+00:02:34,480 --> 00:02:37,950
+meaning they cannot be described
+using the position of the system.
+
+45
+00:02:37,950 --> 00:02:41,700
+These constraints that are not only
+a function of position can, for
+
+46
+00:02:41,700 --> 00:02:44,300
+example, be a function of velocity.
+
+47
+00:02:44,300 --> 00:02:48,100
+In this video, we see that the car wants
+to move sideways into the parking spot.
+
+48
+00:02:49,410 --> 00:02:52,340
+However, there's a non-holonomic
+constraint preventing
+
+49
+00:02:52,340 --> 00:02:54,170
+any lateral velocity.
+
+50
+00:02:54,170 --> 00:02:57,801
+The car can however translate in that
+direction using a parallel parking
+
+51
+00:02:57,801 --> 00:02:58,405
+manuever.
+
+52
+00:03:00,447 --> 00:03:05,387
+We are now interested in establishing
+a relationship between the position of
+
+53
+00:03:05,387 --> 00:03:08,731
+the robots end effector,
+X, in its free space, and
+
+54
+00:03:08,731 --> 00:03:12,390
+all of the machines joint angles, theta.
+
+55
+00:03:12,390 --> 00:03:15,780
+The forward kinematics are when
+the joint angles are known and
+
+56
+00:03:15,780 --> 00:03:18,120
+the position of the end
+effector is to be determined.
+
+57
+00:03:19,660 --> 00:03:24,440
+Typically, in robot arms, the joint angles
+are known as they are instrumented, and
+
+58
+00:03:24,440 --> 00:03:28,070
+so it is of interest to figure out
+where the end effector will be
+
+59
+00:03:28,070 --> 00:03:29,420
+given a set of joint angles.
+
+60
+00:03:30,960 --> 00:03:34,370
+Inverse kinematics pose the opposite
+problem where the position
+
+61
+00:03:34,370 --> 00:03:37,680
+of the end effector is known and
+a joint angles are to be computed.
+
+62
+00:03:38,760 --> 00:03:43,140
+In this video,
+we see a robot arm doing a welding task.
+
+63
+00:03:43,140 --> 00:03:47,960
+The end effector needs to follow a desired
+trajectory in ambiance space and so
+
+64
+00:03:47,960 --> 00:03:51,980
+inverse kinematics must be use
+back out the joint angles.
+
+65
+00:03:51,980 --> 00:03:56,591
+These joint angles are then passed to the
+machine as desired angles for the motor.
+
+66
+00:04:00,603 --> 00:04:05,180
+Here we see a much simpler
+revolute-revolute robot arm.
+
+67
+00:04:05,180 --> 00:04:08,720
+The angle between the first link and
+the base is theta one and
+
+68
+00:04:08,720 --> 00:04:12,440
+the angle between the first link and
+the second link is theta two.
+
+69
+00:04:12,440 --> 00:04:15,230
+It's important to note that
+theta two is a relative angle.
+
+70
+00:04:16,300 --> 00:04:20,600
+Since the position of the end effector,
+X, is a function, F,
+
+71
+00:04:20,600 --> 00:04:25,530
+of the joint angles, theta, calculating
+F represents the forward kinematics.
+
+72
+00:04:26,710 --> 00:04:30,480
+Some dimensions have been broken out in
+this image to help solve the problem of
+
+73
+00:04:30,480 --> 00:04:31,310
+forward kinematics.
+
+74
+00:04:32,880 --> 00:04:37,830
+Using the same revolute-revolute arm,
+if the end effector position is known,
+
+75
+00:04:37,830 --> 00:04:41,620
+inverse kinematics can let us solve for
+the joint angles.
+
+76
+00:04:41,620 --> 00:04:43,720
+Since the forward kinematics are known,
+
+77
+00:04:43,720 --> 00:04:47,330
+this represents a system
+of non-linear equations.
+
+78
+00:04:47,330 --> 00:04:50,740
+The inverse kinematics can be
+found from the forward kinematics
+
+79
+00:04:50,740 --> 00:04:52,619
+by solving a system of equations.
+
+80
+00:04:54,090 --> 00:04:57,140
+Generally, this system of
+equations is non-linear and
+
+81
+00:04:57,140 --> 00:04:59,450
+can be solved with
+trigonometric identities.
+
+82
+00:05:00,920 --> 00:05:06,330
+Simpler cases can be solved in MATLAB by
+making the desired variables symbolic and
+
+83
+00:05:06,330 --> 00:05:07,360
+using the solve function.
+
+84
+00:05:08,920 --> 00:05:12,180
+Solving the inverse kinematics
+amounts to inverting
+
+85
+00:05:12,180 --> 00:05:15,059
+the system of equations
+represented by the function F.
+
+86
+00:05:16,880 --> 00:05:20,070
+All the previous linkages that
+we've considered are serial
+
+87
+00:05:20,070 --> 00:05:23,590
+in that there's only one chain between
+the ground and the end effector.
+
+88
+00:05:24,780 --> 00:05:28,700
+Parallel mechanisms have multiple chains
+connecting the end effector to the ground.
+
+89
+00:05:29,930 --> 00:05:33,740
+Solving the kinematics of parallel
+mechanism is much more difficult than for
+
+90
+00:05:33,740 --> 00:05:35,450
+serial mechanisms.
+
+91
+00:05:35,450 --> 00:05:39,620
+Here we will go over a concrete
+example using the minitaur leg.
+
+92
+00:05:39,620 --> 00:05:43,786
+In this figure we see the minitaur leg
+with the motor angles theta one and
+
+93
+00:05:43,786 --> 00:05:45,250
+theta two Illustrated.
+
+94
+00:05:47,150 --> 00:05:49,989
+We would like to solve
+the forward kinematics and
+
+95
+00:05:49,989 --> 00:05:53,877
+so get a solution for X and Y as
+a function of theta one and theta two.
+
+96
+00:05:53,877 --> 00:05:58,780
+This task greatly simplified if we
+use a couple of coordinate changes.
+
+97
+00:05:58,780 --> 00:06:03,000
+The first coordinate change that will
+be helpful is to go from theta one and
+
+98
+00:06:03,000 --> 00:06:07,480
+theta two to alpha and beta,
+the mean and different coordinates.
+
+99
+00:06:07,480 --> 00:06:09,790
+Once alpha and beta are computed,
+
+100
+00:06:09,790 --> 00:06:14,560
+a further coordinate change to polar
+coordinates help solve the problem.
+
+101
+00:06:14,560 --> 00:06:19,130
+We now consider the infinitesimal
+kinematics for these linkages.
+
+102
+00:06:19,130 --> 00:06:23,330
+This is done by computing the matrix
+of partial derivatives of the system
+
+103
+00:06:23,330 --> 00:06:24,350
+known as the Jacobian.
+
+104
+00:06:25,640 --> 00:06:27,040
+Here we see the Jacobian,
+
+105
+00:06:27,040 --> 00:06:31,480
+J, computed where the rows represent
+the system of equations and
+
+106
+00:06:31,480 --> 00:06:35,750
+the columns represent the partial
+derivatives of the different joint angles.
+
+107
+00:06:35,750 --> 00:06:40,340
+By multiplying the Jacobian by
+DT over DT and rearranging,
+
+108
+00:06:40,340 --> 00:06:45,000
+we see that the Jacobian describes the
+relationship between joint velocities and
+
+109
+00:06:45,000 --> 00:06:47,460
+velocities at the end effector.
+
+110
+00:06:47,460 --> 00:06:51,350
+Thanks to the principle of virtual
+work the Jacobian transpose
+
+111
+00:06:51,350 --> 00:06:55,580
+can be used to relate the forces at the
+end effector to the torques at the joints.
+
+112
+00:06:57,040 --> 00:07:01,210
+This Jacobian transpose inverse represents
+the effective mechanical advantage for
+
+113
+00:07:01,210 --> 00:07:02,580
+the system.
+
+114
+00:07:02,580 --> 00:07:06,170
+It scales the torques at the joint
+into forces at the end effector.

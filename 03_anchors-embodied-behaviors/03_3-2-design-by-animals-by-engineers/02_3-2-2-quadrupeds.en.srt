@@ -1,0 +1,483 @@
+1
+00:00:04,928 --> 00:00:10,048
+So what's different in a quadruped from
+the sprawled that we just looked at?
+
+2
+00:00:10,048 --> 00:00:13,680
+As you might have guessed,
+quadrupeds are animals that use four legs.
+
+3
+00:00:13,680 --> 00:00:16,480
+This is distinct from tetrapods.
+
+4
+00:00:16,480 --> 00:00:19,670
+Tetrapods are evolutionarily
+animals with four legs but
+
+5
+00:00:19,670 --> 00:00:23,709
+they don't necessarily use them, whereas
+quadrupeds move around with four legs.
+
+6
+00:00:25,180 --> 00:00:25,950
+The leg and
+
+7
+00:00:25,950 --> 00:00:30,500
+foot structure is much more pronounced in
+quadrupeds than sprawled posture runners.
+
+8
+00:00:30,500 --> 00:00:37,780
+In fact, we see three broad varieties,
+unguligrade, digitigrade and plantigrade.
+
+9
+00:00:37,780 --> 00:00:41,470
+The unguligrades stand on the tips
+of their toes, for instance, horses,
+
+10
+00:00:41,470 --> 00:00:44,020
+cattle, pigs and deer.
+
+11
+00:00:44,020 --> 00:00:47,670
+Digitigrade animals stand on
+their toes for instance, cats,
+
+12
+00:00:47,670 --> 00:00:50,630
+dogs, dinosaurs, elephants, etc.
+
+13
+00:00:50,630 --> 00:00:53,330
+And plantigrade animals stand
+on their entire foot, for
+
+14
+00:00:53,330 --> 00:00:57,870
+instance, bears, mice, humans, etc.
+
+15
+00:00:57,870 --> 00:01:02,524
+Additionally, their tendons and muscles
+form viscoelastic structures that can be
+
+16
+00:01:02,524 --> 00:01:05,418
+modeled quite well,
+as in this paper from Winters.
+
+17
+00:01:07,878 --> 00:01:11,620
+Almost all quadrupeds gallop
+at their highest speeds.
+
+18
+00:01:11,620 --> 00:01:16,230
+Galloping is a gait which has pronounced
+extension of the stride length
+
+19
+00:01:16,230 --> 00:01:19,660
+which is caused mostly by
+an extension of the spine.
+
+20
+00:01:21,020 --> 00:01:24,280
+Additionally, we start to
+see things like tails.
+
+21
+00:01:24,280 --> 00:01:27,330
+We'll learn more about tails
+in the section on bipeds.
+
+22
+00:01:27,330 --> 00:01:31,530
+But tails in these quadrupeds also
+help turning and reorientation.
+
+23
+00:01:31,530 --> 00:01:36,630
+We saw that sprawl posture runners almost
+exclusively used an alternating tripod,
+
+24
+00:01:36,630 --> 00:01:38,270
+virtual biped gait.
+
+25
+00:01:38,270 --> 00:01:41,020
+But gaits in quadrupeds are much
+more interesting and varied.
+
+26
+00:01:42,200 --> 00:01:45,630
+Almost all quadrupeds walk
+at their lowest speeds and
+
+27
+00:01:45,630 --> 00:01:48,120
+almost all of them gallop
+at their highest speeds.
+
+28
+00:01:48,120 --> 00:01:51,410
+But in the middle there's a large
+variety of gaits that can be observed.
+
+29
+00:01:52,520 --> 00:01:55,400
+I want to show you some popular
+descriptions of gaits that
+
+30
+00:01:55,400 --> 00:01:56,950
+appear in biomechanics, so
+
+31
+00:01:56,950 --> 00:02:01,440
+that you can visually see these diagrams
+and understand what is being said.
+
+32
+00:02:01,440 --> 00:02:04,750
+On the left is the limb support patterns
+description that you'll find in some
+
+33
+00:02:04,750 --> 00:02:05,650
+literature.
+
+34
+00:02:05,650 --> 00:02:12,290
+The field in that represents leg stance
+and along the horizontal axis is time.
+
+35
+00:02:14,090 --> 00:02:19,619
+On the right, is the Gait diagram
+description where again the field in bars
+
+36
+00:02:19,619 --> 00:02:25,528
+are legs uncontacted to the ground and the
+not filled in bars are legs in the air.
+
+37
+00:02:25,528 --> 00:02:28,245
+The Gait diagram description on the right,
+
+38
+00:02:28,245 --> 00:02:30,889
+gives a much better
+idea of the duty cycle,
+
+39
+00:02:30,889 --> 00:02:35,598
+which is exactly how much time the leg
+spends on the ground versus in the air.
+
+40
+00:02:35,598 --> 00:02:37,917
+You should be able to look
+at these diagrams and
+
+41
+00:02:37,917 --> 00:02:41,789
+have an idea of how the legs come in
+contact with the ground for various gaits.
+
+42
+00:02:43,520 --> 00:02:46,410
+Now that we've seen a few different gaits,
+why do they exist?
+
+43
+00:02:46,410 --> 00:02:48,740
+Why do quadrupeds display different ones?
+
+44
+00:02:48,740 --> 00:02:50,570
+Why do they just pick the best one and
+stick with it?
+
+45
+00:02:51,730 --> 00:02:54,980
+The primary reason is really energetic.
+
+46
+00:02:54,980 --> 00:02:59,590
+Energetic efficiency in biomechanics is
+often measured by the cost of transport,
+
+47
+00:02:59,590 --> 00:03:01,730
+which is given by this formula here.
+
+48
+00:03:01,730 --> 00:03:05,850
+The numerator is the metabolic power
+consumed by the animal and at the bottom
+
+49
+00:03:05,850 --> 00:03:10,200
+is some measure of the speed at which the
+animal is moving normalized by its mass.
+
+50
+00:03:10,200 --> 00:03:14,210
+There are mechanical reasons that some
+gaits were more energetically efficient.
+
+51
+00:03:14,210 --> 00:03:17,840
+For instance, a spring mass system has
+a preferred oscillation frequency,
+
+52
+00:03:17,840 --> 00:03:19,790
+together with the stride frequency,
+
+53
+00:03:19,790 --> 00:03:24,720
+this might determine which gate is
+more preferred at widths speed.
+
+54
+00:03:24,720 --> 00:03:28,640
+Other things that affect selection
+of gaits include, limited speed and
+
+55
+00:03:28,640 --> 00:03:32,310
+limited force that can
+produced by animal legs.
+
+56
+00:03:32,310 --> 00:03:34,520
+Now that we've seen some
+quadrupedal animals,
+
+57
+00:03:34,520 --> 00:03:36,830
+let's look at some quadrupedal robots.
+
+58
+00:03:36,830 --> 00:03:39,600
+One of the most famous robotics
+companies in the world
+
+59
+00:03:39,600 --> 00:03:42,110
+is at the erstwhile Boston Dynamics.
+
+60
+00:03:42,110 --> 00:03:45,300
+And they produced a range of quadrupeds,
+from LitttleDog,
+
+61
+00:03:45,300 --> 00:03:50,560
+all the way to the LS3 robot
+across a range of size scales.
+
+62
+00:03:50,560 --> 00:03:54,000
+These robots are hydraulic and
+this comes with some of the advantages and
+
+63
+00:03:54,000 --> 00:03:56,880
+disadvantages that Gavin
+mentioned in his segment.
+
+64
+00:03:57,920 --> 00:04:01,860
+This is an electromechanical quadruped,
+the MIT Cheetah.
+
+65
+00:04:01,860 --> 00:04:06,530
+It's designed for
+having a very transparent drive train and
+
+66
+00:04:06,530 --> 00:04:10,770
+accurate torque control,
+which enables simple control strategies.
+
+67
+00:04:10,770 --> 00:04:12,376
+This robot is called StarlETH.
+
+68
+00:04:12,376 --> 00:04:18,056
+It's a series elastic
+quadruped developed by ETH.
+
+69
+00:04:18,056 --> 00:04:22,360
+There are many more but we would like to
+talk about the robot we have in our lab.
+
+70
+00:04:22,360 --> 00:04:25,250
+This is Minitaur,
+one of our very own quadripeds.
+
+71
+00:04:25,250 --> 00:04:29,970
+It has a very unique leg design which
+was designed to optimize a vertical
+
+72
+00:04:29,970 --> 00:04:33,760
+jumping task and is very good at that.
+
+73
+00:04:33,760 --> 00:04:37,650
+It's also one of the very few direct
+drive legged robots in the world.
+
+74
+00:04:37,650 --> 00:04:40,880
+Electric motors typically like
+operating at very high speeds but
+
+75
+00:04:40,880 --> 00:04:44,360
+don't give you very high forces
+unless you had a gear box.
+
+76
+00:04:44,360 --> 00:04:48,260
+But careful design choices in a number
+of areas has let us make a direct
+
+77
+00:04:48,260 --> 00:04:52,300
+drive legged robot which has
+adequate force capabilities.
+
+78
+00:04:52,300 --> 00:04:55,770
+You'll see some of its feats of
+performance in the last segment.
+
+79
+00:04:55,770 --> 00:04:57,810
+To go into the details
+of mandatory design,
+
+80
+00:04:57,810 --> 00:05:02,100
+let's remember what we've learned about
+animal legs in the past few segments.
+
+81
+00:05:02,100 --> 00:05:04,910
+For running,
+legs should be able to store energy.
+
+82
+00:05:04,910 --> 00:05:07,438
+The legs should be able
+to extend actively.
+
+83
+00:05:09,338 --> 00:05:13,303
+Additionally, there's a lot of evidence
+that animals increase their effective leg
+
+84
+00:05:13,303 --> 00:05:15,270
+stiffness as they run.
+
+85
+00:05:15,270 --> 00:05:20,050
+Here's a plot of human data which
+shows an almost linear relationship
+
+86
+00:05:20,050 --> 00:05:23,706
+between effective leg stiffness and
+running speed.
+
+87
+00:05:23,706 --> 00:05:26,860
+Here are some linkage based
+two degree freedom leg designs
+
+88
+00:05:26,860 --> 00:05:28,410
+with two actuators per leg.
+
+89
+00:05:30,100 --> 00:05:33,490
+Leg extension is an actively controlled
+degree of freedom with any of these
+
+90
+00:05:33,490 --> 00:05:34,470
+designs.
+
+91
+00:05:34,470 --> 00:05:37,748
+An active compliance or
+impedance control is also possible.
+
+92
+00:05:37,748 --> 00:05:42,399
+These three designs have different
+performance with respect to metrics such
+
+93
+00:05:42,399 --> 00:05:46,198
+as intermittent force Studies D force,
+and proprioception.
+
+94
+00:05:46,198 --> 00:05:50,378
+And you can find out more in this paper we
+wrote about direct-drive legged robots.
+
+95
+00:05:52,618 --> 00:05:57,899
+To summarize, Biomechanists tell us
+that legs need to swing and retract.
+
+96
+00:05:57,899 --> 00:06:01,019
+And gaits emerge from energetics and
+control needs.
+
+97
+00:06:02,670 --> 00:06:06,610
+We roboticists have learned to build
+legs with enough degrees of freedom and
+
+98
+00:06:06,610 --> 00:06:08,080
+we've learned several control ideas,
+
+99
+00:06:08,080 --> 00:06:11,010
+some of which we'll talk about
+in the last week of the course.
+
+100
+00:06:12,690 --> 00:06:18,230
+Spines and tails haven't become that
+popular yet in quadrupedal robots but
+
+101
+00:06:18,230 --> 00:06:20,860
+it's a burgeoning field and
+I'm sure we'll see more of them.

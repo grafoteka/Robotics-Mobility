@@ -1,0 +1,931 @@
+1
+00:00:05,538 --> 00:00:10,665
+Now it's time to talk about
+an empirically instantiated version
+
+2
+00:00:10,665 --> 00:00:15,885
+of anchoring that's been very
+successful in the physical world,
+
+3
+00:00:15,885 --> 00:00:21,120
+that we still have only part
+understanding of, mathematically.
+
+4
+00:00:22,270 --> 00:00:26,840
+But gives you a good feeling for
+what can happen,
+
+5
+00:00:27,880 --> 00:00:35,360
+when a simple template as Jeff
+talked to you about in week three.
+
+6
+00:00:35,360 --> 00:00:42,818
+Gets anchored in a complicated but
+useful body.
+
+7
+00:00:42,818 --> 00:00:50,317
+In the year 2000-2001 Martin Buehler,
+then a professor at McGale University,
+
+8
+00:00:50,317 --> 00:00:55,548
+designed a new hexapedal machine
+together with Uluc Saranli,
+
+9
+00:00:55,548 --> 00:00:59,890
+then a graduate student at
+university of Michigan,
+
+10
+00:00:59,890 --> 00:01:05,238
+now a professor at Middle Eastern
+Techno University in Turkey.
+
+11
+00:01:05,238 --> 00:01:12,640
+Their machine that they named RHex had
+only six motors, one for each hip.
+
+12
+00:01:13,860 --> 00:01:18,020
+And indeed, that's what they
+received their patent for,
+
+13
+00:01:18,020 --> 00:01:21,954
+a one actuator per hip
+compliant legged hexapod.
+
+14
+00:01:23,760 --> 00:01:29,510
+This underactuation concept had been
+pioneered by Buehler in the decade prior.
+
+15
+00:01:31,140 --> 00:01:39,150
+And he was convinced that it was crucial
+to achieve adequate specific power
+
+16
+00:01:39,150 --> 00:01:43,510
+as we have described before being a very
+scarce resource in legged mobility.
+
+17
+00:01:46,000 --> 00:01:53,180
+He took the single spoke rimless wheel
+concept that McGeer has pioneered in 1990,
+
+18
+00:01:53,180 --> 00:01:59,510
+and he added that to compliance and
+single actualization
+
+19
+00:01:59,510 --> 00:02:04,580
+to come up with a machine that
+broke all previous records.
+
+20
+00:02:06,090 --> 00:02:10,780
+For not simply speed, it clocked
+in at one body length per second.
+
+21
+00:02:10,780 --> 00:02:15,660
+Which was about an order of magnitude
+greater than any other machine
+
+22
+00:02:15,660 --> 00:02:19,490
+that was unplugged had achieved with legs.
+
+23
+00:02:19,490 --> 00:02:24,860
+It had a reasonable specific resistance,
+you'll remember from the first segment.
+
+24
+00:02:24,860 --> 00:02:27,830
+That specific resistance as
+a measure of cost of transport.
+
+25
+00:02:28,930 --> 00:02:33,830
+This machine not only had an order of
+magnitude greater speed, but it was
+
+26
+00:02:33,830 --> 00:02:39,930
+arguably the first legged machine to run
+over highly irregular broken ground.
+
+27
+00:02:39,930 --> 00:02:46,960
+Here, you see a movie of some of the first
+rugged steps that RHex took back in 2001,
+
+28
+00:02:46,960 --> 00:02:52,090
+and it was very much inspired by the movie
+
+29
+00:02:52,090 --> 00:02:56,988
+you've seen of the cockroaches
+studied by Professor Full at Berkeley.
+
+30
+00:02:56,988 --> 00:03:00,876
+This badly broken and
+complicated landscape
+
+31
+00:03:00,876 --> 00:03:05,486
+had never before been
+traversed by legged machines.
+
+32
+00:03:14,346 --> 00:03:19,120
+We've discussed the cost of
+transport as a measure of
+
+33
+00:03:19,120 --> 00:03:23,160
+efficiency in the first segment, and here.
+
+34
+00:03:24,180 --> 00:03:28,160
+I would say that Martin also broke new
+ground by showing that the cost of
+
+35
+00:03:28,160 --> 00:03:32,680
+transport increased over this rugged
+terrain, but didn't go through the roof.
+
+36
+00:03:32,680 --> 00:03:36,630
+And so this machine had
+a cost of transport that was
+
+37
+00:03:36,630 --> 00:03:40,980
+reasonable over level ground, and not at
+all unreasonable over badly broken ground.
+
+38
+00:03:42,340 --> 00:03:45,130
+And so with this specific
+resistance of less than ten
+
+39
+00:03:45,130 --> 00:03:50,040
+as you'll see from the charts
+if you go back to segment 1.1.1,
+
+40
+00:03:50,040 --> 00:03:54,360
+is still actually quite reasonable and
+was unusual for its time.
+
+41
+00:03:56,660 --> 00:04:01,950
+We believe that this is the consequence
+of the dynamical design, and
+
+42
+00:04:01,950 --> 00:04:05,570
+we have good empirical reason,
+as I will now discuss.
+
+43
+00:04:05,570 --> 00:04:06,830
+But as you will see,
+
+44
+00:04:06,830 --> 00:04:10,400
+the mathematical underpinnings of
+these ideas are still underdeveloped.
+
+45
+00:04:11,840 --> 00:04:19,810
+What can we say about this invention that
+had a number of very new properties?
+
+46
+00:04:19,810 --> 00:04:22,350
+Broke new ground, so
+to speak, in legged robotics.
+
+47
+00:04:23,860 --> 00:04:27,540
+Well, empirically we can say a lot.
+
+48
+00:04:28,700 --> 00:04:32,240
+Mathematically, we have a little
+bit less understanding.
+
+49
+00:04:34,040 --> 00:04:38,590
+Let's first remember the notion of
+anchoring that was brought up in
+
+50
+00:04:38,590 --> 00:04:39,620
+the previous segment.
+
+51
+00:04:40,810 --> 00:04:45,360
+Remember that an anchored template is one
+
+52
+00:04:45,360 --> 00:04:50,200
+which lives in a higher
+degree of freedom body,
+
+53
+00:04:50,200 --> 00:04:53,980
+even though it has only very few
+degrees of freedom that count.
+
+54
+00:04:55,860 --> 00:05:01,460
+This concept was introduced in robotics,
+arguably, by Mark Raibert as well,
+
+55
+00:05:01,460 --> 00:05:05,630
+the guy we've talked about who built
+those Ooiginal hopping pogo sticks.
+
+56
+00:05:06,730 --> 00:05:10,170
+Mark built,
+in addition to literal pogo sticks,
+
+57
+00:05:10,170 --> 00:05:14,340
+he built this mechanism,
+that I'm showing in the figure,
+
+58
+00:05:14,340 --> 00:05:20,560
+which was a quadrupedal version
+of his bipedal hopping machine.
+
+59
+00:05:20,560 --> 00:05:24,390
+He took two of his bipedal machines and
+
+60
+00:05:24,390 --> 00:05:29,460
+he yoked them together through a body,
+and he had a quadruped.
+
+61
+00:05:30,680 --> 00:05:35,450
+He had two hydraulic degrees of
+actuated freedom and one pneumatic
+
+62
+00:05:35,450 --> 00:05:40,570
+actuator per leg, so each of these legs
+had three actuated degrees of freedom.
+
+63
+00:05:41,920 --> 00:05:45,670
+They were plugged into the wall and
+so, there was no power problem.
+
+64
+00:05:45,670 --> 00:05:50,604
+And what Mark was able to do was
+exhibit bounding, pronking, pacing,
+
+65
+00:05:50,604 --> 00:05:51,848
+trotting gaits.
+
+66
+00:05:51,848 --> 00:05:57,952
+Unfortunately, we don't have time in this
+little module to talk about gaits and
+
+67
+00:05:57,952 --> 00:05:58,948
+gait space.
+
+68
+00:05:58,948 --> 00:06:03,750
+But, the gates of animals and the gates
+of robots are a wonderful important area.
+
+69
+00:06:03,750 --> 00:06:04,780
+We'll just ignore it.
+
+70
+00:06:04,780 --> 00:06:07,880
+We'll just assume that you have
+an intuitive idea of what bounding and
+
+71
+00:06:07,880 --> 00:06:09,860
+pronking, and pacing,
+and trotting might be.
+
+72
+00:06:10,950 --> 00:06:14,280
+Mark was able to exhibit,
+on his quadrupedal machine,
+
+73
+00:06:14,280 --> 00:06:19,710
+all of these combinations of
+gaits by very simple manipulation
+
+74
+00:06:19,710 --> 00:06:25,450
+of the individual hopping pieces,
+the hopping legs.
+
+75
+00:06:25,450 --> 00:06:29,520
+We'll come back to this idea when
+we talk about parallel composition
+
+76
+00:06:29,520 --> 00:06:32,570
+more carefully in the next segment.
+
+77
+00:06:32,570 --> 00:06:37,730
+For this segment, we'd like to focus
+on what it was that these pogo
+
+78
+00:06:37,730 --> 00:06:43,120
+stick like machines were able to do that
+made them so interesting and valuable.
+
+79
+00:06:43,120 --> 00:06:48,050
+What Mark was able to show was
+that by coordinating the legs and
+
+80
+00:06:48,050 --> 00:06:54,000
+the gait pattern successfully,
+he could fool the ground
+
+81
+00:06:54,000 --> 00:06:58,992
+to thinking that this quadrupedal
+machine was really a one-legged,
+
+82
+00:06:58,992 --> 00:07:01,740
+spring-loaded inverted pendulum.
+
+83
+00:07:01,740 --> 00:07:04,440
+As we're suggesting in the trace
+
+84
+00:07:04,440 --> 00:07:08,830
+of the various energies that he
+recorded off of his machine.
+
+85
+00:07:11,790 --> 00:07:18,650
+Now, there had not yet been a off-the-wall
+
+86
+00:07:18,650 --> 00:07:23,070
+power autonomous machine to even run,
+much less to run
+
+87
+00:07:23,070 --> 00:07:27,000
+in this spring-loaded inverted pendulum
+like way, which is what the animals do.
+
+88
+00:07:28,450 --> 00:07:34,770
+What we found when we were able to
+tune RHex properly was that it,
+
+89
+00:07:36,110 --> 00:07:40,230
+together with it's legs,
+when it tuned up properly,
+
+90
+00:07:40,230 --> 00:07:45,890
+exhibited motions that I'll now
+show in the video at slow motion.
+
+91
+00:07:45,890 --> 00:07:52,750
+I think you can see if you look at this
+video carefully in slow motion that
+
+92
+00:07:52,750 --> 00:07:58,090
+the mass center of the body of
+this machine is pitching up and
+
+93
+00:07:58,090 --> 00:08:03,740
+down, and back and forth much like the
+center of mass of a pogo stick would be.
+
+94
+00:08:05,200 --> 00:08:10,695
+Not only can you see it with your eye,
+but we were able to measure
+
+95
+00:08:10,695 --> 00:08:16,293
+the same sorts of energetic traces
+of the spring loaded inverted
+
+96
+00:08:16,293 --> 00:08:21,178
+pendulum in the mass center
+of the body of this machine.
+
+97
+00:08:21,178 --> 00:08:27,064
+But also, we're able to show that
+some of the more detailed states,
+
+98
+00:08:27,064 --> 00:08:32,036
+some of the leg configurations
+that we've talked about in
+
+99
+00:08:32,036 --> 00:08:37,718
+the kinematics section,
+also conformed to the time trajectories
+
+100
+00:08:37,718 --> 00:08:42,298
+that one would expect to see
+in a slip like situation.
+
+101
+00:08:42,298 --> 00:08:47,171
+And so, what we found was that
+properly tuned means the clock had to
+
+102
+00:08:47,171 --> 00:08:51,538
+be set properly,
+I'll talk about the clock very shortly.
+
+103
+00:08:51,538 --> 00:08:56,089
+And the leg compliances, the springinesses
+of the legs, needed to be tuned very,
+
+104
+00:08:56,089 --> 00:08:57,630
+very carefully.
+
+105
+00:08:57,630 --> 00:09:01,560
+They're anisotropic, means that
+they're very directionally different.
+
+106
+00:09:01,560 --> 00:09:06,600
+They're stiff in one direction and they're
+very compliant in other directions.
+
+107
+00:09:06,600 --> 00:09:08,650
+These compliances and
+
+108
+00:09:08,650 --> 00:09:13,620
+the timings of the feet for clock
+needed to be tuned up very carefully.
+
+109
+00:09:13,620 --> 00:09:18,640
+And when they were,
+then the RHex empirically could be seen to
+
+110
+00:09:18,640 --> 00:09:23,230
+anchor this spring loaded inverted
+pendulum pogo stick template,
+
+111
+00:09:23,230 --> 00:09:25,140
+just as the animals do when they run.
+
+112
+00:09:26,960 --> 00:09:30,430
+We are very excited about that and the
+question was, could we understand it and
+
+113
+00:09:30,430 --> 00:09:31,500
+could we control it?
+
+114
+00:09:31,500 --> 00:09:37,500
+How would we understand how to tune these
+various complicated aspects of the body
+
+115
+00:09:37,500 --> 00:09:42,420
+of the machine, in order that it could
+anchor this very useful running template.
+
+116
+00:09:44,050 --> 00:09:49,360
+Well, we developed a number of
+mathematical approaches to this problem.
+
+117
+00:09:49,360 --> 00:09:55,050
+The first and most straightforward was
+assuming that we could sense every part,
+
+118
+00:09:55,050 --> 00:09:59,080
+every state of the body, every aspect of
+the body and every part of the leg, and
+
+119
+00:09:59,080 --> 00:10:01,540
+the contact properties of the legs.
+
+120
+00:10:01,540 --> 00:10:06,030
+We did that in a family of
+mathematical models and simulations,
+
+121
+00:10:06,030 --> 00:10:10,069
+the most important of which and
+the simplest of which was a series of
+
+122
+00:10:11,120 --> 00:10:17,140
+bipedal spring loaded inverted pendulum
+templates produced by my then student,
+
+123
+00:10:17,140 --> 00:10:22,280
+now Professor Uluc Saranli at
+Middle Eastern Technical University.
+
+124
+00:10:22,280 --> 00:10:30,010
+What Uluc did was he took the alternating
+tripod gait of this machine,
+
+125
+00:10:30,010 --> 00:10:37,430
+which I'll now describe and
+he virtualized that as a biped.
+
+126
+00:10:37,430 --> 00:10:41,880
+Alternating tripod is the name of
+a gait that hexapedal animals,
+
+127
+00:10:41,880 --> 00:10:49,020
+insects principally, are almost always
+exhibiting when they run at any speed.
+
+128
+00:10:49,020 --> 00:10:55,150
+Alternating tripod means that the two
+left, the two legs in the front and
+
+129
+00:10:55,150 --> 00:11:00,720
+the rear of one side and the middle leg
+of the other side are in phase whilst,
+
+130
+00:11:00,720 --> 00:11:05,510
+the two legs of the in phase side,
+front and
+
+131
+00:11:05,510 --> 00:11:07,770
+rear, are out of phase and
+raised up in the air.
+
+132
+00:11:09,240 --> 00:11:14,960
+And the other leg on the two legged
+down side is up in the air as well.
+
+133
+00:11:14,960 --> 00:11:19,198
+So it's two sets of three
+legs in alternation.
+
+134
+00:11:19,198 --> 00:11:24,122
+And so these three legs,
+two on one side in front and back, and
+
+135
+00:11:24,122 --> 00:11:29,638
+one on the other side in the middle
+are acting as a virtual single leg.
+
+136
+00:11:29,638 --> 00:11:33,498
+And so they're two virtual single legs and
+so this is a virtual biped.
+
+137
+00:11:33,498 --> 00:11:38,290
+When the animals run they're
+running virtually bipedally even
+
+138
+00:11:38,290 --> 00:11:41,138
+though their support base is larger.
+
+139
+00:11:41,138 --> 00:11:46,439
+We understood that these
+complicated bodies with their
+
+140
+00:11:46,439 --> 00:11:52,198
+24-degree of freedoms in the legs and
+the body combined.
+
+141
+00:11:52,198 --> 00:11:57,119
+And there are very few number of
+actuators would have to be organized
+
+142
+00:11:57,119 --> 00:11:59,680
+in a very careful way.
+
+143
+00:11:59,680 --> 00:12:04,470
+There are many many kinematic
+singularities in the RHex design.
+
+144
+00:12:04,470 --> 00:12:06,840
+Particularly when the legs
+are all coming down in parallel.
+
+145
+00:12:08,750 --> 00:12:10,750
+If we focus on this
+alternating tripod gait,
+
+146
+00:12:11,890 --> 00:12:16,990
+which is a ubiquitous bipedal trot in
+animals, virtual bipedal trot in animals.
+
+147
+00:12:16,990 --> 00:12:20,754
+Then, we motivate
+a bipedal approximation or
+
+148
+00:12:20,754 --> 00:12:26,159
+a bipedal projection of the RHex
+machine onto this figure that Uluc
+
+149
+00:12:26,159 --> 00:12:31,854
+drew which was a virtual bipedal
+spring-loaded inverted pendulum,
+
+150
+00:12:31,854 --> 00:12:37,063
+in that each of these two legs was
+its own pogo stick to the body and
+
+151
+00:12:37,063 --> 00:12:39,308
+they would be alternated.
+
+152
+00:12:39,308 --> 00:12:44,532
+If we introduce the stance control very,
+very actively,
+
+153
+00:12:44,532 --> 00:12:50,291
+where we use the shank springiness,
+and the touchdown angle and
+
+154
+00:12:50,291 --> 00:12:56,708
+the liftoff angle, and we think of
+being able to control these things.
+
+155
+00:12:56,708 --> 00:13:01,410
+Then, we can actually decouple all these
+complicated pogo stick dynamics and
+
+156
+00:13:01,410 --> 00:13:03,630
+achieve a control of this template.
+
+157
+00:13:05,400 --> 00:13:10,040
+There were other interesting
+control features of this actively
+
+158
+00:13:10,040 --> 00:13:14,200
+anchored mechanism which I
+will not trouble you with, but
+
+159
+00:13:14,200 --> 00:13:18,110
+they were important to
+the success of the simulation.
+
+160
+00:13:19,820 --> 00:13:26,580
+The anchoring control then, was based
+upon a quasi-static selection of stands.
+
+161
+00:13:26,580 --> 00:13:28,430
+Let me explain that in a figure.
+
+162
+00:13:28,430 --> 00:13:34,910
+Here you see a sagittal plane view of the
+RHex, of the physical bodied RHex machine,
+
+163
+00:13:36,130 --> 00:13:41,050
+wherein there's a virtual
+tow sketched in the figure.
+
+164
+00:13:41,050 --> 00:13:48,350
+That's achieved by tinting the physical
+toes in just the right manner so that,
+
+165
+00:13:48,350 --> 00:13:55,420
+the mass center of the physical body
+meets the ground through a virtual line.
+
+166
+00:13:55,420 --> 00:14:04,740
+That's at the point of a maximum
+pressure point of the leg support,
+
+167
+00:14:04,740 --> 00:14:09,590
+in such a fashion that it feels
+to the machine as though there's
+
+168
+00:14:09,590 --> 00:14:14,130
+really one single virtual leg,
+whose angle can now be adjusted.
+
+169
+00:14:14,130 --> 00:14:18,656
+The touch down angle can now be adjusted
+in the virtual leg by adjusting
+
+170
+00:14:18,656 --> 00:14:20,968
+the cant of the true physical legs.
+
+171
+00:14:24,068 --> 00:14:28,890
+The limits on the hip torques were very,
+very important.
+
+172
+00:14:30,300 --> 00:14:36,410
+And, we were not able to
+maintain stance in the simulation
+
+173
+00:14:36,410 --> 00:14:40,440
+without violating the very
+limited hip torques.
+
+174
+00:14:40,440 --> 00:14:43,770
+And so we threw away the physical limits
+on the torques in order to achieve
+
+175
+00:14:43,770 --> 00:14:45,940
+the stance phase.
+
+176
+00:14:45,940 --> 00:14:50,250
+This has to do with the problems of
+traction that I described earlier in
+
+177
+00:14:50,250 --> 00:14:52,620
+the first segment,
+when we talked about the cheetah and
+
+178
+00:14:52,620 --> 00:14:56,240
+it's claws, and how the cheetah
+is using its claws to dig in.
+
+179
+00:14:56,240 --> 00:15:00,320
+If we don't have enough torque, then we
+can't dig into the ground with our normal
+
+180
+00:15:00,320 --> 00:15:04,990
+forces enough to get traction reaction
+forces to keep from slipping.
+
+181
+00:15:06,190 --> 00:15:09,868
+Or from a toe popping off the ground.
+
+182
+00:15:09,868 --> 00:15:13,933
+When we made all these
+physical approximations and
+
+183
+00:15:13,933 --> 00:15:17,628
+relaxed some of these
+physical constraints.
+
+184
+00:15:17,628 --> 00:15:22,990
+We were able to show
+mathematically that this sagittal
+
+185
+00:15:22,990 --> 00:15:27,771
+plane view of the machine
+actually did stabilize
+
+186
+00:15:27,771 --> 00:15:32,448
+an embedded spring loaded
+inverted pendulum.
+
+187
+00:15:32,448 --> 00:15:38,118
+And we could then take that projection and
+use our understanding
+
+188
+00:15:38,118 --> 00:15:43,473
+of the larger kinematics of
+the machine to generalize across
+
+189
+00:15:43,473 --> 00:15:49,048
+the sagittal plane into the full
+six-degree of freedom body.
+
+190
+00:15:49,048 --> 00:15:53,056
+So that you now see a simulation
+of Uluc's anchoring,
+
+191
+00:15:53,056 --> 00:15:58,723
+actively anchored control of the spring
+inverted pendulum in a simulation of
+
+192
+00:15:58,723 --> 00:16:03,886
+the true physical six-degree of
+freedom in the body of RHex machine.

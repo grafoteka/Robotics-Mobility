@@ -1,0 +1,77 @@
+/*********************************************************/
+/*** QUIZ 1.1.1 Why and how do animals move					   ***/
+**********************************************************/
+	1. In Newton's F=m·a, what does F denote?
+			- Force
+	2. Why is bionspiration encouraged over biomimicry
+			- All of them
+	3. Robot turning left:
+			- Tail turns to the left
+	4. Which is an example of intelligence "baked into" the body?
+			- The kangaroos legs acting as springs
+
+/*********************************************************/
+/*** QUIZ 1.1.3 Legged Mobility: dynamic motion and the***/ 
+/*** management of energy	 										   			 ***/
+**********************************************************/
+	1. In the above image, we see three robots with the leg forces on the ground drawn in blue. Match the robots with their resulting jumps.
+		a) Robot "a" will jump the highest up, robot "b" will jump the furthest sideways.
+		b) Robot "c" will jump the highest up, robot "b" will jump the furthest sideways.
+		c) Robot "b" will jump the highest up, robot "a" will jump the furthest sideways. CORRECT
+		d) Robot "a" will jump the highest up, robot "a" will jump the furthest sideways.
+
+	2. Hamiltonian systems have their total energy (sum of potential and kinetic energies) conserved. Which of these can best be modeled as a Hamiltonian system.
+		a) A block sliding down a ramp covered in honey
+		b) A car decelerating at a red light
+		c) An air conditioner unit
+		d) A pendulum in a clock swinging back and forth CORRECT
+
+	3. Assuming these two motors are about the same size, which one will likely produce more torque and which one will have higher inertia?
+		a) The motor on the right will produce more torque and have higher inertia. CORRECT
+		b) The motor on the left will produce more torque and have higher inertia.
+		c) The motor on the right will produce more torque, the motor on the left will have higher inertia. 
+		d) The motor on the left will produce more torque, the motor on the right will have higher inertia.
+		e) Both motors will produce the same torque and have the same inertia.
+
+	4. Which are examples of programming work? No son todas, ni la cuarta sola. 
+		a) A robot running over rough terrain
+		b) A robot using a sensor to scan the environment
+		c) A robot opening a door
+		d) A robot making a decision about which way to go
+
+/*********************************************************/
+/*** QUIZ 1.2.2 Nonlinear mechanical systems				   ***/
+**********************************************************/
+	1. Which of the following are nonlinear mechanical systems with degree of freedom θ?
+		a) derivada segunda de theta = - derivada primera de theta.
+		b) derivada segunda de theta = - (g/l · tehta) - (b/m · derivada primera de theta)
+		c) derivada segunda de theta = - theta² -> ESTA
+		d) derivada segunda de theta = -(g/l · sin theta) -(b/m · derivada primera de theta) -> ESTA
+
+	2. Assume a nonlinear system has total energy η=(ml²/2)·θ²+mgl(theta−1)² and that the system is dissipative such that the total energy decreases to zero. What do you expect the final angle θ to be when the system comes to a rest? You can assume that there are perturbations that move the system off any unstable fixed points. (Note: your answer should be numeric)
+		a) 0
+
+	3. Assume that the nonlinear system in Question 2 with total energy η=(ml²/2)·θ²+mgl(theta−1)² is actually the model of some robot arm you are building and wish to control so that θ goes to the answer of Question 2. If the mass is doubled and the length is quadrupled, how will the answer to Question 2 change?
+		a) It will go up
+		b) It will stay the same -> ESTA
+		c) It will go down
+
+	4. Assume you are designing a robot controller to make a robot walk to the top of a hill. You've figured out the low-level robot control to prevent your robot from falling over and to give it basic commands like move forwards and turn, but you still have to control the robot to navigate safely to the hilltop without hitting any obstacles.
+
+	Your available sensor inputs are an IMU that gives you the robot orientation (so you can tell if the robot is moving up the hill or down the hill) and a LiDAR device that tells you if there are obstacles such as trees in the way. Assume that you have figured out a way to encode the task of safely getting to the top of the hill as an energy-like basin using these sensor inputs and a energy-like function. Which one of the following could be true about this energy-like function? Remember that the controller will seek to decrease this function.
+
+		a) The top of the hill represents the lowest energy state, while the obstacles represent high energy states. -> ESTA
+		b) The top of the hill represents the highest energy state, while the obstacles represent low energy states.
+		c) The top of the hill represents the highest energy state, while the obstacles represent high energy states.
+		d) The top of the hill represents the lowest energy state, while the obstacles represent low energy states.
+
+/*********************************************************/
+/*** QUIZ 1.2.3 Linearizations											   ***/
+**********************************************************/
+	1. Linearize the equations of motion of an undamped pendulum with equation of motion second derivate θ=−g·sin⁡(θ)/l about the point θ=0,derivate θ=0.
+		Sol: 0.
+			You should get a Jacobian [0 1; −g/l 0]. The eigenvalues of this matrix are pure imaginary, indicating that the solutions oscillate about this fixed point.
+			It turns out that the nonlinear solutions also oscillate but we need more advanced methods to show this mathematically.
+	2. Linearize the equations of motion of an undamped pendulum with equation of motion second derivate θ=−g·sin(⁡θ)/l about the point θ=π, derivate θ=0. 
+		Sol: -g/l
+			You should get a Jacobian [0 1; g/l 0]. This matrix has one positive and one negative eigenvalue. Since the linearized dynamics are hyperbolic we can predict the nonlinear stability behavior from that of the linearized dynamics (which our eigenvalue analysis indeed shows to be unstable).

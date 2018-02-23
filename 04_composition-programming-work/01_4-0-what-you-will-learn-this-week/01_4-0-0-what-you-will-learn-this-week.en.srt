@@ -1,0 +1,264 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:20,410 --> 00:00:24,885
+Welcome to week four,
+the last installment of our robotics MOOC.
+
+3
+00:00:26,325 --> 00:00:30,525
+In this week, we will bring you from what
+
+4
+00:00:30,525 --> 00:00:36,060
+we understand today about composition of
+behavior to the horizons of research.
+
+5
+00:00:36,060 --> 00:00:41,280
+Where we can begin to achieve behaviors
+that we imperfectly understand but
+
+6
+00:00:41,280 --> 00:00:46,570
+have some hope of understanding
+well enough to become truly
+
+7
+00:00:46,570 --> 00:00:51,460
+compositional as if we have
+a language of programing work.
+
+8
+00:00:52,650 --> 00:00:59,570
+In the first segment,
+we'll be thinking about the abstract idea
+
+9
+00:00:59,570 --> 00:01:05,650
+of dynamical composition, we'll come back
+to this ideas of sequential uncomposition,
+
+10
+00:01:05,650 --> 00:01:09,680
+sequential and
+parallel composition that were introduced
+
+11
+00:01:09,680 --> 00:01:14,600
+in the very original first week and we'll
+treat them a little bit more carefully
+
+12
+00:01:14,600 --> 00:01:19,300
+both from the point of view of
+mathematics and of energetic design.
+
+13
+00:01:22,030 --> 00:01:29,640
+Here's an example of a RHex like hexapod
+seen from the side and the sagittal plane,
+
+14
+00:01:29,640 --> 00:01:33,730
+kinematically behaving just as if
+it were the pogo stick on the left.
+
+15
+00:01:34,730 --> 00:01:38,850
+And here's an instantiated version
+of RHex in the physical world,
+
+16
+00:01:38,850 --> 00:01:41,150
+running through the grass.
+
+17
+00:01:41,150 --> 00:01:44,630
+Acting on the grass just
+as if it were a pogo stick,
+
+18
+00:01:44,630 --> 00:01:46,630
+even though it doesn't
+look anything like one.
+
+19
+00:01:49,290 --> 00:01:53,600
+You can see in slow motion
+when RHex is properly tuned,
+
+20
+00:01:53,600 --> 00:01:58,590
+it does begin to look like a pogo stick
+from the point of view of its mass center.
+
+21
+00:01:58,590 --> 00:02:02,160
+We'll be talking about
+these ideas of anchoring
+
+22
+00:02:02,160 --> 00:02:07,015
+the templates in the bodies in 4.1.
+
+23
+00:02:07,015 --> 00:02:10,900
+In 4.2, we'll introduce you to
+
+24
+00:02:10,900 --> 00:02:15,500
+a family of compositions that we have
+been practicing for a while, but
+
+25
+00:02:15,500 --> 00:02:22,080
+only recently do we begin to think we have
+the mathematics to underlie them formally.
+
+26
+00:02:22,080 --> 00:02:24,820
+We'll start by talking about why
+parallel composition is hard.
+
+27
+00:02:26,310 --> 00:02:31,240
+We'll then discuss the minotaur
+robot that you've seen before and
+
+28
+00:02:31,240 --> 00:02:34,000
+the jerboa robot that you've seen before.
+
+29
+00:02:34,000 --> 00:02:39,640
+As increasingly complicated
+compositions of simple pieces.
+
+30
+00:02:39,640 --> 00:02:42,530
+You remember the Ray Bird
+hopper from before, and
+
+31
+00:02:42,530 --> 00:02:45,240
+you remember the rimless
+wheel from before.
+
+32
+00:02:45,240 --> 00:02:50,186
+We're going to put these two together
+to build a two dimensional hopper, and
+
+33
+00:02:50,186 --> 00:02:54,977
+then we're going to put them together
+with that inertial tail reorienting
+
+34
+00:02:54,977 --> 00:02:59,157
+style behavior that we showed
+you earlier to get the minotaur.
+
+35
+00:03:01,386 --> 00:03:04,470
+We're going to do the same thing to
+the more complicated jerboa body.
+
+36
+00:03:05,550 --> 00:03:09,420
+And we can begin to get mathematical
+proofs of the empirical behaviors that you
+
+37
+00:03:09,420 --> 00:03:11,370
+see revealed in these videos.
+
+38
+00:03:12,460 --> 00:03:16,490
+The last segment of this course will bring
+you to the horizons of research of what we
+
+39
+00:03:16,490 --> 00:03:17,130
+understand.
+
+40
+00:03:18,490 --> 00:03:24,370
+Here, we actually get the minotaur
+to bound around in a stable manner
+
+41
+00:03:25,480 --> 00:03:30,630
+using simple compositions
+of vertical Ray Bird
+
+42
+00:03:30,630 --> 00:03:35,790
+style hoppers in ways that we can
+almost begin to prove are correct.
+
+43
+00:03:37,220 --> 00:03:40,699
+We can use the same compositions
+in different bodies.
+
+44
+00:03:41,990 --> 00:03:45,020
+We can use different
+compositions in the same body.
+
+45
+00:03:47,070 --> 00:03:51,310
+The last piece of this week
+will be spent thinking about
+
+46
+00:03:52,990 --> 00:03:55,250
+the jagged edge of what we understand,
+
+47
+00:03:55,250 --> 00:04:00,590
+which are these transitional behaviors
+such as Aaron Johnson's leaping Rhex.
+
+48
+00:04:00,590 --> 00:04:05,760
+And Aaron Johnson's scrambling Rhex, where
+you can see if we could get this down
+
+49
+00:04:05,760 --> 00:04:11,290
+right, we would be able to hugely
+increase the operating capacity and
+
+50
+00:04:11,290 --> 00:04:15,030
+the rescue abilities
+of machines like Rhex.
+
+51
+00:04:15,030 --> 00:04:19,555
+Welcome to the final installment of our
+mobility component of this robotics MOOC.
+
+52
+00:04:20,750 --> 00:04:25,360
+In this week four of the mobility effort,
+
+53
+00:04:25,360 --> 00:04:29,330
+we will be talking about
+the beginnings of programing.
+
+54
+00:04:29,330 --> 00:04:34,000
+What we do and don't understand, and
+what sorts of behaviors we can get
+
+55
+00:04:34,000 --> 00:04:37,410
+in the physical world with what
+sorts of mathematical guarantees.

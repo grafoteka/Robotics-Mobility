@@ -1,0 +1,262 @@
+1
+00:00:07,503 --> 00:00:11,774
+In this section, we consider basic
+material properties relevant to design.
+
+2
+00:00:11,774 --> 00:00:16,540
+Material properties of interest, such
+as strength and stiffness are typically
+
+3
+00:00:16,540 --> 00:00:21,490
+mass normalized and specific strength and
+specific stiffness computed.
+
+4
+00:00:21,490 --> 00:00:25,570
+In this figure,
+we see a log log plot of youngs modulus or
+
+5
+00:00:25,570 --> 00:00:28,510
+stiffness plotted against density.
+
+6
+00:00:28,510 --> 00:00:31,230
+In the top right,
+we see that there are many metals
+
+7
+00:00:31,230 --> 00:00:36,520
+at the very favorable high stiffness
+at the price of significant density.
+
+8
+00:00:36,520 --> 00:00:41,060
+Moving down in stiffness, we see many
+ceramics that seem favorable, but
+
+9
+00:00:41,060 --> 00:00:42,190
+are typically very brittle.
+
+10
+00:00:44,130 --> 00:00:46,200
+Moving down in stiffness
+a little bit more,
+
+11
+00:00:46,200 --> 00:00:50,620
+we see composite materials, which will
+be of interest later in this section.
+
+12
+00:00:50,620 --> 00:00:56,065
+We now revisit the implications of posture
+on stress in a simplified bone model.
+
+13
+00:00:56,065 --> 00:00:57,188
+In this figure,
+
+14
+00:00:57,188 --> 00:01:02,575
+we see how changes in posture influence
+loading in bones in a simplified model.
+
+15
+00:01:02,575 --> 00:01:08,240
+For a more upright posture,
+there is nearly pure compressive loading.
+
+16
+00:01:08,240 --> 00:01:11,160
+This results in a uniform
+stress distribution,
+
+17
+00:01:11,160 --> 00:01:16,070
+which in our example does not exceed
+the ultimate strength of the material.
+
+18
+00:01:16,070 --> 00:01:21,545
+In the more sprawled animal, we see
+a combination of compression and bending.
+
+19
+00:01:21,545 --> 00:01:26,450
+The principle of superposition let's us
+simply add the stress profiles to see
+
+20
+00:01:26,450 --> 00:01:28,765
+the resulting profile on the right.
+
+21
+00:01:28,765 --> 00:01:32,761
+This resulting profile has peak
+stress above the ultimate strength
+
+22
+00:01:32,761 --> 00:01:34,300
+of the material.
+
+23
+00:01:34,300 --> 00:01:38,270
+And so in this case, the bone in
+the sprawled animal would break.
+
+24
+00:01:38,270 --> 00:01:42,170
+As mentioned, all materials up to
+this point have been isotropic.
+
+25
+00:01:42,170 --> 00:01:45,814
+Which means when loaded in different
+conditions, they respond the same way.
+
+26
+00:01:45,814 --> 00:01:49,425
+We now consider anisotropic
+materials such as composites,
+
+27
+00:01:49,425 --> 00:01:53,755
+which have very different responses
+depending on loading conditions.
+
+28
+00:01:53,755 --> 00:01:58,402
+In this video, we see an example
+of an anisotropic material that
+
+29
+00:01:58,402 --> 00:02:01,594
+has a grain similar to
+something like wood.
+
+30
+00:02:01,594 --> 00:02:04,549
+When the material is loaded in
+the direction of the grain,
+
+31
+00:02:04,549 --> 00:02:05,705
+it is very compliant.
+
+32
+00:02:05,705 --> 00:02:10,646
+When it is rotated 90 degrees,
+however and loaded against the grain,
+
+33
+00:02:10,646 --> 00:02:12,275
+it becomes very rigid.
+
+34
+00:02:12,275 --> 00:02:13,155
+In this video,
+
+35
+00:02:13,155 --> 00:02:17,576
+we see the implications of combining
+two of these samples in different ways.
+
+36
+00:02:17,576 --> 00:02:21,738
+When the two samples are combines with
+that the grains are parallel, once again,
+
+37
+00:02:21,738 --> 00:02:26,180
+the combined samples are very compliant
+when loaded in the direction of the grain.
+
+38
+00:02:26,180 --> 00:02:29,844
+When the samples are combined, so
+that the grains are perpendicular.
+
+39
+00:02:29,844 --> 00:02:34,334
+We now have a more isotropic material,
+which is stiff in both directions.
+
+40
+00:02:38,904 --> 00:02:44,350
+In this image, we see the robot XRL that
+has two different kind of composites.
+
+41
+00:02:44,350 --> 00:02:48,250
+These composites are layered differently
+to achieve different material properties.
+
+42
+00:02:49,400 --> 00:02:50,209
+In both cases,
+
+43
+00:02:50,209 --> 00:02:54,273
+we would like the ultimate strength of
+the material to be as high as possible.
+
+44
+00:02:54,273 --> 00:02:57,694
+In the shell, however,
+we prioritize stiffness.
+
+45
+00:02:57,694 --> 00:02:59,860
+And in the legs, we prioritize compliance.
+
+46
+00:03:00,930 --> 00:03:05,500
+Now, we consider anisotropic
+materials at various scales.
+
+47
+00:03:05,500 --> 00:03:08,590
+These are known as
+hierarchical structures.
+
+48
+00:03:08,590 --> 00:03:09,340
+In this figure,
+
+49
+00:03:09,340 --> 00:03:14,010
+we see hierarchical structures found
+in nature, such as bone and bamboo.
+
+50
+00:03:14,010 --> 00:03:17,960
+These are both examples of
+using hierarchical features
+
+51
+00:03:17,960 --> 00:03:21,590
+to change the property of
+the overall material as distinct
+
+52
+00:03:21,590 --> 00:03:24,670
+from the material properties
+of the constituents.
+
+53
+00:03:24,670 --> 00:03:25,530
+In this figure,
+
+54
+00:03:25,530 --> 00:03:30,080
+we see the use of hierarchical compliance
+in the sticky bot robot, which is able
+
+55
+00:03:30,080 --> 00:03:34,780
+to keep the toes of the machine a fixed
+to a surface, even on irregular terrain.

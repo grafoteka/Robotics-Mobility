@@ -1,0 +1,714 @@
+1
+00:00:05,038 --> 00:00:08,050
+In this section,
+we're going to consider actuators.
+
+2
+00:00:08,050 --> 00:00:11,680
+Actuators are very important in leg of
+robots because this is how the robot
+
+3
+00:00:11,680 --> 00:00:14,060
+exerts forces on the world.
+
+4
+00:00:14,060 --> 00:00:17,550
+These forces conserve to either
+manipulate the environment or
+
+5
+00:00:17,550 --> 00:00:18,850
+manipulate the robot itself.
+
+6
+00:00:20,160 --> 00:00:23,080
+We're going to consider different
+actuation technologies, and
+
+7
+00:00:23,080 --> 00:00:26,280
+their respective advantages and
+disadvantages.
+
+8
+00:00:26,280 --> 00:00:29,630
+The first actuator we'll think about
+are hydraulics and pneumatics.
+
+9
+00:00:30,830 --> 00:00:33,570
+These are typically considered
+as actuators, but really,
+
+10
+00:00:33,570 --> 00:00:35,400
+they're actually transmissions.
+
+11
+00:00:35,400 --> 00:00:38,690
+These transmissions rely
+on a source of compressed
+
+12
+00:00:38,690 --> 00:00:43,040
+fluid that's usually external
+to the actuators themselves.
+
+13
+00:00:43,040 --> 00:00:45,660
+For hydraulics, the working fuel is oil.
+
+14
+00:00:45,660 --> 00:00:48,568
+Where as for pneumatics,
+the working fluid is typically air.
+
+15
+00:00:48,568 --> 00:00:53,746
+So, for both of these systems, the force
+is proportional to the cross-section
+
+16
+00:00:53,746 --> 00:00:58,560
+area of the piston and the power consumed
+is proportional to the velocity.
+
+17
+00:00:59,910 --> 00:01:02,100
+They have very good specific force and
+
+18
+00:01:02,100 --> 00:01:05,020
+specific power because of
+the decoupled power source.
+
+19
+00:01:06,230 --> 00:01:10,940
+In this video, we have a very simple
+example of a hydraulic system.
+
+20
+00:01:10,940 --> 00:01:13,660
+There are two syringes filled with fluid,
+and
+
+21
+00:01:13,660 --> 00:01:17,490
+as one syringe moves, it causes
+the other syringe to move as well.
+
+22
+00:01:18,880 --> 00:01:20,880
+The force on the syringes and
+
+23
+00:01:20,880 --> 00:01:24,080
+displacement both relate to
+the surface area of the syringe.
+
+24
+00:01:25,240 --> 00:01:28,810
+In this video we see a simple
+example of a pneumatic system
+
+25
+00:01:28,810 --> 00:01:31,210
+where moving one cylinder
+causes the other to move.
+
+26
+00:01:32,600 --> 00:01:36,500
+The forces and displacement are also
+proportional to the area, however,
+
+27
+00:01:36,500 --> 00:01:40,560
+because the fluid is compressible,
+the relationship isn't as clear.
+
+28
+00:01:40,560 --> 00:01:44,640
+Friction in the walls of the cylinder
+is responsible for this discrepancy.
+
+29
+00:01:44,640 --> 00:01:50,110
+The innate compliance of the two working
+fluids dictates how the systems can work.
+
+30
+00:01:50,110 --> 00:01:55,500
+In this simple hydraulic system, if we tap
+the end of the syringe so that the system
+
+31
+00:01:55,500 --> 00:01:59,290
+is closed It's almost impossible
+to compress the hydraulic fluid.
+
+32
+00:01:59,290 --> 00:02:04,510
+In the pneumatic system, however, if we
+cap the syringe, the compressible fluid
+
+33
+00:02:04,510 --> 00:02:09,880
+means that as we push on the cylinder,
+we have effectively created an air spring.
+
+34
+00:02:09,880 --> 00:02:13,590
+These air springs were very useful
+in Mark Raibert's early hoppers,
+
+35
+00:02:13,590 --> 00:02:15,270
+which were all pneumatic.
+
+36
+00:02:15,270 --> 00:02:18,400
+These pneumatic hoppers used
+air as the working fluid.
+
+37
+00:02:18,400 --> 00:02:22,280
+And that's what's responsible for
+the hopping you can see in this video.
+
+38
+00:02:22,280 --> 00:02:24,860
+However, the spring properties of the leg
+
+39
+00:02:24,860 --> 00:02:26,998
+are also due to
+the compression of the air.
+
+40
+00:02:26,998 --> 00:02:32,330
+More recent Boston Dynamics robots
+use hydraulic transmissions.
+
+41
+00:02:32,330 --> 00:02:33,240
+In this video,
+
+42
+00:02:33,240 --> 00:02:37,750
+we see Spot, which is a hydraulic
+machine that has an electrical pump.
+
+43
+00:02:37,750 --> 00:02:38,770
+It's relatively quiet.
+
+44
+00:02:40,030 --> 00:02:44,450
+In this video, we see LS3, which also
+has a hydraulic transmission, but
+
+45
+00:02:44,450 --> 00:02:46,634
+has a gas engine,
+which makes it very loud.
+
+46
+00:02:46,634 --> 00:02:51,848
+[SOUND] Now we consider the implications
+
+47
+00:02:51,848 --> 00:02:58,484
+on actuation bandwidth
+in these transmissions.
+
+48
+00:02:58,484 --> 00:03:03,028
+Actuation bandwidth is how the amplitude
+of the signal decreases as
+
+49
+00:03:03,028 --> 00:03:05,510
+frequency increases.
+
+50
+00:03:05,510 --> 00:03:08,700
+Ideally, we would like very
+high actuation bandwidth so
+
+51
+00:03:08,700 --> 00:03:12,040
+that we get significant
+amplitude at high frequencies.
+
+52
+00:03:12,040 --> 00:03:17,910
+In this video, we see a simple pneumatic
+system where one cylinder is actuated
+
+53
+00:03:17,910 --> 00:03:21,600
+externally and we see the implications
+of movement in the other cylinder.
+
+54
+00:03:21,600 --> 00:03:24,903
+The larger cylinder is driven
+at increasing speeds and
+
+55
+00:03:24,903 --> 00:03:28,864
+we can see that the amplitude in
+the smaller cylinder decreases.
+
+56
+00:03:36,920 --> 00:03:40,170
+In this video we see a simple
+hydraulic system where the larger
+
+57
+00:03:40,170 --> 00:03:43,560
+driven cylinder causes displacement
+in the smaller cylinder.
+
+58
+00:03:44,840 --> 00:03:49,050
+As the frequency of the larger
+cylinder's drive is increased,
+
+59
+00:03:49,050 --> 00:03:52,900
+the smaller cylinder's amplitude
+decreases, but not as significantly.
+
+60
+00:03:54,080 --> 00:03:57,500
+This simple demonstration
+shows the bandwidth advantages
+
+61
+00:03:57,500 --> 00:03:59,550
+of hydraulic compared
+to pneumatic systems.
+
+62
+00:04:02,040 --> 00:04:06,760
+Now we consider electromagnetic actuators
+typically exemplified by electric motors.
+
+63
+00:04:07,850 --> 00:04:11,400
+These motors have
+considerably lower forces and
+
+64
+00:04:11,400 --> 00:04:14,510
+operate at very high speeds
+with high bandwidth.
+
+65
+00:04:14,510 --> 00:04:18,330
+The power costs operate these
+motors is typically proportional to
+
+66
+00:04:18,330 --> 00:04:19,250
+the torque squared.
+
+67
+00:04:20,300 --> 00:04:24,240
+The operation of these motors is
+governed by a speed-torque curve.
+
+68
+00:04:24,240 --> 00:04:27,470
+This means that the peak torque
+is achieved at no speed.
+
+69
+00:04:27,470 --> 00:04:32,210
+And as speed increases,
+the provided torque linearly decreases.
+
+70
+00:04:32,210 --> 00:04:36,320
+This can be modeled with a force
+damper system as seen in this image.
+
+71
+00:04:36,320 --> 00:04:41,050
+This force damper model is a useful
+abstraction of the speed torque curve.
+
+72
+00:04:41,050 --> 00:04:45,520
+This speed torque curve can be simply
+explained by a force damper model.
+
+73
+00:04:45,520 --> 00:04:51,200
+The force in this Model F is attenuated
+by a damper with constant beat.
+
+74
+00:04:51,200 --> 00:04:56,550
+Again, we see that at no speed, the full
+force of the actuator is available.
+
+75
+00:04:56,550 --> 00:05:00,530
+Whereas at larger speeds,
+the damper diminishes the output force.
+
+76
+00:05:00,530 --> 00:05:05,500
+Most electric motors are used in legged
+robots with the addition of a gear box.
+
+77
+00:05:05,500 --> 00:05:11,120
+The gearbox effectively increases
+the output torque and decreases the speed.
+
+78
+00:05:11,120 --> 00:05:14,260
+This allows the maximum power
+of the actuator to be achieved
+
+79
+00:05:14,260 --> 00:05:15,940
+at reasonable speeds.
+
+80
+00:05:15,940 --> 00:05:21,340
+While gears are very helpful to amplify
+torque they are also fragile and lossy.
+
+81
+00:05:21,340 --> 00:05:26,100
+In gear boxes there's considerable static,
+dry and viscous friction.
+
+82
+00:05:26,100 --> 00:05:30,620
+Furthermore the motor's inertia is
+reflected through the gear box so
+
+83
+00:05:30,620 --> 00:05:35,430
+that the inertia at the output is
+proportional to the gear ratio squared.
+
+84
+00:05:35,430 --> 00:05:39,190
+Gil Pratt made famous the notion
+of a series elastic actuator
+
+85
+00:05:39,190 --> 00:05:42,760
+in which a spring is placed
+between the load and the motor.
+
+86
+00:05:42,760 --> 00:05:47,280
+This is very helpful in that it
+protects the gears from shock loading
+
+87
+00:05:47,280 --> 00:05:50,360
+It also improves the compliance
+of the system and
+
+88
+00:05:50,360 --> 00:05:53,950
+it changes force control into
+a position control problem.
+
+89
+00:05:53,950 --> 00:05:56,490
+By changing the effective
+length of the spring
+
+90
+00:05:56,490 --> 00:05:59,700
+forces can be modulated when the actuator
+is in contact with the load.
+
+91
+00:06:00,850 --> 00:06:05,680
+For a series elastic system we must add
+a series spring to our four stamper model.
+
+92
+00:06:07,310 --> 00:06:13,499
+This spring of stiffness KS is added
+between the actuator and the load.
+
+93
+00:06:13,499 --> 00:06:18,070
+So proprioception in legging robotics
+is the information about one's own.
+
+94
+00:06:19,280 --> 00:06:23,370
+Information in this context is
+typically a force on the end effector.
+
+95
+00:06:24,370 --> 00:06:28,720
+It's possible to measure forces with
+an explicit sensor at the end effector.
+
+96
+00:06:28,720 --> 00:06:34,140
+But here we consider forces that are
+inferred by displacements at the actuator.
+
+97
+00:06:34,140 --> 00:06:37,130
+For this to work,
+actuator transparency is key,
+
+98
+00:06:37,130 --> 00:06:40,540
+so that information from the end effector
+
+99
+00:06:40,540 --> 00:06:45,100
+can travel to the actuator without being
+significantly attenuated or delayed.
+
+100
+00:06:46,100 --> 00:06:50,380
+Most delays will come in from any
+kind of compliance in the system,
+
+101
+00:06:50,380 --> 00:06:51,990
+such as a series elastic element.
+
+102
+00:06:53,110 --> 00:06:57,490
+Actuator transparency is much
+improved by now removing the gearbox.
+
+103
+00:06:58,960 --> 00:07:00,970
+By removing the gearbox,
+
+104
+00:07:00,970 --> 00:07:07,020
+we decrease the attenuation by all the
+sources of friction inside the gearbox.
+
+105
+00:07:07,020 --> 00:07:12,550
+These direct drive robots were first
+pioneered by Harry Asada in the 80s.
+
+106
+00:07:14,400 --> 00:07:18,220
+These machines were, however,
+not power-autonomous and needed to be
+
+107
+00:07:18,220 --> 00:07:21,860
+plugged into the ground as well as having
+the first link attached to the ground.
+
+108
+00:07:23,620 --> 00:07:26,790
+In our Minotaur machine,
+we have created a power-autonomous,
+
+109
+00:07:26,790 --> 00:07:28,470
+legged robot that is direct drive.
+
+110
+00:07:29,890 --> 00:07:33,970
+The actuators on the minuter machine
+are conventional of the shelf
+
+111
+00:07:33,970 --> 00:07:35,680
+rotary brushless electric motors.
+
+112
+00:07:36,850 --> 00:07:42,050
+When comparing the actuators in
+minuter to actuators in a Rex robot.
+
+113
+00:07:42,050 --> 00:07:46,130
+We see 100 fold decrease
+in reflected inertia
+
+114
+00:07:46,130 --> 00:07:48,608
+a 50 fold decrease in viscous friction.
+
+115
+00:07:48,608 --> 00:07:53,640
+And a four-fold decrease in
+both static and dry friction.
+
+116
+00:07:53,640 --> 00:07:58,460
+In this video, we see Minotaur taking
+a few short steps before making a jump.
+
+117
+00:08:00,180 --> 00:08:05,240
+What's important to understand here is
+that the machine must sense every time
+
+118
+00:08:05,240 --> 00:08:06,970
+the leg is in contact with the ground.
+
+119
+00:08:08,160 --> 00:08:09,810
+This is done using proprioception.
+
+120
+00:08:11,030 --> 00:08:15,240
+The actuators in the leg are commanded
+to be virtual springs, and
+
+121
+00:08:15,240 --> 00:08:20,120
+as the leg hits the ground, the deflection
+in the virtual springs is measured and
+
+122
+00:08:20,120 --> 00:08:22,720
+a force at the end effector is estimated.
+
+123
+00:08:22,720 --> 00:08:25,750
+As you can see, this works reliably and
+
+124
+00:08:25,750 --> 00:08:28,230
+ground detection is sensed near
+the beginning of the stride.
+
+125
+00:08:29,830 --> 00:08:30,670
+In this video,
+
+126
+00:08:30,670 --> 00:08:34,900
+we see a comparison between two actuators
+with very different transparency.
+
+127
+00:08:36,090 --> 00:08:39,070
+One is direct drive and one has a gearbox.
+
+128
+00:08:39,070 --> 00:08:41,520
+First we see the direct drive motor,
+
+129
+00:08:41,520 --> 00:08:46,310
+which is not controlled in any way,
+being driven into a fragile egg.
+
+130
+00:08:46,310 --> 00:08:51,690
+We see that the egg does not crack and
+that the actuator itself spins.
+
+131
+00:08:51,690 --> 00:08:54,520
+This spinning means that
+position information
+
+132
+00:08:54,520 --> 00:08:57,060
+can go back into the other system.
+
+133
+00:08:57,060 --> 00:09:00,220
+In the second part of this video,
+we see that a conventional
+
+134
+00:09:00,220 --> 00:09:04,010
+motor with a gear box is driven
+at a similar speed into the egg.
+
+135
+00:09:05,640 --> 00:09:10,990
+We notice that the egg breaks and
+that the actuator has not rotated at all.
+
+136
+00:09:10,990 --> 00:09:14,510
+This means that no information
+can get from the end effector
+
+137
+00:09:14,510 --> 00:09:15,410
+back into the system.
+
+138
+00:09:17,330 --> 00:09:20,000
+Now we consider what happens in biology.
+
+139
+00:09:20,000 --> 00:09:23,520
+Muscles in humans are typically
+very high in transparency.
+
+140
+00:09:23,520 --> 00:09:28,530
+If we consider our series elastic
+spring damper model from before,
+
+141
+00:09:28,530 --> 00:09:32,450
+the typical hill muscle model
+is very similar looking.
+
+142
+00:09:32,450 --> 00:09:36,070
+But, has the addition of a parallel
+spring of spring constant kp.
+
+143
+00:09:37,190 --> 00:09:42,450
+Muscles also have proprioceptive sensors
+built in as the muscle spindles can sense
+
+144
+00:09:42,450 --> 00:09:47,450
+the change in length and the Golgi
+tendon can sense tension in the muscle.
+
+145
+00:09:49,190 --> 00:09:52,100
+In this section we considered
+the advantages and
+
+146
+00:09:52,100 --> 00:09:55,370
+disadvantages of various
+actuators technologies.
+
+147
+00:09:55,370 --> 00:09:59,000
+Furthermore we motivated why
+it's important to think about
+
+148
+00:09:59,000 --> 00:10:03,890
+not only how the actuators are able
+to exert forces on their environment.
+
+149
+00:10:03,890 --> 00:10:07,832
+But what happens when the environment
+exerts forces onto the actuator?

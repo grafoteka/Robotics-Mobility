@@ -1,0 +1,191 @@
+1
+00:00:00,728 --> 00:00:10,728
+[MUSIC]
+
+2
+00:00:20,094 --> 00:00:25,175
+Welcome to the first week of our
+special robotic course in mobility.
+
+3
+00:00:25,175 --> 00:00:29,310
+This week we are going to be looking
+at the background materials, and
+
+4
+00:00:29,310 --> 00:00:31,390
+we'll be motivating the effort.
+
+5
+00:00:32,430 --> 00:00:37,150
+Our first segment will involve
+motivation and such questions as why,
+
+6
+00:00:37,150 --> 00:00:39,580
+how, where to move.
+
+7
+00:00:40,740 --> 00:00:45,900
+We'll spend a fair bit of time
+thinking about the animals, and
+
+8
+00:00:45,900 --> 00:00:50,530
+we'll talk a fair bit
+about bioinspiration.
+
+9
+00:00:50,530 --> 00:00:54,140
+And finally,
+we'll move toward what it means for
+
+10
+00:00:54,140 --> 00:01:00,240
+robots to take bioinspiration and
+turn that inspiration into engineering.
+
+11
+00:01:00,240 --> 00:01:05,470
+At that end of that first segment,
+we'll be looking at animals that don't use
+
+12
+00:01:05,470 --> 00:01:10,714
+their limbs, and realizing that now,
+most of the animals do use their limbs.
+
+13
+00:01:10,714 --> 00:01:17,400
+And we'll be spending the rest of our
+MOOC time on limbed and tailed mobility.
+
+14
+00:01:19,490 --> 00:01:24,240
+The second half hour of this week
+will be background material.
+
+15
+00:01:25,860 --> 00:01:30,170
+Those of you who are very strong on
+ordinary differential equations and
+
+16
+00:01:30,170 --> 00:01:33,670
+linear algebra will race
+through this segment.
+
+17
+00:01:33,670 --> 00:01:38,740
+And those of you who are weak are going
+to find it important to take some time
+
+18
+00:01:38,740 --> 00:01:44,300
+to go through and think about the ideas
+being introduced, and possibly to do
+
+19
+00:01:44,300 --> 00:01:49,740
+some background reading as well, in order
+to follow the development of the ideas.
+
+20
+00:01:49,740 --> 00:01:54,900
+Really, it revolves around this simple
+second-order differential equation that
+
+21
+00:01:54,900 --> 00:01:58,330
+most college students have in year two or
+
+22
+00:01:58,330 --> 00:02:04,140
+year three in engineering, and
+even in other disciplines as well.
+
+23
+00:02:05,990 --> 00:02:10,060
+We'll be thinking about this
+second-order mechanical
+
+24
+00:02:10,060 --> 00:02:15,470
+differential equation
+as a dynamical system.
+
+25
+00:02:15,470 --> 00:02:20,860
+And that change in thinking takes a little
+bit of getting used to, as exemplified by
+
+26
+00:02:20,860 --> 00:02:26,230
+these figures where on the left-hand side
+of each panel you see a time trajectory.
+
+27
+00:02:26,230 --> 00:02:33,020
+And on the right hand side, you see
+the position and the velocity on a plane.
+
+28
+00:02:33,020 --> 00:02:37,510
+And time is collapsed
+down onto that plane so
+
+29
+00:02:37,510 --> 00:02:44,460
+that the trajectories in time become
+orbits, so-called curves on the plane.
+
+30
+00:02:44,460 --> 00:02:45,600
+That idea is crucial.
+
+31
+00:02:47,870 --> 00:02:51,900
+We're not really concerned with linear
+ordinary differential equations,
+
+32
+00:02:51,900 --> 00:02:55,510
+which is what you all learned in
+your sophomore or junior year.
+
+33
+00:02:55,510 --> 00:03:00,240
+No, no, everything that's interesting
+about mobility in robotics has to do with
+
+34
+00:03:00,240 --> 00:03:02,890
+nonlinear ordinary differential equations.
+
+35
+00:03:02,890 --> 00:03:08,429
+And we'll spend some time reviewing what's
+known about nonlinear dynamical systems.
+
+36
+00:03:09,750 --> 00:03:16,710
+The most important ideas that we'll need
+later have to with energy and basins.
+
+37
+00:03:16,710 --> 00:03:18,640
+Welcome to week one.
+
+38
+00:03:18,640 --> 00:03:23,590
+We'll be spending the rest of
+the three weeks using these ideas and
+
+39
+00:03:23,590 --> 00:03:26,630
+turning them into marvelous robots, and
+
+40
+00:03:26,630 --> 00:03:30,160
+thinking about how our marvelous
+robots might become even better.

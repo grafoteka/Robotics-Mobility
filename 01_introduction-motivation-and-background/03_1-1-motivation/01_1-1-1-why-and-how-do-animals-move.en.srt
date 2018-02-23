@@ -1,0 +1,679 @@
+1
+00:00:05,024 --> 00:00:07,170
+Why and how do we move?
+
+2
+00:00:09,160 --> 00:00:10,240
+Well, we're animals.
+
+3
+00:00:10,240 --> 00:00:12,200
+Why do animals move?
+
+4
+00:00:12,200 --> 00:00:14,620
+Animals, the very word means movement.
+
+5
+00:00:16,370 --> 00:00:19,750
+Breathing, Animalia has to
+do with things that breathe.
+
+6
+00:00:19,750 --> 00:00:24,080
+Aristotle, thousands of years ago,
+thought about such questions and
+
+7
+00:00:24,080 --> 00:00:26,250
+asked why it is that animals move.
+
+8
+00:00:26,250 --> 00:00:30,958
+And he understood that there was
+some combination of reason and
+
+9
+00:00:30,958 --> 00:00:34,530
+motivation and perception.
+
+10
+00:00:34,530 --> 00:00:38,420
+And curiously, he didn't have much
+to say about the motor act itself.
+
+11
+00:00:39,590 --> 00:00:43,780
+So, for thousands of years,
+we've been thinking about such questions.
+
+12
+00:00:43,780 --> 00:00:47,160
+And recently, the biologists have
+gotten together many different
+
+13
+00:00:47,160 --> 00:00:51,970
+fields within biology and a new discipline
+of movement ecology has developed.
+
+14
+00:00:53,000 --> 00:00:56,200
+And the movement ecologists
+have come to understand that
+
+15
+00:00:56,200 --> 00:00:59,500
+we need to think about many
+scales at the same time.
+
+16
+00:00:59,500 --> 00:01:02,720
+We need to think about limbs over seconds.
+
+17
+00:01:02,720 --> 00:01:06,190
+We need to think about
+bodies over minutes.
+
+18
+00:01:06,190 --> 00:01:10,800
+We need to think about places that
+the animals travel over days.
+
+19
+00:01:12,120 --> 00:01:18,470
+And of course over continents,
+there are migrations and yearly motion.
+
+20
+00:01:18,470 --> 00:01:24,399
+The basic components of study involve
+motion science as the engineers
+
+21
+00:01:24,399 --> 00:01:30,630
+understand it, navigation as
+the cognitive scientists understand it,
+
+22
+00:01:30,630 --> 00:01:36,057
+natural sciences as the physicists and
+chemists participate,
+
+23
+00:01:36,057 --> 00:01:40,195
+and many, many,
+many branches come together.
+
+24
+00:01:40,195 --> 00:01:44,259
+In our module, we're not going to so
+
+25
+00:01:44,259 --> 00:01:51,030
+much consider the environmental
+record of travel.
+
+26
+00:01:51,030 --> 00:01:55,224
+We're not so much going to consider
+the motivation and evolutionary drivers.
+
+27
+00:01:55,224 --> 00:02:01,200
+We're going to focus largely on the
+mechanical and navigational capabilities.
+
+28
+00:02:01,200 --> 00:02:05,620
+And when we think about the connections
+to biology, we're trying very,
+
+29
+00:02:05,620 --> 00:02:09,490
+very hard to understand the lessons
+of evolutionary ecology.
+
+30
+00:02:09,490 --> 00:02:14,200
+But mostly we'll be focused on what
+the people in biomechanics and
+
+31
+00:02:14,200 --> 00:02:18,590
+the neuroscientists and
+the cognitive scientists can tell us.
+
+32
+00:02:18,590 --> 00:02:24,500
+So welcome to this special
+inquiry into mobility.
+
+33
+00:02:24,500 --> 00:02:29,107
+We'll be spending a lot of time
+thinking about the relationship
+
+34
+00:02:29,107 --> 00:02:33,981
+between animal mobility and
+machine mobility in the hours to come.
+
+35
+00:02:36,873 --> 00:02:38,959
+Well, how do animals move?
+
+36
+00:02:40,820 --> 00:02:42,300
+It starts with Newton.
+
+37
+00:02:42,300 --> 00:02:44,750
+Newton says, F equals m a.
+
+38
+00:02:44,750 --> 00:02:49,900
+The body accelerates consequent
+upon forces applied to it.
+
+39
+00:02:51,270 --> 00:02:56,520
+The forces of reaction against
+the environment cause accelerations.
+
+40
+00:02:56,520 --> 00:03:02,706
+And those forces are carried
+by appendages, limbs, tails.
+
+41
+00:03:02,706 --> 00:03:08,487
+We'll be concerned with the way
+in which the appendages
+
+42
+00:03:08,487 --> 00:03:13,653
+of the animals or
+the machines carry the forces and
+
+43
+00:03:13,653 --> 00:03:19,190
+imbue the body with reaction
+forces from the ground.
+
+44
+00:03:21,340 --> 00:03:24,250
+This begins a very long and
+
+45
+00:03:24,250 --> 00:03:29,610
+very much unfinished story, because the
+appendages have to travel with the body.
+
+46
+00:03:30,750 --> 00:03:33,482
+And so
+the appendages can't be left behind, and
+
+47
+00:03:33,482 --> 00:03:35,947
+if they're going to be
+asserting forces and
+
+48
+00:03:35,947 --> 00:03:40,156
+transmitting forces from the ground
+to the body, they have to oscillate.
+
+49
+00:03:40,156 --> 00:03:44,724
+If they oscillate, they have to
+oscillate in tight coordination.
+
+50
+00:03:44,724 --> 00:03:50,195
+And tight coordination requires very
+complicated and intricate feedback
+
+51
+00:03:50,195 --> 00:03:55,663
+loops such as the biologists are beginning
+to uncover and understand, but
+
+52
+00:03:55,663 --> 00:04:00,890
+we in engineering have been thinking
+about for a very, very long time.
+
+53
+00:04:03,170 --> 00:04:07,170
+The feedback loops include pathways
+from the environment through the limbs,
+
+54
+00:04:07,170 --> 00:04:13,850
+from the environment through the nerves,
+within the body,
+
+55
+00:04:13,850 --> 00:04:18,120
+through the limbs and nerves, and
+all of this pathways are mixed.
+
+56
+00:04:19,630 --> 00:04:23,760
+What's particularly fascinating to
+us in robotics about animal movement
+
+57
+00:04:24,950 --> 00:04:29,990
+is that the animals have a lot of their
+intelligence built into their bodies.
+
+58
+00:04:29,990 --> 00:04:36,530
+Their bodies mix form with function
+in a marvelous and confusing way.
+
+59
+00:04:36,530 --> 00:04:37,800
+Muscles.
+
+60
+00:04:37,800 --> 00:04:41,420
+Muscles in the animals
+sometimes function as motors,
+
+61
+00:04:41,420 --> 00:04:45,920
+sometimes they function as brakes,
+sometimes they function as springs.
+
+62
+00:04:47,490 --> 00:04:48,952
+Intelligence.
+
+63
+00:04:48,952 --> 00:04:51,990
+The intelligence is baked into the body.
+
+64
+00:04:54,890 --> 00:04:56,700
+Well, how don't the animals move?
+
+65
+00:04:58,280 --> 00:05:01,390
+And why are we spending all
+of our time on the animals?
+
+66
+00:05:01,390 --> 00:05:05,477
+The animals inspire this course because
+they have been moving successfully for
+
+67
+00:05:05,477 --> 00:05:07,126
+hundreds of millions of years.
+
+68
+00:05:07,126 --> 00:05:11,346
+Animals invented limbed mobility, and
+
+69
+00:05:11,346 --> 00:05:18,430
+we would like to try to be inspired and
+to learn from their mobility.
+
+70
+00:05:19,890 --> 00:05:25,860
+The animals are focused
+on body-based sensing.
+
+71
+00:05:25,860 --> 00:05:31,950
+And traditionally, this has been less true
+of the engineering artifacts in robotics,
+
+72
+00:05:31,950 --> 00:05:37,220
+it's very hard for
+us to build sensors and actuators
+
+73
+00:05:37,220 --> 00:05:41,670
+all into the same body and into the limbs
+that will be interacting with the world.
+
+74
+00:05:44,130 --> 00:05:45,830
+How do the animals move?
+
+75
+00:05:45,830 --> 00:05:47,900
+Well, on land, they stride.
+
+76
+00:05:49,590 --> 00:05:50,810
+How don't they move?
+
+77
+00:05:50,810 --> 00:05:52,770
+Don't they have wheels?
+
+78
+00:05:52,770 --> 00:05:54,539
+Why don't the animals have wheels?
+
+79
+00:05:56,910 --> 00:06:01,220
+Biology has invented wheels a few times
+
+80
+00:06:01,220 --> 00:06:06,500
+in the form of molecular motors and
+sometimes in the form of organisms.
+
+81
+00:06:06,500 --> 00:06:11,410
+Here's a marvelous stomatopod
+called the mantis shrimp.
+
+82
+00:06:11,410 --> 00:06:16,140
+This stomatopod was
+investigated 20 years ago,
+
+83
+00:06:16,140 --> 00:06:20,310
+25 years ago by my good friend and
+colleague, Bob Full and his collaborators.
+
+84
+00:06:20,310 --> 00:06:23,940
+And what they discovered was
+that this animal rolls itself up
+
+85
+00:06:25,070 --> 00:06:29,610
+into a ball, really, into a disk.
+
+86
+00:06:29,610 --> 00:06:34,680
+And it rolls along the beach
+as a disk-like wheel.
+
+87
+00:06:36,318 --> 00:06:40,376
+But there are very, very,
+very few animals that move in this manner.
+
+88
+00:06:40,376 --> 00:06:41,550
+How about in liquid?
+
+89
+00:06:41,550 --> 00:06:42,980
+How do animals move in liquid?
+
+90
+00:06:44,060 --> 00:06:45,670
+In liquid, they slither or they swim.
+
+91
+00:06:47,320 --> 00:06:48,560
+They don't have jets?
+
+92
+00:06:48,560 --> 00:06:50,959
+Well, sure, they have jets.
+
+93
+00:06:52,120 --> 00:06:56,740
+Scientists, biologists have been
+looking at squids for decades and
+
+94
+00:06:56,740 --> 00:07:00,670
+trying to understand the nature
+of the jet propulsion that
+
+95
+00:07:00,670 --> 00:07:04,030
+allows the squids to
+whish through the seas.
+
+96
+00:07:05,300 --> 00:07:08,290
+They think of the squids
+as just hearts set free.
+
+97
+00:07:09,870 --> 00:07:13,750
+But jet propulsion turns out to be very,
+very inefficient.
+
+98
+00:07:13,750 --> 00:07:16,550
+It's very inefficient to
+contain the reaction mass.
+
+99
+00:07:18,570 --> 00:07:22,480
+Mostly, when animals move,
+they use their limbs.
+
+100
+00:07:22,480 --> 00:07:26,519
+They use their fins, they use their legs,
+they use their tails.
+
+101
+00:07:27,630 --> 00:07:33,100
+This course is going to be focused on the
+relationship between the inspiration we
+
+102
+00:07:33,100 --> 00:07:37,940
+receive from biology and the engineering
+that we can build in consequence.
+
+103
+00:07:39,030 --> 00:07:42,590
+We therefore will be
+studying limbed mobility.
+
+104
+00:07:42,590 --> 00:07:46,800
+And again, when I say limbed,
+I will mean all sorts of limbs,
+
+105
+00:07:46,800 --> 00:07:53,280
+all sorts of appendages, tails and
+arms and legs and possibly even fingers.
+
+106
+00:07:54,710 --> 00:07:59,159
+We will be inspired, but we will not copy.
+
+107
+00:07:59,159 --> 00:08:04,085
+The first lessons that we learn from our
+friends in biology is that the history of
+
+108
+00:08:04,085 --> 00:08:06,580
+animal form is very complicated.
+
+109
+00:08:06,580 --> 00:08:10,296
+Millions of years of history that
+we only partially understand.
+
+110
+00:08:10,296 --> 00:08:13,430
+Let's take for example tails.
+
+111
+00:08:13,430 --> 00:08:15,420
+What are tails used for?
+
+112
+00:08:15,420 --> 00:08:19,500
+Well, here's a beautiful macaque monkey.
+
+113
+00:08:19,500 --> 00:08:26,340
+This beautiful macaque monkey has a very
+long, bushy tail, and we might be inspired
+
+114
+00:08:26,340 --> 00:08:31,630
+to try to build such a tail in our
+robots until we talk to the biologists,
+
+115
+00:08:31,630 --> 00:08:36,089
+who tell us that, well, this tail is
+mostly used for play-time signalling.
+
+116
+00:08:37,110 --> 00:08:40,410
+Probably we don't want our robots to
+do too much play-time signalling, so
+
+117
+00:08:40,410 --> 00:08:43,560
+we will probably not build a tail for
+this purpose.
+
+118
+00:08:44,860 --> 00:08:45,830
+How about the beaver?
+
+119
+00:08:45,830 --> 00:08:49,680
+The beaver has a tail, the beaver
+uses its tail for swimming, right?
+
+120
+00:08:49,680 --> 00:08:52,670
+And we know the beaver uses its tail for
+slapping and
+
+121
+00:08:52,670 --> 00:08:55,510
+warning its fellow beavers
+of possible enemies.
+
+122
+00:08:55,510 --> 00:08:57,557
+These sound like very,
+very useful roles for tails.
+
+123
+00:08:57,557 --> 00:09:01,185
+But really, as it turns out,
+when you talk to the biologists,
+
+124
+00:09:01,185 --> 00:09:03,730
+the beaver's tail is used for storing fat.
+
+125
+00:09:04,750 --> 00:09:09,660
+We probably don't want to store fat in
+our robots, and we probably will be very
+
+126
+00:09:09,660 --> 00:09:14,390
+careful about how we use insights from
+the beaver tail in building our robots.
+
+127
+00:09:15,700 --> 00:09:18,850
+And then there are all the many
+animals such as pigs or
+
+128
+00:09:18,850 --> 00:09:21,110
+humans that have vestigial tails.
+
+129
+00:09:21,110 --> 00:09:24,790
+Do we really want to build
+a vestigial tail on our robots?
+
+130
+00:09:24,790 --> 00:09:25,540
+Probably not.
+
+131
+00:09:27,190 --> 00:09:30,730
+We would like to work with principles and
+not appearances.
+
+132
+00:09:32,440 --> 00:09:35,330
+We have spent a lot of time
+talking with Bob Full and
+
+133
+00:09:35,330 --> 00:09:39,730
+his students about how the lizards
+use their tails to right themselves
+
+134
+00:09:39,730 --> 00:09:43,650
+in situations of crisis or imbalance.
+
+135
+00:09:43,650 --> 00:09:46,650
+And we've spent a number of years
+working together with him and
+
+136
+00:09:46,650 --> 00:09:52,660
+his students to build tailed robots that
+don't look anything like those lizards,
+
+137
+00:09:52,660 --> 00:09:57,878
+but have tails that function a little
+bit like the lizard's in their
+
+138
+00:09:57,878 --> 00:10:03,220
+self-righting ability, as seen by this
+little robot car on the left hand.
+
+139
+00:10:03,220 --> 00:10:08,460
+And seen by our Rex robot
+running across the pedestal
+
+140
+00:10:08,460 --> 00:10:12,990
+of Ben Franklin and righting itself with
+its tail when it falls off the cliff.
+
+141
+00:10:12,990 --> 00:10:18,210
+These robots don't look anything like
+the lizard, but the principles Involved
+
+142
+00:10:18,210 --> 00:10:24,220
+in getting the body level in consequence
+of the tail motion is exactly
+
+143
+00:10:24,220 --> 00:10:29,620
+the kind of thing that we want to learn
+how to do and generalize in robotics.
+
+144
+00:10:29,620 --> 00:10:34,062
+So we're concerned with bioinspiration and
+not mimicry.

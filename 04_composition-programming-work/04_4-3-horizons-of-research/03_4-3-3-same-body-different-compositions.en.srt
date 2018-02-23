@@ -1,0 +1,309 @@
+1
+00:00:06,146 --> 00:00:09,730
+Last segment we looked at
+reusing templates on bodies.
+
+2
+00:00:09,730 --> 00:00:13,220
+There's another facet of composition
+that's useful even with a single body.
+
+3
+00:00:14,270 --> 00:00:17,980
+Sometimes there are different ways
+to anchor the same templates.
+
+4
+00:00:17,980 --> 00:00:19,520
+Since the bodies are coupled,
+
+5
+00:00:19,520 --> 00:00:23,730
+a single actuator output may
+affect many degrees of freedom and
+
+6
+00:00:23,730 --> 00:00:28,970
+we have some flexibility of choosing how
+the actuator controls a degree of freedom.
+
+7
+00:00:30,020 --> 00:00:33,040
+For this section we need to
+introduce a new template.
+
+8
+00:00:33,040 --> 00:00:38,370
+We've already seen pitch control for
+as well as for Jerboa.
+
+9
+00:00:38,370 --> 00:00:39,999
+So, let's remember how that works.
+
+10
+00:00:41,030 --> 00:00:44,730
+Let's say we have an actuator which
+could be a virtual hip torque or
+
+11
+00:00:44,730 --> 00:00:47,700
+a physical hip torque or anything else.
+
+12
+00:00:47,700 --> 00:00:52,430
+And we have an attitude degree of
+freedom which is essentially an angle.
+
+13
+00:00:52,430 --> 00:00:55,570
+And what we do is we choose
+the torque to be a PD controller or
+
+14
+00:00:55,570 --> 00:00:58,960
+similar servo on the angle
+that we're trying to control.
+
+15
+00:00:58,960 --> 00:01:03,600
+Now we introduce a new template which
+is called tailed reorientation.
+
+16
+00:01:03,600 --> 00:01:07,080
+Bodies with a tail have this
+internal shape angle which
+
+17
+00:01:07,080 --> 00:01:09,830
+you can find out more
+about from this paper.
+
+18
+00:01:09,830 --> 00:01:14,417
+And what we can do is allow the tail to
+work and affect the internal shape angle,
+
+19
+00:01:14,417 --> 00:01:15,749
+to reorient the body.
+
+20
+00:01:19,975 --> 00:01:24,397
+Let's take SLIP on Jerboa from the
+previous segment, and now remove the boom,
+
+21
+00:01:24,397 --> 00:01:27,080
+which was locking the body pitch.
+
+22
+00:01:27,080 --> 00:01:32,310
+What we're going to do is let the hip
+torque control the body pitch and
+
+23
+00:01:32,310 --> 00:01:37,340
+stance, and the tail torque
+control the shape angle in flight.
+
+24
+00:01:37,340 --> 00:01:38,370
+This is what that looks like.
+
+25
+00:01:39,620 --> 00:01:41,870
+Empirical work is really in progress.
+
+26
+00:01:41,870 --> 00:01:44,835
+And some of the reasons why
+these experiments are difficult
+
+27
+00:01:44,835 --> 00:01:48,280
+are that you need very
+good orientation sensing.
+
+28
+00:01:48,280 --> 00:01:51,990
+These experiments are also sensitive to
+the location of the center of mass which
+
+29
+00:01:51,990 --> 00:01:57,880
+is why I have to have this unicorn horn to
+move the center of mass further forward.
+
+30
+00:01:57,880 --> 00:02:01,670
+Essentially what we've done is
+we've extended Raibert's ideas
+
+31
+00:02:01,670 --> 00:02:06,540
+from his original three degree of freedom
+planar hopper to this much more coupled,
+
+32
+00:02:06,540 --> 00:02:08,340
+four degree of freedom tailed system.
+
+33
+00:02:09,540 --> 00:02:12,730
+So is that the only way
+to get your robot to hop?
+
+34
+00:02:12,730 --> 00:02:15,140
+Well let's see, the answer is no.
+
+35
+00:02:15,140 --> 00:02:18,330
+Here's an example that
+just borrows Rex's idea
+
+36
+00:02:18,330 --> 00:02:21,782
+of having the hip energize
+a SLIP like behavior.
+
+37
+00:02:22,880 --> 00:02:26,280
+The C legs in this video are here
+primarily because we could not get enough
+
+38
+00:02:26,280 --> 00:02:27,880
+traction with the point legs.
+
+39
+00:02:27,880 --> 00:02:30,600
+But we don't really thinks that that's
+that important for the behavior.
+
+40
+00:02:31,850 --> 00:02:35,680
+So the hips control the slip
+degrees of freedom and
+
+41
+00:02:35,680 --> 00:02:40,480
+the tail then needs to control the body
+angle as well as the shape angle.
+
+42
+00:02:40,480 --> 00:02:45,360
+This video shows one way in which the tail
+can control attitude degrees of freedom
+
+43
+00:02:45,360 --> 00:02:47,510
+by interacting with the ground.
+
+44
+00:02:47,510 --> 00:02:51,037
+You'll remember from section 3.2
+by using tails to interact with
+
+45
+00:02:51,037 --> 00:02:53,789
+the ground is not unusual
+even in the animal kingdom.
+
+46
+00:02:58,653 --> 00:03:01,410
+Okay, so
+we have two ways that Jerboa could hop.
+
+47
+00:03:01,410 --> 00:03:03,950
+The two ways have important differences.
+
+48
+00:03:03,950 --> 00:03:06,050
+The hip energized hopping is faster.
+
+49
+00:03:06,050 --> 00:03:09,880
+It actually goes seven to
+eight body lengths per second.
+
+50
+00:03:09,880 --> 00:03:12,450
+But, the tail energized
+hopping needs less traction,
+
+51
+00:03:12,450 --> 00:03:15,449
+which could be important if you're
+trying to hop on the slippery surface.
+
+52
+00:03:16,670 --> 00:03:20,400
+Additionally, they impose different
+morphological constraints.
+
+53
+00:03:20,400 --> 00:03:23,850
+We haven't spoken about this before,
+but when we anchor templates,
+
+54
+00:03:23,850 --> 00:03:27,610
+there is a push forward of
+controllers from template to body.
+
+55
+00:03:27,610 --> 00:03:31,160
+But complimentary to this to use
+the template controllers we need to
+
+56
+00:03:31,160 --> 00:03:34,000
+pull back some of the body's parameters.
+
+57
+00:03:34,000 --> 00:03:38,140
+This is a topic of active research as you
+can see from the reference in this slide.
+
+58
+00:03:38,140 --> 00:03:41,100
+But this morphological
+reduction imposes constraints
+
+59
+00:03:41,100 --> 00:03:43,780
+on the allowable parameter
+space of the body.
+
+60
+00:03:43,780 --> 00:03:47,430
+In this instance, the hip/g-energized
+hopping seems to prefer
+
+61
+00:03:47,430 --> 00:03:51,490
+a different location for the center of
+mass than the tail-energized hopping.
+
+62
+00:03:51,490 --> 00:03:55,930
+To summarize, having alternate
+solutions is a good thing.
+
+63
+00:03:55,930 --> 00:04:00,970
+What we've done is we've shown you two
+ways that Jerboa can hop in the plane.
+
+64
+00:04:00,970 --> 00:04:04,590
+And the different environmental conditions
+might make us prefer one solution
+
+65
+00:04:04,590 --> 00:04:05,180
+over the other.

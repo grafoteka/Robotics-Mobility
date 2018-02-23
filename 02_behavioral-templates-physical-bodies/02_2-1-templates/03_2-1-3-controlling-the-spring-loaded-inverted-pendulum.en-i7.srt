@@ -1,0 +1,740 @@
+1
+00:00:06,148 --> 00:00:09,622
+In the last few lectures, we learned
+about templates and their importance for
+
+2
+00:00:09,622 --> 00:00:10,840
+robot design and control.
+
+3
+00:00:12,010 --> 00:00:14,160
+Some of the examples we
+saw included walking and
+
+4
+00:00:14,160 --> 00:00:18,260
+running robots that anchored the stability
+properties of their templates directly in
+
+5
+00:00:18,260 --> 00:00:20,010
+their mechanical design,
+
+6
+00:00:20,010 --> 00:00:23,630
+in a way that they could move robustly
+with almost no sensing or computation.
+
+7
+00:00:24,640 --> 00:00:25,440
+In this lecture,
+
+8
+00:00:25,440 --> 00:00:30,290
+we'll discuss the case where more active
+control is needed not to fall over.
+
+9
+00:00:30,290 --> 00:00:34,720
+Specifically, we'll look at the ideas
+pioneered by Mark Reinert in 1980s,
+
+10
+00:00:34,720 --> 00:00:37,980
+during his professorship at
+the Carnegie Mellon University and
+
+11
+00:00:37,980 --> 00:00:40,960
+the Massachusetts Institute of Technology.
+
+12
+00:00:40,960 --> 00:00:44,860
+In this lecture we will learn about his
+machines and view them through the lens of
+
+13
+00:00:44,860 --> 00:00:47,950
+controlling a spring-loaded,
+inverted pendulum template.
+
+14
+00:00:47,950 --> 00:00:51,680
+The mechanical design of Raibert's
+hopper is facilitated their control.
+
+15
+00:00:51,680 --> 00:00:55,735
+The sagittal plane hopper, which we first
+investigate, was fixed to a boom and
+
+16
+00:00:55,735 --> 00:00:58,865
+possessed three degrees of freedom,
+allowing it to move vertically,
+
+17
+00:00:58,865 --> 00:01:01,025
+horizontally and to pitch.
+
+18
+00:01:01,025 --> 00:01:04,875
+The leg was radially actuated by
+a pneumatic actuator, which also provided
+
+19
+00:01:04,875 --> 00:01:08,705
+the leg with compliance in
+a similar fashion to a spring.
+
+20
+00:01:08,705 --> 00:01:11,820
+Hydraulic actuators
+controlled the leg angle.
+
+21
+00:01:11,820 --> 00:01:15,120
+The leg was also light enough to be
+able to swing without significantly
+
+22
+00:01:15,120 --> 00:01:17,290
+disrupting the body dynamics.
+
+23
+00:01:17,290 --> 00:01:21,340
+So the mechanical design of Raibert's
+hopper is pretty closely approximated
+
+24
+00:01:21,340 --> 00:01:23,660
+in the actuated version of slip.
+
+25
+00:01:23,660 --> 00:01:25,575
+Raibert's idea was to
+separately control for
+
+26
+00:01:25,575 --> 00:01:29,515
+hopping height, forward speed in flight,
+and pitch angle.
+
+27
+00:01:29,515 --> 00:01:32,415
+Of course, all three of these things
+are coupled through the dynamics,
+
+28
+00:01:32,415 --> 00:01:35,925
+but Raibert recognized that these
+coupling effects were weak enough so
+
+29
+00:01:35,925 --> 00:01:39,525
+that stable running could be
+achieved despite their interaction.
+
+30
+00:01:39,525 --> 00:01:40,835
+To control hopping height,
+
+31
+00:01:40,835 --> 00:01:45,520
+a fixed magnitude radial force is applied
+during stance with a pneumatic actuator.
+
+32
+00:01:45,520 --> 00:01:50,080
+And the duration of this thrust force is
+modulated to achieve the desired height.
+
+33
+00:01:50,080 --> 00:01:51,990
+As the mechanical losses from friction and
+
+34
+00:01:51,990 --> 00:01:55,190
+impacts monotonically
+increase with hopping height,
+
+35
+00:01:55,190 --> 00:01:59,410
+there is a unique equilibrium height for
+each thrust duration and stance.
+
+36
+00:01:59,410 --> 00:02:02,690
+Thus to jump higher, a longer thrust
+duration is used and vice versa.
+
+37
+00:02:03,820 --> 00:02:07,450
+The body pitch is controlled by
+actuating the leg angle and stance.
+
+38
+00:02:07,450 --> 00:02:11,050
+The pitch angle can be sensed using
+an inertial measurement unit, and
+
+39
+00:02:11,050 --> 00:02:14,530
+a proportional derivative
+controller is used to derive
+
+40
+00:02:14,530 --> 00:02:17,150
+the system to the desired pitch angle.
+
+41
+00:02:17,150 --> 00:02:21,227
+We will talk more about proportional
+derivative control in a later lecture,
+
+42
+00:02:21,227 --> 00:02:24,612
+but for now the intuition is that
+the leg motors are given a torque
+
+43
+00:02:24,612 --> 00:02:26,995
+command proportional to the pitch error,
+or
+
+44
+00:02:26,995 --> 00:02:31,156
+a difference between the desired and
+the actual pitch to decrease this error.
+
+45
+00:02:31,156 --> 00:02:33,186
+But before the torque command is set,
+
+46
+00:02:33,186 --> 00:02:37,470
+it is subtracted from by a value
+proportional to angular velocity.
+
+47
+00:02:37,470 --> 00:02:41,210
+This term is used in an effort to
+slow down the angular velocity so
+
+48
+00:02:41,210 --> 00:02:43,740
+that the desired pitch isn't
+continuously overshot.
+
+49
+00:02:45,180 --> 00:02:47,370
+So in stance, radio actuation controls for
+
+50
+00:02:47,370 --> 00:02:50,770
+hopping height, while angular
+actuation controls your pitch.
+
+51
+00:02:50,770 --> 00:02:54,590
+Since there are only two degrees of
+freedom of actuation of forward in stance,
+
+52
+00:02:54,590 --> 00:02:56,590
+how can forward speed be controlled?
+
+53
+00:02:56,590 --> 00:02:58,730
+This is where things get interesting.
+
+54
+00:02:58,730 --> 00:03:01,080
+Instead of controlling
+forward speed in stance,
+
+55
+00:03:01,080 --> 00:03:05,080
+forward speed is controlled in flight
+by choosing the light touchdown angle.
+
+56
+00:03:05,080 --> 00:03:08,260
+This is an example of where the
+inheritantly hybrid dynamics of leg and
+
+57
+00:03:08,260 --> 00:03:11,200
+locomotion can be leveraged for
+controlling robots.
+
+58
+00:03:12,260 --> 00:03:16,140
+Let's stop for a minute and consider why
+the light touchdown angle is important.
+
+59
+00:03:16,140 --> 00:03:21,000
+To do so, we're going to go back to the
+dynamics of a purely passive slip model.
+
+60
+00:03:21,000 --> 00:03:24,520
+If the model is released from some
+height with some set forward speed,
+
+61
+00:03:24,520 --> 00:03:27,570
+then the leg touch standing will
+determine what happens in stance
+
+62
+00:03:27,570 --> 00:03:32,180
+by setting up how much gravity pulls the
+inverted pendulum forwards or backwards.
+
+63
+00:03:32,180 --> 00:03:35,860
+Intuitively, the more negative
+the leg angle is at touchdown,
+
+64
+00:03:35,860 --> 00:03:38,720
+then the more the model's forward
+acceleration will increase.
+
+65
+00:03:38,720 --> 00:03:40,810
+The more positive the leg
+angle at touch down,
+
+66
+00:03:40,810 --> 00:03:44,260
+the more the model's forwards
+acceleration will decrease.
+
+67
+00:03:44,260 --> 00:03:46,800
+Because the dynamics don't
+have an analytic solution,
+
+68
+00:03:46,800 --> 00:03:50,340
+the precise net acceleration in
+stance as a function of leg angle,
+
+69
+00:03:50,340 --> 00:03:52,670
+doesn't have an analytic expression.
+
+70
+00:03:52,670 --> 00:03:57,040
+However, we can intuit that the leg touch
+down angle is monotonic with the net
+
+71
+00:03:57,040 --> 00:03:58,960
+forwards acceleration.
+
+72
+00:03:58,960 --> 00:04:02,990
+A consequence of this is that there is
+a unique leg angle that will give no net
+
+73
+00:04:02,990 --> 00:04:04,980
+acceleration direct stance.
+
+74
+00:04:04,980 --> 00:04:06,490
+When this leg angle is chosen,
+
+75
+00:04:06,490 --> 00:04:10,540
+we call the distance that the foot lands
+in front of the body the neutral point.
+
+76
+00:04:10,540 --> 00:04:14,050
+At the neutral point, the mass slows down
+in the first half of the stance, but
+
+77
+00:04:14,050 --> 00:04:17,670
+then speeds up in the second half
+of the stance by the same amount.
+
+78
+00:04:17,670 --> 00:04:19,240
+By estimating the neutral point and
+
+79
+00:04:19,240 --> 00:04:22,930
+choosing to touch down with the foot
+in front or behind the neutral point,
+
+80
+00:04:22,930 --> 00:04:26,630
+we can affect a net acceleration in
+stance to regulate forward speed.
+
+81
+00:04:26,630 --> 00:04:29,940
+We don't have an extremely accurate way
+of estimating the neutral point, but
+
+82
+00:04:29,940 --> 00:04:32,970
+it turns out that a very
+crude estimation can suffice.
+
+83
+00:04:32,970 --> 00:04:33,540
+Here's how it's done.
+
+84
+00:04:34,670 --> 00:04:38,890
+We know that landing with a foot at the
+neutral point is zero net acceleration.
+
+85
+00:04:38,890 --> 00:04:43,867
+The forward distance traveled in stance is
+then equal to the average stance velocity
+
+86
+00:04:43,867 --> 00:04:45,768
+times the time spent in stance.
+
+87
+00:04:45,768 --> 00:04:49,825
+The neutral point is half of this
+forward's distance traveled.
+
+88
+00:04:49,825 --> 00:04:52,825
+We can use the estimated forward
+speed in flight as a proxy for
+
+89
+00:04:52,825 --> 00:04:55,095
+the average forward speed in stance, and
+
+90
+00:04:55,095 --> 00:04:59,415
+use the measured previous stance time as
+an estimate for the next stance time.
+
+91
+00:04:59,415 --> 00:05:02,005
+Now that we have a way of
+estimating the neutral point,
+
+92
+00:05:02,005 --> 00:05:05,715
+we can regulate speed by landing
+with an offset to the neutral point.
+
+93
+00:05:05,715 --> 00:05:10,310
+To accelerate, a leg angle was chosen that
+places the foot behind the neutral point
+
+94
+00:05:10,310 --> 00:05:11,770
+and vice versa.
+
+95
+00:05:11,770 --> 00:05:15,470
+Despite all of these approximations, the
+Raibert controller works quite well and
+
+96
+00:05:15,470 --> 00:05:17,540
+can produce impressive behaviors.
+
+97
+00:05:17,540 --> 00:05:21,766
+Shown here is a two-legged version of
+Raibert's hopper running a controller,
+
+98
+00:05:21,766 --> 00:05:24,258
+where one leg hops while
+the other circulates.
+
+99
+00:05:27,678 --> 00:05:31,668
+Raibert also built an unconstrained
+version of this robot not supported in any
+
+100
+00:05:31,668 --> 00:05:33,030
+direction.
+
+101
+00:05:33,030 --> 00:05:36,110
+This robot has the same
+radial actuation as before.
+
+102
+00:05:36,110 --> 00:05:39,740
+But now, two motors capable of
+applying torques in two different
+
+103
+00:05:39,740 --> 00:05:41,650
+direction of leg angle.
+
+104
+00:05:41,650 --> 00:05:45,940
+It is controlled by a direct extension
+of his sagittal plane controllers.
+
+105
+00:05:45,940 --> 00:05:49,830
+Again, he divided the control problem
+into that of controlling hopping height,
+
+106
+00:05:49,830 --> 00:05:52,070
+horizontal velocity in flight,
+and posture.
+
+107
+00:05:53,110 --> 00:05:55,145
+To control the new degrees of freedom,
+
+108
+00:05:55,145 --> 00:05:59,098
+he simply used copies of his sagittal
+plane controller for each direction.
+
+109
+00:05:59,098 --> 00:06:03,042
+Now our neutral point is a two-dimensional
+position vector, and the x and
+
+110
+00:06:03,042 --> 00:06:07,235
+y offsets from the neutral point are each
+individually determined from the x and
+
+111
+00:06:07,235 --> 00:06:08,310
+y speeds.
+
+112
+00:06:08,310 --> 00:06:10,320
+The posture now consists of a pitch and
+
+113
+00:06:10,320 --> 00:06:15,770
+a roll angle, which are individually
+controlled by the two angular hip motors.
+
+114
+00:06:15,770 --> 00:06:18,010
+This simple controller
+extension allowed for
+
+115
+00:06:18,010 --> 00:06:22,450
+a free running robot, capable of feats
+that are still impressive today.
+
+116
+00:06:22,450 --> 00:06:25,428
+The robots Raibert built were
+not just limited to monopeds.
+
+117
+00:06:25,428 --> 00:06:29,181
+He was able to apply the same control
+ideas to robots with multiple legs,
+
+118
+00:06:29,181 --> 00:06:31,740
+by using the concept of a virtual leg.
+
+119
+00:06:31,740 --> 00:06:34,260
+When multiple legs act in unison,
+touching down and
+
+120
+00:06:34,260 --> 00:06:39,210
+lifting off roughly at the same time,
+it can act as a single virtual leg.
+
+121
+00:06:39,210 --> 00:06:42,830
+The forces and torques on the body by
+this virtual leg, are simply the sum of
+
+122
+00:06:42,830 --> 00:06:46,530
+the forces and torques acting on
+the body by the multiple legs.
+
+123
+00:06:46,530 --> 00:06:49,881
+By applying the previous
+controllers to the virtual leg, and
+
+124
+00:06:49,881 --> 00:06:53,877
+getting the actual legs to have the same
+combined effect as a virtual leg,
+
+125
+00:06:53,877 --> 00:06:56,728
+the robot can run with
+a variety of different gaits.
+
+126
+00:06:56,728 --> 00:06:59,731
+Now we should note that one reason
+these robot behaviors are so
+
+127
+00:06:59,731 --> 00:07:02,918
+visually striking is that they
+have an off-board power source.
+
+128
+00:07:02,918 --> 00:07:06,586
+We will see in later lectures that a robot
+needing to carry its own power source
+
+129
+00:07:06,586 --> 00:07:10,800
+can significantly increase the robot's
+weight and hurt performance.
+
+130
+00:07:10,800 --> 00:07:14,330
+Even so, Raibert's robots
+continue to impress to this day.
+
+131
+00:07:14,330 --> 00:07:18,286
+We consider a contributing factor to
+the success that the mechanical design
+
+132
+00:07:18,286 --> 00:07:20,528
+of the robots facilitated their control.
+
+133
+00:07:20,528 --> 00:07:24,724
+By building a robot that naturally
+anchored a slip template through either
+
+134
+00:07:24,724 --> 00:07:27,590
+an almost literal instantiation
+of the template or
+
+135
+00:07:27,590 --> 00:07:30,338
+being capable of acting
+like a virtual monoped.
+
+136
+00:07:30,338 --> 00:07:34,255
+Raibert's idea to control for hopping
+height and pitch angle using the leg
+
+137
+00:07:34,255 --> 00:07:38,545
+motors and stance, and forward speed using
+the natural hybrid dynamics of slip by
+
+138
+00:07:38,545 --> 00:07:42,525
+regulating the touch down offset from
+a neutral point, is a great example of
+
+139
+00:07:42,525 --> 00:07:46,500
+leveraging the natural hybrid
+dynamics of legged locomotion.
+
+140
+00:07:46,500 --> 00:07:50,060
+In this section on templates,
+we've seen that robotic legged locomotion
+
+141
+00:07:50,060 --> 00:07:53,200
+is achieved by properly regulating
+leg forces on the environment.
+
+142
+00:07:54,340 --> 00:07:58,100
+Templates, representing the simplest model
+needed to describe a target behavior,
+
+143
+00:07:59,180 --> 00:08:02,700
+can describe in basic terms this
+robot environment interaction, and
+
+144
+00:08:02,700 --> 00:08:06,860
+generate useful force profiles that can be
+anchored to a variety of robot sizes and
+
+145
+00:08:06,860 --> 00:08:07,900
+morphologies.
+
+146
+00:08:07,900 --> 00:08:10,830
+We've see the rimless wheel,
+the spring-loaded inverted pendulum,
+
+147
+00:08:10,830 --> 00:08:14,930
+and the lateral leg springing templates
+together describe many forms of running
+
+148
+00:08:14,930 --> 00:08:16,420
+and walking.
+
+149
+00:08:16,420 --> 00:08:20,050
+These templates have natural energy saving
+and stability properties that make them
+
+150
+00:08:20,050 --> 00:08:22,880
+advantageous behavioral targets for
+control.
+
+151
+00:08:22,880 --> 00:08:26,900
+By anchoring the template dynamics
+directly into the mechanism of the body
+
+152
+00:08:26,900 --> 00:08:30,663
+and legs, stability and control can
+be achieved with minimal need for
+
+153
+00:08:30,663 --> 00:08:32,148
+computation and sensing.
+
+154
+00:08:32,148 --> 00:08:36,380
+And even when active balance is required,
+careful consideration in leveraging
+
+155
+00:08:36,380 --> 00:08:40,498
+of the underlying template dynamics
+proves a powerful tool for robot design.

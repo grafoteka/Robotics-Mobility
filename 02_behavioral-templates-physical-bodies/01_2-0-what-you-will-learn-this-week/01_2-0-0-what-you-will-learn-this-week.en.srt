@@ -1,0 +1,272 @@
+1
+00:00:01,947 --> 00:00:11,947
+[MUSIC]
+
+2
+00:00:20,579 --> 00:00:25,250
+Welcome to week two of our robotics
+special course on mobility.
+
+3
+00:00:27,050 --> 00:00:33,780
+This week, we'll be focused on
+the components of mobile robots.
+
+4
+00:00:35,140 --> 00:00:41,490
+The components fall into two
+major conceptual pieces.
+
+5
+00:00:41,490 --> 00:00:48,120
+First, we want to introduce behavioral
+components that we'll call templates.
+
+6
+00:00:49,160 --> 00:00:50,282
+What's a template?
+
+7
+00:00:50,282 --> 00:00:56,170
+A template, as an example, is a so
+called compass gait, what is that?
+
+8
+00:00:56,170 --> 00:01:01,310
+Think about a wheel rolling down a hill,
+think about a spoked wheel
+
+9
+00:01:01,310 --> 00:01:06,150
+rolling down the hill,
+take the rim of that wheel off and
+
+10
+00:01:06,150 --> 00:01:08,430
+think about wheel rolling down the hill.
+
+11
+00:01:10,430 --> 00:01:15,390
+Now take those spokes and think about
+their transition from one point,
+
+12
+00:01:15,390 --> 00:01:17,860
+to the other point, to the other point.
+
+13
+00:01:17,860 --> 00:01:22,630
+Remove all but two of those spokes,
+and let those two spokes oscillate and
+
+14
+00:01:22,630 --> 00:01:24,670
+suddenly, we've got a compass gait.
+
+15
+00:01:25,870 --> 00:01:29,210
+That's a very, very,
+very simple mechanical system.
+
+16
+00:01:29,210 --> 00:01:31,790
+Still pretty complicated to understand but
+
+17
+00:01:31,790 --> 00:01:35,160
+simple enough that we can
+understand it pretty thoroughly.
+
+18
+00:01:35,160 --> 00:01:39,840
+And that dynamical system will turn out
+the be the organizing principle for
+
+19
+00:01:39,840 --> 00:01:42,500
+many, many quasi-static gaits.
+
+20
+00:01:42,500 --> 00:01:44,190
+That's a compass gait, it's a template.
+
+21
+00:01:45,230 --> 00:01:47,680
+Another template is the spring
+loaded inverted pendulum.
+
+22
+00:01:47,680 --> 00:01:49,230
+This is the template for running.
+
+23
+00:01:49,230 --> 00:01:51,430
+Think about this as the pogo stick.
+
+24
+00:01:51,430 --> 00:01:55,420
+The pogo stick is even harder to
+understand than the compass gait but
+
+25
+00:01:55,420 --> 00:01:57,400
+still we can understand it pretty well.
+
+26
+00:01:57,400 --> 00:02:02,140
+It's the organizing principle for almost
+all animal running that we know of and
+
+27
+00:02:02,140 --> 00:02:03,840
+the organizing principle for
+
+28
+00:02:03,840 --> 00:02:06,870
+all good running robots that
+have been built to date.
+
+29
+00:02:08,800 --> 00:02:11,980
+Here is the origin of
+the spring loaded inverted
+
+30
+00:02:11,980 --> 00:02:16,980
+pendulum in robotics introduced by Dr.
+Marc Raibert,
+
+31
+00:02:16,980 --> 00:02:22,840
+then a professor at MIT in 1983,
+when he first showed us how to think
+
+32
+00:02:22,840 --> 00:02:27,490
+about dynamical management of
+mobility via energy control.
+
+33
+00:02:29,580 --> 00:02:33,060
+We'll spend a little bit of time
+talking about Raibert's wonderful work
+
+34
+00:02:33,060 --> 00:02:36,690
+which informs much of what's
+gone in legged robotics for
+
+35
+00:02:36,690 --> 00:02:38,950
+the last 30 years since that time.
+
+36
+00:02:40,736 --> 00:02:45,905
+The second half hour of our week two
+will be concerned not with behavioral
+
+37
+00:02:45,905 --> 00:02:50,435
+components but with the literal physical
+components, the materials properties,
+
+38
+00:02:50,435 --> 00:02:55,975
+the structures, and the power, as I
+promised in the original work on week one.
+
+39
+00:02:57,340 --> 00:03:01,240
+We're going to be thinking about scaling,
+strengths of materials,
+
+40
+00:03:01,240 --> 00:03:06,890
+how the same weight is not adequate
+to support the strength of much,
+
+41
+00:03:06,890 --> 00:03:09,030
+much larger scaled mechanisms.
+
+42
+00:03:10,420 --> 00:03:13,590
+We'll be thinking about
+the materials properties.
+
+43
+00:03:13,590 --> 00:03:17,850
+What about the compliance
+properties of these materials?
+
+44
+00:03:17,850 --> 00:03:20,490
+How do these compliance
+materials scale with weight?
+
+45
+00:03:20,490 --> 00:03:22,360
+What compliance properties do we want?
+
+46
+00:03:22,360 --> 00:03:23,740
+How do we choose those materials?
+
+47
+00:03:26,000 --> 00:03:30,510
+We'll be thinking about figures
+of merit and robustness and
+
+48
+00:03:30,510 --> 00:03:35,390
+we'll be thinking about how to build novel
+materials into novel structures that
+
+49
+00:03:35,390 --> 00:03:39,890
+have never been built before because
+of the revolution in manufacturing
+
+50
+00:03:39,890 --> 00:03:44,020
+brought about by these
+MakerBot style devices.
+
+51
+00:03:44,020 --> 00:03:50,850
+The last thing that we'll talk
+about in this week of the course
+
+52
+00:03:50,850 --> 00:03:56,150
+will be our actuator technology, the all
+important source of force and power.
+
+53
+00:03:57,320 --> 00:04:01,370
+And the limitations of actuators, and the
+possibilities of using actuators as they
+
+54
+00:04:01,370 --> 00:04:06,190
+are today and actuators as they may
+be in the future will comprise one
+
+55
+00:04:06,190 --> 00:04:09,780
+of the most important
+components of this week.
+
+56
+00:04:09,780 --> 00:04:11,166
+Welcome to week two,
+
+57
+00:04:11,166 --> 00:04:16,980
+we'll spend all of this week thinking
+about the components but don't
+
+58
+00:04:16,980 --> 00:04:21,920
+be impatient because those components will
+turn into robots in week three and four.

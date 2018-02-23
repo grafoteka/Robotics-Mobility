@@ -1,0 +1,482 @@
+1
+00:00:05,138 --> 00:00:08,418
+In this segment we are going to talk
+a little bit about the verification step
+
+2
+00:00:08,418 --> 00:00:10,410
+that I mentioned at
+the end of the last video.
+
+3
+00:00:12,040 --> 00:00:16,130
+This entails some formalism of
+an analysis but as we'll see
+
+4
+00:00:16,130 --> 00:00:20,600
+in later segment is not critical to the
+conceptual ideas of parallel composition.
+
+5
+00:00:20,600 --> 00:00:22,540
+Let's look at SLIP as
+a parallel composition.
+
+6
+00:00:22,540 --> 00:00:25,300
+Just like Reword did, but
+we'll add in some formalism so
+
+7
+00:00:25,300 --> 00:00:26,630
+that we can really see what's going on.
+
+8
+00:00:26,630 --> 00:00:31,330
+So the first template in action is
+a controlled one degree of freedom,
+
+9
+00:00:31,330 --> 00:00:31,980
+vertical hopper.
+
+10
+00:00:34,360 --> 00:00:38,830
+Here's a video of the Pengerboa
+which I introduced in week three
+
+11
+00:00:38,830 --> 00:00:40,730
+doing a vertical hopping.
+
+12
+00:00:40,730 --> 00:00:43,040
+But it's implemented actually
+with the tail wagging up and
+
+13
+00:00:43,040 --> 00:00:45,530
+down against the passive legs.
+
+14
+00:00:45,530 --> 00:00:49,560
+This just goes to show you that a pogo
+stick need not look like a pogo stick.
+
+15
+00:00:49,560 --> 00:00:52,770
+What we really care about is
+the behavior of the dynamical system.
+
+16
+00:00:52,770 --> 00:00:57,770
+A vertical hopper can be described in
+phase energy coordinates in this way,
+
+17
+00:00:57,770 --> 00:01:01,710
+where a represents the energy
+of the vertical hopper and
+
+18
+00:01:01,710 --> 00:01:05,100
+this angular coordinate,
+psi, represents the phase.
+
+19
+00:01:05,100 --> 00:01:10,800
+You can see that even if the input,
+u, were zero,
+
+20
+00:01:10,800 --> 00:01:15,550
+the energy would stay conserved, but the
+phase would keep going at a rate, omega.
+
+21
+00:01:17,320 --> 00:01:23,150
+What we choose to do with this system,
+is introduce a controller that energizes
+
+22
+00:01:23,150 --> 00:01:27,730
+in an oscillatory fashion trying to
+compensate for the natural dumping.
+
+23
+00:01:29,850 --> 00:01:32,570
+Here's an example of
+an Oscillatory energization.
+
+24
+00:01:33,610 --> 00:01:37,120
+Here the k term energizes the system and
+
+25
+00:01:37,120 --> 00:01:41,690
+the a times beta term is really
+the natural dumping of the system.
+
+26
+00:01:41,690 --> 00:01:46,680
+Which, as intuition should point out,
+increases as the energy increases.
+
+27
+00:01:46,680 --> 00:01:51,340
+The analysis of the system is made
+simpler by a particular approximation
+
+28
+00:01:51,340 --> 00:01:52,950
+that's called dynamical averaging.
+
+29
+00:01:54,260 --> 00:01:56,340
+And without going into
+the details too much,
+
+30
+00:01:56,340 --> 00:02:00,780
+you get something like this very simple
+first order linear time in variant ODE.
+
+31
+00:02:02,200 --> 00:02:03,890
+Which you should be able to solve.
+
+32
+00:02:05,470 --> 00:02:09,810
+The next template we have to consider is
+the Rimless wheel which I have introduced
+
+33
+00:02:09,810 --> 00:02:13,460
+but now let's think about it as
+a model only for forward speed.
+
+34
+00:02:13,460 --> 00:02:16,058
+The Rimless wheel has more
+than one degree of freedom but
+
+35
+00:02:16,058 --> 00:02:19,273
+here we'll only care about the speed
+that which it rolls down the hill
+
+36
+00:02:21,978 --> 00:02:25,782
+What we'll do with the rimless wheel
+is we'll add a lift off torque so
+
+37
+00:02:25,782 --> 00:02:29,320
+that it's an active rimless wheel and
+not just passive.
+
+38
+00:02:29,320 --> 00:02:34,021
+This is not dissimilar to the Cornell
+Ranger pictured here which used lift off
+
+39
+00:02:34,021 --> 00:02:38,666
+ankle torques to walk a huge distance
+with a minimal expenditure of energy.
+
+40
+00:02:42,271 --> 00:02:45,370
+Let's take a simplistic view of
+the dynamics of the rimless wheel.
+
+41
+00:02:46,560 --> 00:02:49,340
+The continuous dynamics
+are pretty well captured
+
+42
+00:02:49,340 --> 00:02:53,260
+by this equation with suggest that
+the energy of the rimless wheel
+
+43
+00:02:53,260 --> 00:02:58,169
+increases by a fixed amount due to
+the rolling every continuous phase.
+
+44
+00:03:00,890 --> 00:03:01,410
+The impacts,
+
+45
+00:03:01,410 --> 00:03:05,910
+on the other hand, take away energy where
+you can really think about the impacts as
+
+46
+00:03:05,910 --> 00:03:10,610
+being kind of a coefficient of restitution
+effect, as suggested by this equation.
+
+47
+00:03:12,290 --> 00:03:16,691
+Together, you get this equation for
+the return map, where intuitively, some
+
+48
+00:03:16,691 --> 00:03:21,105
+energy is added and some energy is taken
+away to give you a stable forward speed.
+
+49
+00:03:23,704 --> 00:03:28,489
+What's interesting is that the simplicity
+view has a one to one mapping to what
+
+50
+00:03:28,489 --> 00:03:33,360
+were did templement forward speed
+control on his hopping robot.
+
+51
+00:03:33,360 --> 00:03:35,990
+The mechanism by which that happened
+
+52
+00:03:35,990 --> 00:03:39,390
+was a stepping controller where
+the toe is positioned in flight.
+
+53
+00:03:40,910 --> 00:03:44,670
+There's no rimless wheel in that
+setting but there's really a one to one
+
+54
+00:03:44,670 --> 00:03:47,660
+correspondence between the rimless
+wheel and the stepping example.
+
+55
+00:03:47,660 --> 00:03:51,894
+In the stepping example there's
+a particular stepping angle called
+
+56
+00:03:51,894 --> 00:03:55,471
+the neutral angle which results
+in zero change in speed and
+
+57
+00:03:55,471 --> 00:04:01,070
+by serving around the neutral angle you
+can control your speed effectively.
+
+58
+00:04:01,070 --> 00:04:05,460
+Together, these two templates
+give us a stable hopping behavior
+
+59
+00:04:05,460 --> 00:04:08,760
+as I've shown you before and
+as Rayburn has demonstrated before.
+
+60
+00:04:10,140 --> 00:04:13,780
+Unfortunately, it turns out that
+implementing the parallel composition is
+
+61
+00:04:13,780 --> 00:04:16,470
+much easier than analyzing it.
+
+62
+00:04:16,470 --> 00:04:18,980
+This is really the main
+part of this section.
+
+63
+00:04:18,980 --> 00:04:21,700
+So the question is,
+does SLIP anchor a vertical hopper?
+
+64
+00:04:23,540 --> 00:04:25,420
+What does this question mean?
+
+65
+00:04:25,420 --> 00:04:27,510
+If we go back to full
+encoded tap templates and
+
+66
+00:04:27,510 --> 00:04:30,600
+anchor is what we're asking
+is are the dynamics of slip
+
+67
+00:04:30,600 --> 00:04:35,890
+the same as the vertical hopper in some in
+variance sub manifold of it's dynamics.
+
+68
+00:04:35,890 --> 00:04:38,640
+So how does one go about
+proving an anchoring?
+
+69
+00:04:38,640 --> 00:04:42,089
+This really by demonstrating that there's
+a conjugacy of the form just mentioned.
+
+70
+00:04:43,230 --> 00:04:47,280
+But proving that there isn't a conjugacy,
+or there isn't an anchoring is much
+
+71
+00:04:47,280 --> 00:04:52,080
+more difficult because logically you'd
+have to search all possible conjugacies.
+
+72
+00:04:52,080 --> 00:04:56,050
+However, I will go over the most natural
+coordinate change here, and even though it
+
+73
+00:04:56,050 --> 00:05:00,050
+won't be a proof, hopefully you will see
+how this process is quite difficult.
+
+74
+00:05:01,310 --> 00:05:06,520
+Here the continuous dynamics corresponding
+to the extension of the leg in SLIP.
+
+75
+00:05:06,520 --> 00:05:09,540
+The first term,
+corresponds to the spring force.
+
+76
+00:05:09,540 --> 00:05:12,570
+The second term,
+to gravity and the third term,
+
+77
+00:05:12,570 --> 00:05:16,980
+to the centrifugal force felt by
+the mass as it's spins above the toe.
+
+78
+00:05:19,810 --> 00:05:25,000
+If we define the states base we really
+get something like this equation for
+
+79
+00:05:25,000 --> 00:05:25,830
+the dynamics.
+
+80
+00:05:28,060 --> 00:05:32,310
+Let's compare to a vertical hopper
+where a lot of it is the same but
+
+81
+00:05:32,310 --> 00:05:34,840
+there are few critical differences.
+
+82
+00:05:34,840 --> 00:05:40,260
+Firstly, gravity is not meet
+projected about the angle data and
+
+83
+00:05:40,260 --> 00:05:42,130
+there's no centrifugal force.
+
+84
+00:05:42,130 --> 00:05:45,350
+For this trivial but
+kind of obvious change of coordinates,
+
+85
+00:05:45,350 --> 00:05:51,390
+we see that the dynamics are the same only
+if data is zero and data dot is zero.
+
+86
+00:05:51,390 --> 00:05:53,890
+What these means is that
+the leg is really vertical and
+
+87
+00:05:53,890 --> 00:05:56,050
+hopping vertically and
+has no speed at all.
+
+88
+00:05:57,420 --> 00:05:59,980
+So you can see that it's very challenging
+
+89
+00:05:59,980 --> 00:06:04,190
+to prove this anchoring because it doesn't
+exist for any non-zero forward speed.
+
+90
+00:06:06,050 --> 00:06:10,330
+Some new research that we're doing is
+trying to show that instead of anchoring
+
+91
+00:06:10,330 --> 00:06:11,640
+the exact dynamics sef.
+
+92
+00:06:12,750 --> 00:06:17,800
+There's approximation f bar that
+has this correspondence and
+
+93
+00:06:17,800 --> 00:06:20,040
+has all the stability
+properties that we require.
+
+94
+00:06:21,370 --> 00:06:25,920
+To summarize SLIP can actually be
+decomposed into a vertical hopper and
+
+95
+00:06:25,920 --> 00:06:26,610
+a rimless wheel.
+
+96
+00:06:28,270 --> 00:06:30,510
+A vertical hopper can be
+controlled by active damping.
+
+97
+00:06:31,650 --> 00:06:34,560
+A rimless wheel can be controlled
+by active liftoff impulse.
+
+98
+00:06:36,500 --> 00:06:40,780
+SLIP as a composition works
+very well in simulation and
+
+99
+00:06:40,780 --> 00:06:47,090
+in practice but showing that this
+anchoring is exact is almost impossible.
+
+100
+00:06:47,090 --> 00:06:50,980
+Approximate versions of this
+anchoring might be more feasible.

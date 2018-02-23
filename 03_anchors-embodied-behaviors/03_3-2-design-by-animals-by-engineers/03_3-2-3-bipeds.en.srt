@@ -1,0 +1,775 @@
+1
+00:00:05,928 --> 00:00:07,710
+Now we're moving on to bipeds.
+
+2
+00:00:09,140 --> 00:00:12,190
+We saw that some of the quadrupeds that
+we talked about were quite accomplished
+
+3
+00:00:12,190 --> 00:00:14,200
+animals, as well as robots.
+
+4
+00:00:14,200 --> 00:00:17,700
+What is a reason for us to move to bipeds?
+
+5
+00:00:17,700 --> 00:00:21,390
+For animals,
+manipulation is actually a key motivator.
+
+6
+00:00:21,390 --> 00:00:25,180
+Animals would have liked to use their
+full limbs to manipulate optics and
+
+7
+00:00:25,180 --> 00:00:26,860
+not just walk around.
+
+8
+00:00:26,860 --> 00:00:32,470
+They developed an upright posture which
+is known as orthograde versus pronograde.
+
+9
+00:00:32,470 --> 00:00:36,880
+They developed muscles for
+supporting their core to be upright and
+
+10
+00:00:36,880 --> 00:00:39,300
+they also develop mechanisms for
+endurance.
+
+11
+00:00:40,680 --> 00:00:44,760
+It's very curious that humans are actually
+one of the best marathon runners in
+
+12
+00:00:44,760 --> 00:00:49,110
+the world, whereas even your house cat
+could probably outrun you in a sprint.
+
+13
+00:00:50,480 --> 00:00:53,680
+That's because bipeds
+developed mechanisms for
+
+14
+00:00:53,680 --> 00:00:56,310
+endurance that a lot of
+quadrupeds can't have.
+
+15
+00:00:56,310 --> 00:01:01,270
+One of the reasons for
+this has been termed carrier's constraint.
+
+16
+00:01:01,270 --> 00:01:06,900
+In a pronorate animal the forelimb muscles
+are connected very close to the lungs.
+
+17
+00:01:06,900 --> 00:01:10,310
+What happens because of this
+is that the stride rate
+
+18
+00:01:10,310 --> 00:01:12,750
+is coupled to the breathing rate.
+
+19
+00:01:12,750 --> 00:01:16,110
+So the biomechanical energetics,
+i.e the stride length and
+
+20
+00:01:16,110 --> 00:01:20,000
+stride length, compete with the preferred
+breathing rate for the animal.
+
+21
+00:01:21,240 --> 00:01:25,099
+Paleontologist Richard Cowen wrote this
+funny limerick to help you remember
+
+22
+00:01:25,099 --> 00:01:25,699
+this fact.
+
+23
+00:01:31,524 --> 00:01:36,144
+You can see in this plot the horse's cost
+of transport given by the dotted line
+
+24
+00:01:36,144 --> 00:01:39,699
+versus a human's cost of transport
+you can see the human has
+
+25
+00:01:39,699 --> 00:01:43,720
+a very flat cost of transport
+past a certain speed.
+
+26
+00:01:43,720 --> 00:01:45,330
+That's where it's running.
+
+27
+00:01:45,330 --> 00:01:48,690
+And since the human can alter its
+breathing rate independent of stride rate,
+
+28
+00:01:48,690 --> 00:01:51,390
+the cost of transport can
+remain relatively flat,
+
+29
+00:01:51,390 --> 00:01:54,700
+whereas the same is not true of the horse.
+
+30
+00:01:54,700 --> 00:01:57,260
+One disadvantage of bipeds,
+as you might have guessed,
+
+31
+00:01:57,260 --> 00:02:00,460
+is that much more active
+control of balance is required.
+
+32
+00:02:01,460 --> 00:02:06,690
+A standing biped is really an inverted
+angelum that requires more active control
+
+33
+00:02:06,690 --> 00:02:09,580
+that a quadruped roll past the runner.
+
+34
+00:02:09,580 --> 00:02:12,740
+To double my balance a bit
+more quasi statics ability
+
+35
+00:02:12,740 --> 00:02:16,960
+with the polygon of support is
+basically impossible to temp of biped
+
+36
+00:02:16,960 --> 00:02:20,500
+because the best case is polygon
+of support is just the line.
+
+37
+00:02:20,500 --> 00:02:24,030
+We humans often use our arms
+inertially to help them balance.
+
+38
+00:02:24,030 --> 00:02:28,890
+If a mean friend walked up behind you and
+gave you a shove, you might use your
+
+39
+00:02:28,890 --> 00:02:33,440
+arms to transfer your angular momentum and
+stay upright or if you're walking
+
+40
+00:02:33,440 --> 00:02:37,400
+on a tightrope, you might use your arms to
+exert counter movements about your torso.
+
+41
+00:02:37,400 --> 00:02:41,160
+Some bipeds have a purpose built
+inertial appendage a tail, but
+
+42
+00:02:41,160 --> 00:02:43,770
+it's uses are more varied
+than you may think.
+
+43
+00:02:43,770 --> 00:02:48,230
+Here's a video of a hopping
+kangaroo where if you look closely,
+
+44
+00:02:48,230 --> 00:02:51,230
+you'll notice that the tail
+seems to rotate opposite
+
+45
+00:02:51,230 --> 00:02:54,360
+to the direction that that
+the leg is rotating in flight.
+
+46
+00:02:54,360 --> 00:02:55,120
+Why is this?
+
+47
+00:02:56,200 --> 00:02:57,890
+Here's a cartoon of a kangaroo.
+
+48
+00:02:57,890 --> 00:02:59,750
+This is from Mark Wayburg's paper.
+
+49
+00:03:01,720 --> 00:03:05,340
+If you imagine the body in flight as
+being kind of a three link system,
+
+50
+00:03:05,340 --> 00:03:09,290
+with the tail being approximately one
+link, the leg being one link, and
+
+51
+00:03:09,290 --> 00:03:10,570
+the body being the third link.
+
+52
+00:03:11,970 --> 00:03:15,959
+When the animal is trying to
+recirculate its leg forward in flight
+
+53
+00:03:17,200 --> 00:03:22,160
+moving the tail in the opposite direction
+cancels out the moment applied by leg and
+
+54
+00:03:22,160 --> 00:03:26,800
+keeps the body relatively level but in
+the engineering we can both very light and
+
+55
+00:03:26,800 --> 00:03:31,220
+strong limbs which means that
+the inertia of the leg can be small.
+
+56
+00:03:31,220 --> 00:03:32,990
+Do we still need the tail for this reason?
+
+57
+00:03:34,090 --> 00:03:37,350
+This is a kangaroo behavior you
+might not have seen before.
+
+58
+00:03:37,350 --> 00:03:39,300
+They use their tail as a fifth leg.
+
+59
+00:03:40,350 --> 00:03:42,680
+This gate is called a pentopetal crawl,
+and
+
+60
+00:03:42,680 --> 00:03:46,500
+it only happens at the slowest
+speeds of movement of a Kangaroo.
+
+61
+00:03:46,500 --> 00:03:50,800
+But what it's doing is it's trying
+to maintain a tripod of support
+
+62
+00:03:50,800 --> 00:03:52,350
+with every step.
+
+63
+00:03:52,350 --> 00:03:57,780
+Moving on to robotic bipeds, There's
+a very crowded space of bipedal robots.
+
+64
+00:03:57,780 --> 00:04:02,190
+Part of the reason for this is that
+there is a push to get human-like robots
+
+65
+00:04:02,190 --> 00:04:04,470
+out into the world doing
+human-like things.
+
+66
+00:04:05,520 --> 00:04:07,110
+Close to the extreme end,
+
+67
+00:04:07,110 --> 00:04:11,160
+you'll find this robot, which has close
+to 100 actuated degrees of freedom.
+
+68
+00:04:13,110 --> 00:04:18,050
+While this robot is very dexterous and has
+a lot of fine manipulation capabilities
+
+69
+00:04:18,050 --> 00:04:21,430
+all the actuated degrees
+of freedom need mass, and
+
+70
+00:04:21,430 --> 00:04:24,540
+not all of the degrees of freedom
+can be useful for every task.
+
+71
+00:04:25,960 --> 00:04:30,150
+So we're stuck with a relatively low
+power density and quasi static motions,
+
+72
+00:04:30,150 --> 00:04:30,880
+unfortunately.
+
+73
+00:04:31,980 --> 00:04:35,010
+We'll talk about some ways of
+controlling walking in these settings
+
+74
+00:04:35,010 --> 00:04:35,780
+in a couple of slides.
+
+75
+00:04:37,210 --> 00:04:40,290
+Recently there's only be a push
+towards actuated bipeds which have
+
+76
+00:04:40,290 --> 00:04:44,720
+a more reasonable chance of being able
+to move dynamically through the world.
+
+77
+00:04:44,720 --> 00:04:47,850
+ATRIAS is probably the most
+well known of this and
+
+78
+00:04:47,850 --> 00:04:50,930
+it uses a series of elastic
+two degree freedom legs.
+
+79
+00:04:50,930 --> 00:04:54,730
+We asked this question before about by
+an animal would like to be a biped versus
+
+80
+00:04:54,730 --> 00:04:59,710
+a quadruped but a lot of those
+reasons like manipulation constraints,
+
+81
+00:04:59,710 --> 00:05:02,900
+etc don't really apply to robots at all.
+
+82
+00:05:02,900 --> 00:05:06,100
+So what are some reasons that
+robots might want to be bipedal?
+
+83
+00:05:06,100 --> 00:05:09,000
+Gavin talked about scaling in Segment 2.2.
+
+84
+00:05:09,000 --> 00:05:12,790
+Here's a quick application of these
+techniques to see if it's better to have
+
+85
+00:05:12,790 --> 00:05:15,190
+a trotting quadruped or a running biped.
+
+86
+00:05:15,190 --> 00:05:18,620
+Let's assume the amount of motor mass
+you're allowed to have in your robot
+
+87
+00:05:18,620 --> 00:05:20,040
+is fixed.
+
+88
+00:05:20,040 --> 00:05:23,310
+But this mass can be
+divided among end motors.
+
+89
+00:05:23,310 --> 00:05:27,440
+For instance, n would be two for
+a trotting quadruped, if it were one for
+
+90
+00:05:27,440 --> 00:05:28,900
+a running biped.
+
+91
+00:05:28,900 --> 00:05:32,850
+This reference paper from Sanbay Kim's
+group teaches us how the torque and
+
+92
+00:05:32,850 --> 00:05:37,100
+mass per motor scale with
+the gap radius of the motor.
+
+93
+00:05:37,100 --> 00:05:41,580
+Eliminating our gap, we see that
+the torque scale is the reciprocal of n.
+
+94
+00:05:41,580 --> 00:05:45,730
+What this means is that there is
+a technological pressure towards having
+
+95
+00:05:45,730 --> 00:05:50,620
+fewer actuated degrees of freedom
+driven by the specific force, scaling,
+
+96
+00:05:50,620 --> 00:05:52,520
+but the number of motors.
+
+97
+00:05:52,520 --> 00:05:55,280
+How does biped design affect control?
+
+98
+00:05:55,280 --> 00:05:59,040
+Before we move to control of
+bipeds with low degrees of freedom
+
+99
+00:05:59,040 --> 00:06:03,830
+I wanted to go quickly over the control
+ideas helpful for bipeds with feet, and
+
+100
+00:06:03,830 --> 00:06:06,660
+typically high degree
+of freedom humanoids.
+
+101
+00:06:06,660 --> 00:06:10,330
+The first idea tries to reuse
+the polygon of support idea.
+
+102
+00:06:10,330 --> 00:06:13,570
+It seems reasonable to try to
+reuse the polygon of support idea,
+
+103
+00:06:13,570 --> 00:06:15,560
+because the foot is
+really a small polygon.
+
+104
+00:06:17,160 --> 00:06:20,500
+The first thought might be to place
+the center of mass above the polygon
+
+105
+00:06:20,500 --> 00:06:21,420
+created by the foot.
+
+106
+00:06:22,600 --> 00:06:25,330
+A popular generalization
+of this is to use the so
+
+107
+00:06:25,330 --> 00:06:30,030
+called zero moment point
+instead of the center of mass.
+
+108
+00:06:30,030 --> 00:06:34,220
+What the zero moment point does is
+it incorporates inertial forces
+
+109
+00:06:34,220 --> 00:06:35,865
+as well as gravitational forces.
+
+110
+00:06:35,865 --> 00:06:39,800
+In this cartoon which
+shows the ZMP the center
+
+111
+00:06:39,800 --> 00:06:43,300
+of mass is adjusted to take into
+account horizontal acceleration of
+
+112
+00:06:43,300 --> 00:06:46,500
+the center of mass of the body
+was just denoted by the cart.
+
+113
+00:06:47,600 --> 00:06:52,560
+Under actuated dynamic bipeds mostly
+use a slip like control idea,
+
+114
+00:06:52,560 --> 00:06:55,150
+like Jeff spoke about it
+in the previous segment.
+
+115
+00:06:55,150 --> 00:06:57,820
+The leg is modelled as a sprung mass.
+
+116
+00:06:57,820 --> 00:07:00,940
+The balance problem is to keep
+the center of mass from toppling.
+
+117
+00:07:02,300 --> 00:07:06,290
+Raibert's idea was to notice that
+there's a special touch toe angle
+
+118
+00:07:06,290 --> 00:07:07,610
+which causes neutral stance.
+
+119
+00:07:08,870 --> 00:07:12,790
+Intuitively replacing the toe under
+the average position of the body
+
+120
+00:07:12,790 --> 00:07:13,780
+as it moves through a stance.
+
+121
+00:07:14,960 --> 00:07:16,730
+In addition to this strategy,
+
+122
+00:07:16,730 --> 00:07:21,650
+slip can actually be stabilized
+by a fixed touchdown angle.
+
+123
+00:07:21,650 --> 00:07:25,780
+This is a controller that requires
+no information and no sensing, but
+
+124
+00:07:25,780 --> 00:07:26,830
+can stabilize slip.
+
+125
+00:07:28,170 --> 00:07:31,610
+The simply stabilized strategy has,
+unfortunately,
+
+126
+00:07:31,610 --> 00:07:34,579
+a smaller basin of attraction
+than the Raibert strategy.
+
+127
+00:07:35,750 --> 00:07:38,700
+The bipedal we have in our
+lab is called the Jerboa.
+
+128
+00:07:38,700 --> 00:07:43,130
+It's a robot with two legs and
+a two degree of freedom actuated tail.
+
+129
+00:07:44,340 --> 00:07:47,950
+The tail masses only 6% of
+the total mass of the body where
+
+130
+00:07:47,950 --> 00:07:49,840
+you'll see that it's quite effective.
+
+131
+00:07:49,840 --> 00:07:53,410
+The tail is a five bar linkage
+in a spherical configuration.
+
+132
+00:07:53,410 --> 00:07:58,830
+We can see in this video how the two
+motors control the two angles of the tail.
+
+133
+00:07:58,830 --> 00:08:03,180
+This allows the tail to provide horizontal
+plain activation to the Jerboa.
+
+134
+00:08:03,180 --> 00:08:07,900
+Some ways in which a tail actuator is
+better for an electro-mechanical robot
+
+135
+00:08:07,900 --> 00:08:11,800
+is that the tail operation can
+happen at a higher duty cycle.
+
+136
+00:08:11,800 --> 00:08:15,760
+Legs can exert forces on the body
+only when it's touching the ground.
+
+137
+00:08:15,760 --> 00:08:20,550
+Where as the tail can apply force to the
+body even when the robot is in the air.
+
+138
+00:08:20,550 --> 00:08:24,720
+Additionally, the reaction forces from
+the tail are independent of the traction
+
+139
+00:08:24,720 --> 00:08:26,460
+available on the ground.
+
+140
+00:08:26,460 --> 00:08:29,180
+Compare to the tail, the lengths
+of jerboa are relatively simple.
+
+141
+00:08:30,180 --> 00:08:32,620
+They're only actually begin at the hip.
+
+142
+00:08:32,620 --> 00:08:35,290
+And the extension degree of
+freedom is completely passive.
+
+143
+00:08:36,330 --> 00:08:39,120
+In this image, you will see that
+there is a four-bar linkage for
+
+144
+00:08:39,120 --> 00:08:43,700
+the leg where a spring is controlling
+the passive extension degree of freedom.
+
+145
+00:08:45,410 --> 00:08:48,830
+So now that we've endowed Jerboa
+with a relatively complicated and
+
+146
+00:08:48,830 --> 00:08:53,390
+powerful tail,
+what are some uses of a robotic tail?
+
+147
+00:08:53,390 --> 00:08:55,750
+The tail can impart movements
+about the vertical axis,
+
+148
+00:08:55,750 --> 00:08:59,220
+which aids in turning as
+you can see in this video.
+
+149
+00:08:59,220 --> 00:09:02,858
+In the sagittal plane,
+the tail can reorient the body pitch.
+
+150
+00:09:04,914 --> 00:09:08,420
+Again, the tail only has
+6% of the body mass.
+
+151
+00:09:08,420 --> 00:09:10,850
+But you can see that it's very
+effective at correcting the body.
+
+152
+00:09:12,800 --> 00:09:14,710
+In addition to the sagittal reorientation,
+
+153
+00:09:14,710 --> 00:09:17,860
+we are currently working on
+spatial reorientation as well.
+
+154
+00:09:17,860 --> 00:09:21,580
+Which would be possible because of the two
+degree of freedom tail that Jerboa has.
+
+155
+00:09:21,580 --> 00:09:24,410
+We'll learn a lot more about Jerboa
+behaviors in the next segment.
+
+156
+00:09:25,490 --> 00:09:29,500
+To summarize, from biomechanists,
+we learned that animals went bipedal for
+
+157
+00:09:29,500 --> 00:09:32,170
+mostly physiological reasons.
+
+158
+00:09:32,170 --> 00:09:34,280
+It's interesting that as roboticists,
+
+159
+00:09:34,280 --> 00:09:39,070
+we learn to put some of the same features
+on our robots, but for different reasons.
+
+160
+00:09:39,070 --> 00:09:42,870
+We should build robots with as few
+actuated degrees of freedom as possible
+
+161
+00:09:42,870 --> 00:09:46,290
+because of specific force and
+specific power reasons.
+
+162
+00:09:46,290 --> 00:09:51,260
+Additionally, tails can be helpful for our
+bipeds to control the body orientation,
+
+163
+00:09:51,260 --> 00:09:54,270
+which is often difficult
+with underactuated bipeds.
