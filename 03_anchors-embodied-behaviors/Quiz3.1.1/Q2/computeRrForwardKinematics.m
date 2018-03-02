@@ -12,5 +12,5 @@ joint_1_y = l1 * sin(rads1);
 effector_x = joint_1_x + l2 * cos(rads1 + rads2);
 effector_y = joint_1_y + l2 * sin(rads1 + rads2);
 
-elbow = [joint_1_x, joint_1_y];
+elbow = [joint_1_x, joint_1_y]
 endeff =[effector_x, effector_y]

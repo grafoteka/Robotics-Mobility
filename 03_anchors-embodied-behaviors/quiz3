@@ -1,0 +1,336 @@
+/*********************************************************/
+/*** QUIZ 3.1.1 Review of kinematics (MATLAB)				   ***/
+**********************************************************/
+
+1. For all of this quiz, download and unzip the attached file.
+
+	Using MATLAB, open the Q1 folder and edit "computeForwardKinematics.m" and compute forward kinematics for a single revolute link, replacing the trivial solution (x=0, y=0). Then run "singlelinkforward.m"To check that this is correct, drag the slider to θ1=2 what is the x coordinate of the end effector?
+
+	Assume L1=1.
+
+		En el fichero computeForwardKinematics.m introducir lo siguiente:
+		theta = rads;
+		L1 = 1;
+
+		x = L1 * cos(theta);
+		y = L1 * sin(theta);
+		
+		Solution:
+		X = -0.4161 -> -0.42;
+
+2. Using MATLAB, open the Q2 folder and edit "computeRRForwardKinematics.m" and compute forward kinematics for a revolute-revolute robot, replacing the trivial solution for both the elbow (joint connecting L1 and L2) and end effector (orange dot). To check that this is correct, run "rrForward.m" and drag the sliders to θ1=1 and θ2=0.75 what is the y coordinate of the end effector?
+
+	Assume L1=1, and L2=1.
+
+	En el fichero computeRrForwardKinematics.m introducir lo siguiente:
+
+	l1 = 1; l2 = 1;
+
+	joint_1_x = l1 * cos(rads1);
+	joint_1_y = l1 * sin(rads1);
+
+	effector_x = joint_1_x + l2 * cos(rads1 + rads2);
+	effector_y = joint_1_y + l2 * sin(rads1 + rads2);
+
+	elbow = [joint_1_x, joint_1_y];
+	endeff =[effector_x, effector_y];
+
+	Solution: 
+	endeff =
+
+    0.3621    1.8255 -> Y = 1.83 -> CORRECT
+	Y = 0.8415 -> 0.84;
+
+3. Using MATLAB, open the Q3 folder and edit "computeRRInverseKinematics.m" and compute inverse kinematics for a revolute-revolute robot. To check that this is correct, run "rrInverse.m" and drag the sliders to x=0 and y=1.5. What is the value of θ2, assuming that 0<_θ1<π/2 and 0<θ_2<2π?
+
+	Assume L1=1, and L2=1.
+
+	Note: There are technically two correct configurations, yet we are limiting the possible angles of θ1 in such a way that only one of the solutions is valid. 
+
+		En el fichero computeRrForwardKinematics.m introducir lo siguiente:
+
+		function [rads1,rads2] = computeRrInverseKinematics(X,Y)
+
+		syms theta1 theta2 ;
+
+		l1 = 1; l2 = 1;
+
+		%% Effector
+		theta_2_cos = (X^2 + Y^2 - l1^2 - l2^2) / (2 * l1 * l2);
+
+		% Aplicando la igualdad cos² + sin² = 1
+		theta_2_sin_pos = sqrt(1-((X^2 + Y^2 - l1^2 - l2^2) / (2 * l1 * l2))^2);
+		theta_2_sin_neg = -(sqrt(1-((X^2 + Y^2 - l1^2 - l2^2) / (2 * l1 * l2))^2));
+
+		theta_2_pos = atan2(theta_2_sin_pos, theta_2_cos)
+		theta_2_neg = atan2(theta_2_sin_neg, theta_2_cos)
+
+		%% Elbow
+		theta_1_cos_pos = (X * (l1 + l2 * theta_2_cos) + Y * l2 * theta_2_sin_pos) / (X^2 + Y^2);
+		theta_1_cos_neg = (X * (l1 + l2 * theta_2_cos) + Y * l2 * theta_2_sin_neg) / (X^2 + Y^2);
+
+		theta_1_sin_pos = sqrt(1-(theta_1_cos_pos));
+		theta_1_sin_neg = sqrt(1-(theta_1_cos_neg));
+
+		theta_1_pos = atan2(theta_1_sin_pos, theta_1_cos_pos);
+		theta_1_neg = atan2(theta_1_sin_pos, theta_1_cos_neg);
+
+		%% Solution
+		rads1=theta_1_pos;
+		rads2=theta_2_pos;
+
+		Solution:
+		theta_2 = 1.441 -> 1.44;
+
+4. Using MATLAB, open the Q4 folder and edit "computeMiniForwardKinematics.m" and compute the forward kinematics for a parallel robot. To check that this is correct, run "miniForwardNoToe.m" and drag the sliders to θ1=3.5 and θ2=1.5 what is the value of x?
+
+	Assume the shorter link is of length 1 and the longer link is of length 2.
+
+	function [endeff] = computeMiniForwardKinematics(rads1,rads2)
+
+	l1 = 1; l2 = 2;
+
+	alpha_world = (1/2) * (rads1 + rads2) + pi;
+	beta_world = (rads1 - rads2);
+
+	alpha_polar = alpha_world;
+	r_polar = sqrt(l2^2 - (l1 * sin(beta_world)^2)) - l1 * cos(beta_world);
+
+	x_world = r_polar * cos(alpha_polar);
+	y_world = r_polar * sin(alpha_polar);
+
+	endeff = [x_world, y_world];
+
+	Solution: 
+	X = 1.7605 -> 1.76
+	--------------
+	alpha = (1/2) * (rads1 + rads2) + pi;
+	beta = (rads1 - rads2);
+
+	Y = sqrt(1+1-2*1*1*cos(beta));
+	Z = sqrt(1-(Y/2)^2);
+	X = sqrt(4-(Y/2)^2);
+
+	l = X-Z;
+
+	x_world = l*cos(alpha);
+	y_world = l*sin(alpha);
+
+	endeff = [x_world, y_world];
+
+	Solution: 
+	X = 1.0207 -> 1.02 -> CORRECT
+
+/*********************************************************/
+/*** QUIZ 3.1.2 Introduction to dynamics and control   ***/
+**********************************************************/
+1. One possible simplification to the dynamics of the spring loaded inverted pendulum (SLIP) model is to neglect gravity altogether. Using your knowledge of Lagrangian mechanics, which of the below equations of motion are generated from this simplification?
+
+	q = (r, theta)^T
+	Kinetic Energy: T = (m/2) * ((derivate r)² + r²*(derivate theta)²)
+	Potential Energy: V= (k/2) * (r - r_0)²
+
+Note: The kinetic and potential energies are given using polar coordinates. The correct answer below is in simplest form and involves a cancellation. You can assume that the radial coordinate never goes to zero.
+
+	m*derivate_seg_r - k(r_0 - r) - m*r*(derivate_theta)² = 0;
+	r*derivate_seg_theta + 2*derivate_r*derivate_theta = 0;
+
+	INCORRECT
+	m*theta² + 2k(r0-r) + m*r*(derivate_r)² = 0;
+	r*second_derivate_r - derivate_r*derivate_theta = 0;
+
+2. Which of the following PD controllers -- used to directly give motor commands u -- is implemented correctly for the goal of having the motors to track the desired state? Let the desired state is given by the subscript "des", the proportional term be given by kp, and the derivative term be given by kd. 
+
+	u = k_p(theta_des - theta) + k_d(derivate_theta_des - derivate_theta);
+
+3. PD control allows the motors to add stiffness (via the P term) and damping (via the D term) in different directions. Often when controlling robotic legs it proves useful to have these directions align with some coordinate system at the foot. For example, you might want the motors to make the leg seem very stiff when the foot pushes against the ground in the vertical direction but not as much in the horizontal direction.
+
+Assume a 2 degree of freedom leg actuated by 2 motors. Which of the following equations is a PD controller that gives motor commands to track a desired x and y foot position such that the leg stiffness and damping can be independently controlled in the x and y directions? Hint: it may be helpful to review the end of the kinematics section showing how forces at the end effector are mapped to motor torques.
+
+Let J be the kinematic Jacobian, mapping motor velocities into toe velocities. Let k_px,k_py be the x and y proportional gains, and k_dx,k_dy be the x and y derivative gains.
+
+	CORRECTO
+	u = J^(T)[k_px(x_des - x) + k_dx(derivate_x_des - derivate_x); k_py(y_des - y) + k_dy(derivate_y_des - derivate_y)]
+
+	INCORRECT
+	u = J[k_px(x_des - x) + k_dx(derivate_x_des - derivate_x); k_py(y_des - y) + k_dy(derivate_y_des - derivate_y)]
+	u = J^(-T)[k_px(x - x_des) + k_dx(derivate_x - derivate_x_des); k_py(y - y_des) + k_dy(derivate_y - derivate_y_des)]
+
+
+/*********************************************************/
+/*** QUIZ 3.2.1 Sprawled posture runners						   ***/
+**********************************************************/
+1. Assume the center of mass (CoM) is at (0,0), the left corner is at (−1,0), the bottom is at (1,−1), and the top is at (1,1). What is d1? Enter 3 decimal places.
+
+	Hint: https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
+
+	Solution:
+	0.477 <- INCORRECT
+
+	Otra forma: a través de la recta que se forma con los dos puntos.
+	Se halla la ecuación de la recta. El término de la pendiente es el cociente entre el corte de la recta con el eje Y y el corte de la recta con el eje X. El término independiente es el corte de la recta con el eje Y.
+
+	y = mx + c;
+
+	y = (1/2)*x + 1/2; -> (1/2)*x - y + 1/2 = 0.
+
+	Ahora se aplica la ecuación de la Wikipedia para una recta:
+
+	d(ax+by+c=0,(x_0, y_0)) = (abs(a*x_0 + b*y_0 + c))/(sqrt(a² + b²))
+	d = 0.4472 -> d = 0.447
+
+
+
+
+2. The lecture introduced the idea of a support polygon (see the figure below and [Ting, 1994] for more information). The cockroach is "quasistatically stable" when the projection of the CoM is within the support polygon at all times. In this question and the next, we will think about the limits this model imposes on locomotion speed.
+
+Assume that the CoM moves along a vertical line through the origin as the cockroach runs forward, and that the toe locations are fixed at (−1,0), (1,−1), and (1,1), in units of cm (about right for a small cockroach).
+
+What is the maximum CoM displacement that keeps a positive quasistatic stability margin (in cm)?
+
+Puede que sea 1:
+Starting with the top diagonal line between coordinates(-1,0) and (1,1), equation for the straight line is:
+
+y =mx + c, where the gradient m =(y2-y1)/(x2-x1).
+
+To get the value of c, substitute one of the known coordinates in the equation y = mx +c.
+
+c is also the distance from the centre of mass (CoM) to the edge of the triangle, and the CoM moves up AND down on this vertical line, through the origin at (0,0).
+
+Now you also have to find the equation for the line that goes through (-1,0) and (1,-1) and get c for this line. The sum of the two values for c gives you the total distance that the CoM can move before it is outside the triangle.
+
+Solution: 1
+
+3. Assume that the CoM moves along a vertical line through the origin as the cockroach runs forward, and that the toe locations are fixed at (−1,0), (1,−1), and (1,1), in units of cm (about right for a small cockroach).
+
+Assuming the stride frequency and duty cycle are such that each tripod is maintained for 0.5 seconds, what is the maximum speed such that quasistatic stability is guaranteed (in cm/s)?
+
+
+4. In this question you will think about if RHex's "C" legs are better or worse than stick legs for a vertical leap. Imagine the two leg designs on a vertical rail and frictionless floor (as shown above); the legs rotate in the direction of the red arrow and the body is propelled upwards.
+
+Recall Gavin's lecture on effective mechanical advantage (EMA) from 3.1.1. Which of these curves roughly captures the EMA versus height trend for each leg?
+
+Hint: you don’t need to calculate the kinematics. Think about how much the hip joint rotates per infinitesimal displacement in height of the "robot" as a function of the height. Start with the stick leg.
+
+	a) gray - half circle leg, red - stick leg
+	b) red - half circle leg, green - stick leg
+	c) green - half circle leg, blue - stick leg <- CORRECT
+	d) blue - half circle leg, gray - stick leg
+
+/*********************************************************/
+/*** QUIZ 3.2.2 Quadrupeds													   ***/
+**********************************************************/
+1. First watch this gif (you can also save it to your computer or watch here if it isn't playing) of my foster kitten performing a gait transition.
+
+	a) Walk to trot
+	b) Gallop to walk
+	c) Trot to gallop -> CORRECT
+	d) Walk to gallop
+
+2. This ostrich is a:
+
+	a) Digitigrade -> CORRECT
+	b) Unguligrade 
+	c) Plantigrade -> INCORRECT
+	d) None of the above 
+
+3. From the evidence of this cost of transport (CoT) plot of animals and robots from MIT, which of these is a more efficient mode of locomotion?
+
+	a) Running
+	b) Flying -> INCORRECT
+	c) Swimming -> CORRECT
+	d) There is no correlation between these modalities and CoT -> INCORRECT
+
+4. From the evidence of this CoT plot of animals and robots from MIT, how much power is a human running at 3m/s consuming (in Watts)?
+
+	Assume the mass of the human is m=80 kg, and the CoT is 10−0.5.
+
+	CoT = P / (mgv) -> P = CoT * m * g * v;
+	P = 10^(-0.5)*80*9.81*3 ) = 744.5267 -> 744.53
+
+
+/*********************************************************/
+/*** QUIZ 3.2.3 Bipeds															   ***/
+**********************************************************/
+1. You've seen the SLIP model a few times now. You may have noticed that this model does not allow for a biped to stand still (recall inverted pendulums from 1.2.3). What additional actuation/appendage is required for a monoped (sagittal projection of a biped) to stably stand? (There may be more than one correct answer, and assume that multiple answers are independent of each other, i.e., A OR B and not A and B)
+
+	a) Ankle torque -> CORRECT
+	b) An actuated tail attached at the hip (but not allowed to touch the ground) -> CORRECT
+	c) A tail allowed to touch the ground -> CORRECT
+
+2. How many degrees of freedom (DOFs) does sagittal Jerboa (model above) have in stance (toe is pinned to the ground)?
+
+	Hint: First, count the total unconstrained DOFs for the Jerboa, including (x,z), the leg DOFs (θ1,θ2), and the orientation DOFs (ϕ1,ϕ2). In stance, you have to consider the TWO constraints imposed by the fact that the toe is pinned to the ground
+
+Solution: 4 DoF
+
+3. How many non-degenerate* degrees of freedom (DOFs) does sagittal Jerboa (model above) have in flight (massless leg)?
+
+*We call a DOF with zero apparent inertia (such as a massless end effector on an actuated joint) degenerate, since theoretically any actuator torque would cause infinite acceleration.
+
+Hint: start from the total DOFs in the unconstrained Jerboa (as in the previous question), but now eliminate the DOFs that have zero mass associated with them.
+
+	Solution: 4DoF
+
+/*********************************************************/
+/*** QUIZ 3.2.4 Simply stablized SLIP						 		   ***/
+**********************************************************/
+1. In the following cartoon robots, an encoder measures leg angle relative to body, and an IMU measures absolute body angle.
+
+	In this cartoon robot, assuming the control input is desired leg angle, which sensors need to be used to implement the simply stabilized controller? (Keep in mind the 'disk body' has no degree of freedom)
+
+		a) IMU
+		b) Encoder
+		c) None
+
+		None -> CORRECT
+		Encoder solo -> INCORRECT
+		Encoder + IMU -> INCORRECT
+
+2. In this cartoon robot, which sensors are needed to implement the Raibert stepping controller (from week 2)?
+
+		a) IMU
+		b) Encoder
+		c) None
+
+		Encoder solo -> INCORRECT
+		Encoder + IMU -> INCORRECT
+		None -> INCORRECT
+
+3. In this cartoon robot, assuming the control input is desired leg angle (relative to the body), which sensors are needed to implement the simply stabilized controller?
+
+		a) IMU
+		b) Encoder
+		c) None
+
+		IMU -> CORRECT
+		Encoder solo -> INCORRECT
+		Encoder + IMU -> INCORRECT
+
+4. In this cartoon robot, assuming the control input is desired leg angle (relative to the body), which sensors are needed to implement the Raibert stepping controller?
+
+		a) IMU	-> CORRECT
+		b) Encoder -> CORRECT
+		c) None
+
+5. In the attached zip file, you will find a MATLAB GUI (run "slipHW.m"). In the GUI that appears, you must set the parameters through the input boxes (as described below), and click "run" to run the simulation and present results.
+
+	You will find a simplistic implementation of SLIP with a tunable fixed stepping angle. You will change the value of the stepping angle (in radians) to get a sense of the basin of this simple controller.
+
+	What is a valid stepping angle (in units of radians) for speed 0.5 m/s?
+
+	Hint: change the stepping angle till there are sustained bounces, i.e., the stride-to-stride apex z and speed x˙ should not change much. A "close enough" answer is sufficient.
+
+	Hint 2: the correct answer lies between 0.12 and 0.14 radians, and you may need to go down to ±0.0001 radians of precision to get it to work. This question is meant to convey how small the basin of the fixed stepping angle controller really is!
+
+		Solution: 
+			0.129 -> INCORRECT
+			0.13 -> INCORRECT
+
+6. (building off the previous question)
+
+	Experiment with a couple of more values of speed, and finding a good stepping angle. Which of the following plot trends represents the stepping angle – speed relation well? NOTE: Enter "gray", "green", "blue", or "red" (not including quotes).
+
+		Solution:
+			Green -> INCORRECT
+			Blue -> CORRECT
