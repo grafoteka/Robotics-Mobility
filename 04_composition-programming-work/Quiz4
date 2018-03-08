@@ -1,0 +1,267 @@
+/*********************************************************/
+/*** 4.1.1 Sequential and Parallel Composition			   ***/
+**********************************************************/
+1. In the execution of this sequential composition, how many controllers need to be sequenced for initial point x1? (enter a numeric answer)
+
+	Solution: 2
+
+2. In this scenario, Φ1 makes the goal an attracting fixed point. Which of these is a correct reason that controllers Φ2 and Φ3 are needed in addition?
+
+	a) The goal of Φ1 is not the correct goal location 
+	b) To control the rate of contraction 
+	c) A sequence of controllers is better than a single controller 
+	d) The basin of Φ1 is not large enough -> CORRECT
+
+3. Why is Φ3→Φ1 not a valid sequential composition?
+
+	a) Without Φ2, the overall basin of attraction is too small -> INCORRECT
+	b) The basin of Φ1 does not include the goal of Φ3 	-> CORRECT
+
+/*********************************************************/
+/*** 4.2.1 Why is parallel hard?										   ***/
+**********************************************************/
+1. Which of these is a template for a trotting horse?
+
+Hint: this is a review of earlier material, specifically around 1:30--2:30 of lecture 2.1.1 where Jeff introduces templates
+
+	a) SLIP -> CORRECT
+	b) Compass walker
+	c) LLS
+	d) Rimless wheel
+
+2. Recall from lecture the de-coupled RL-RC circuit (R21=∞), where x˙=Ax, and A is a 2x2 diagonal matrix with values A11 and A22. What is the solution x1(t) if starting at t=0? Use "x10" for x1(0), "x20" for x2(0), and "A11" for A11 etc. To denote ex, use "exp(x)".
+
+Hint: for those in need of a refresher on ODEs, you might find this helpful (http://people.math.gatech.edu/~xchen/teach/ode/ExpMatrix.pdf).
+
+	Solution: x10*exp(A11*t)
+
+3.  Which of these is the reason the ”heavy toe” simulation of the Raibert hopper fails? 
+
+	a) The pitch controller affects the hopping height 
+	b) The thrust controller affects the body pitch 
+	c) The stepping controller affects the hopping height 
+	d) The stepping controller affects the pitch -> CORRECT
+
+/*********************************************************/
+/*** 4.2.2 SLIP as a parallel composition?					   ***/
+**********************************************************/
+1. Which of these axes labels are correct for a vertical hopper (mass at height z)?
+
+	a) Z vs derivate_Z -> CORRECT
+	b) derivate_Z vs Z
+	c) Z vs second_derivate_Z
+	d) second_derivate_Z vs Z
+
+2. Enter an expression for the equilibrium energy a∗ of the controlled vertical hopper (enter "b" for β).
+
+	Solution: (k-a*b)/2
+
+3. Enter an expression for the equilibrium energy a∗ of the simplified rimless wheel in this section (enter "d" for δ and "g" for γ).
+
+	Solution: d*(a+g)
+
+/*********************************************************/
+/*** 4.2.3a RHEX																		   ***/
+**********************************************************/
+1. Why was RHex designed to have one actuator per hip?
+
+	a) Two actuators per hip would be redundant -> INCORRECT
+	b) To have adequate specific power per individual motor
+	c) To have adequate robot specific power (power/mass) -> CORRECT
+	d) Because cockroaches have one muscle per leg
+
+2. Which are some of the steps that had to be taken to anchor a pogo stick on RHex (referred to as "tuning" in the lecture)?
+	
+	a) The compliance (stiffness magnitudes) had to be tuned -> CORRECT
+	b) The clock had to be tuned properly -> CORRECT
+	C) A physical pogo stick had to be attached to RHex
+	d) The running speed had to be limited to exactly 1 bodylength/sec
+
+/*********************************************************/
+/*** 4.2.3b Clocked RHex gaits											   ***/
+**********************************************************/
+1. Why can RHex not sense leg touchdown easily?
+
+	a) The legs are C-shaped, and it's not clear where to put the touchdown sensor
+	b) The legs recirculate continuously, and so communication between the motor stator and rotor sides cannot be made through a fixed wired connection -> CORRECT
+	c) There are no available sensors to detect touchdown
+	d) The RHex legs never leave contact with the ground
+
+2. The "Buehler clock" sets a desired
+	
+	a) Continuously varying leg speed -> INCORRECT
+	b) Leg speed is set as a feedback function of the leg position -> INCORRECT
+	c) Piecewise constant leg speed -> CORRECT
+	d) Piecewise linear leg speed -> INCORRECT
+
+/*********************************************************/
+/*** 4.3.1 Compositions of vertical hoppers					   ***/
+**********************************************************/
+1. How many virtual legs are used in a quadrupedal walk? (refer: 3.2.2)
+
+	Solution: 2 -> WRONG
+	Solution: 4
+
+2. How many virtual legs are used by a hopping kangaroo? 
+	
+	Solution: 1 -> CORRECT
+
+3. Suppose the cartoon robot below is in stance (toe is pinned to the ground), and a hip torque is applied in the direction of the arrow. Then:
+
+	a) the leg will rotate in the counterclockwise direction, the body will not experience any moments
+	b) the body will experience a counterclockwise moment
+	c) the leg will rotate in the clockwise direction, the body will not experience any moments
+	d) the body will experience a clockwise moment -> CORRECT
+
+4. Assume all the virtual or physical toes are in stance (i.e. pinned to the ground). The arrows in the left figure are physical leg extension forces, and the arrow in the right figure is a virtual hip torque. Note that this counterclockwise virtual hip torque would result in a clockwise acceleration of the body.
+
+To apply the shown virtual hip torque on the right, in the physical model on the left,
+
+	a) both legs should apply the same extension force -> INCORRECT
+	b) the left leg should apply a higher extension force
+	c) this is not possible without using physical hip torques -> INCORRECT
+	d) the right leg should apply a higher extension force -> INCORRECT
+
+5. Assume the physical robot on the left is in stance. The equivalent "virtual leg" is shown in the image on the right. In this question we think about how physical torques can move the virtual hip. Assume that a torque in the direction of the arrows is positive.
+
+Imagine the right physical hip applies 0 Nm. Then, a torque of 1 Nm applied by the left physical hip moves the virtual hip to the left. Similarly, if the left hip applies −1 Nm and the right hip applies 0 Nm, the virtual hip moves to the right.
+
+Which of the following would translate the pivot point of the virtual hip to the left?
+
+	a) Left hip applies 2 Nm, right hip applies −1 Nm. -> CORRECT
+	b) The left toe is positioned further left in flight -> INCORECT
+	c) Left hip applies 1 Nm, right hip applies −1 Nm.
+	d) Left hip applies −2 Nm, right hip applies 1 Nm. 
+
+/*********************************************************/
+/*** MATLAB: composition of vertical hoppers				   ***/
+**********************************************************/
+1. We have made a very simplistic MATLAB simulation with a Minitaur-like body and a composition of identical, independent vertical hoppers. This means that in the simulation, each leg is controlled as if it were a vertical hopper, and the controllers are truly decoupled.
+
+The following questions should help you see the power of this kind of composition, and also how the body design might affect behavior.
+avikHW.zip
+
+Download the zip file, and run the script "avikHW.m". You must set the parameters (as described below) and click "run" to run the simulation and display the plots.
+
+What is the symbolic name of the parameter that controls vertical hopper height (according to the slide in 0:35--1:40 of 4.2.2?) Hint: it is a single letter!
+
+	Solution: a -> INCORRECT
+
+2. Select d=0.2 and leave it for the following three questions.
+
+Increasing the gain from 0, with d=0.2, find the smallest value of vertical hopper gain such that both of the vertical hoppers have sustained bounces.
+
+Hint: look at the hybrid mode plot; "3" means that both legs are in stance. Make sure that the system doesn't settle in to mode 3 after a few bounces; i.e., modes other than 3 (when either vertical hopper has some aerial phase) are visible till the end of the simulation. 
+
+	Solution: 12	-> CORRECT
+
+3. With d=0.2, find a value of VH gain such that "bounding" occurs, i.e. the vertical hoppers get out of sync, and there is no double stance (i.e. the hybrid mode does not reach 3 after a few initial bounces)
+
+	Solution: 26	-> INCORRECT
+
+4. With d=0.2, what is the value of VH gain such that the equilibrium z (of the CoM) is ≈0.2.
+
+	Solution: 36	-> CORRECT
+
+5. Now we shall see how the body dynamics (specifically, as parameterized by the length of the body) affects our composition. Change to d=0.1 and leave it for the following three questions.
+
+With d=0.1, find a value of vertical hopper gain such that ”bounding” occurs, i.e. the vertical hoppers get out of sync, and there is no double stance (i.e. the hybrid mode does not reach 3 after a few initial bounces).
+
+Note: You will observe that the shorter body does not like to passively desynchronize the vertical hoppers as well as the longer body...telling us that more active desynchronization is needed (not implemented in this simulation).
+
+	Solution: 10 -> INCORRECT
+
+6. With d=0.1, what is the value of vertical hopper gain such that the equilibrium z (of the CoM) is ≈0.2?
+
+Note: it might oscillate about this value unless you run the simulation for a longer time, but try to guess the steady-state value it is converging to.
+
+	Solution: 40	-> CORRECT
+
+/*********************************************************/
+/*** 4.3.2 Same composition, different bodies				   ***/
+**********************************************************/
+1. In pronking minitaur (a virtual monoped), the body orientation could be corrected using (select all equivalent answers)
+
+	a) Virtual hip torque -> CORRECT
+	b) Virtual toe positioning
+	c) Differential axial leg forces -> CORRECT
+	d) Mean axial leg forces
+
+	a -> INCORRECT
+	a, c -> CORRECT
+
+2. Which of these are advantages of composition as a means for controller synthesis? 
+	
+	a) The resulting behaviors are guaranteed to optimize efficiency -> CORRECT
+	b) The compositions are guaranteed to be stable
+	c) A library of templates can generate new compositions without redesigning controllers -> CORRECT
+	d) Template or component controllers are simpler to design 
+
+	c INCORRECT
+	a,c -> INCORRECT
+	b, c -> INCORRECT
+
+3. Which of these are disadvantages of composition as a means for controller synthesis? 
+	
+	a) The resulting behaviors can’t be proven to be optimal -> CORRECT
+	b) There’s no existing method of using template stability to guarantee composition stability
+	c) Precise models of the robot are needed to design controllers -> CORRECT
+	d) The controllers usually have hundreds of parameters 
+
+	a INCORRECT
+	a, c -> INCORRECT
+	b, d -> INCORRECT
+
+/*********************************************************/
+/*** 4.3.3 Same body, different compositions				   ***/
+**********************************************************/
+1. The inertial reorientation template plant (pictured below) dynamically only has 1 DOF, because
+
+	a) of linear momentum conservation -> CORRECT
+	b) of angular momentum conservation
+	c) the tail angle is not a DOF -> INCORRECT
+	d) the body angle is not a DOF  -> INCORRECT
+
+2. Suppose we modify the template plant for inertial reorientation and pin the body away from the CoM. Gravity is present. How many DOFs does this system have?
+
+	Solution: 2	 
+
+/*********************************************************/
+/*** 4.3.4 Transitions															   ***/
+**********************************************************/
+1. To get some idea of the ground reaction complex (GRC), take the example of an n-legged stool being dropped to the ground, and assume that as it falls, contacts can be made but never broken (i.e. if a leg touches the ground it doesn’t lift off again), and also that there are no “simultaneous” contacts. Define the “sitting” mode as the one where all legs are in contact.
+
+Define the term "word" as a sequence of contact modes in a transitional behavior. For example, 000→001→011→111 is a single word comprised of 4 letters (contact modes). For further reference into the vocabulary analogy take a look at
+
+https://repository.upenn.edu/ese_papers/662/
+
+How many possible “words” are there from aerial to sitting for n=2?
+
+	Solution: 2 -> CORRECT
+
+2. (Same setup as previous question) How many words are there from aerial to sitting for n=3?
+
+	Solution: 9
+	15 -> INCORRECT
+	16 -> INCORRECT
+	9 -> INCORRECT
+
+3. The three digits inside the robot are a binary string representing current contact mode, with 1 signifying an active contact, and 0 and inactive one. If “LB = left body, RB = right body, T = toe”, the correct sequence of labels is
+
+	a) LB,RB,T
+	b) LB,T,RB -> CORRECT
+	c) RB,LB,T
+	d) T,LB,RB
+
+4. First watch this leap (you can also save the gif to your computer)
+
+Assuming the contact labels are in the sequence {nose, leg, rear, tail}, which of these is the correct completion of the leap word corresponding to the video clip?
+
+1010→1011→1001→1101→0101→
+
+Hint: think about which contacts are the last to break?
+
+	a) 0001→0000 -> CORRECT
+	b) 0100→0000
+	c) 0111→0000
+	d) 0010→0000
