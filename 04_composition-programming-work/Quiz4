@@ -192,10 +192,10 @@ Note: it might oscillate about this value unless you run the simulation for a lo
 
 2. Which of these are advantages of composition as a means for controller synthesis? 
 	
-	a) The resulting behaviors are guaranteed to optimize efficiency -> CORRECT
+	a) The resulting behaviors are guaranteed to optimize efficiency
 	b) The compositions are guaranteed to be stable
 	c) A library of templates can generate new compositions without redesigning controllers -> CORRECT
-	d) Template or component controllers are simpler to design 
+	d) Template or component controllers are simpler to design -> CORRECT
 
 	c INCORRECT
 	a,c -> INCORRECT
@@ -204,8 +204,8 @@ Note: it might oscillate about this value unless you run the simulation for a lo
 3. Which of these are disadvantages of composition as a means for controller synthesis? 
 	
 	a) The resulting behaviors can’t be proven to be optimal -> CORRECT
-	b) There’s no existing method of using template stability to guarantee composition stability
-	c) Precise models of the robot are needed to design controllers -> CORRECT
+	b) There’s no existing method of using template stability to guarantee composition stability -> CORRECT
+	c) Precise models of the robot are needed to design controllers
 	d) The controllers usually have hundreds of parameters 
 
 	a INCORRECT
@@ -241,10 +241,11 @@ How many possible “words” are there from aerial to sitting for n=2?
 
 2. (Same setup as previous question) How many words are there from aerial to sitting for n=3?
 
-	Solution: 9
+	Solution: 6
 	15 -> INCORRECT
 	16 -> INCORRECT
 	9 -> INCORRECT
+	18 -> INCORRECT
 
 3. The three digits inside the robot are a binary string representing current contact mode, with 1 signifying an active contact, and 0 and inactive one. If “LB = left body, RB = right body, T = toe”, the correct sequence of labels is
 
