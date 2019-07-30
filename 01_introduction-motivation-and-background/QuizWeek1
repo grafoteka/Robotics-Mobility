@@ -49,7 +49,7 @@
 		d) derivada segunda de theta = -(g/l · sin theta) -(b/m · derivada primera de theta) -> ESTA
 
 	2. Assume a nonlinear system has total energy η=(ml²/2)·θ²+mgl(theta−1)² and that the system is dissipative such that the total energy decreases to zero. What do you expect the final angle θ to be when the system comes to a rest? You can assume that there are perturbations that move the system off any unstable fixed points. (Note: your answer should be numeric)
-		a) 0
+		a) 1
 
 	3. Assume that the nonlinear system in Question 2 with total energy η=(ml²/2)·θ²+mgl(theta−1)² is actually the model of some robot arm you are building and wish to control so that θ goes to the answer of Question 2. If the mass is doubled and the length is quadrupled, how will the answer to Question 2 change?
 		a) It will go up
