@@ -1,3 +1,4 @@
+CSDN版本:https://blog.csdn.net/qq_39537898/article/details/104184033
 /*********************************************************/
 /*** QUIZ 2.1.1 Walking like a rimless wheel				   ***/
 **********************************************************/
@@ -5,51 +6,53 @@
 
 		a) COT = Sin(rampAngle)
 		b) COT = Cos(rampAngle)
-		c) COT = Tan(rampAngle) -> This one
+		✔c) COT = Tan(rampAngle) -> CORRECT
 		d) COT = Csc(rampAngle)
 		e) COT = Sec(rampAngle)
 		f) COT = Cot(rampAngle)
 
 	2. The Cornell Ranger has a mass of 9.91 kg and walked a total distance of 65,243 m using 1,774,800 J of battery energy. What is the cost of transport for the Cornell Ranger? Assume a gravitational acceleration of 9.81 m/s^2 in calculating your answer.
-
+		
+		✔0.28
+		
 		COT = E / mgd; E = Energy input of the system, m = mass, d = distance, g = standard gravity.
 		COT = 1774800/(9.91*9.81*65243) = 0.27981
 
 	3. What ramp angle is required to give a cost of transport of 0.2 for the rimless wheel, which is approximately equal to the efficiency of human walking?
 
-		a) 6 degrees -> No es correcta
-		b) 11 degrees
+		a) 6 degrees
+		✔b) 11 degrees -> CORRECT
 		c) 31 degrees
 		d) 45 degrees
-
+		解释：arctan(0.2)=11
+		
 	4. We've seen that energy is often used very efficiently for movement in biology as compared to in robots. The cost of storing energy (in terms of weight) is another factor that comes into play in determining locomotion ability -- the more weight is stored in fuel, the more mass the actuators need to move! Let's compare how much it weights to store a given amount of energy in biological fuel -- i.e. food -- as compared with electricity to power a robot.
-
 	How many kg of battery weight would it be necessary for a human-like robot to walk a marathon? Assume that a marathon takes 5960 KJ to walk (this is an extremely roughly estimate assuming a 72 kg person walking it with a energetic cost of transport of 0.2), and that the lithium polymer batteries have a mass of 0.002kg per KJ of energy storage. Round to the nearest kilogram.
-
 	Just to put this in perspective, this same energy can be contained in less than 7 candy bars, which have a total weight of less than 0.4kg!
-
+		
+		✔12
 		Energy required for marathon * KJ per battery = 5960KJ * 0.002 KJ per battery = 11.92 -> 12KG.
 
 /*********************************************************/
-/*** QUIZ 2.1.2																			   ***/
+/*** QUIZ 2.1.2 Running like a spring-loaded pendulum ***/													   ***/
 **********************************************************/
 	1. Given a robot with a leg length of 0.4m, what is the estimated maximum possible walking speed in meters per second according to the Froude number? Assume an acceleration due to gravity of 10m/s^2.
-
+		
+		✔2
 		Fr = v² / g·l -> v = sqrt(Fr·g·l), donde Fr < 1 para correr y Fr > 1 para caminar
-
 		Por tanto, v = 2
 
 	2. Assume that the energetically optimal walk-to-run transition speed for a robotic biped occurs at a Froude number of 0.5. What is the expression for the optimal speed of transitioning from walking to running in terms of leg length d? Assume a gravitational acceleration of 10m/s^2. Enter you answer in simplest form, using sqrt() to represent any square roots. (Ex: The square root of 2*d is written as sqrt(2*d)).
 
-		v = sqrt(5·d)
+		✔v = sqrt(5·d)
 
-	3. Which of the following energy plots best represents the energy during stance of the center-of-mass of a robot running with SLIP-like dynamics? The blue curve shows kinetic energy and the red curve shows gravitational potential energy. Assume the horizontal axis is time and the vertical axis is energy. 
-
-		La 4. Las dos curvas son idénticas. Se puede observar en: Evidence for Spring Loaded Inverted Pendulum Running in a Hexapod Robot, página 7.
-
+	3. Which of the following energy plots best represents the energy during stance of the center-of-mass of a robot running with SLIP-like dynamics? The blue curve shows kinetic energy and the red curve shows gravitational potential energy. Assume the horizontal axis is time and the vertical axis is energy.
+		
+		✔两个下凸的图
+		
 	4. Here is actual data for the center-of-mass trajectory of a robot running primarily in the directions labeled y and z. From this data, which template best explains the motion observed?
 
-	a) Lateral leg spring (LLS) -> Correcta
+	✔a) Lateral leg spring (LLS) -> CORRECT
 	b) Ackermann vehicle
 	c) Rimless wheel
 
@@ -67,18 +70,20 @@
 
 	Your first task is to tune the thrust duration using the slider so that the hopper reaches a steady state hopping height between 1m and 1.1m (denoted by the horizontal green and red lines in the generated plot) at the end of the simulation. Give the resulting thrust duration in seconds that meets these goals as your answer.
 
-		P = 0.00065
+		✔0.00071429
 
 	2. Now we will tune the forward speed controller. You run the simulation by running Quiz_2_1_1_Question_2 with no arguments.
 
 	Recall that the neutral point is estimated at each step, and that the forward speed controller consists of a proportional controller that puts the toe in front of or behind the neutral point to obtain the desired speed. What proportional gain to the forward speed controller causes the robot to accelerate from rest to a speed between 0.9 m/s and 1.1 m/s without ever going over 1.1 m/s?
 
-		P = 0.1
+		✔0.087439
 
 	3. Now we will tune the pitch controller to achieve a desired pitch of π12 radians. You run the simulation by running Quiz_2_1_1_Question_3 with no arguments.
 
 	Your task is to finish writing the PD controller contained in pitchController.m. Keep a derivative term of kd_phi = 5. What value of kp_phi bounds the pitch within the green and red lines in the graph generated by the simulation?
-
+		
+		✔5
+		
 		En el script pitchController.m
 
 		function Tphi = pitchController(phi,phiDesired,dphi_dt)
@@ -103,7 +108,7 @@
 		b) Perimeter: 2x
 		 	 Area: 2x
 			 Volume: 2x
-		c) Perimeter: 2x -> Correcta
+		✔c) Perimeter: 2x -> CORRECT
 			 Area: 4x
 			 Volume: 8x
 		d) Perimeter: 2x
@@ -123,10 +128,11 @@
 	Hint: stress is mass divided by area. Assuming constant density of the animals, mass is proportional to volume. Also assume that the volume scales with length^3. Remember that the primary compression occurs axially along the length of the bone. How much larger must the thickness be to maintain the same (mass)/(cross sectional area) ratio?
 
 	Correct answers should be submitted with one decimal place, (e.g, 23.5)
+	
+		✔0.11
 
-	El volumen aumenta por 3 veces también. 
-
-	V = 3*3*3 = 27 -> sqrt(V) = 5.19 ~ 5.2
+		El volumen aumenta por 3 veces también. 
+		V = 3*3*3 = 27 -> sqrt(V) = 5.19 ~ 5.2
 
 	4. Pair the following scenarios with the dominant mode of loading:
 			1) a rubber band being stretched
@@ -138,7 +144,7 @@
 				 2) compression
 			   3) bending
 				 4) tension
-			b) 1) tension -> Correcta
+			✔b) 1) tension -> CORRECT
 				 2) bending
 				 3) compression
 				 4) torsion
@@ -160,24 +166,28 @@
 **********************************************************/
 1. With everything else being equal (stiffness, strength, dimensions, etc.) which type of material will heat up more if stressed in tension until failure?
 
-	a) Ductile -> Correct
+	✔a) Ductile -> CORRECT
 	b) Brittle
 
 2. If a 10cm diameter, 0.5m long cylinder is loaded with 20kg mass in tension, what is the stress (force divided by cross-sectional area) in the material in Pascals (the SI unit for stress: N/m^2)? (Remember, we are concerned with axial tension loads)
-
+	
+	✔24972.4
+	
 	stress = F/A; 
 	F = m*g = 20kg*9.8m/s² = 196.133 N;
 	A = pi*r² = pi*0.05m² = 0.00785m²;
-	F = 196.133N / 0.00785m² = 24972.4N/m²; -> Correcta
+	F = 196.133N / 0.00785m² = 24972.4N/m²; -> CORRECT
 
 3. If the above cylinder then stretches by 8cm, what is the strain (extension normalized by initial length) in %?
-
-	strain = ðL / L = 0.08 / 0.5 = 0.16 = 16% -> Correcta
+	
+	✔16
+	
+	strain = ðL / L = 0.08 / 0.5 = 0.16 = 16% -> CORRECT
 
 4. Necking is a phenomena where plastic deformation induces significant strain resulting in decreased cross sectional area. If the above cylinder experiences "necking" will the stress in the neck be larger or smaller than the stress in the rest of the sample?
 
 	a) Smaller
-	b) Larger -> Correcta, porque el estrés depende inversamente del área de la sección.
+	✔b) Larger -> CORRECT
 
 /*********************************************************/
 /*** QUIZ 2.2.3 Design: figures of merit, robustness   ***/
@@ -189,37 +199,45 @@
 	If a "spring" were to be made by pulling a 10cm long cylinder of material in tension with a desired stiffness of 5000kN/m, what should the diameter (in millimeters) be for an Aluminum "spring"?
 
 	This wikipedia page (https://en.wikipedia.org/wiki/Young%27s_modulus) may be helpful, specifically the section : "Force exerted by stretched or contracted material".
-
-		F = (EA/L0)*ðL -> F*L0 = E * pi * r² -> r = sqrt(F*L0/(E*pi));
-		r[m] = sqrt(5000*0.1/(69*pi)) = 1.51[m]
-		r[mm] = 1518.7[mm]
-		----
-		d = sqrt((4*K*L)/(E*pi));
-		Ø = 3.037494611[mm]
+	
+	 ✔3.04 -> CORRECT
+	 
+	F = (EA/L0)*ðL -> F*L0 = E * pi * r² -> r = sqrt(F*L0/(E*pi));
+	r[m] = sqrt(5000*0.1/(69*pi)) = 1.51[m]
+	r[mm] = 1518.7[mm]
+	----
+	d = sqrt((4*K*L)/(E*pi));
+	Ø = 3.037494611[mm]
 		
 
 2. If the "spring" were to be made of ABS plastic instead, what should the diameter be (in millimeters)?
-
-		Ø = 17.010955993 [mm]
+	
+	✔17.01 -> CORRECT
+	Ø = 17.010955993 [mm]
 
 3. What would be the mass of the aluminum "spring" (in grams)?
-
+	
+	✔1.96 -> CORRECT
+	
+	解释：质量=密度*体积
 	La masa de un cilindro es: 
 	densidad = masa/volumen -> masa = densidad * volumen. 
 	volumen = pi * r² * L;
 	masa[g] = 2.7 g/cm^3 * pi * (0.304/2)² [cm²] * 10 [cm] = 0.623808[g]
 
 4. What would be the mass of the plastic "spring" (in grams)?
-
+	
+	✔3.197 -> CORRECT
+	
 	masa[g] = 1.3 g/cm^3 * pi * (1.701/2)² [cm²] * 10 [cm] = 19.53045[g]
 
 5. If the aluminum "spring" were pulled 3mm, would it break?
 	a) No
-	b) Yes -> Correcta
+	✔b) Yes -> CORRECT
 
 6. If the plastic "spring" were pulled 3mm, would it break?
 
-	a) No -> Correcta
+	✔a) No -> CORRECT
 	b) Yes
 
 /*********************************************************/
@@ -227,23 +245,23 @@
 **********************************************************/
 1. Which of these tasks is significantly dependent on high actuator bandwidth (frequency at which actuator can work well)?
 	Todas no son correctas.
-	2, 3 y 4 -> Incorrect
-	a) High speed pick and place
-	b) A self-driving car making a passing maneuver	-> Correct
-	c) A robot arm picking up a fragile object	-> Correct
-	d) A legged robot catching itself after a stumble
+	2, 3 y 4
+	✔a) High speed pick and place -> CORRECT
+	b) A self-driving car making a passing maneuver
+	c) A robot arm picking up a fragile object
+	✔d) A legged robot catching itself after a stumble -> CORRECT
 
 2. The speed torque curve establishes a relationship between these two physical properties in electric motors. Since power is the product of torque and angular speed, where does maximum power occur?
 
 	a) At stall (no speed)
 	b) At 1/4 no-load speed
-	c) At 1/2 no-load speed -> Correct
+	✔c) At 1/2 no-load speed -> CORRECT
 	d) At 3/4 no-load speed
 	c) At no-load speed
 
 3. Torque in an electromagnetic actuator is proportional to current by the constant Kt ( in Nm/A, often specified by motor manufacturers). The dominant mode of wasted energy in these actuators is due to Joule heating which scales with current squared. Where does maximum wasted energy occur?
 
-	a) At stall (no speed) -> Correct
+	✔a) At stall (no speed) -> CORRECT
 	b) At 1/4 no-load speed
 	c) At 1/2 no-load speed
 	d) At 3/4 no-load speed
@@ -253,5 +271,5 @@
 
 	a) F=bx−k(x0−v)
 	b) Fx=v(b+k)+x0
-	c) F+bv=k(x−x0) -> Correct
+	✔c) F+bv=k(x−x0) -> CORRECT
 
