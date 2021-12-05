@@ -1,5 +1,6 @@
+CSDN版本：https://blog.csdn.net/qq_39537898/article/details/104184033
 /*********************************************************/
-/*** QUIZ 1.1.1 Why and how do animals move					   ***/
+/*** QUIZ 1.1.1 Why and how do animals move ***/
 **********************************************************/
 	1. In Newton's F=m·a, what does F denote?
 			- Force
@@ -9,6 +10,22 @@
 			- Tail turns to the left
 	4. Which is an example of intelligence "baked into" the body?
 			- The kangaroos legs acting as springs
+			
+/*********************************************************/
+/*** QUIZ 1.1.2 Bioinspiration ***/
+**********************************************************/
+	1.The speed of airplanes is often described in units of Mach (the speed of sound at standard sea level conditions). What is the speed of Helios 2 in Mach?
+	207
+
+	2.Acceleration is sometimes measured in g (acceleration due to gravity at the Earth’s surface). What is the cheetah’s acceleration in units of g?
+	1.3
+	解释：记得看清这里的单位是，几个g的加速度
+
+	3.Turning left “at the house with the red roof” is an example of navigation using which part of the hippocampus?
+	Place cells
+
+	4.Turning left “after 25 meters” is an example of navigation using which part of the hippocampus?
+	Grid cells
 
 /*********************************************************/
 /*** QUIZ 1.1.3 Legged Mobility: dynamic motion and the***/ 
@@ -17,26 +34,26 @@
 	1. In the above image, we see three robots with the leg forces on the ground drawn in blue. Match the robots with their resulting jumps.
 		a) Robot "a" will jump the highest up, robot "b" will jump the furthest sideways.
 		b) Robot "c" will jump the highest up, robot "b" will jump the furthest sideways.
-		c) Robot "b" will jump the highest up, robot "a" will jump the furthest sideways. CORRECT
+		✔c) Robot "b" will jump the highest up, robot "a" will jump the furthest sideways. CORRECT
 		d) Robot "a" will jump the highest up, robot "a" will jump the furthest sideways.
 
 	2. Hamiltonian systems have their total energy (sum of potential and kinetic energies) conserved. Which of these can best be modeled as a Hamiltonian system.
 		a) A block sliding down a ramp covered in honey
 		b) A car decelerating at a red light
 		c) An air conditioner unit
-		d) A pendulum in a clock swinging back and forth CORRECT
+		✔d) A pendulum in a clock swinging back and forth CORRECT
 
 	3. Assuming these two motors are about the same size, which one will likely produce more torque and which one will have higher inertia?
-		a) The motor on the right will produce more torque and have higher inertia. CORRECT
+		✔a) The motor on the right will produce more torque and have higher inertia. CORRECT
 		b) The motor on the left will produce more torque and have higher inertia.
 		c) The motor on the right will produce more torque, the motor on the left will have higher inertia. 
 		d) The motor on the left will produce more torque, the motor on the right will have higher inertia.
 		e) Both motors will produce the same torque and have the same inertia.
 
 	4. Which are examples of programming work? No son todas, ni la cuarta sola. 
-		a) A robot running over rough terrain
+		✔a) A robot running over rough terrain CORRECT
 		b) A robot using a sensor to scan the environment
-		c) A robot opening a door
+		✔c) A robot opening a door CORRECT
 		d) A robot making a decision about which way to go
 
 /*********************************************************/
